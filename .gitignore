@@ -8,3 +8,6 @@ results/*.log
 *.log
 *.out
 .DS_Store
+
+# figures drawn by the author in MATLAB (revision/matlab); test renders are not tracked
+revision/figures/
