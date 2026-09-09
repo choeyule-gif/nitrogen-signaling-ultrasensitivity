@@ -89,7 +89,7 @@ ax.legend(loc='center right', handlelength=1.3, borderpad=0.3, labelspacing=0.25
 no_minor(fig)
 for x, s in ((0.008, 'a'), (0.518, 'b')):
     fig.text(x, 0.945, s, fontsize=11, fontweight='bold', va='baseline')
-fig.savefig(os.path.join(FIGURES, "Fig1.pdf"))
+fig.savefig(os.path.join(FIGURES, "Fig1.pdf"), metadata={"CreationDate": None})
 save_csv("Fig1a_enzyme_sweep", dict(free_enzyme=E, **{"s%d_over_s%d" % (i+1, i): Rr[:, i] for i in range(n_a)}), "Fig 1a: n=4, non-identical ladder, fixed free effector l=0.9")
 save_csv("Fig1b_deadend_sweep", dict(K_Z=xb, **{"s%d_over_s%d" % (i+1, i): yb[:, i] for i in range(n_b)}), "Fig 1b: n=3, T_E/T_L=1.1e-9")
 save_json("fig1_invariance", dict(enzyme_fold_range=fold_a, ratio_drift_a=drift_a, max_abs_dev_from_Ki_over_l=dev_a,

@@ -66,7 +66,7 @@ ax.legend(loc='upper left', handlelength=1.3, borderpad=0.3, labelspacing=0.25)
 no_minor(fig)
 for xx, s in ((0.006, 'a'), (0.339, 'b'), (0.672, 'c')):
     fig.text(xx, 0.945, s, fontsize=11, fontweight='bold', va='baseline')
-fig.savefig(os.path.join(FIGURES, "Fig8.pdf"))
+fig.savefig(os.path.join(FIGURES, "Fig8.pdf"), metadata={"CreationDate": None})
 save_csv("Fig8ab_budget", dict(PII_uM=PII, first_layer=[L1]*3, composite=COMP, measured=MEAS, residual=RES, residual_lo=RLO, residual_hi=RHI), "Fig 8a,b")
 save_csv("Fig8c_readout_factor", dict(Khat2=K2g, factor_linear=fac_lin, factor_complementary=fac_cmp), "Fig 8c")
 print("Fig8 written; readout sup linear %.5f complementary %.5f" % (fac_lin.max(), fac_cmp.max()))

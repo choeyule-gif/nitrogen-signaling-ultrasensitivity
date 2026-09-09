@@ -46,7 +46,7 @@ ax.errorbar([NU], [ETA], xerr=[NU_E], yerr=[ETA_E], fmt='o', color='k', ms=5.4, 
 ax.set_xlim(x0, x1); ax.set_ylim(y0, y1); ax.set_xticks([1, 2, 3]); ax.set_yticks([1, 2, 3])
 ax.set_xlabel(r'$\nu$'); ax.set_ylabel(r'$\eta$')
 no_minor(fig)
-fig.savefig(os.path.join(FIGURES, "Fig4.pdf"))
+fig.savefig(os.path.join(FIGURES, "Fig4.pdf"), metadata={"CreationDate": None})
 print("eta ceilings: Mg2+ %.4f (ratio %.3f)  Mn2+ %.4f (ratio %.3f);  point (%.2f,%.2f) product %.3f" % (eta_mg, r_mg, eta_mn, r_mn, NU, ETA, NU*ETA))
 save_csv("Fig4_plane_markers", dict(quantity=["nu", "nu_err", "eta", "eta_err", "nH_first_cycle", "eta_ceiling_Mg", "eta_ceiling_Mn", "nu_ceiling_n3"], value=[NU, NU_E, ETA, ETA_E, NH, eta_mg, eta_mn, 3.0]), "Fig 4")
 save_json("fig4_plane", dict(eta_ceiling_Mg=eta_mg, eta_ceiling_Mn=eta_mn, ratio_Mg=r_mg, ratio_Mn=r_mn, nu_eta_product=NU*ETA))

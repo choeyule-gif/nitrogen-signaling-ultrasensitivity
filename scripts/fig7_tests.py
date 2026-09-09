@@ -70,7 +70,7 @@ ax.set_xlabel(r'$T_L$'); ax.set_ylabel(r'$\theta$')
 no_minor(fig)
 for x, s in ((0.006, 'a'), (0.262, 'b'), (0.518, 'c'), (0.774, 'd')):
     fig.text(x, 0.94, s, fontsize=11, fontweight='bold', va='baseline')
-fig.savefig(os.path.join(FIGURES, "Fig7.pdf"))
+fig.savefig(os.path.join(FIGURES, "Fig7.pdf"), metadata={"CreationDate": None})
 
 def nH(y, x):
     yy = np.clip(np.array(y), 1e-9, 1-1e-9); gg = np.log(yy/(1-yy))

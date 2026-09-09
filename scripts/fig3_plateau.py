@@ -41,6 +41,6 @@ ax.set_zlim(0.6, 1.02); ax.set_zticks([0.6, 0.8, 1.0]); ax.set_xticks([-4, -2, 0
 ax.tick_params(pad=-1)
 ax.view_init(elev=18, azim=-60)
 ax.xaxis.pane.set_alpha(0.0); ax.yaxis.pane.set_alpha(0.0); ax.zaxis.pane.set_alpha(0.0)
-fig.savefig(os.path.join(FIGURES, "Fig3.pdf"))
+fig.savefig(os.path.join(FIGURES, "Fig3.pdf"), metadata={"CreationDate": None})
 save_json("fig3_plateau", dict(grid_min=Z.min(), grid_max=Z.max(), interior_min=interior.min(), interior_max=interior.max(),
                                interior_width=interior.max()-interior.min()))

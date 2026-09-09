@@ -43,7 +43,7 @@ ax[1].plot(lg2[m2], R2[m2], '-', color=MC[0]); ax[1].axhline(0, color='k', ls='-
 ax[1].plot(rts, np.zeros(len(rts)), 'o', color=MC[1], ms=7, zorder=5)
 ax[1].set_xscale('log'); ax[1].set_xlabel(r'$l$'); ax[1].set_ylabel(r'$\mathcal{R}(l)$')
 ax[1].set_xlim(lo, hi); tidy(ax[1], 1, 0, nx=3); panel(ax[1], 'b', -0.20)
-plt.tight_layout(w_pad=2.0); plt.savefig(os.path.join(FIGURES, 'Fig6.pdf'))
+plt.tight_layout(w_pad=2.0); plt.savefig(os.path.join(FIGURES, 'Fig6.pdf'), metadata={"CreationDate": None})
 save_csv("Fig6a_residual", dict(l=lg[m0], R=R0[m0]), "Fig 6a: n=3, Bhat=1.5, Ghat=0.8, T_E=1, T_S=4, T_L=2")
 save_csv("Fig6b_residual", dict(l=lg2[m2], R=R2[m2]), "Fig 6b: parameters in S1_counterexamples.json (condition_i)")
 print("(b) n=%d spread %.2f zeros %d" % (n, ex['spread'], len(rts)))

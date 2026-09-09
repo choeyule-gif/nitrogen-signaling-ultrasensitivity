@@ -60,7 +60,7 @@ ax.set_xlabel(r'$T_E/T_S$'); ax.set_ylabel(r'$n_H$')
 no_minor(fig)
 for x, s in ((1.4, 'a'), (185.7, 'b'), (370.0, 'c')):
     fig.text(x/W, 1-9.7/H, s, fontsize=11, fontweight='bold', va='baseline')
-fig.savefig(os.path.join(FIGURES, "Fig2.pdf"))
+fig.savefig(os.path.join(FIGURES, "Fig2.pdf"), metadata={"CreationDate": None})
 save_csv("Fig2a_theta", dict(l=l, **{"theta_n%d" % n: [theta_exact(x, n) for x in l] for n in NS}), "Fig 2a")
 save_csv("Fig2b_local_hill", dict(l=lb, **{"nH_n%d" % n: [nH(x, n) for x in lb] for n in NS}), "Fig 2b")
 save_csv("Fig2c_total_fraction_hill", dict(TE_over_TS=xc, nH=yc), "Fig 2c: n=3, A*Khat=1, Bhat=Ghat=0.4/Khat, T_S=Khat")
