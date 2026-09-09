@@ -94,4 +94,16 @@ ax.set_zticks([0, 0.5, 1.0])
 ax.tick_params(pad=-1); ax.view_init(elev=20, azim=-121)
 for pane in (ax.xaxis.pane, ax.yaxis.pane, ax.zaxis.pane): pane.set_alpha(0.0)
 fig.savefig(os.path.join(FIGURES, "FigS_ReF_companion.pdf"), metadata={"CreationDate": None})
+# CSV for the MATLAB version (revision/matlab/FigS2_ReF_companion.m)
+import csv
+_fd = os.path.join(os.path.dirname(os.path.abspath(__file__)), os.pardir, "revision", "figdata")
+with open(os.path.join(_fd, "FigS2_ReF_companion.csv"), "w", newline="") as f:
+    f.write("# Re F(i omega) of the auxiliary chain at the identical-independent steady state (companion manuscript); omega in units of the mean exit rate\n")
+    w = csv.writer(f); w.writerow(["n", "omega", "ReF"])
+    for j, n in enumerate(NS):
+        for i, om in enumerate(OM): w.writerow([n, om, Z[j, i]])
+with open(os.path.join(_fd, "FigS2_ReF_markers.csv"), "w", newline="") as f:
+    f.write("# per n: circulation threshold (proved for omega above it; all omega at n = 1) and F(0) = 1 - delta^2\n")
+    w = csv.writer(f); w.writerow(["n", "circulation_threshold", "F0"])
+    for j, n in enumerate(NS): w.writerow([n, THR[j], Z[j, 0]])
 save_json("extras_ReF", dict(global_min=float(Z.min()), F0={int(n): float(Z[j,0]) for j, n in enumerate(NS)}))
