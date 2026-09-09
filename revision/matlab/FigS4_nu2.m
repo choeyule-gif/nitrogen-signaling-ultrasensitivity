@@ -7,7 +7,7 @@ ax = axes('Position', [0.16 0.19 0.80 0.76]); hold(ax, 'on');
 plot(ax, [1 max(T.nu2)], [1 1], '--', 'Color', S.gr, 'LineWidth', 1.0);
 plot(ax, T.nu2, T.ratio_PII_36, '-', 'Color', S.k, 'LineWidth', 1.5, 'DisplayName', '36 \muM');
 plot(ax, T.nu2, T.ratio_PII_5, '-', 'Color', S.r, 'LineWidth', 1.5, 'DisplayName', '5 \muM');
-plot(ax, T.nu2, T.ratio_PII_0_5, '-', 'Color', S.b, 'LineWidth', 1.5, 'DisplayName', '0.5 \muM');
+plot(ax, T.nu2, T.('ratio_PII_0.5'), '-', 'Color', S.b, 'LineWidth', 1.5, 'DisplayName', '0.5 \muM');
 xlim(ax, [1 max(T.nu2)]); ylim(ax, [0 1.8]); yticks(ax, [0 0.5 1 1.5]);
 xlabel(ax, '\nu_2'); ylabel(ax, 'reported / calculated');
 legend(ax, 'Location', 'northeast', 'Box', 'on', 'EdgeColor', 'k'); S.axes(ax);
