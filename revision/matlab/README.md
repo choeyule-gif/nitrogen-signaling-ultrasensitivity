@@ -6,7 +6,8 @@ manuscript.  Every plotted value is read from `../figdata/*.csv`, written by
 
 ```matlab
 cd matlab
-run_all_figures          % writes ../figures/Fig1.pdf ... Fig5.pdf (+ PNG previews)
+run_all_figures          % writes ../figures/Fig1.pdf ... Fig5.pdf and FigS1 ... FigS5 (+ PNG previews)
+Fig_ReF_companion        % the Re F(i omega) figure of the companion stability manuscript
 ```
 
 `plosstyle.m` holds the shared style (box on, ticks inward, minor ticks, 8-pt tick labels,

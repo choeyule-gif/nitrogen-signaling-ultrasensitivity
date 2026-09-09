@@ -2,7 +2,7 @@
 % proofs (all omega at n = 1; omega above the circulation threshold otherwise); red, the band
 % that remains open (n >= 2, omega below the threshold); circles at omega -> 0 mark F(0).
 S = plosstyle();
-T = S.read('FigS2_ReF_companion.csv'); Mk = S.read('FigS2_ReF_markers.csv');
+T = S.read('Fig_ReF_companion.csv'); Mk = S.read('Fig_ReF_markers.csv');
 ns = unique(T.n)';
 fig = figure('Units', 'centimeters', 'Position', [2 2 11.5 8.5], 'Color', 'w');
 ax = axes('Position', [0.02 0.05 0.96 0.92]); hold(ax, 'on');
@@ -22,4 +22,4 @@ xlabel(ax, 'log_{10}\omega'); ylabel(ax, 'n'); zlabel(ax, 'Re F');
 xticks(ax, [-3 -1 1 3]); yticks(ax, ns); zticks(ax, [0 0.5 1]); zlim(ax, [0 1.05]);
 set(ax, 'FontSize', 8, 'FontName', 'Helvetica', 'LineWidth', 0.8, 'Box', 'off'); grid(ax, 'off');
 view(ax, -50, 20);
-S.save(fig, 'FigS2_ReF_companion');
+S.save(fig, 'Fig_ReF_companion');

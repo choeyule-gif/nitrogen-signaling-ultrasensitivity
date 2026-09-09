@@ -1,5 +1,7 @@
-% Fig 2.  (A) curves of constant local coefficient nu*eta in the (nu, eta) plane with the
-% independent ladder nu = 1 (dashed) and the trimer ceiling nu = 3; (B) the maximum switch
+% Fig 2.  (A) curves of constant local coefficient nu*eta in the (nu, eta) plane, the hyperbola of the
+% fitted first-layer coefficient (blue) with the integer values eta = h ticked on the right, the
+% eta ceiling of eq (6) (orange, shaded above 2), the independent ladder nu = 1 (dashed) and the
+% trimer ceiling nu = 3 (purple); (B) the maximum switch
 % elasticity of eq (6) against the affinity ratio, with the Mg (circle) and Mn (square)
 % ratios; (C) the local logit slope of the fitted first-layer curve against glutamine, the
 % fitted exponent (dashed) and the value at the midpoint (circle).
@@ -17,6 +19,11 @@ for c = cs
     xm = min(2.8, c/0.65); ym = c/xm;
     text(ax, xm, ym, sprintf('%d', c), 'FontSize', 7, 'Color', S.gr, 'HorizontalAlignment', 'center', 'BackgroundColor', 'w', 'Margin', 0.5);
 end
+fill(ax, [0.5 3.1 3.1 0.5], [2 2 3.5 3.5], S.o, 'FaceAlpha', 0.12, 'EdgeColor', 'none');   % unreachable by the specified switch
+plot(ax, [0.5 3.1], [2 2], '-', 'Color', S.o, 'LineWidth', 1.4);
+Hm = S.read('Fig2A_measured_hyperbola.csv'); m = Hm.eta >= 0.5 & Hm.eta <= 3.5;
+plot(ax, Hm.nu(m), Hm.eta(m), '-', 'Color', S.b, 'LineWidth', 1.6);                       % nu*eta = fitted first-layer coefficient
+for hh = 1:3, plot(ax, [3.1 3.02], [hh hh], '-', 'Color', S.b, 'LineWidth', 1.6); end     % integer values eta = h
 plot(ax, [1 1], [0.5 3.5], '--', 'Color', S.b, 'LineWidth', 1.0);
 plot(ax, [3 3], [0.5 3.5], '-', 'Color', S.p, 'LineWidth', 1.4);
 xlim(ax, [0.5 3.1]); ylim(ax, [0.5 3.5]); xticks(ax, [1 2 3]); yticks(ax, [1 2 3]);

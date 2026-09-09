@@ -1,8 +1,8 @@
-% S1 Fig.  Local coefficient of the total modified fraction as a surface over both totals
+% S3 Fig.  Local coefficient of the total modified fraction as a surface over both totals
 % (n = 3, A*Khat = 1, Bhat = Ghat = 0.4/Khat, K_m = 1/(n Bhat)); contours at 0.80, 0.90,
 % 0.95 and 0.99 projected onto the floor.  Rotate interactively (rotate3d) and re-export.
 S = plosstyle();
-T = S.read('FigS1_plateau_surface.csv');
+T = S.read('FigS3_plateau_surface.csv');
 X = unique(T.TE_over_TS); Y = unique(T.TS_over_Km); nx = numel(X); ny = numel(Y);
 Z = reshape(T.nH_local, nx, ny)';                 % rows: Y (T_S/K_m), columns: X (T_E/T_S)
 lx = log10(X); ly = log10(Y);
@@ -20,4 +20,4 @@ xlabel(ax, 'log_{10}(T_E/T_S)'); ylabel(ax, 'log_{10}(T_S/K_m)'); zlabel(ax, 'n_
 xticks(ax, [-4 -2 0]); yticks(ax, [-2 0 2]); zticks(ax, [0.6 0.8 1.0]); zlim(ax, [0.6 1.02]);
 set(ax, 'FontSize', 8, 'FontName', 'Helvetica', 'LineWidth', 0.8, 'Box', 'off');
 view(ax, -37.5, 18); grid(ax, 'off');
-S.save(fig, 'FigS1');
+S.save(fig, 'FigS3');
