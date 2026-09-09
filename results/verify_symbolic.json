@@ -1,0 +1,36 @@
+{
+ "A_chain_free_of_e": true,
+ "B": {
+  "mobius_ok": true,
+  "degree": 4,
+  "c4_ok": true,
+  "c0_ok": true,
+  "quartic_form_ok": true
+ },
+ "C_hillid_residual_zero": true,
+ "D_twoform_chain_ok": true,
+ "E_twoform_l2_degrees": [
+  1,
+  2
+ ],
+ "F_omcov_violations": 0,
+ "G_detJ_signs": {
+  "1": {
+   "monomials": 18,
+   "positive": 18,
+   "negative": 0,
+   "denominator": "A*G0*l**2"
+  },
+  "2": {
+   "monomials": 51,
+   "positive": 44,
+   "negative": 7,
+   "denominator": "A**3*G0**2*G1*l**4"
+  }
+ },
+ "H": {
+  "free_of_e": true,
+  "carries_s0": true,
+  "reduces_to_chain": true
+ }
+}

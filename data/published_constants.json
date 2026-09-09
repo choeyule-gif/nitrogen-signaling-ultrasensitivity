@@ -1,0 +1,38 @@
+{
+  "_comment": "Values transcribed from the cited papers; units as stated. These are inputs, never outputs, of the code.",
+  "ventura2010": {
+    "_source": "Ventura AC et al. (2010) PNAS 107:10032, Table/Fig. of the reconstituted UTase/UR-PII system",
+    "hill_wildtype_trimer": [2.21, 0.07],
+    "hill_monovalent_construct": [1.99, 0.18],
+    "halfpoint_wildtype_mM": [0.42, 0.05],
+    "halfpoint_monovalent_mM": [0.74, 0.15],
+    "subunit_ratio_wt_to_mutant_uM": [6, 36],
+    "PII_trimer_wt_uM": 3.0, "UTase_wt_uM": 0.8,
+    "PII_wt_trimer_in_construct_uM": 2.0, "PII_mutant_trimer_in_construct_uM": 12.0, "UTase_construct_uM": 0.6
+  },
+  "jiangninfa2011": {
+    "_source": "Jiang P, Ninfa AJ (2011) Biochemistry 50:10929",
+    "first_cycle_hill_reported": 1.95,
+    "first_cycle_halfpoint_mM": 0.55,
+    "cascade_PII_uM": [36, 5, 0.5],
+    "cascade_hill_90": [4.48, 6.46, 5.23],
+    "cascade_halfpoint_mM": [0.225, 0.530, 0.600],
+    "second_cycle_alone_hill_range": [1.39, 2.11],
+    "second_cycle_no_unmodified_PII_hill": 1.83,
+    "ATase_uM": 0.1,
+    "UTase_uM_titration": 0.05, "PII_uM_titration": 0.5,
+    "removing_activity_fold_activation_R_rev": 6.8
+  },
+  "jiang1998a": {
+    "_source": "Jiang P, Peliska JA, Ninfa AJ (1998) Biochemistry 37:12782",
+    "Ki_glutamine_UT_uM_Mg": [70, 80],
+    "Kact_glutamine_UR_uM_Mg": 80,
+    "Ki_glutamine_UT_uM_Mn": 700,
+    "Kact_glutamine_UR_uM_Mn": 150,
+    "UR_specificity_constant_no_gln": 1.17, "UR_specificity_constant_sat_gln": 7.93
+  },
+  "jiang1998b": {
+    "_source": "Jiang P, Peliska JA, Ninfa AJ (1998) Biochemistry 37:12802",
+    "ATase_forward_fold_activation_by_glutamine_no_PII": 3.7
+  }
+}

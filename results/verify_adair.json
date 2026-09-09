@@ -1,0 +1,27 @@
+{
+ "adair_sets": 1500,
+ "adair_rejected": 529,
+ "adair_worst_rel_dev": 5.998739727175462e-09,
+ "adair_wellconditioned_sets": 1500,
+ "adair_wellconditioned_worst": 7.701594917364218e-11,
+ "adair_40digit_worst": 4.035503140865158e-24,
+ "twoform_40digit_worst": 4.8499978559966e-35,
+ "twoform_40digit_drift": 8.082373140242688e-35,
+ "twoform_worst_rel_dev": 3.585181040932639e-10,
+ "twoform_drift_1000fold": 4.889012528153103e-10,
+ "integer_hill": {
+  "1": [
+   0.9999999999961169,
+   1.0000000000040794
+  ],
+  "2": [
+   1.9999999999956302,
+   2.000000000004749
+  ],
+  "3": [
+   2.9999999999946922,
+   3.000000000003105
+  ]
+ },
+ "nu_sup_n2_K1_1e_minus3_K2_1e3": 1.9990004997501254
+}

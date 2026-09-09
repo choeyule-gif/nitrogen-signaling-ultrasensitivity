@@ -1,0 +1,30 @@
+{
+ "cond_i": {
+  "n": 4,
+  "spread": 2.89,
+  "n_roots": 3,
+  "all_positive": true
+ },
+ "cond_ii": [
+  {
+   "n": 6,
+   "n_roots": 3,
+   "max_elasticity": 5.953856050789286,
+   "all_positive": true
+  },
+  {
+   "n": 5,
+   "n_roots": 3,
+   "max_elasticity": 4.9749657379707495,
+   "all_positive": true
+  },
+  {
+   "n": 4,
+   "n_roots": 3,
+   "max_elasticity": 2.979887898273128,
+   "all_positive": true
+  }
+ ],
+ "trials_i": 1250,
+ "trials_ii": 1387
+}

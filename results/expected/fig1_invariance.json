@@ -1,0 +1,7 @@
+{
+ "enzyme_fold_range": 5278.053464418573,
+ "ratio_drift_a": 1.5432100042289676e-14,
+ "max_abs_dev_from_Ki_over_l": 4.973799150320701e-14,
+ "deadend_ratio_drift": 5.371082467675592e-10,
+ "TE_over_TL_b": 1.1111111098765434e-09
+}

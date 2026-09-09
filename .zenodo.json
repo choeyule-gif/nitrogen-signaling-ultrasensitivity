@@ -1,0 +1,13 @@
+{
+  "title": "Code for: Two separable sources of ultrasensitivity in bifunctional modification cycles, and how a bacterial nitrogen cascade uses them",
+  "upload_type": "software",
+  "description": "Python code that reproduces every number and every figure of the manuscript: the invariant-chain and dead-end checks, the factorisation and the bound on the ladder factor, the quartic reduction, the counterexamples to the uniqueness conditions, the adversarial monotonicity search, the reanalysis of the published PII uridylylation titration (model selection, profile likelihood, MCMC), the cascade accounting with its digitisation bootstrap, and the referee-response sensitivity analyses.",
+  "creators": [{"name": "Choi, Yule"}],
+  "license": "MIT",
+  "keywords": ["bifunctional enzyme", "ultrasensitivity", "multisite modification", "chemical reaction network theory", "PII", "GlnD", "nitrogen assimilation", "Hill coefficient"],
+  "related_identifiers": [
+    {"relation": "isSupplementTo", "identifier": "10.1371/journal.pcbi.XXXXXXX", "resource_type": "publication-article", "scheme": "doi"}
+  ],
+  "language": "eng",
+  "version": "1.0.0"
+}

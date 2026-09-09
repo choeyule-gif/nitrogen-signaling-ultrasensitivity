@@ -1,0 +1,32 @@
+cff-version: 1.2.0
+message: "If you use this code, please cite the manuscript and the archived software release."
+title: "Code for: Two separable sources of ultrasensitivity in bifunctional modification cycles, and how a bacterial nitrogen cascade uses them"
+type: software
+version: 1.0.0
+date-released: 2026-09-09
+license: MIT
+authors:
+  - family-names: Choi
+    given-names: Yule
+repository-code: "https://github.com/<user>/<repo>"
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.<to be assigned>"
+    description: "Zenodo archive of the release"
+keywords:
+  - bifunctional enzyme
+  - ultrasensitivity
+  - multisite modification
+  - chemical reaction network theory
+  - nitrogen assimilation
+  - PII
+  - GlnD
+preferred-citation:
+  type: article
+  title: "Two separable sources of ultrasensitivity in bifunctional modification cycles, and how a bacterial nitrogen cascade uses them"
+  authors:
+    - family-names: Choi
+      given-names: Yule
+  journal: "PLOS Computational Biology"
+  year: 2026
+  notes: "submitted"
