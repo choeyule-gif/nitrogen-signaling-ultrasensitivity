@@ -1,13 +1,15 @@
 """Data for S2 Fig (the supremum of the ladder factor over every three-site ladder shape, with
 the locus of ladders reproducing the observed ratio 1.1106), S4 Fig (reported/calculated cascade
-coefficient against the downstream ladder factor at each PII), and the measured hyperbola of Fig 2A.
-Run after export_figure_data.py."""
+coefficient against the downstream ladder factor at each PII), the measured hyperbola of Fig 2A,
+and the three fixed-exponent fits of Fig 3A drawn as curves.  Run after export_figure_data.py."""
 import os, sys, json, csv
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir)))
 import numpy as np
 from math import comb
 from scipy.optimize import brentq
 from esbm.model import n1090
+from esbm.data import digitised_titration
+from scipy.optimize import least_squares
 HERE = os.path.dirname(os.path.abspath(__file__)); FD = os.path.join(HERE, "figdata")
 def csvw(name, cols, comment):
     keys = list(cols); rows = zip(*[np.asarray(cols[k]).ravel() for k in keys])
@@ -68,3 +70,18 @@ for w in ws:
     rows["w"].append(w); rows["nu2"].append(float(np.mean(nus)))
 csvw("FigS4_ratio_vs_nu2.csv", rows, "S4 Fig: reported/calculated cascade coefficient against the downstream ladder factor nu_2 (twelve-site ladder K_i = (n-i+1)/i Khat2 w^(i-1)), Khat2 pinned to each reported midpoint")
 print("S4: nu2 from %.3f to %.3f; ratios at nu2~1.34: %s" % (rows['nu2'][0], rows['nu2'][-1], [round(rows['ratio_PII_%g' % p_][np.argmin(abs(np.array(rows['nu2'])-1.34))], 3) for p_ in PII]))
+
+# ---- Fig 3A: the bounded fixed-exponent fits as curves, on the grid of Fig3A_fit.csv
+xt, yt = digitised_titration()
+BOUNDS = ([0, 1.5, -8, .1], [1.5, 3, 5, 8])
+def hill(xx, q):
+    lo, hi, ls, h = q
+    return lo + (hi-lo)/(1+(np.asarray(xx)/np.exp(ls))**h)
+def fit_fixed(h):
+    r = least_squares(lambda q: hill(xt, [*q, h])-yt, [.45, 2.97, np.log(.56)],
+                      bounds=(np.array(BOUNDS[0])[:3], np.array(BOUNDS[1])[:3]),
+                      xtol=1e-10, ftol=1e-10, gtol=1e-10)
+    return np.r_[r.x, h]
+xx = np.logspace(-2, 1.25, 350)
+csvw("Fig3A_fixed_h_fits.csv", dict(glutamine_mM=xx, **{"fit_h%d" % h: hill(xx, fit_fixed(h)) for h in (1, 2, 3)}),
+     "Fig 3A: the bounded fixed-exponent fits h = 1, 2, 3 as curves, on the grid of Fig3A_fit.csv")

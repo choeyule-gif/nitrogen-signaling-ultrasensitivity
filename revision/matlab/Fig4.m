@@ -1,38 +1,74 @@
-% Fig 4.  (A) calibrated composite responses at PII 0.5, 5 and 36 uM with the reported
-% midpoints; (B) calculated (filled) and reported (open) coefficients; (C) reported over
-% calculated with the central 95% ranges of the upstream coordinate perturbations.
-S = plosstyle();
-fig = figure('Units', 'centimeters', 'Position', [2 2 17.4 5.9], 'Color', 'w');
-pos = {[0.075 0.19 0.24 0.74], [0.415 0.19 0.24 0.74], [0.755 0.19 0.24 0.74]};
-cols = {S.b, S.r, S.g}; pii = [0.5 5 36];
+function Fig4()
+%FIG4  Fig 4: the composite cascade response, one panel per file.
+%   Fig4A  calibrated composite responses at PII 0.5, 5 and 36 uM with the
+%          reported midpoints (circles)
+%   Fig4B  calculated and reported coefficients at the three PII levels
+%   Fig4C  reported over calculated, with the central 95% ranges of the
+%          upstream coordinate perturbations
+%
+%   Reads figdata/Fig4*.csv and writes figures/Fig4A, Fig4B, Fig4C (PDF + PNG).
+%
+%   See also RUN_ALL_FIGURES, NEWPANEL, SAVEPANEL, SERIESCOLORS.
 
-% ---- (A)
-T = S.read('Fig4A_composites.csv'); Md = S.read('Fig4A_midpoints.csv');
-ax = axes('Position', pos{1}); hold(ax, 'on');
-for i = 1:3
-    plot(ax, T.glutamine_mM, T.(sprintf('Y_norm_PII_%g', pii(i))), '-', 'Color', cols{i}, 'LineWidth', 1.5, 'DisplayName', sprintf('%g \\muM', pii(i)));
-    plot(ax, Md.midpoint_mM(i), 0.5, 'o', 'Color', cols{i}, 'MarkerSize', 5, 'MarkerFaceColor', 'w', 'LineWidth', 1.1, 'HandleVisibility', 'off');
+piiLevels = [0.5, 5, 36];    % uM
+piiLabels = {'0.5', '5', '36'};
+grey = [0.5, 0.5, 0.5];
+thinEdge = 0.75;             % marker outlines, as in the reference figure
+
+%% Fig4A: composite responses with the reported midpoints
+composites = readFigData('Fig4A_composites.csv');
+midpoints = readFigData('Fig4A_midpoints.csv');
+colors = seriesColors(numel(piiLevels));
+
+[fig, ax] = newPanel();
+for k = 1:numel(piiLevels)
+    plot(ax, composites.glutamine_mM, composites.(sprintf('Y_norm_PII_%g', piiLevels(k))), ...
+        '-', 'Color', colors(k, :), 'DisplayName', [piiLabels{k}, ' \muM']);
 end
-set(ax, 'XScale', 'log'); xlim(ax, [1e-2 10]); ylim(ax, [-0.02 1.02]);
-xticks(ax, [1e-2 1e-1 1 10]); yticks(ax, [0 0.5 1]);
-xlabel(ax, '[Gln] / mM'); ylabel(ax, 'Y'); legend(ax, 'Location', 'northwest', 'Box', 'on', 'EdgeColor', 'k');
-S.axes(ax); S.label(ax, 'A');
+for k = 1:numel(piiLevels)
+    midpoint = midpoints.midpoint_mM(midpoints.PII_uM == piiLevels(k));
+    plot(ax, midpoint, 0.5, 'o', 'Color', colors(k, :), 'MarkerFaceColor', 'w', ...
+        'LineWidth', thinEdge, 'HandleVisibility', 'off');
+end
+ax.XScale = 'log';
+xlim(ax, [1e-2, 10]);
+ylim(ax, [-0.02, 1.02]);
+xlabel(ax, '[Gln] / mM');
+ylabel(ax, 'Y');
+legend(ax, 'Location', 'northwest');
+savePanel(fig, 'Fig4A');
 
-% ---- (B)
-C = S.read('Fig4B_coefficients.csv');
-ax = axes('Position', pos{2}); hold(ax, 'on');
-x = 1:3; w = 0.36;
-bar(ax, x-w/2, C.calculated, w, 'FaceColor', S.b, 'EdgeColor', S.k, 'LineWidth', 0.7);
-bar(ax, x+w/2, C.reported, w, 'FaceColor', 'w', 'EdgeColor', S.k, 'LineWidth', 1.0);
-xlim(ax, [0.4 3.6]); ylim(ax, [0 8]); xticks(ax, x); xticklabels(ax, {'0.5', '5', '36'}); yticks(ax, [0 2 4 6 8]);
-xlabel(ax, 'T_{PII} / \muM'); ylabel(ax, 'n_H'); S.axes(ax); set(ax, 'XMinorTick', 'off'); S.label(ax, 'B');
+%% Fig4B: calculated and reported coefficients
+coefficients = readFigData('Fig4B_coefficients.csv');
+colors = barColors();
 
-% ---- (C)
-Rt = S.read('Fig4C_ratios.csv');
-ax = axes('Position', pos{3}); hold(ax, 'on');
-plot(ax, [0.2 100], [1 1], '--', 'Color', S.gr, 'LineWidth', 1.0);
-errorbar(ax, Rt.PII_uM, Rt.ratio, Rt.ratio-Rt.p025, Rt.p975-Rt.ratio, 'o-', 'Color', S.r, 'LineWidth', 1.2, 'MarkerSize', 5, 'MarkerFaceColor', 'w', 'CapSize', 4);
-set(ax, 'XScale', 'log'); xlim(ax, [0.2 100]); ylim(ax, [0.6 2.0]);
-xticks(ax, [1 10 100]); yticks(ax, [0.8 1.2 1.6 2.0]);
-xlabel(ax, 'T_{PII} / \muM'); ylabel(ax, 'reported / calculated'); S.axes(ax); S.label(ax, 'C');
-S.save(fig, 'Fig4');
+[fig, ax] = newPanel();
+bars = bar(ax, [coefficients.calculated, coefficients.reported], 'EdgeColor', 'none');
+bars(1).FaceColor = colors(1, :);
+bars(1).DisplayName = 'calculated';
+bars(2).FaceColor = colors(2, :);
+bars(2).DisplayName = 'reported';
+xlim(ax, [0.4, 3.6]);
+ylim(ax, [0, 8]);
+xticks(ax, 1:numel(piiLevels));
+xticklabels(ax, piiLabels);
+xlabel(ax, 'T_{PII} / \muM');
+ylabel(ax, 'n_H');
+legend(ax, 'Location', 'northwest');
+savePanel(fig, 'Fig4B');
+
+%% Fig4C: reported over calculated, with the central 95% ranges
+ratios = readFigData('Fig4C_ratios.csv');
+
+[fig, ax] = newPanel();
+errorbar(ax, ratios.PII_uM, ratios.ratio, ratios.ratio - ratios.p025, ...
+    ratios.p975 - ratios.ratio, '-o', 'Color', seriesColors(1), 'MarkerFaceColor', 'w', ...
+    'LineWidth', thinEdge, 'MarkerSize', 6, 'CapSize', 5);
+yline(ax, 1, '--', 'Color', grey, 'LineWidth', 1);
+ax.XScale = 'log';
+xlim(ax, [0.2, 100]);
+ylim(ax, [0.6, 2]);
+xlabel(ax, 'T_{PII} / \muM');
+ylabel(ax, 'reported / calculated');
+savePanel(fig, 'Fig4C');
+end

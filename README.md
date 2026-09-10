@@ -106,8 +106,9 @@ the text that the script's printed output and `results/<name>.json` are checked 
 `revision/` holds what the revised, shortened manuscript uses: `export_figure_data.py` writes
 `revision/figdata/*.csv` (the values behind every panel of its Figs 1–5, the 2,000 coordinate-
 perturbation draws and the downstream ladder-factor table) and `revision_numbers.json` (every
-number the revised text quotes); `revision/matlab/Fig1.m … Fig5.m` draw the figures from those
-CSV files in MATLAB (`run_all_figures`). The Python analyses and tests above are unchanged.
+number the revised text quotes); `revision/matlab/` draws the figures from those
+CSV files in MATLAB (`run_all_figures`), one file per panel. The Python analyses and tests
+above are unchanged.
 
 ## Notes on reproducibility
 

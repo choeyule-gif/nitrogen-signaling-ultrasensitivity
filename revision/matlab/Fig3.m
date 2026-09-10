@@ -1,52 +1,111 @@
-% Fig 3.  (A) the digitised titration, the bounded four-parameter fit and the pointwise
-% 95% band under the coordinate perturbations; (B) standardised residuals of the fixed-
-% exponent fits; (C) the fitted exponent over the 2,000 perturbations; (D) profile
-% likelihood loss against the regulatory swing, with the criterion and the lower endpoint.
-S = plosstyle();
-fig = figure('Units', 'centimeters', 'Position', [2 2 17.4 12.0], 'Color', 'w');
-pos = {[0.085 0.60 0.38 0.35], [0.585 0.60 0.38 0.35], [0.085 0.10 0.38 0.35], [0.585 0.10 0.38 0.35]};
+function Fig3()
+%FIG3  Fig 3: the titration fit, one panel per file.
+%   Fig3A  digitised titration (circles), the three bounded fixed-exponent
+%          fits, and the pointwise 95% band of the free-exponent fit under the
+%          coordinate perturbations
+%   Fig3B  standardised residuals of the same three fits, with the band
+%          |r| <= 2 sigma shaded
+%   Fig3C  fitted exponent over the 2,000 perturbations, with the point fit
+%          (solid) and the central 95% range (dotted)
+%   Fig3D  profile likelihood loss against the regulatory swing, with the
+%          criterion (dashed) and the lower endpoint (dotted)
+%
+%   The full manuscript also carries a logit panel and a likelihood-ratio panel
+%   in its Fig 4; the shortened revision drops both, so neither is drawn here.
+%
+%   Reads figdata/Fig3*.csv and writes figures/Fig3A ... Fig3D (PDF + PNG).
+%
+%   See also RUN_ALL_FIGURES, NEWPANEL, SAVEPANEL, SERIESCOLORS.
 
-% ---- (A)
-P = S.read('Fig3A_points.csv'); F = S.read('Fig3A_fit.csv');
-ax = axes('Position', pos{1}); hold(ax, 'on');
-fill(ax, [F.glutamine_mM; flipud(F.glutamine_mM)], [F.band_lo; flipud(F.band_hi)], S.lb, 'EdgeColor', 'none');
-plot(ax, F.glutamine_mM, F.fit, '-', 'Color', S.b, 'LineWidth', 1.5);
-plot(ax, P.glutamine_mM, P.UMP_per_trimer, 'o', 'Color', S.k, 'MarkerSize', 5, 'MarkerFaceColor', 'w', 'LineWidth', 1.1);
-set(ax, 'XScale', 'log'); xlim(ax, [1e-2 10^1.25]); ylim(ax, [0 3.15]);
-xticks(ax, [1e-2 1e-1 1 10]); yticks(ax, [0 1 2 3]);
-xlabel(ax, '[Gln] / mM'); ylabel(ax, 'UMP per trimer'); S.axes(ax); S.label(ax, 'A');
+exponents = [1, 2, 3];
+exponentColors = seriesColors(numel(exponents));
+baseColors = seriesColors(2);
+blue = baseColors(1, :);
+rose = baseColors(2, :);
+grey = [0.5, 0.5, 0.5];
+thinEdge = 0.75;                        % marker outlines, as in the reference figure
 
-% ---- (B)
-R = S.read('Fig3B_residuals.csv');
-ax = axes('Position', pos{2}); hold(ax, 'on');
-fill(ax, [1e-2 20 20 1e-2], [-2 -2 2 2], [0.9 0.9 0.9], 'EdgeColor', 'none');
-plot(ax, [1e-2 20], [0 0], '-', 'Color', S.k, 'LineWidth', 0.7);
-hs = [1 2 3]; cols = {S.gr, S.b, S.r};
-for i = 1:3
-    plot(ax, R.glutamine_mM, R.(sprintf('r_h%d', hs(i))), 'o-', 'Color', cols{i}, 'LineWidth', 1.0, 'MarkerSize', 4, 'MarkerFaceColor', 'w', 'DisplayName', sprintf('h = %d', hs(i)));
+%% Fig3A: data, the three fixed-exponent fits, and the 95% band
+points = readFigData('Fig3A_points.csv');
+freeFit = readFigData('Fig3A_fit.csv');
+fixedFits = readFigData('Fig3A_fixed_h_fits.csv');
+
+[fig, ax] = newPanel();
+fill(ax, [freeFit.glutamine_mM; flipud(freeFit.glutamine_mM)], ...
+    [freeFit.band_lo; flipud(freeFit.band_hi)], paleTint(blue, 0.32), ...
+    'EdgeColor', 'none', 'HandleVisibility', 'off');
+for k = 1:numel(exponents)
+    plot(ax, fixedFits.glutamine_mM, fixedFits.(sprintf('fit_h%d', exponents(k))), '-', ...
+        'Color', exponentColors(k, :), 'DisplayName', sprintf('h = %d', exponents(k)));
 end
-set(ax, 'XScale', 'log'); xlim(ax, [1e-2 20]); ylim(ax, [-8 11]);
-xticks(ax, [1e-2 1e-1 1 10]); yticks(ax, [-8 -4 0 4 8]);
-xlabel(ax, '[Gln] / mM'); ylabel(ax, 'r / \sigma'); legend(ax, 'Location', 'northeast', 'Box', 'on', 'EdgeColor', 'k', 'NumColumns', 3);
-S.axes(ax); S.label(ax, 'B');
+plot(ax, points.glutamine_mM, points.UMP_per_trimer, 'ko', 'MarkerFaceColor', 'w', ...
+    'LineWidth', thinEdge, 'HandleVisibility', 'off');
+ax.XScale = 'log';
+xlim(ax, [1e-2, 10^1.25]);
+ylim(ax, [0, 3.15]);
+xticks(ax, [1e-2, 1e-1, 1, 10]);
+xlabel(ax, '[Gln] / mM');
+ylabel(ax, 'UMP per trimer');
+legend(ax, 'Location', 'southwest');
+savePanel(fig, 'Fig3A');
 
-% ---- (C)
-H = S.read('Fig3C_exponent_draws.csv'); Mk = S.read('Fig3C_markers.csv');
-ax = axes('Position', pos{3}); hold(ax, 'on');
-histogram(ax, H{:,1}, 35, 'Normalization', 'pdf', 'FaceColor', S.lb, 'EdgeColor', 'w');
-plot(ax, [Mk.value(1) Mk.value(1)], [0 3], '-', 'Color', S.b, 'LineWidth', 1.3);
-plot(ax, [Mk.value(2) Mk.value(2)], [0 3], ':', 'Color', S.gr, 'LineWidth', 1.1);
-plot(ax, [Mk.value(3) Mk.value(3)], [0 3], ':', 'Color', S.gr, 'LineWidth', 1.1);
-xlim(ax, [1.5 3.0]); ylim(ax, [0 2.8]); xticks(ax, [1.5 2 2.5 3]); yticks(ax, [0 1 2]);
-xlabel(ax, 'h'); ylabel(ax, 'density'); S.axes(ax); S.label(ax, 'C');
+%% Fig3B: standardised residuals of the same three fits
+residuals = readFigData('Fig3B_residuals.csv');
+glutamineLimits = [1e-2, 20];
 
-% ---- (D)
-W = S.read('Fig3D_swing_profile.csv'); Mk = S.read('Fig3D_markers.csv');
-ax = axes('Position', pos{4}); hold(ax, 'on');
-plot(ax, [10^1.5 1e5], [Mk.value(1) Mk.value(1)], '--', 'Color', S.gr, 'LineWidth', 1.0);
-plot(ax, [Mk.value(2) Mk.value(2)], [0 12], ':', 'Color', S.p, 'LineWidth', 1.1);
-plot(ax, W.swing, W.loss, '-', 'Color', S.p, 'LineWidth', 1.5);
-set(ax, 'XScale', 'log'); xlim(ax, [10^1.5 1e5]); ylim(ax, [0 12]);
-xticks(ax, [1e2 1e3 1e4 1e5]); yticks(ax, [0 4 8 12]);
-xlabel(ax, 'R_{fwd} R_{rev}'); ylabel(ax, '2\Delta\itL'); S.axes(ax); S.label(ax, 'D');
-S.save(fig, 'Fig3');
+[fig, ax] = newPanel();
+fill(ax, glutamineLimits([1, 2, 2, 1]), [-2, -2, 2, 2], [0.9, 0.9, 0.9], ...
+    'EdgeColor', 'none', 'HandleVisibility', 'off');
+for k = 1:numel(exponents)
+    plot(ax, residuals.glutamine_mM, residuals.(sprintf('r_h%d', exponents(k))), '-o', ...
+        'Color', exponentColors(k, :), 'MarkerFaceColor', 'w', 'MarkerSize', 5, ...
+        'LineWidth', thinEdge, 'DisplayName', sprintf('h = %d', exponents(k)));
+end
+yline(ax, 0, 'k-', 'HandleVisibility', 'off');
+ax.XScale = 'log';
+xlim(ax, glutamineLimits);
+ylim(ax, [-8, 16]);                     % headroom so the legend clears the h = 1 peak
+xticks(ax, [1e-2, 1e-1, 1, 10]);
+yticks(ax, -8:4:16);
+xlabel(ax, '[Gln] / mM');
+ylabel(ax, 'r / \sigma');
+legend(ax, 'Location', 'northeast', 'NumColumns', 3);
+savePanel(fig, 'Fig3B');
+
+%% Fig3C: fitted exponent over the perturbations
+draws = readFigData('Fig3C_exponent_draws.csv');    % single column: the fitted h of each draw
+markers = readFigData('Fig3C_markers.csv');
+fittedExponent = markers.value(strcmp(markers.quantity, 'h_fit'));
+lowerBound = markers.value(strcmp(markers.quantity, 'p025'));
+upperBound = markers.value(strcmp(markers.quantity, 'p975'));
+
+[fig, ax] = newPanel();
+histogram(ax, draws{:, 1}, 35, 'Normalization', 'pdf', 'FaceColor', paleTint(blue, 0.55), ...
+    'FaceAlpha', 1, 'EdgeColor', 'w');
+xline(ax, fittedExponent, '-', 'Color', rose, 'LineWidth', 1.5);
+xline(ax, lowerBound, ':', 'Color', grey, 'LineWidth', 1);
+xline(ax, upperBound, ':', 'Color', grey, 'LineWidth', 1);
+xlim(ax, [1.5, 3]);
+ylim(ax, [0, 2.8]);
+xlabel(ax, 'h');
+ylabel(ax, 'density');
+savePanel(fig, 'Fig3C');
+
+%% Fig3D: profile likelihood loss against the regulatory swing
+profileLoss = readFigData('Fig3D_swing_profile.csv');
+markers = readFigData('Fig3D_markers.csv');
+threshold = markers.value(strcmp(markers.quantity, 'threshold'));
+lowerEndpoint = markers.value(strcmp(markers.quantity, 'lower95'));
+
+[fig, ax] = newPanel();
+plot(ax, profileLoss.swing, profileLoss.loss, '-', 'Color', blue);
+yline(ax, threshold, '--', 'Color', grey, 'LineWidth', 1);
+xline(ax, lowerEndpoint, ':', 'Color', rose, 'LineWidth', 1);
+ax.XScale = 'log';
+xlim(ax, [10^1.5, 1e5]);
+ylim(ax, [0, 12]);
+xticks(ax, [1e2, 1e3, 1e4, 1e5]);
+xlabel(ax, 'R_{fwd} R_{rev}');
+ylabel(ax, '2\Delta\itL');
+savePanel(fig, 'Fig3D');
+end
