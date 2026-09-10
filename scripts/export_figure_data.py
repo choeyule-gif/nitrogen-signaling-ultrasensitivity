@@ -16,8 +16,9 @@ import numpy as np
 from scipy.optimize import least_squares, brentq
 from scipy.special import gammaln, logsumexp
 from esbm.data import digitised_titration, constants
-from esbm import S1DATA
-HERE = os.path.dirname(os.path.abspath(__file__)); FD = os.path.join(HERE, "figdata")
+from esbm import RESULTS, ROOT
+FD = os.path.join(ROOT, "figdata")
+os.makedirs(FD, exist_ok=True)
 x, y = digitised_titration(); N = len(x)
 cc = constants()["jiangninfa2011"]
 BOUNDS = ([0, 1.5, -8, .1], [1.5, 3, 5, 8])
@@ -135,8 +136,12 @@ J = brentq(lambda j: 4*np.sum(dist(j)*(ii-n/2)**2)/n-2.2, 0, .3); out['nu2_examp
 
 # ======================= figure data
 import shutil
-for src, dst in (("Fig2a_theta.csv", "Fig1B_theta.csv"), ("Fig2b_local_hill.csv", "Fig1C_local_hill.csv"), ("Fig7_titrations.csv", "Fig5BC_titrations.csv")):
-    shutil.copy(os.path.join(S1DATA, src), os.path.join(FD, dst))
+PANELS = os.path.join(RESULTS, "panels")        # written by the Python figure scripts
+for src, dst in (("Fig2a_theta.csv", "Fig1B_theta.csv"), ("Fig2b_local_hill.csv", "Fig1C_local_hill.csv"), ("Fig7_titrations.csv", "Fig5BC_titrations.csv"),
+                 ("Fig1a_enzyme_sweep.csv", "FigS1A_enzyme_sweep.csv"), ("Fig1b_deadend_sweep.csv", "FigS1B_deadend_sweep.csv"),
+                 ("Fig6a_residual.csv", "FigS5A_residual.csv"), ("Fig6b_residual.csv", "FigS5B_residual.csv"),
+                 ("Fig3_plateau_surface.csv", "FigS3_plateau_surface.csv")):
+    shutil.copy(os.path.join(PANELS, src), os.path.join(FD, dst))
 nu = np.linspace(.55, 3, 300)
 csvw("Fig2A_isocurves.csv", dict(nu=nu, **{"eta_c%g" % c: c/nu for c in (1, 2, 3, 4, 6)}), "Fig 2A: curves of constant local coefficient nu*eta = c; reference lines nu = 1 (independent ladder) and nu = 3 (trimer ceiling)")
 rat = np.logspace(0, 4, 300)
@@ -148,6 +153,8 @@ csvw("Fig2C_markers.csv", dict(quantity=["S_mM", "nH_loc_at_S", "nH_fit"], value
 xx = np.logspace(-2, 1.25, 350); curves = np.array([hill(xx, pp) for pp in ps]); band = np.quantile(curves, [.025, .975], axis=0)
 csvw("Fig3A_points.csv", dict(glutamine_mM=x, UMP_per_trimer=y), "Fig 3A: the twelve digitised points (data/jiangninfa2011_fig2B_digitised.csv)")
 csvw("Fig3A_fit.csv", dict(glutamine_mM=xx, fit=hill(xx, p), band_lo=band[0], band_hi=band[1]), "Fig 3A: free-exponent fit and pointwise 2.5-97.5 percentiles over 2,000 coordinate perturbations")
+csvw("Fig3A_fixed_h_fits.csv", dict(glutamine_mM=xx, **{"fit_h%d" % h: hill(xx, fits[str(h)][0]) for h in (1, 2, 3)}),
+     "Fig 3A: the bounded fixed-exponent fits h = 1, 2, 3 as curves, on the grid of Fig3A_fit.csv")
 sigma = np.sqrt(fits['2'][1]/(N-3))
 csvw("Fig3B_residuals.csv", dict(glutamine_mM=x, **{"r_h%d" % h: (y-hill(x, fits[str(h)][0]))/sigma for h in (1, 2, 3)}), "Fig 3B: residuals of the bounded fixed-exponent fits divided by sigma_hat = %.4f (h = 2 fit, 9 dof)" % sigma)
 csvw("Fig3C_exponent_draws.csv", dict(h=ps[:, 3]), "Fig 3C: fitted exponent in each of the 2,000 perturbation draws; quantiles 2.5/50/97.5 = %.4f/%.4f/%.4f" % tuple(q_h))
@@ -165,10 +172,10 @@ probs = np.c_[dist(0), dist(J)]
 csvw("Fig5D_distributions.csv", dict(modified_sites=ii, independent_nu1=probs[:, 0], example_nu2p2=probs[:, 1]), "Fig 5D: twelve-site distributions with mean 1/2, weights binomial(12,i) exp[J (i-6)^2], J = 0 and J = %.6f" % J)
 csvw("S1_perturbation_draws.csv", dict(Umin=ps[:, 0], Umax=ps[:, 1], S_mM=np.exp(ps[:, 2]), h=ps[:, 3], composite_PII_0p5=preds[:, 0], composite_PII_5=preds[:, 1], composite_PII_36=preds[:, 2], regulatory_swing=sw),
      "S1 Data: the 2,000 coordinate-perturbation draws (seed 20260909; log-input sd 0.06, ordinate sd 0.06): refitted parameters, calibrated composite coefficients at PII 0.5, 5, 36 uM, and the regulatory swing")
-nu2 = json.load(open(os.path.join(HERE, os.pardir, "results", "nu2_major2.json")))
+nu2 = json.load(open(os.path.join(ROOT, "results", "nu2_major2.json")))
 csvw("S1_downstream_ladder_factor.csv", dict(cooperativity_w=[r['w'] for r in nu2['rows']], nu2_at_halfpoint=[r['nu2'] for r in nu2['rows']],
      composite_PII_36=[r['composite'][0] for r in nu2['rows']], composite_PII_5=[r['composite'][1] for r in nu2['rows']], composite_PII_0p5=[r['composite'][2] for r in nu2['rows']],
      ratio_PII_36=[r['residual'][0] for r in nu2['rows']], ratio_PII_5=[r['residual'][1] for r in nu2['rows']], ratio_PII_0p5=[r['residual'][2] for r in nu2['rows']]),
      "S1 Data: the cascade composite when the twelve-site downstream ladder is non-binomial (K_i = (n-i+1)/i Khat2 w^(i-1)); ratio = reported/calculated; from scripts/nu2_major2.py")
-with open(os.path.join(HERE, "revision_numbers.json"), "w") as f: json.dump(out, f, indent=1, default=float)
+with open(os.path.join(ROOT, "results", "revision_numbers.json"), "w") as f: json.dump(out, f, indent=1, default=float)
 print("written", len(os.listdir(FD)), "csv files and revision_numbers.json")

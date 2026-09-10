@@ -23,9 +23,12 @@ def load_json(name):
         return json.load(f)
 
 def save_csv(name, columns, header_comment=None):
-    """Write S1_Data/<name>.csv from a dict of equal-length columns (numbers behind a figure panel)."""
+    """Write results/panels/<name>.csv from a dict of equal-length columns (the numbers behind one
+    panel of a Python figure).  scripts/export_figure_data.py draws on these for the figdata/ files
+    the MATLAB figures read, and scripts/make_s1_data.py assembles the S1 Data package."""
     import csv
-    from .paths import S1DATA
+    from .paths import RESULTS
+    S1DATA = os.path.join(RESULTS, "panels"); os.makedirs(S1DATA, exist_ok=True)
     keys = list(columns); rows = zip(*[np.asarray(columns[k]).ravel() for k in keys])
     path = os.path.join(S1DATA, name + ".csv")
     with open(path, "w", newline="") as f:

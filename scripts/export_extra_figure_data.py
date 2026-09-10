@@ -7,16 +7,18 @@ sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), os.pa
 import numpy as np
 from math import comb
 from scipy.optimize import brentq
+from esbm import ROOT
 from esbm.model import n1090
 from esbm.data import digitised_titration
 from scipy.optimize import least_squares
-HERE = os.path.dirname(os.path.abspath(__file__)); FD = os.path.join(HERE, "figdata")
+FD = os.path.join(ROOT, "figdata")
+os.makedirs(FD, exist_ok=True)
 def csvw(name, cols, comment):
     keys = list(cols); rows = zip(*[np.asarray(cols[k]).ravel() for k in keys])
     with open(os.path.join(FD, name), "w", newline="") as f:
         f.write("# " + comment + "\n"); w = csv.writer(f); w.writerow(keys); w.writerows(rows)
 # ---- Fig 2A: the hyperbola nu*eta = 2.018 of the fitted first-layer coefficient
-nums = json.load(open(os.path.join(HERE, "revision_numbers.json"))); hfit = nums['fit']['h']
+nums = json.load(open(os.path.join(ROOT, "results", "revision_numbers.json"))); hfit = nums['fit']['h']
 nu = np.linspace(.55, 3, 300)
 csvw("Fig2A_measured_hyperbola.csv", dict(nu=nu, eta=hfit/nu), "Fig 2A: nu*eta = %.4f, the fitted first-layer coefficient; constrains the product only" % hfit)
 # ---- S2 Fig: sup_u nu over three-site ladder shapes c = (1, 3a, 3b, 1)
@@ -30,7 +32,7 @@ for j, b in enumerate(10**lb):
         c = np.array([1.0, 3*a, 3*b, 1.0]); Z[j, i] = max(nu_of(c, 10**x) for x in lu)
 LA, LB = np.meshgrid(la, lb)
 csvw("FigS2_nu_sup_surface.csv", dict(log10_a=LA.ravel(), log10_b=LB.ravel(), nu_sup=Z.ravel()), "S2 Fig: sup over the input of the ladder factor nu for the three-site ladder c = (1, 3a, 3b, 1); a = b = 1 is the binomial ladder (nu = 1); the bound nu <= 3 is approached as a, b -> 0")
-conv = json.load(open(os.path.join(HERE, os.pardir, "results", "conversion_factor.json")))
+conv = json.load(open(os.path.join(ROOT, "results", "conversion_factor.json")))
 for kind in ("fit", "range"):
     pts = sorted(conv['locus'][kind+'_points'], key=lambda q: q['a'])
     zs = [max(nu_of(np.array([1.0, 3*q['a'], 3*q['b'], 1.0]), 10**x) for x in lu) for q in pts]

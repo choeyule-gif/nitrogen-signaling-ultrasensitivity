@@ -9,5 +9,7 @@ results/*.log
 *.out
 .DS_Store
 
-# figures drawn by the author in MATLAB (revision/matlab); test renders are not tracked
-revision/figures/
+# generated: the assembled Supporting Information package and every rendered figure
+S1_Data/
+figures/
+results/panels/

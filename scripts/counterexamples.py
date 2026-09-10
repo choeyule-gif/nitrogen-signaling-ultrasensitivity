@@ -6,13 +6,13 @@
      random search at n in {3..6}; three are kept (S1 Appendix).
 Every root is refined and re-verified in 60-digit arithmetic: residual, positivity of every
 species, and the elasticity dlog(omega)/dlog(l) at the root.
-Writes S1_Data/S1_counterexamples.json (rate constants, totals, roots) and results/counterexamples.json.
+Writes results/counterexamples_parameters.json (rate constants, totals, roots) and results/counterexamples.json.
 """
 import _path  # noqa: F401
 import os, json, numpy as np
 from scipy.optimize import brentq
 from mpmath import mp
-from esbm import S1DATA, save_json
+from esbm import RESULTS, save_json
 
 # ============================================================ (i): spread 2.89 in rho_i
 def resid_i(n, A, c, Bh, Gh, TE, TS, TL, ls):
@@ -163,9 +163,9 @@ for d in found:
     print("    max dlog omega/dlog l over 12 decades: %s" % mp.nstr(max(ee), 8))
     ex_ii.append(dict(condition_broken="(ii)", n=n, A=d['A'], rho=d['rho'], Bhat=d['Bh'].tolist(), K=d['K'].tolist(), TE=d['TE'], TL=d['TL'], TS=d['TS'],
                       roots_double=d['roots'], roots_60digit=ver, max_elasticity=float(max(ee))))
-with open(os.path.join(S1DATA, "S1_counterexamples.json"), "w") as f:
+with open(os.path.join(RESULTS, "counterexamples_parameters.json"), "w") as f:
     json.dump(dict(condition_i=ex_i, condition_ii=ex_ii), f, indent=1, default=float)
 save_json("counterexamples", dict(cond_i=dict(n=ex_i['n'], spread=ex_i['spread'], n_roots=len(roots_i), all_positive=all(v['all_positive'] for v in ver_i)),
                                   cond_ii=[dict(n=x['n'], n_roots=len(x['roots_double']), max_elasticity=x['max_elasticity'], all_positive=all(v['all_positive'] for v in x['roots_60digit'])) for x in ex_ii],
                                   trials_i=trials, trials_ii=trials2))
-print("written S1_Data/S1_counterexamples.json")
+print("written results/counterexamples_parameters.json")

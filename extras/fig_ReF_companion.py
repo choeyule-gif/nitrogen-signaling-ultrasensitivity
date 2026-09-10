@@ -94,9 +94,9 @@ ax.set_zticks([0, 0.5, 1.0])
 ax.tick_params(pad=-1); ax.view_init(elev=20, azim=-121)
 for pane in (ax.xaxis.pane, ax.yaxis.pane, ax.zaxis.pane): pane.set_alpha(0.0)
 fig.savefig(os.path.join(FIGURES, "FigS_ReF_companion.pdf"), metadata={"CreationDate": None})
-# CSV for the MATLAB version (revision/matlab/Fig_ReF_companion.m)
+# CSV for the MATLAB version (matlab/Fig_ReF_companion.m)
 import csv
-_fd = os.path.join(os.path.dirname(os.path.abspath(__file__)), os.pardir, "revision", "figdata")
+_fd = os.path.join(os.path.dirname(os.path.abspath(__file__)), os.pardir, "figdata")
 with open(os.path.join(_fd, "Fig_ReF_companion.csv"), "w", newline="") as f:
     f.write("# Re F(i omega) of the auxiliary chain at the identical-independent steady state (companion manuscript); omega in units of the mean exit rate\n")
     w = csv.writer(f); w.writerow(["n", "omega", "ReF"])

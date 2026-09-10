@@ -1,11 +1,13 @@
 #!/usr/bin/env python3
-"""Reproduce every number and figure of the manuscript, in dependency order.
+"""Reproduce every number of the manuscript and the data behind every figure, in dependency order.
 
-    python run_all.py            # everything (about 40 minutes on an Apple-silicon laptop)
-    python run_all.py --quick    # skip the four long searches (adversarial, counterexamples, MCMC, profile)
+    python run_all.py            # everything (about 45 minutes on an Apple-silicon laptop)
+    python run_all.py --quick    # skip the four long searches (about 10 minutes)
 
 Each script prints the quantities it is responsible for and writes results/<name>.json;
 tests/test_reproduce.py then compares those files with the values quoted in the manuscript.
+The figures themselves are drawn separately, in MATLAB, from the CSV files this run writes to
+figdata/ (see matlab/README.md).
 """
 import os, sys, subprocess, time
 ROOT = os.path.dirname(os.path.abspath(__file__))
@@ -19,9 +21,11 @@ ORDER = [
     # reanalysis of the published data
     "fit_titration.py", "mcmc_h.py", "cascade_budget.py", "sensitivity_major1.py", "nu2_major2.py",
     "mixture_bias.py", "conversion_factor.py", "swing_profile.py", "direct_input.py", "ratios_table.py",
-    # figures
+    # panel values (these scripts also render reference versions of the figures into figures/)
     "fig1_invariance.py", "fig2_sites.py", "fig3_plateau.py", "fig4_plane.py",
     "fig5_integer.py", "fig6_uniqueness.py", "fig7_tests.py", "fig8_budget.py",
+    # the CSV files the MATLAB figures read, and the Supporting Information package
+    "export_figure_data.py", "export_extra_figure_data.py", "make_s1_data.py",
 ]
 failed = []
 for s in ORDER:

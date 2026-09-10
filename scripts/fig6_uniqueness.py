@@ -2,14 +2,14 @@
 
 (a) both conditions of eq (cond) satisfied (n = 3 identical independent sites, Bhat = 1.5,
     Ghat = 0.8, T_E = 1, T_S = 4, T_L = 2): one zero, R increasing throughout;
-(b) condition (i) broken by a spread of 2.89 in the catalytic ratios (S1_Data/S1_counterexamples.json):
+(b) condition (i) broken by a spread of 2.89 in the catalytic ratios (results/counterexamples_parameters.json):
     three zeros.
 """
 import _path  # noqa: F401
 import os, json, numpy as np
 from math import comb
 import matplotlib.pyplot as plt
-from esbm import FIGURES, S1DATA, save_json, save_csv
+from esbm import FIGURES, RESULTS, save_json, save_csv
 from esbm.style import MC, use, tidy, panel
 use()
 def resid(n, A, c, Bh, Gh, TE, TS, TL, ls):
@@ -19,7 +19,7 @@ def resid(n, A, c, Bh, Gh, TE, TS, TL, ls):
     a = (1+A*ls)*Q; b = (1+A*ls)*Mp+Q*TS-TE*Q; cc = -TE*Mp
     e = (-b+np.sqrt(np.maximum(b*b-4*a*cc, 0)))/(2*a); s0 = TS/(Mp+e*Q)
     return ls+A*e*ls+A*e*s0*Vt-TL, e, s0
-ex = json.load(open(os.path.join(S1DATA, "S1_counterexamples.json")))["condition_i"]
+ex = json.load(open(os.path.join(RESULTS, "counterexamples_parameters.json")))["condition_i"]
 n, A, c, Bh, Gh, TE, TS, TL = ex['n'], ex['A'], np.array(ex['c']), np.array(ex['Bhat']), np.array(ex['Ghat']), ex['TE'], ex['TS'], ex['TL']
 rts = [float(r['l']) for r in ex['roots_60digit']]
 
@@ -45,6 +45,6 @@ ax[1].set_xscale('log'); ax[1].set_xlabel(r'$l$'); ax[1].set_ylabel(r'$\mathcal{
 ax[1].set_xlim(lo, hi); tidy(ax[1], 1, 0, nx=3); panel(ax[1], 'b', -0.20)
 plt.tight_layout(w_pad=2.0); plt.savefig(os.path.join(FIGURES, 'Fig6.pdf'), metadata={"CreationDate": None})
 save_csv("Fig6a_residual", dict(l=lg[m0], R=R0[m0]), "Fig 6a: n=3, Bhat=1.5, Ghat=0.8, T_E=1, T_S=4, T_L=2")
-save_csv("Fig6b_residual", dict(l=lg2[m2], R=R2[m2]), "Fig 6b: parameters in S1_counterexamples.json (condition_i)")
+save_csv("Fig6b_residual", dict(l=lg2[m2], R=R2[m2]), "Fig 6b: parameters in results/counterexamples_parameters.json (condition_i)")
 print("(b) n=%d spread %.2f zeros %d" % (n, ex['spread'], len(rts)))
 save_json("fig6_uniqueness", dict(panel_a_zeros=len(i0), panel_a_increasing=bool(np.all(np.diff(R0[m0]) > 0)), panel_b_n=n, panel_b_spread=ex['spread'], panel_b_zeros=len(rts)))

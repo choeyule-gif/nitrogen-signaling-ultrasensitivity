@@ -1,7 +1,10 @@
 # Reproducibility record
 
 Every quantitative statement of the manuscript, the script that produces it, the value the
-script gives, and whether the text agrees.  Values were regenerated from a clean checkout on
+script gives, and whether the text agrees. The table below was written against the longer first
+version of the manuscript, whose numbers the revised version carries over unchanged; where the
+revised version states a quantity differently, `results/revision_numbers.json` holds the value it
+quotes and `tests/test_reproduce.py` checks both.  Values were regenerated from a clean checkout on
 2026-09-09 (CPython 3.14.6, numpy 2.5.2, scipy 1.18.1, sympy 1.14.0, mpmath 1.3.0).
 "agrees" means agreement at the rounding used in the text; the last section lists every
 statement that does **not** agree and what the code supports instead.
