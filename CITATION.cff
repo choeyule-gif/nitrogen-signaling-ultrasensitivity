@@ -18,3 +18,7 @@ keywords:
   - nitrogen assimilation
   - PII
   - GlnD
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.22731768"
+    description: "Concept DOI for all versions; cite the version DOI when available."
