@@ -4,7 +4,7 @@ The main manuscript follows the PLOS LaTeX template and contains text, reference
 
 Compile `manuscript_submission.tex`, `S1_Appendix.tex`, `cover_letter.tex` or individual `S1_Fig.tex` through `S10_Fig.tex` with pdfLaTeX twice. Supporting figure inputs are in `figure_inputs/`.
 
-The paper has 31 cited references, with bibliography ordered by first citation. The Author summary is 157 words. The Methods section discloses AI assistance. No journal acceptance or completed submission is implied.
+The paper has 31 cited references, with bibliography ordered by first citation. The Author summary is 157 words. No journal acceptance or completed submission is implied.
 
 ## Archive status
 
