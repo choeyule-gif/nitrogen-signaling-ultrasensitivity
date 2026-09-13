@@ -1,0 +1,16 @@
+doi,source_locator,activity,quantity,value,units,conditions,use_and_limit
+10.1021/bi980667m,Table 2,Mg UT,Ki glutamine,70--80,uM,Mg-dependent; see source substrate conditions,apparent inhibition; not microscopic Kd
+10.1021/bi980667m,Table 2,Mg UR,Kact glutamine,80,uM,Mg-dependent; see source substrate conditions,apparent activation; cross-assay half-range scenario
+10.1021/bi980667m,Table 2,Mn UT,Ki glutamine,150,uM,No 2-oxoglutarate,corrected transposed repository entry
+10.1021/bi980667m,Table 2,Mn UR,Kact glutamine,700,uM,No 2-oxoglutarate or ATP,corrected transposed repository entry
+10.1021/bi980667m,Table 2,Mg UT,kcat; Km PII,137; 3.0,min^-1; uM,Different kinetic determinations in the source,used only in strict cross-assay scenario
+10.1021/bi980667m,Table 2,Mg UR no Gln,kcat; Km PII-UMP,2.7; 2.3,min^-1; uM,No glutamine,rounded inputs for specificity fold
+10.1021/bi980667m,Table 2,Mg UR with Gln,kcat; Km PII-UMP,6.5; 0.82,min^-1; uM,2.5 mM glutamine,rounded inputs for specificity fold
+10.1021/bi0620510,Table 2: 010605,PII activation,apparent Kact,1.00,uM,2-OG 0.05 mM; Gln absent; ATase 0.10 uM; PII-UMP absent,scenario input; not microscopic Kd
+10.1021/bi0620510,Table 2: 010705,PII activation,apparent Kact,2.50,uM,2-OG 1 mM; Gln absent; ATase 1.20 uM; PII-UMP absent,scenario upper input; not a universal bound
+10.1021/bi0620510,Table 2: 011005,PII activation,apparent Kact,0.015,uM,2-OG 0.05 mM; Gln 50 mM; ATase 0.01 uM; PII-UMP absent,scenario lower input; not a universal bound
+10.1021/bi0620510,Table 2: 011005,PII activation,apparent Kact,0.024,uM,2-OG 1 mM; Gln 50 mM; ATase 0.01 uM; PII-UMP absent,condition dependence
+10.1021/bi0620510,Table 2: 030705,PII activation,apparent Kact,>40,uM,2-OG 1 mM; Gln absent; ATase 2 uM; PII-UMP 10 uM,excluded from no-PII-UMP scenario envelope
+10.1021/bi0620510,Table 3: 022305,PII-UMP activation,apparent Kact,0.28,uM,2-OG 1 mM; PII absent; Gln absent; ATase 0.02 uM,scenario input; not microscopic Kd
+10.1021/bi0620510,Table 3: 022305,PII-UMP activation,apparent Kact,0.35,uM,2-OG 0.02 mM; PII absent; Gln absent; ATase 0.02 uM,condition dependence
+10.1021/bi0620510,Table 3: 042105,PII-UMP activation,apparent Kact,0.85,uM,2-OG 1 mM; PII absent; Gln 50 mM; ATase 0.03 uM,scenario input; not microscopic Kd

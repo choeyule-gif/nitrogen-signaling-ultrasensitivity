@@ -27,8 +27,8 @@
     "_source": "Jiang P, Peliska JA, Ninfa AJ (1998) Biochemistry 37:12782",
     "Ki_glutamine_UT_uM_Mg": [70, 80],
     "Kact_glutamine_UR_uM_Mg": 80,
-    "Ki_glutamine_UT_uM_Mn": 700,
-    "Kact_glutamine_UR_uM_Mn": 150,
+    "Ki_glutamine_UT_uM_Mn": 150,
+    "Kact_glutamine_UR_uM_Mn": 700,
     "UR_specificity_constant_no_gln": 1.17, "UR_specificity_constant_sat_gln": 7.93
   },
   "jiang1998b": {

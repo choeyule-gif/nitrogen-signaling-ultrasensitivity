@@ -1,0 +1,15 @@
+{
+  "multistart_runs": 100,
+  "max_SSE_spread": 2.931682674400804e-16,
+  "h_range": [
+    2.017893600954741,
+    2.0178936329251327
+  ],
+  "unbounded_h1_SSE": 0.365830288549682,
+  "unbounded_h1_upper_plateau": 3.323030918269499,
+  "symbolic_switch_identity": true,
+  "symbolic_plateau_odds": true,
+  "symbolic_stationary_point": true,
+  "range_bound_random_checks": 1000,
+  "all_2000_perturbations_retained": true
+}

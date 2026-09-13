@@ -1,0 +1,5 @@
+# Fig 4B: calculated range coefficients (linear reading of the reverse input) and reported cascade coefficients
+PII_uM,calculated,reported
+0.5,3.55184497879897,5.23
+5.0,3.77942275773576,6.46
+36.0,4.914505946216687,4.48

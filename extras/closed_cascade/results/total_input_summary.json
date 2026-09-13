@@ -1,0 +1,13 @@
+{
+  "conditions": 62,
+  "max_free_PII_TV": {
+    "pool_scale": 10,
+    "total_G_uM": 240.22488679628626,
+    "free_G_reference": 231.9769027351715,
+    "free_G_transformed": 231.6736928293934,
+    "free_PII_TV": 0.0006341902765803857,
+    "total_GS_gap": 9.455330686000338e-05
+  },
+  "max_free_G_difference": 0.4038946813781763,
+  "scope": "Conserved regulatory glutamine, no metabolic consumption; nucleotide pools buffered; steady roots only, no 121-species ODE validation."
+}

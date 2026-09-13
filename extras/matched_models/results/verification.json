@@ -1,0 +1,13 @@
+{
+  "max_population_equivalence_error": 6.463718449367661e-13,
+  "inverse_max_logu_error": 2.0771184910950424e-09,
+  "variance_derivative_max_error": 5.1089764363521084e-11,
+  "odds_curvature_max_error": 4.440892098500626e-15,
+  "baseline_exact_coefficients": [
+    3.5518449932420535,
+    3.7794227736612216,
+    4.9145059493552905
+  ],
+  "dense_grid_max_coefficient_error": 1.3389256211304712e-05,
+  "mixture_exact_cascade_error": 4.440892098500626e-15
+}

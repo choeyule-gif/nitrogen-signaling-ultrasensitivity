@@ -1,0 +1,10 @@
+{
+  "fit": {
+    "number_checked": 17,
+    "max_ratio_error": 1.5008865634769109e-06
+  },
+  "range": {
+    "number_checked": 16,
+    "max_ratio_error": 4.492748945539304e-06
+  }
+}

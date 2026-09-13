@@ -1,0 +1,237 @@
+{
+  "seed": 20260913,
+  "n_digitized_coordinates": 12,
+  "scope": "Finite buffered-ligand unsaturated catalytic reaction model; not a full GlnD/GlnE reconstitution.",
+  "profile": [
+    {
+      "cap_C": 0.25,
+      "parameters": [
+        0.9999989999999999,
+        0.01412778796002186,
+        0.9999989999999999,
+        -1.244806623275402,
+        -1.3862943611198908
+      ],
+      "q_states": [
+        0.9999989999999999,
+        0.9999980141287876,
+        0.01412778796002186
+      ],
+      "s_mM": 0.28799659458452087,
+      "C": 0.24999999999999994,
+      "SSE": 0.2551507818056751,
+      "RMSE": 0.14581688911258847,
+      "success": true,
+      "C_upper_boundary": true
+    },
+    {
+      "cap_C": 1,
+      "parameters": [
+        0.9999989999999999,
+        0.053374957427212565,
+        0.9999989999999999,
+        -0.9350719511897198,
+        -1.8210754422088032e-32
+      ],
+      "q_states": [
+        0.9999989999999999,
+        0.9999980533759572,
+        0.053374957427212565
+      ],
+      "s_mM": 0.3925576195276052,
+      "C": 1.0,
+      "SSE": 0.12235155908771397,
+      "RMSE": 0.10097506255164934,
+      "success": true,
+      "C_upper_boundary": true
+    },
+    {
+      "cap_C": 10,
+      "parameters": [
+        0.9999989999999999,
+        0.11064597082622588,
+        0.9999989999999999,
+        -0.7056536049670674,
+        2.3025850929940455
+      ],
+      "q_states": [
+        0.9999989999999999,
+        0.9999981106469705,
+        0.11064597082622588
+      ],
+      "s_mM": 0.4937857279562032,
+      "C": 9.999999999999998,
+      "SSE": 0.03147526286598241,
+      "RMSE": 0.051214632402910014,
+      "success": true,
+      "C_upper_boundary": true
+    },
+    {
+      "cap_C": 100,
+      "parameters": [
+        0.9942961660906914,
+        0.13632118571224833,
+        0.9999989999996981,
+        -0.621316629496381,
+        4.605170185988091
+      ],
+      "q_states": [
+        0.9942961660906914,
+        0.994295308115452,
+        0.13632118571224833
+      ],
+      "s_mM": 0.537236630143057,
+      "C": 99.99999999999996,
+      "SSE": 0.016988452695909633,
+      "RMSE": 0.03762584738349162,
+      "success": true,
+      "C_upper_boundary": true
+    },
+    {
+      "cap_C": 10000,
+      "parameters": [
+        0.9907526726032777,
+        0.14835002907880465,
+        0.9999989999999999,
+        -0.5843722005313607,
+        9.210340371976182
+      ],
+      "q_states": [
+        0.9907526726032777,
+        0.9907518302006341,
+        0.14835002907880465
+      ],
+      "s_mM": 0.5574557223858456,
+      "C": 9999.99999999999,
+      "SSE": 0.014974474089650233,
+      "RMSE": 0.035325243676501174,
+      "success": true,
+      "C_upper_boundary": true
+    }
+  ],
+  "fixed_C100_unconstrained_RMSE": 0.03762584738328202,
+  "transported_C100": {
+    "parameters": [
+      0.9971771468731598,
+      0.13695488137730918,
+      1.0,
+      -0.6267550742516869,
+      4.605170185988092
+    ],
+    "fitted_parameter_count": 2,
+    "transported_UR_half_range_mM": 0.08,
+    "RMSE": 0.03781852225667861,
+    "success": true
+  },
+  "independent_binding": {
+    "parameters": [
+      0.998895638128322,
+      0.14591109298321076,
+      0.4569208648598554,
+      -0.585228125364858,
+      5.955557860804892
+    ],
+    "fitted_parameter_count": 3,
+    "effective_C_not_binding_ratio": 385.89212473400147,
+    "SSE": 0.016075717643515283,
+    "RMSE": 0.036601135733192854,
+    "LOO_RMSE": 0.049054236981902886,
+    "success": true,
+    "q_states": [
+      0.998895638128322,
+      0.5356575290630053,
+      0.14591109298321076
+    ],
+    "r": 0.14591109298321076,
+    "gain_R_over_H": 0.7294678610891335,
+    "state_predictions_G10": {
+      "H": [
+        0.6149052170179502,
+        0.3246197651962832,
+        0.05712424670755605,
+        0.003350771078210665
+      ],
+      "R": [
+        0.842950388657102,
+        0.011089814912420469,
+        4.8632357825813973e-05,
+        0.14591116407265173
+      ]
+    }
+  },
+  "finite_reaction_realization": {
+    "binding_K1_mM": 0.026022235825683727,
+    "binding_K2_mM": 0.10408894330273488,
+    "binding_K1_over_K2": 0.25000000000000006,
+    "alpha_H": [
+      0.998895638128322,
+      0.001273972958322552,
+      0.0012739729583225517
+    ],
+    "beta_shared": [
+      0.0011043618716779502,
+      0.0011043618716779502,
+      0.007457186080210188
+    ],
+    "alpha_R": [
+      0.8529845451451112,
+      0.0009269475237971398,
+      0.0
+    ],
+    "catalytic_rate_scale": "arbitrary common positive rate scale",
+    "UR_specificity_fold_scenario": 6.752484191508582,
+    "UT_half_range_mM": 0.021557526004538464,
+    "UR_half_range_mM": 0.12564646930725107,
+    "UT_R_half_range_mM": 0.021590700004911246,
+    "interpretation": "UR fold transported as a scenario; activity half-range points are not assumed identical to reported Ki/Kact."
+  },
+  "checks": {
+    "mean_equivalence_error": 1.3322676295501878e-15,
+    "cascade_ratio_equivalence_error": 2.6645352591003757e-15,
+    "finite_rate_mean_error_H": 4.440892098500626e-16,
+    "finite_rate_mean_error_R": 5.551115123125783e-16,
+    "stationary_solve_error": 7.771561172376096e-16,
+    "stationary_residual": 1.1362438767648086e-16,
+    "positive_rate_check": true
+  },
+  "separate_site_saturation": [
+    {
+      "PII_uM": 0.5,
+      "scenario_min_max_difference": 0.0018059076833969456,
+      "scenario_max_max_difference": 0.02669410269061842
+    },
+    {
+      "PII_uM": 5,
+      "scenario_min_max_difference": 0.016432439242188956,
+      "scenario_max_max_difference": 0.037353582608515956
+    },
+    {
+      "PII_uM": 36,
+      "scenario_min_max_difference": 0.02397380457970727,
+      "scenario_max_max_difference": 0.03904752789477409
+    }
+  ],
+  "unknown_affinity_equivalence": {
+    "Kp_R_over_Kp_H": 1.3708623139434106,
+    "example_Kp_H_uM": 0.1,
+    "example_Kp_R_uM": 0.13708623139434106,
+    "saturated_ratio_error": 1.3875130863662645e-15,
+    "four_occupancy_class_error": 1.9984014443252818e-15,
+    "scope": "Buffered free PII input; rescale every unmodified-PII dissociation constant by the same factor. Reverse recognition weighted by modification count. Total-bound conservation not included."
+  },
+  "strict_cross_assay_transfer": {
+    "unliganded_specificity_ratio": 38.90123456790123,
+    "q0": 0.9749381188118812,
+    "parameters": [
+      0.9749381188118812,
+      0.4062195754584629,
+      1.0,
+      -1.924792813190585,
+      4.605170185988092
+    ],
+    "RMSE": 0.5399341622087674,
+    "success": true,
+    "interpretation": "Transporting all three kinetic summaries across assays fails in this fixed-C minimal topology; this is not validation of a GlnD mechanism."
+  },
+  "uncertainty": "No replicate likelihood or experimental confidence intervals; C bounds and cross-assay apparent-constant envelopes are scenarios."
+}

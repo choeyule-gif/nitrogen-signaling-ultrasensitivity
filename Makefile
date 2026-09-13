@@ -13,3 +13,26 @@ s1data:         ## assemble S1_Data/ for submission
 clean:
 	rm -rf results/*.json results/*.log results/*.npy results/*.npz results/panels figures S1_Data \
 	       esbm/__pycache__ scripts/__pycache__ tests/__pycache__ .pytest_cache
+
+.PHONY: matched-models
+matched-models:
+	$(PY) extras/matched_models/run.py
+
+.PHONY: finite-mechanisms
+finite-mechanisms:
+	$(PY) extras/finite_mechanism/run.py
+
+.PHONY: regulatory-states
+regulatory-states:
+	$(PY) extras/regulatory_states/code/analyze.py
+
+.PHONY: robust-design
+robust-design:
+	$(PY) extras/robust_design/code/analyze.py
+
+.PHONY: closed-cascade
+closed-cascade:
+	$(PY) extras/closed_cascade/code/analyze.py
+	$(PY) extras/closed_cascade/code/topology.py
+	$(PY) extras/closed_cascade/code/total_input.py
+	$(PY) extras/closed_cascade/code/verify_algebra.py

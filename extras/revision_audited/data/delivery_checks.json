@@ -1,0 +1,33 @@
+{
+  "main_pages": 29,
+  "supplement_pages": 21,
+  "all_pages_rendered_and_visually_reviewed": true,
+  "latex_overfull_or_undefined_warnings": false,
+  "line_numbers_removed": true,
+  "main_figures": 5,
+  "main_figure_panel_counts": [
+    4,
+    4,
+    4,
+    4,
+    4
+  ],
+  "promoted_supporting_results": [
+    "S3 to Fig1C,D",
+    "S2 to Fig2D",
+    "S7B to Fig4D"
+  ],
+  "supplementary_figures": 7,
+  "MATLAB_rerun": false,
+  "python_fit_and_checks_rerun": true,
+  "audit_scripts_rerun": [
+    "audit_counterexamples.py",
+    "audit_exact_roots.py",
+    "audit_stability.py",
+    "audit_endpoints.py",
+    "audit_loci.py",
+    "rebuild_supporting_figures.py",
+    "promote_supporting_panels.py"
+  ],
+  "universal_stability_certificate_independently_verified": false
+}

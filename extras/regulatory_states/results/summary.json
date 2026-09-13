@@ -1,0 +1,156 @@
+{
+  "seed": 20260913,
+  "scope": "Free-input reaction models; state binding at rapid equilibrium; no closed-total fit or absolute biological time prediction.",
+  "glnd": {
+    "fitted_parameters_q0_q2_logK": [
+      0.9988956385628978,
+      0.14591109447981754,
+      -2.9556569011944966
+    ],
+    "RMSE": 0.03660113573316272,
+    "fitted_parameters_count": 3,
+    "transported_UR_fold": 6.752484191508582,
+    "family": [
+      {
+        "lambda": 1.0,
+        "K1_mM": 0.026022230637817993,
+        "K2_mM": 0.10408892255127197,
+        "K1_over_K2": 0.25,
+        "alpha": [
+          0.9988956385628978,
+          0.0012739724723029192,
+          0.0012739724723029192
+        ],
+        "beta": [
+          0.0011043614371022414,
+          0.0011043614371022414,
+          0.007457183145744586
+        ],
+        "E1_fraction_at_G_equal_K": 0.5,
+        "catalytic_speed_ratio_at_G_equal_K": 1.0
+      },
+      {
+        "lambda": 2.0,
+        "K1_mM": 0.052044461275635986,
+        "K2_mM": 0.052044461275635986,
+        "K1_over_K2": 1.0,
+        "alpha": [
+          0.9988956385628978,
+          0.0025479449446058383,
+          0.0012739724723029192
+        ],
+        "beta": [
+          0.0011043614371022414,
+          0.002208722874204483,
+          0.007457183145744586
+        ],
+        "E1_fraction_at_G_equal_K": 0.3333333333333333,
+        "catalytic_speed_ratio_at_G_equal_K": 1.3333333333333333
+      },
+      {
+        "lambda": 4.0,
+        "K1_mM": 0.10408892255127197,
+        "K2_mM": 0.026022230637817993,
+        "K1_over_K2": 4.0,
+        "alpha": [
+          0.9988956385628978,
+          0.005095889889211677,
+          0.0012739724723029192
+        ],
+        "beta": [
+          0.0011043614371022414,
+          0.004417445748408966,
+          0.007457183145744586
+        ],
+        "E1_fraction_at_G_equal_K": 0.2,
+        "catalytic_speed_ratio_at_G_equal_K": 1.6
+      }
+    ],
+    "mean_invariance_error": 2.220446049250313e-16,
+    "lambda_monotonicity_interval": [
+      1,
+      6.752484191508582
+    ]
+  },
+  "glne": {
+    "topology_source": "Jiang, Mayo & Ninfa 2007, Fig 12, DOI 10.1021/bi0620510",
+    "parameter_scenarios": {
+      "reference": {
+        "KG": 15.6,
+        "KP": 0.18,
+        "KU": 0.35,
+        "a1": 0.17,
+        "a2": 4.0,
+        "beta": 1.0,
+        "betap": 10.0,
+        "k": 1.4877648555011858
+      },
+      "binding_catalysis_tradeoff": {
+        "KG": 15.6,
+        "KP": 0.18,
+        "KU": 0.35,
+        "a1": 0.68,
+        "a2": 4.0,
+        "beta": 1.0,
+        "betap": 40.0,
+        "k": 1.4877648555011858
+      },
+      "PII_UMP_interaction_2p17": {
+        "KG": 15.6,
+        "KP": 0.18,
+        "KU": 0.35,
+        "a1": 0.17,
+        "a2": 2.17,
+        "beta": 1.0,
+        "betap": 10.0,
+        "k": 1.4877648555011858
+      },
+      "PII_UMP_interaction_8p85": {
+        "KG": 15.6,
+        "KP": 0.18,
+        "KU": 0.35,
+        "a1": 0.17,
+        "a2": 8.85,
+        "beta": 1.0,
+        "betap": 10.0,
+        "k": 1.4877648555011858
+      }
+    },
+    "parameter_provenance": "KG=15.6 mM, KP=0.18 uM, alpha1=0.17: source reported joint-fit example; KU=0.35 uM: source Table 3 selected apparent scale; beta=1 and beta_prime=10: chosen illustration; alpha2 variants 2.17,4,8.85: illustrative range motivated by source fits, not CI. k calibrated once to GS=0.5 at G=0.53mM,T=5uM.",
+    "steady_response_invariance_error": 2.220446049250313e-16,
+    "purified_condition": {
+      "PII_uM": 1.0,
+      "PII_UMP_uM": 0.3,
+      "G10_rate_ratio_tradeoff": 2.0849420785588997,
+      "G10_EGP_reference": 0.6938271585359375,
+      "G10_EGP_tradeoff": 0.36164735951963317,
+      "G10_binding_halfpoints_uM": [
+        0.09020423159214194,
+        0.20847310324159632
+      ],
+      "binding_halfpoint_ratio": 2.311123320513461
+    },
+    "concentration_line_error": 2.6645352591003757e-15,
+    "local_decomposition_error": 3.8553515935291216e-10,
+    "direct_local_range": [
+      0.5241166572923578,
+      0.9997771209776356
+    ]
+  },
+  "verification": {
+    "random_six_state_networks": 250,
+    "stationary_linear_solve_error": 3.3306690738754696e-16,
+    "species_balance_error": 3.3306690738754696e-16,
+    "random_synergy_identity_error": 2.220446049250313e-16,
+    "coupled_36_scenarios_error": 4.440892098500626e-16,
+    "random_GlnD_stationary_solves": 100,
+    "GlnD_stationary_solve_error": 5.551115123125783e-16
+  },
+  "dynamics": {
+    "G_start_mM": 0.5,
+    "G_end_mM": 0.05,
+    "PII_uM": 5.0,
+    "time_units": "reference relaxation scales set at final input; illustrative, not minutes",
+    "max_GS_separation": 0.019632640419327413
+  }
+}

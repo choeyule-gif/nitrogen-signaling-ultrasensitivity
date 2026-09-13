@@ -1,0 +1,78 @@
+{
+  "scope": "Explicit ligand-binding and enzyme-target complexes; conditional free-input steady states, not a closed-total titration fit. Zero catalytic branches are omitted reactions. Buffered nucleotide cofactors absorbed into effective catalytic rates.",
+  "cases": [
+    {
+      "G_mM": 0.02,
+      "refractory": false,
+      "maximum_species_balance_residual": 2.202285662861181e-20,
+      "enzyme_total": 0.0010095345432480053,
+      "target_total": 1.000009534543248
+    },
+    {
+      "G_mM": 0.02,
+      "refractory": true,
+      "maximum_species_balance_residual": 3.959879028413854e-20,
+      "enzyme_total": 0.001008139098628368,
+      "target_total": 1.0000081390986282
+    },
+    {
+      "G_mM": 0.08,
+      "refractory": false,
+      "maximum_species_balance_residual": 7.453889935837843e-20,
+      "enzyme_total": 0.001020173805489509,
+      "target_total": 1.0000201738054895
+    },
+    {
+      "G_mM": 0.08,
+      "refractory": true,
+      "maximum_species_balance_residual": 6.268043809681823e-20,
+      "enzyme_total": 0.0010171654898562615,
+      "target_total": 1.0000171654898562
+    },
+    {
+      "G_mM": 0.53,
+      "refractory": false,
+      "maximum_species_balance_residual": 1.3552527156068805e-20,
+      "enzyme_total": 0.0010226377387482827,
+      "target_total": 1.0000226377387482
+    },
+    {
+      "G_mM": 0.53,
+      "refractory": true,
+      "maximum_species_balance_residual": 1.3552527156068805e-20,
+      "enzyme_total": 0.0010170593687623317,
+      "target_total": 1.0000170593687623
+    },
+    {
+      "G_mM": 1.0,
+      "refractory": false,
+      "maximum_species_balance_residual": 2.752857078576476e-20,
+      "enzyme_total": 0.0010144488435821855,
+      "target_total": 1.0000144488435823
+    },
+    {
+      "G_mM": 1.0,
+      "refractory": true,
+      "maximum_species_balance_residual": 2.752857078576476e-20,
+      "enzyme_total": 0.0010084569869830962,
+      "target_total": 1.0000084569869832
+    },
+    {
+      "G_mM": 10.0,
+      "refractory": false,
+      "maximum_species_balance_residual": 1.3552527156068805e-20,
+      "enzyme_total": 0.0010066364582376845,
+      "target_total": 1.0000066364582376
+    },
+    {
+      "G_mM": 10.0,
+      "refractory": true,
+      "maximum_species_balance_residual": 1.3552527156068805e-20,
+      "enzyme_total": 0.0010001653833812837,
+      "target_total": 1.0000001653833814
+    }
+  ],
+  "maximum_residual": 7.453889935837843e-20,
+  "random_positive_parameter_cases": 1000,
+  "random_equivalence_error": 4.440892098500626e-16
+}

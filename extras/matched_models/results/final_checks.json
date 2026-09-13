@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "birth_death_stationarity_max_error": 1.4432899320127035e-15,
+  "independent_stationary_solves": 123,
+  "coordinate_draws": 300,
+  "fixed_cascade_comparisons": 16,
+  "joint_shared_comparisons": 4,
+  "additional_asymmetric_comparisons": 1,
+  "notes": "Checks numerical consistency, not molecular validity, experimental fit uncertainty, or a global optimum."
+}

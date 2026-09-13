@@ -1,0 +1,21 @@
+{
+  "conditions": 861,
+  "max_fixed_free_GS_gap": {
+    "eta": 1.0,
+    "G_uM": 447.213595499958,
+    "fixed_free_GS_gap": 0.1544898370819789,
+    "closed_GS_gap": 0.15300560417573428,
+    "RHS": 7.632783294297951e-17
+  },
+  "zero_productivity_max_free_gap": 0.0,
+  "max_RHS": 9.853229343548264e-16,
+  "recognition_conditions": 90,
+  "recognition_bound_violation": 0.0,
+  "recognition_RHS": 6.106226635438361e-15,
+  "productive_compensation_bound": {
+    "conditions": 360,
+    "max_violation": 0.0,
+    "max_total_GS_gap": 0.0002720395957468147,
+    "max_RHS": 5.062616992290714e-14
+  }
+}

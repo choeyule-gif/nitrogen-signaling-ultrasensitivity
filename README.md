@@ -1,10 +1,10 @@
-# Quantifying the sources of ultrasensitivity in bacterial nitrogen signaling
+# Discriminating mechanisms of ultrasensitivity in bacterial nitrogen signaling
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22731768.svg)](https://doi.org/10.5281/zenodo.22731768)
 
 Code and data for
 
-> Choi Y. *Quantifying the sources of ultrasensitivity in bacterial nitrogen signaling.*
+> Choi Y. *Discriminating mechanisms of ultrasensitivity in bacterial nitrogen signaling.*
 > Manuscript prepared for PLOS Computational Biology (2026).
 
 The manuscript analyses a distributive modification cycle in which an effector partitions a single
@@ -21,7 +21,7 @@ statement.
 
 **Repository:** <https://github.com/choeyule-gif/nitrogen-signaling-ultrasensitivity>
 
-**Archived release:** [v1.0.0 (DOI: 10.5281/zenodo.22731769)](https://doi.org/10.5281/zenodo.22731769). The [concept DOI 10.5281/zenodo.22731768](https://doi.org/10.5281/zenodo.22731768) always resolves to the latest archived version.
+**Current release:** v1.1.0. Baseline archive: [v1.0.0](https://doi.org/10.5281/zenodo.22731769). The [concept DOI 10.5281/zenodo.22731768](https://doi.org/10.5281/zenodo.22731768) always resolves to the latest archived version.
 
 ## Layout
 
@@ -154,3 +154,41 @@ paper are drawn from those CSV files in MATLAB; nothing is recomputed at plot ti
 ## License and citation
 
 Code: MIT (`LICENSE`). Please cite the manuscript and the Zenodo record (`CITATION.cff`).
+
+## Matched-model research revision
+
+A subsequent research revision adds data-matched mechanistic alternatives, an exact
+population/readout equivalence, shared-parameter cascade comparisons, and state-observation
+design. See [`extras/matched_models/README.md`](extras/matched_models/README.md).
+Run `python3 extras/matched_models/run.py` or `make matched-models`.
+These additions are included in v1.1.0; v1.0.0 contains the earlier baseline.
+
+### Finite biochemical realization
+
+`extras/finite_mechanism` adds finite reaction models, a primary-source constraint
+audit, saturation/affinity equivalence tests, and Figure 7. Run `make finite-mechanisms`.
+The included README distinguishes structural realizability from physiological
+validation and reports failed strict kinetic transfers. This extension is included in v1.1.0.
+
+### GlnD/GlnE regulatory-state analysis
+
+`extras/regulatory_states` develops finite GlnD occupancy/catalysis alternatives
+and the published six-state GlnE topology. Run `make regulatory-states`. The
+identical steady outputs, distinct kinetic/binding predictions and parameter
+provenance are documented in its README and outputs. This extension is included in v1.1.0.
+
+### Assumption boundaries and experimental design
+
+`extras/robust_design` supplies explicit finite-rate reaction models, conservation
+bounds on total observations, a substrate-bound ligand-exchange extension, and
+binding designs with nuisance ranges and prospective error calculations. Run
+`make robust-design`. Parameter ranges and assay errors are declared scenarios,
+not physiological confidence intervals. This extension is included in v1.1.0.
+
+## Protein-conserving cascade (v1.1.0)
+
+`extras/closed_cascade` contains the 120-species/300-reaction cascade, productive-complex extension, total-input analysis, network exports and verification results (main Figure 10). Run `make closed-cascade`; see its README for assumptions and individual commands. Version 1.1.0 archives all matched-model, regulatory-state, finite-reaction and design additions together. No new experimental data or physiological validation is claimed.
+
+## AI assistance
+
+OpenAI ChatGPT and Codex assisted with model/derivation development, implementation, verification, scientific writing and figure preparation. Model outputs were assessed by the conservation, independent-integration and reproducibility checks documented with each analysis. The manuscript provides the detailed disclosure.

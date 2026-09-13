@@ -16,7 +16,7 @@ use_compact()
 c = constants()["jiang1998a"]
 eta_of = lambda r: 2*np.sqrt(r)/(1+np.sqrt(r))
 r_mg = c["Kact_glutamine_UR_uM_Mg"]/c["Ki_glutamine_UT_uM_Mg"][0]     # 80/70
-r_mn = c["Ki_glutamine_UT_uM_Mn"]/c["Kact_glutamine_UR_uM_Mn"]         # 700/150
+r_mn = c["Kact_glutamine_UR_uM_Mn"]/c["Ki_glutamine_UT_uM_Mn"]         # 700/150
 eta_mg, eta_mn = eta_of(r_mg), eta_of(r_mn)
 NU, NU_E, ETA, ETA_E, NH = 1.11, 0.11, 1.82, 0.18, 2.02
 

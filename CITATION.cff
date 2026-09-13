@@ -1,8 +1,8 @@
 cff-version: 1.2.0
 message: "If you use this code, please cite the manuscript and the archived software release."
-title: "Code for: Quantifying the sources of ultrasensitivity in bacterial nitrogen signaling"
+title: "Code for: Discriminating mechanisms of ultrasensitivity in bacterial nitrogen signaling"
 type: software
-version: 1.0.0
+version: 1.1.0
 date-released: 2026-09-13
 license: MIT
 authors:
@@ -10,7 +10,6 @@ authors:
     given-names: Yule
     email: 25-117@ksa.hs.kr
 repository-code: "https://github.com/choeyule-gif/nitrogen-signaling-ultrasensitivity"
-doi: "10.5281/zenodo.22731769"
 keywords:
   - bifunctional enzyme
   - ultrasensitivity
@@ -19,12 +18,3 @@ keywords:
   - nitrogen assimilation
   - PII
   - GlnD
-preferred-citation:
-  type: article
-  title: "Quantifying the sources of ultrasensitivity in bacterial nitrogen signaling"
-  authors:
-    - family-names: Choi
-      given-names: Yule
-  journal: "PLOS Computational Biology"
-  year: 2026
-  notes: "submitted"

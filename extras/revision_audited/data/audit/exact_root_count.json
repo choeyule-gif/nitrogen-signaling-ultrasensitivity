@@ -1,0 +1,26 @@
+[
+  {
+    "degree": 1,
+    "multiplicity": 2,
+    "nonnegative_roots": 1,
+    "polynomial": "l"
+  },
+  {
+    "degree": 1,
+    "multiplicity": 5,
+    "nonnegative_roots": 0,
+    "polynomial": "l + 1"
+  },
+  {
+    "degree": 4,
+    "multiplicity": 1,
+    "nonnegative_roots": 0,
+    "polynomial": "2501*l**4 + 12000*l**3 + 16050*l**2 + 1290000*l + 2825"
+  },
+  {
+    "degree": 12,
+    "multiplicity": 1,
+    "nonnegative_roots": 5,
+    "polynomial": "6230001*l**12 - 4650284742*l**11 + 582042939816*l**10 + 15577283458600*l**9 + 53471356206750*l**8 - 620329597477300*l**7 - 36949156441484100*l**6 - 73574221871143000*l**5 + 120161762965325625*l**4 + 22015077903470426250*l**3 - 23779760877247500*l**2 - 1748381100000*l - 1592500000"
+  }
+]
