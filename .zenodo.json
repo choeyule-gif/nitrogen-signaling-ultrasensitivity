@@ -1,7 +1,7 @@
 {
   "title": "Code for: Mechanistic equivalence and measurement design in models of bacterial nitrogen signaling",
   "upload_type": "software",
-  "description": "Reproducible code, digitized published-data coordinates, parameter provenance, figure data and numerical verification for the manuscript Mechanistic equivalence and measurement design in models of bacterial nitrogen signaling. Includes baseline response constraints; data-matched ladder and population alternatives; finite GlnD/GlnE regulatory-state equivalences; protein-conserving cascade bounds and topology/input extensions; and conditional measurement design. No new experimental data were generated. The models use explicitly stated reaction assumptions and illustrative parameter scenarios.",
+  "description": "Reproducible code, digitized published-data coordinates, parameter provenance, figure data and numerical verification for the manuscript Mechanistic equivalence and measurement design in models of bacterial nitrogen signaling. Includes baseline response constraints; data-matched ladder and population alternatives; finite GlnD/GlnE regulatory-state equivalences; protein-conserving cascade bounds and topology/input extensions; and conditional measurement design. No new experimental data were generated. The models use explicitly stated reaction assumptions and illustrative parameter scenarios. Version 1.2 adds independent published GlnB/GlnK data, conditional count-state binding ceilings and calibrated paired-reporter intervals, integrated regeneration and a compressed five-figure manuscript. Third-party source data and literature retain their CC BY 4.0 attribution; original analysis code is MIT licensed.",
   "creators": [
     {
       "name": "Choi, Yule"
@@ -19,5 +19,5 @@
     "Hill coefficient"
   ],
   "language": "eng",
-  "version": "1.1.0"
+  "version": "1.2.0"
 }

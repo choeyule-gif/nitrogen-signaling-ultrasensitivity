@@ -2,6 +2,9 @@
 
 ## Verified clean regeneration
 
+The v1.2 numerical source snapshot completed all 16 regeneration and check stages in 745 seconds, including original-workbook extraction and count-state bounds. See `validation/clean_regeneration_v1.2.json`, `clean_environment_v1.2.txt` and `clean_source_v1.2.json`. The final rendering and a baseline-export docstring changed after this numerical snapshot; those differences are listed explicitly. All numerical analysis source files match the verified snapshot.
+
+
 A fresh virtual environment and source copy with all generated results removed regenerated every pre-existing numerical layer. `validation/clean_regeneration_pre_paralog.json` records all 12 commands, durations and zero exit codes; `validation/clean_environment.txt` records dependencies. The baseline passed 22 checks with no skips. Matched-model verification used 123 independent stationary solves, 300 coordinate draws and cascade comparisons. Three extension test groups check regulatory equivalences, conservation/positivity and independent integration, and ladder/design bounds.
 
 This evidence covers numerical regeneration, not visual reproduction of final publication layouts, global optimization, experimental uncertainty coverage or native mechanism validation. The subsequent paired-paralog addition is checked separately and by the current integrated entry point. The saved clean report intentionally identifies its earlier scope.

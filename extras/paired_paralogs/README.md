@@ -1,6 +1,6 @@
 # Paired GlnB/GlnK measurements and conditional sequestration inference
 
-This extension adds independent published measurements and a prospective assay construction. It does not establish the native GlnD mechanism or infer measured AmtB occupancy from the available time series.
+This extension adds independent published measurements, count-state upper bounds on binding, and a prospective calibrated assay construction. It does not establish the native GlnD mechanism or infer measured AmtB occupancy from the available time series.
 
 ## Source and attribution
 
@@ -24,3 +24,5 @@ The first program re-extracts the original workbook. The remaining programs chec
 ## Exploratory dynamics
 
 `native_trimers.py` and `profile_paralog.py` fit a positive count-state model with buffered AmtB, imposed protein totals and assumed unmodified synthesis. `verify_native.py` compares independent BDF and LSODA integrations at saved parameters. The fits do not establish predictive biological validation: rate estimates reach a search boundary and mutant comparisons remain imperfect. `dynamic_pilot.py` is a diagnostic linear-interpolation port of the older model, not a faithful reproduction claim. Its scores are not used as biological evidence. The prospective stationary assay does not assume the published time points are equilibrated.
+
+Main Figure 5 is rendered by `python extras/paired_paralogs/code/plot_paired_reporter.py` after data extraction and state-bound calculation. It uses 7.5-inch width, Arial labels and 600-dpi raster export. Panel D propagates the observation-model alternatives into binding ceilings; it is not an occupancy estimate.

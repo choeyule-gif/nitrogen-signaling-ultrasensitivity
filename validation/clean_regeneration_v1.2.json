@@ -1,0 +1,119 @@
+{
+  "regenerated": true,
+  "steps": [
+    {
+      "command": [
+        "run_all.py"
+      ],
+      "exit_code": 0,
+      "seconds": 526.4823698997498
+    },
+    {
+      "command": [
+        "extras/matched_models/run.py"
+      ],
+      "exit_code": 0,
+      "seconds": 88.56066799163818
+    },
+    {
+      "command": [
+        "extras/finite_mechanism/run.py"
+      ],
+      "exit_code": 0,
+      "seconds": 3.486109972000122
+    },
+    {
+      "command": [
+        "extras/regulatory_states/code/analyze.py"
+      ],
+      "exit_code": 0,
+      "seconds": 3.118298053741455
+    },
+    {
+      "command": [
+        "extras/robust_design/code/analyze.py"
+      ],
+      "exit_code": 0,
+      "seconds": 8.03946328163147
+    },
+    {
+      "command": [
+        "extras/closed_cascade/code/analyze.py"
+      ],
+      "exit_code": 0,
+      "seconds": 89.54847478866577
+    },
+    {
+      "command": [
+        "extras/closed_cascade/code/topology.py"
+      ],
+      "exit_code": 0,
+      "seconds": 14.499573707580566
+    },
+    {
+      "command": [
+        "extras/closed_cascade/code/total_input.py"
+      ],
+      "exit_code": 0,
+      "seconds": 3.9012768268585205
+    },
+    {
+      "command": [
+        "extras/closed_cascade/code/verify_algebra.py"
+      ],
+      "exit_code": 0,
+      "seconds": 0.8569557666778564
+    },
+    {
+      "command": [
+        "extras/paired_paralogs/code/extract_data.py"
+      ],
+      "exit_code": 0,
+      "seconds": 0.19734811782836914
+    },
+    {
+      "command": [
+        "extras/paired_paralogs/code/state_bounds.py"
+      ],
+      "exit_code": 0,
+      "seconds": 1.1476109027862549
+    },
+    {
+      "command": [
+        "tests/test_reproduce.py"
+      ],
+      "exit_code": 0,
+      "seconds": 0.052629947662353516
+    },
+    {
+      "command": [
+        "extras/matched_models/code/verify_final.py"
+      ],
+      "exit_code": 0,
+      "seconds": 0.5573902130126953
+    },
+    {
+      "command": [
+        "tests/test_extensions.py"
+      ],
+      "exit_code": 0,
+      "seconds": 4.413363933563232
+    },
+    {
+      "command": [
+        "extras/paired_paralogs/code/paired_reporter.py"
+      ],
+      "exit_code": 0,
+      "seconds": 0.36368608474731445
+    },
+    {
+      "command": [
+        "extras/paired_paralogs/code/reporter_intervals.py"
+      ],
+      "exit_code": 0,
+      "seconds": 0.27273106575012207
+    }
+  ],
+  "completed": true,
+  "passed": true
+}

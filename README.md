@@ -2,7 +2,7 @@
 
 Code, numerical outputs and manuscript sources for Yule Choi's nitrogen-signaling study. This is a conditional analysis of mechanistic equivalence and measurement design; the calculations do not establish a unique native GlnD–PII–GlnE–GS mechanism.
 
-**Archived release:** [v1.1.0](https://doi.org/10.5281/zenodo.22735182). **Working revision:** adds independent paired-paralog data, assay interval calculations and integrated validation. These additions are not contained in the v1.1.0 archive. The manuscript and submission package are being revised; the older release ZIP is not the current working manuscript.
+**Archived release:** [v1.1.0](https://doi.org/10.5281/zenodo.22735182). **Prepared release v1.2.0:** adds independent paired-paralog data, assay interval calculations and integrated validation. These additions are not contained in the v1.1.0 archive. The manuscript and submission package are being revised; the older release ZIP is not the current working manuscript.
 
 ## Reproduce
 
