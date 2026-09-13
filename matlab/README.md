@@ -7,7 +7,7 @@ while plotting.
 
 ```matlab
 cd matlab
-run_all_figures        % Fig 1-5 and S1-S5 Figs, one file per panel, into ../figures/
+run_all_figures        % quantitative panels and S1-S5 Figs, into ../figures/
 Fig_ReF_companion      % the Re F(i omega) figure of the companion stability manuscript
 ```
 
@@ -16,9 +16,12 @@ Fig_ReF_companion      % the Re F(i omega) figure of the companion stability man
 Each panel is drawn in its own figure window and exported on its own, as a vector PDF
 plus a 300-dpi PNG preview (`Fig2A.pdf`, `Fig2B.pdf`, `Fig2C.pdf`, ...).  The panels
 carry no letters and no titles; letters are added when the panels are assembled.
-Fig 1 no longer has the schematic panel: `Fig1A` is the theta(l) panel and `Fig1B` the
-local-coefficient panel (they read `Fig1B_theta.csv` and `Fig1C_local_hill.csv`, whose
-names keep the letters of the old layout).
+The script and output names retain the numbering of an earlier draft. In the final manuscript,
+the pathway schematic is Fig 1; `Fig1.m` supplies Fig 2, `Fig2.m` supplies Fig 3,
+`Fig3.m` supplies Fig 4, `Fig4.m` supplies Fig 5, and `Fig5.m` supplies Fig 6.
+Within the first pair, `Fig1A` is the theta(l) panel and `Fig1B` the local-coefficient
+panel; they read `Fig1B_theta.csv` and `Fig1C_local_hill.csv`, whose names also retain
+the earlier layout.
 
 | script | panels written |
 | --- | --- |

@@ -87,5 +87,5 @@ for (fe, ft), lab in zip(LEV, ("1x1x", "2x1x", "1x4x", "2x4x")):
     cols["b_theta_%s" % lab] = [theta_tot(x, 1e-4*fe, ft)[0] for x in ll]
     cols["c_theta_bridge_%s" % lab] = [theta_bridge(x, ft, c=0.35) for x in ll]
     o = [theta_tot(x, 0.6*fe, ft) for x in ll]; cols["d_theta_%s" % lab] = [v[0] for v in o]; cols["d_TL_%s" % lab] = [v[1] for v in o]
-save_csv("Fig7_titrations", cols, "Fig 7b-d: n=3, A=1, Bhat=Ghat=0.4, Khat=1; (enzyme x, target x)")
+save_csv("Fig7_titrations", cols, "Fig 6B-C: n=3, A=1, Bhat=Ghat=0.4, Khat=1; (enzyme x, target x)")
 save_json("fig7_tests", out)

@@ -1,4 +1,4 @@
-# Fig 3A: free-exponent fit and pointwise 2.5-97.5 percentiles over 2,000 coordinate perturbations
+# Fig 4A: free-exponent fit and pointwise 2.5-97.5 percentiles over 2,000 coordinate perturbations
 glutamine_mM,fit,band_lo,band_hi
 0.01,2.9669610626831133,2.8767865382736835,2.999544242033925
 0.010216739517934467,2.9669280410997665,2.876775539573057,2.9995226488725257

@@ -1,13 +1,10 @@
 {
-  "title": "Code for: Separating the sources of ultrasensitivity in a bacterial nitrogen-signaling cascade",
+  "title": "Code for: Quantifying the sources of ultrasensitivity in bacterial nitrogen signaling",
   "upload_type": "software",
   "description": "Code that reproduces every number of the manuscript and the data behind every figure: the invariant-chain and dead-end checks, the factorisation and the bound on the ladder factor, the counterexamples to the uniqueness conditions, the adversarial monotonicity search, the reanalysis of the published PII uridylylation titration (model selection, profile likelihood, MCMC), the cascade accounting with its coordinate-perturbation analysis, and the MATLAB scripts that draw the figures from the exported per-panel values.",
   "creators": [{"name": "Choi, Yule"}],
   "license": "MIT",
   "keywords": ["bifunctional enzyme", "ultrasensitivity", "multisite modification", "chemical reaction network theory", "PII", "GlnD", "nitrogen assimilation", "Hill coefficient"],
-  "related_identifiers": [
-    {"relation": "isSupplementTo", "identifier": "10.1371/journal.pcbi.<ARTICLE_ID>", "resource_type": "publication-article", "scheme": "doi"}
-  ],
   "language": "eng",
   "version": "1.0.0"
 }

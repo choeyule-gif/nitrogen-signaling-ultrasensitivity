@@ -27,7 +27,7 @@ print("plateau: min %.5f max %.5f over the grid" % (Z.min(), Z.max()))
 print("for T_E/T_S <= 1e-2 : %.6f to %.6f  (range %.1e)" % (interior.min(), interior.max(), interior.max()-interior.min()))
 np.savez(os.path.join(RESULTS, "plateau_grid.npz"), X=X, Y=Y, Z=Z)
 LXf, LYf = np.meshgrid(X, Y)
-save_csv("Fig3_plateau_surface", dict(TE_over_TS=LXf.ravel(), TS_over_Km=LYf.ravel(), nH_local=Z.ravel()), "Fig 3: n=3, A*Khat=1, Bhat=Ghat=0.4/Khat, K_m=1/(n Bhat)")
+save_csv("Fig3_plateau_surface", dict(TE_over_TS=LXf.ravel(), TS_over_Km=LYf.ravel(), nH_local=Z.ravel()), "S3 Fig: n=3, A*Khat=1, Bhat=Ghat=0.4/Khat, K_m=1/(n Bhat)")
 
 plt.rcParams.update({'font.size': 9, 'axes.labelsize': 10, 'pdf.fonttype': 42})
 fig = plt.figure(figsize=(4.4, 3.25))

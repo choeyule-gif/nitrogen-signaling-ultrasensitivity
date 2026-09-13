@@ -1,4 +1,4 @@
-# Fig 3: n=3, A*Khat=1, Bhat=Ghat=0.4/Khat, K_m=1/(n Bhat)
+# S3 Fig: n=3, A*Khat=1, Bhat=Ghat=0.4/Khat, K_m=1/(n Bhat)
 TE_over_TS,TS_over_Km,nH_local
 0.0001,0.01,0.9999998341503202
 0.0001311528637009947,0.01,0.9999997824583362

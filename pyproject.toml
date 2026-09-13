@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "esbm"
 version = "1.0.0"
-description = "Code for: Two separable sources of ultrasensitivity in bifunctional modification cycles"
+description = "Code for quantifying the sources of ultrasensitivity in bacterial nitrogen signaling"
 readme = "README.md"
 license = {text = "MIT"}
 authors = [{name = "Yule Choi"}]

@@ -1,9 +1,9 @@
-# Separating the sources of ultrasensitivity in a bacterial nitrogen-signaling cascade
+# Quantifying the sources of ultrasensitivity in bacterial nitrogen signaling
 
 Code and data for
 
-> Choi Y. *Separating the sources of ultrasensitivity in a bacterial nitrogen-signaling cascade.*
-> PLOS Computational Biology (submitted, 2026).
+> Choi Y. *Quantifying the sources of ultrasensitivity in bacterial nitrogen signaling.*
+> Manuscript prepared for PLOS Computational Biology (2026).
 
 The manuscript analyses a distributive modification cycle in which an effector partitions a single
 bifunctional enzyme pool between opposing activities. The shared enzyme cancels from the ratios of
@@ -17,7 +17,9 @@ panel, and the Supporting Information package. `tests/test_reproduce.py` checks 
 the values quoted in the text, and `REPRODUCIBILITY.md` records the comparison statement by
 statement.
 
-**Archived release:** Zenodo DOI `10.5281/zenodo.<to be assigned>` (see `CITATION.cff`).
+**Repository:** <https://github.com/choeyule-gif/nitrogen-signaling-ultrasensitivity>
+
+**Archived release:** A version-specific Zenodo DOI will be added after the first GitHub release.
 
 ## Layout
 
@@ -27,7 +29,7 @@ statement.
 | `data/` | inputs only: the twelve digitized points of the published titration and the published constants (`data/README.md` gives the sources and the uncertainty model) |
 | `scripts/` | one script per result; each prints what it reproduces and writes `results/<name>.json` |
 | `results/` | the generated numbers (`*.json`), the run logs, and `results/expected/`, the same files as produced on the machine the manuscript was written from |
-| `figdata/` | the values behind every panel of Figs 1–5 and S1–S5 Figs, one CSV per panel, written by `scripts/export_figure_data.py` |
+| `figdata/` | the values behind every quantitative panel of main Figs 2–6 and S1–S5 Figs, one CSV per panel, written by `scripts/export_figure_data.py` |
 | `matlab/` | the MATLAB scripts that draw the figures from `figdata/` (`matlab/README.md`) |
 | `tests/` | comparison of `results/*.json` with the manuscript |
 | `extras/` | the Re *F*(iω) figure of the companion stability manuscript, which the Discussion cites |
@@ -72,8 +74,18 @@ few that depend on another's output say so in their docstring (`fig8_budget.py` 
 
 ## What each script reproduces
 
-Equation and figure numbers refer to the manuscript. The right-hand column is the statement in the
+Equation numbers refer to the manuscript. Some script and CSV names preserve the numbering of an
+earlier draft; the mapping to the final six-figure manuscript is shown below. The right-hand column is the statement in the
 text that the script's printed output and `results/<name>.json` are checked against.
+
+| final manuscript figure | analysis/plot identifier |
+|---|---|
+| Fig 1 | explanatory pathway schematic; no numerical analysis |
+| Fig 2 | `Fig1.m`, `Fig1B_theta.csv`, `Fig1C_local_hill.csv`, plus the concentration-dependence panels |
+| Fig 3 | `Fig2.m` and `Fig2*.csv` |
+| Fig 4 | `Fig3.m` and `Fig3*.csv` |
+| Fig 5 | `Fig4.m`, `Fig4*.csv`, plus the direct-glutamine-route panel |
+| Fig 6 | `Fig5.m` and `Fig5*.csv` |
 
 ### Verifications of the derived statements
 
@@ -109,7 +121,7 @@ text that the script's printed output and `results/<name>.json` are checked agai
 `fig6_uniqueness.py`, `fig7_tests.py` and `fig8_budget.py` compute the underlying quantities,
 write them to `results/panels/*.csv`, and render reference versions of the panels in matplotlib.
 `scripts/export_figure_data.py` and `scripts/export_extra_figure_data.py` then assemble
-`figdata/*.csv`, one file per panel of the manuscript's Figs 1–5 and S1–S5 Figs, and
+`figdata/*.csv`, one file per quantitative panel of the manuscript's main Figs 2–6 and S1–S5 Figs, and
 `results/revision_numbers.json`, which holds every quantity the text quotes. The figures in the
 paper are drawn from those CSV files in MATLAB; nothing is recomputed at plot time.
 

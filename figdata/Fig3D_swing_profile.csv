@@ -1,4 +1,4 @@
-# Fig 3D: profile likelihood loss N log(SSE_W/SSE_free) against the regulatory swing W = f_max/w_0; threshold 3.841; lower endpoint 172.91
+# Fig 4D: profile likelihood loss N log(SSE_W/SSE_free) against the regulatory swing W = f_max/w_0; threshold 3.841; lower endpoint 172.91
 swing,loss
 31.622776601683793,30.521464299845512
 34.04944926197731,29.251650032675094

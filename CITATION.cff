@@ -1,18 +1,15 @@
 cff-version: 1.2.0
 message: "If you use this code, please cite the manuscript and the archived software release."
-title: "Code for: Separating the sources of ultrasensitivity in a bacterial nitrogen-signaling cascade"
+title: "Code for: Quantifying the sources of ultrasensitivity in bacterial nitrogen signaling"
 type: software
 version: 1.0.0
-date-released: 2026-09-10
+date-released: 2026-09-13
 license: MIT
 authors:
   - family-names: Choi
     given-names: Yule
-repository-code: "https://github.com/<GITHUB_USER>/<REPOSITORY>"   # fill in at first push
-identifiers:
-  - type: doi
-    value: "10.5281/zenodo.<ZENODO_ID>"   # fill in when the release is archived
-    description: "Zenodo archive of the release"
+    email: 25-117@ksa.hs.kr
+repository-code: "https://github.com/choeyule-gif/nitrogen-signaling-ultrasensitivity"
 keywords:
   - bifunctional enzyme
   - ultrasensitivity
@@ -23,7 +20,7 @@ keywords:
   - GlnD
 preferred-citation:
   type: article
-  title: "Separating the sources of ultrasensitivity in a bacterial nitrogen-signaling cascade"
+  title: "Quantifying the sources of ultrasensitivity in bacterial nitrogen signaling"
   authors:
     - family-names: Choi
       given-names: Yule

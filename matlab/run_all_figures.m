@@ -1,4 +1,4 @@
-%RUN_ALL_FIGURES  Draw every panel of Fig 1-5 and S1-S5 Figs from ../figdata.
+%RUN_ALL_FIGURES  Draw quantitative main panels and S1-S5 Figs from ../figdata.
 %   Writes one vector PDF and one 300 dpi PNG per panel into ../figures.
 %   Usage (MATLAB R2020a or later):   cd matlab; run_all_figures
 %   The companion figure is drawn on its own:   Fig_ReF_companion

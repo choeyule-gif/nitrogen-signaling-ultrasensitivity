@@ -1,4 +1,4 @@
-# Fig 3A: the bounded fixed-exponent fits h = 1, 2, 3 as curves, on the grid of Fig3A_fit.csv
+# Fig 4A: the bounded fixed-exponent fits h = 1, 2, 3 as curves, on the grid of Fig3A_fit.csv
 glutamine_mM,fit_h1,fit_h2,fit_h3
 0.01,2.9603344575786403,2.970230380929841,2.8409838198055097
 0.010216739517934467,2.9594863585058104,2.970195137038718,2.840982935019724

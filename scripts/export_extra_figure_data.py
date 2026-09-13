@@ -20,7 +20,7 @@ def csvw(name, cols, comment):
 # ---- Fig 2A: the hyperbola nu*eta = 2.018 of the fitted first-layer coefficient
 nums = json.load(open(os.path.join(ROOT, "results", "revision_numbers.json"))); hfit = nums['fit']['h']
 nu = np.linspace(.55, 3, 300)
-csvw("Fig2A_measured_hyperbola.csv", dict(nu=nu, eta=hfit/nu), "Fig 2A: nu*eta = %.4f, the fitted first-layer coefficient; constrains the product only" % hfit)
+csvw("Fig2A_measured_hyperbola.csv", dict(nu=nu, eta=hfit/nu), "Fig 3A: nu*eta = %.4f, the fitted first-layer coefficient; constrains the product only" % hfit)
 # ---- S2 Fig: sup_u nu over three-site ladder shapes c = (1, 3a, 3b, 1)
 def nu_of(c, u):
     i = np.arange(len(c)); w = c*u**i; p = w/w.sum(); m = (i*p).sum(); v = ((i-m)**2*p).sum()
@@ -73,7 +73,7 @@ for w in ws:
 csvw("FigS4_ratio_vs_nu2.csv", rows, "S4 Fig: reported/calculated cascade coefficient against the downstream ladder factor nu_2 (twelve-site ladder K_i = (n-i+1)/i Khat2 w^(i-1)), Khat2 pinned to each reported midpoint")
 print("S4: nu2 from %.3f to %.3f; ratios at nu2~1.34: %s" % (rows['nu2'][0], rows['nu2'][-1], [round(rows['ratio_PII_%g' % p_][np.argmin(abs(np.array(rows['nu2'])-1.34))], 3) for p_ in PII]))
 
-# ---- Fig 3A: the bounded fixed-exponent fits as curves, on the grid of Fig3A_fit.csv
+# ---- Fig 4A: the bounded fixed-exponent fits as curves, on the grid of Fig3A_fit.csv
 xt, yt = digitised_titration()
 BOUNDS = ([0, 1.5, -8, .1], [1.5, 3, 5, 8])
 def hill(xx, q):
@@ -86,4 +86,4 @@ def fit_fixed(h):
     return np.r_[r.x, h]
 xx = np.logspace(-2, 1.25, 350)
 csvw("Fig3A_fixed_h_fits.csv", dict(glutamine_mM=xx, **{"fit_h%d" % h: hill(xx, fit_fixed(h)) for h in (1, 2, 3)}),
-     "Fig 3A: the bounded fixed-exponent fits h = 1, 2, 3 as curves, on the grid of Fig3A_fit.csv")
+     "Fig 4A: the bounded fixed-exponent fits h = 1, 2, 3 as curves, on the grid of Fig3A_fit.csv")

@@ -1,4 +1,4 @@
-# Fig 3B: residuals of the bounded fixed-exponent fits divided by sigma_hat = 0.0407 (h = 2 fit, 9 dof)
+# Fig 4B: residuals of the bounded fixed-exponent fits divided by sigma_hat = 0.0407 (h = 2 fit, 9 dof)
 glutamine_mM,r_h1,r_h2,r_h3
 0.02,1.185481959091021,0.053519082844692985,3.16915009553821
 0.1,5.264534843939264,-0.8109772943369128,0.7913815065802794

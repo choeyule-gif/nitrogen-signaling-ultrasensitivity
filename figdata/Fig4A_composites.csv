@@ -1,4 +1,4 @@
-# Fig 4A: calibrated composite responses normalised between their plateaus; midpoints at the reported cascade half-points
+# Fig 5A: calibrated composite responses normalised between their plateaus; midpoints at the reported cascade half-points
 glutamine_mM,Y_norm_PII_0.5,Y_norm_PII_5,Y_norm_PII_36
 0.01,4.794695515605463e-07,7.690921482080657e-07,3.947457376498599e-05
 0.010174634027476068,4.96918857849634e-07,7.970816636772165e-07,4.091111147326413e-05
