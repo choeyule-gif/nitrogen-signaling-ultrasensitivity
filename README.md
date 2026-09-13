@@ -1,5 +1,7 @@
 # Quantifying the sources of ultrasensitivity in bacterial nitrogen signaling
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22731768.svg)](https://doi.org/10.5281/zenodo.22731768)
+
 Code and data for
 
 > Choi Y. *Quantifying the sources of ultrasensitivity in bacterial nitrogen signaling.*
@@ -19,7 +21,7 @@ statement.
 
 **Repository:** <https://github.com/choeyule-gif/nitrogen-signaling-ultrasensitivity>
 
-**Archived release:** A version-specific Zenodo DOI will be added after the first GitHub release.
+**Archived release:** [v1.0.0 (DOI: 10.5281/zenodo.22731769)](https://doi.org/10.5281/zenodo.22731769). The [concept DOI 10.5281/zenodo.22731768](https://doi.org/10.5281/zenodo.22731768) always resolves to the latest archived version.
 
 ## Layout
 
