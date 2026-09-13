@@ -1,0 +1,91 @@
+{
+  "regenerated": true,
+  "steps": [
+    {
+      "command": [
+        "run_all.py"
+      ],
+      "exit_code": 0,
+      "seconds": 557.9467141628265
+    },
+    {
+      "command": [
+        "extras/matched_models/run.py"
+      ],
+      "exit_code": 0,
+      "seconds": 98.72667598724365
+    },
+    {
+      "command": [
+        "extras/finite_mechanism/run.py"
+      ],
+      "exit_code": 0,
+      "seconds": 3.8111791610717773
+    },
+    {
+      "command": [
+        "extras/regulatory_states/code/analyze.py"
+      ],
+      "exit_code": 0,
+      "seconds": 3.399807929992676
+    },
+    {
+      "command": [
+        "extras/robust_design/code/analyze.py"
+      ],
+      "exit_code": 0,
+      "seconds": 8.87796401977539
+    },
+    {
+      "command": [
+        "extras/closed_cascade/code/analyze.py"
+      ],
+      "exit_code": 0,
+      "seconds": 99.74632215499878
+    },
+    {
+      "command": [
+        "extras/closed_cascade/code/topology.py"
+      ],
+      "exit_code": 0,
+      "seconds": 16.04494309425354
+    },
+    {
+      "command": [
+        "extras/closed_cascade/code/total_input.py"
+      ],
+      "exit_code": 0,
+      "seconds": 4.194169998168945
+    },
+    {
+      "command": [
+        "extras/closed_cascade/code/verify_algebra.py"
+      ],
+      "exit_code": 0,
+      "seconds": 0.9402561187744141
+    },
+    {
+      "command": [
+        "tests/test_reproduce.py"
+      ],
+      "exit_code": 0,
+      "seconds": 0.0556640625
+    },
+    {
+      "command": [
+        "extras/matched_models/code/verify_final.py"
+      ],
+      "exit_code": 0,
+      "seconds": 0.6109251976013184
+    },
+    {
+      "command": [
+        "tests/test_extensions.py"
+      ],
+      "exit_code": 0,
+      "seconds": 5.045496940612793
+    }
+  ],
+  "completed": true,
+  "passed": true
+}

@@ -1,0 +1,22 @@
+{
+  "records": 156,
+  "lp_optimizations": 624,
+  "infeasible_point_ratios": 5,
+  "majority_fully_modified_certified": [
+    {
+      "strain": "WT",
+      "time_min": "-15",
+      "protein": "GlnK",
+      "estimator": "paired_peptide_fraction",
+      "pn_lo": 0.5152355302189271
+    },
+    {
+      "strain": "delta_glnB",
+      "time_min": "-5",
+      "protein": "GlnK",
+      "estimator": "paired_peptide_fraction",
+      "pn_lo": 0.5133222174211851
+    }
+  ],
+  "interpretation": "Bounds on latent oligomer fractions require the stated peptide observation/calibration model. They are not measurements of individual oligomer states. Simultaneous t intervals use source SE/n with no covariance estimate; low n can make intervals uninformative."
+}

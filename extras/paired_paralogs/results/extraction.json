@@ -1,0 +1,9 @@
+{
+  "source_doi": "10.6084/m9.figshare.4880003",
+  "article_doi": "10.1016/j.bpj.2017.04.012",
+  "source_sheet": "Sheet1",
+  "records": 352,
+  "units": "source copy/cell; conversion 0.00161 micromolar per copy/cell follows original model",
+  "uncertainty": "source SE and n retained; no replicate vectors or cross-observable covariance provided",
+  "note": "Workbook cell B2 prints 1.61 M per 1000 molecules, inconsistent with 1 fl. Published model and physical scale support 1.61 micromolar; preserve raw text and document conversion explicitly."
+}

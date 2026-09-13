@@ -1,0 +1,40 @@
+{
+  "random_feasible_cases": 10000,
+  "max_interval_violation": 0.0,
+  "synthetic_design_scenarios": [
+    {
+      "free_relation_error": 0,
+      "rho_interval": [
+        2.495726495726495,
+        3.626811594202899
+      ],
+      "bound_fraction_interval": [
+        0.4407106164383561,
+        0.5609198493813878
+      ]
+    },
+    {
+      "free_relation_error": 0.03,
+      "rho_interval": [
+        2.495726495726495,
+        3.626811594202899
+      ],
+      "bound_fraction_interval": [
+        0.41556698725117414,
+        0.5768454574068246
+      ]
+    },
+    {
+      "free_relation_error": 0.1,
+      "rho_interval": [
+        2.495726495726495,
+        3.626811594202899
+      ],
+      "bound_fraction_interval": [
+        0.34707646176911533,
+        0.6098630978798949
+      ]
+    }
+  ],
+  "interpretation": "Deterministic interval propagation. Synthetic values are not measured biology; confidence coverage requires joint input coverage."
+}

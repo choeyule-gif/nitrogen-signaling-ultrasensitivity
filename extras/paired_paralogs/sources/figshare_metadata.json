@@ -1,0 +1,208 @@
+{
+  "files": [
+    {
+      "id": 8171027,
+      "name": "model.txt",
+      "size": 117118,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/8171027",
+      "supplied_md5": "2ce2397b53a47253969f62384bf2f5a0",
+      "computed_md5": "2ce2397b53a47253969f62384bf2f5a0",
+      "mimetype": "text/plain"
+    },
+    {
+      "id": 8544976,
+      "name": "Data.xlsx",
+      "size": 52721,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/8544976",
+      "supplied_md5": "044af714f51f6e82e42bd09a01e13089",
+      "computed_md5": "044af714f51f6e82e42bd09a01e13089",
+      "mimetype": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+    }
+  ],
+  "folder_structure": {},
+  "authors": [
+    {
+      "id": 3927968,
+      "full_name": "Adam Gosztolai",
+      "first_name": "Adam",
+      "last_name": "Gosztolai",
+      "is_active": true,
+      "url_name": "Adam_Gosztolai",
+      "orcid_id": "0000-0002-0699-5825"
+    },
+    {
+      "id": 3928025,
+      "full_name": "J\u00f6rg Schumacher",
+      "first_name": "J\u00f6rg",
+      "last_name": "Schumacher",
+      "is_active": false,
+      "url_name": "_",
+      "orcid_id": ""
+    },
+    {
+      "id": 164700,
+      "full_name": "Volker Behrends",
+      "first_name": "Volker",
+      "last_name": "Behrends",
+      "is_active": false,
+      "url_name": "_",
+      "orcid_id": ""
+    },
+    {
+      "id": 93025,
+      "full_name": "Jacob G Bundy",
+      "first_name": "Jacob",
+      "last_name": "G Bundy",
+      "is_active": false,
+      "url_name": "Jacob_G_Bundy",
+      "orcid_id": ""
+    },
+    {
+      "id": 28569,
+      "full_name": "Martin Buck",
+      "first_name": "Martin",
+      "last_name": "Buck",
+      "is_active": false,
+      "url_name": "Martin_Buck",
+      "orcid_id": ""
+    },
+    {
+      "id": 55205,
+      "full_name": "Mauricio Barahona",
+      "first_name": "Mauricio",
+      "last_name": "Barahona",
+      "is_active": false,
+      "url_name": "Mauricio_Barahona",
+      "orcid_id": ""
+    },
+    {
+      "id": 3928028,
+      "full_name": "Franziska Heydenreich",
+      "first_name": "Franziska",
+      "last_name": "Heydenreich",
+      "is_active": false,
+      "url_name": "_",
+      "orcid_id": ""
+    },
+    {
+      "id": 95219,
+      "full_name": "Mark H Bennett",
+      "first_name": "Mark",
+      "last_name": "H Bennett",
+      "is_active": false,
+      "url_name": "Mark_H_Bennett",
+      "orcid_id": ""
+    }
+  ],
+  "custom_fields": [],
+  "figshare_url": "https://figshare.com/articles/dataset/Proteomic_metabolic_data_and_mathematical_model_of_nitrogen_assimilation/4880003",
+  "download_disabled": false,
+  "description": "Experimental data and mathematical model accompanying the paper 'GlnK facilitates the dynamic regulation of bacterial\nnitrogen assimilation' by Gosztolai et al. (2017) Biophys J.\u00a0<div><br></div><div>Data.xlsx contains concurrent\u00a0<i>in vivo</i> time-courses of metabolite, total protein and PTM protein concentrations in response to time-varying external ammonium levels.\u00a0</div><div><br></div><div>Model.txt contains the mathematical model in the paper in SBML language.</div>",
+  "funding": "BBSRC (BB/M011178/1), EPSRC (EP/N014529/1 and EP/I032223/1)",
+  "funding_list": [
+    {
+      "id": 188957,
+      "title": "BBSRC (BB/M011178/1), EPSRC (EP/N014529/1 and EP/I032223/1)",
+      "grant_code": "",
+      "funder_name": null,
+      "is_user_defined": 1
+    }
+  ],
+  "version": 3,
+  "status": "public",
+  "size": 220061,
+  "created_date": "2018-12-18T07:30:29Z",
+  "modified_date": "2023-06-01T05:23:23Z",
+  "is_public": true,
+  "is_confidential": false,
+  "is_metadata_record": false,
+  "confidential_reason": "",
+  "metadata_reason": "",
+  "license": {
+    "value": 1,
+    "name": "CC BY 4.0",
+    "url": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  "tags": [
+    "nitrogen assimilation pathway",
+    "Predictive models",
+    "proteomics experiments",
+    "post-translational modulation",
+    "glnbk",
+    "in vivo recording",
+    "Systems Biology",
+    "Proteomics and Intermolecular Interactions (excl. Medical Proteomics)"
+  ],
+  "keywords": [
+    "nitrogen assimilation pathway",
+    "Predictive models",
+    "proteomics experiments",
+    "post-translational modulation",
+    "glnbk",
+    "in vivo recording",
+    "Systems Biology",
+    "Proteomics and Intermolecular Interactions (excl. Medical Proteomics)"
+  ],
+  "categories": [
+    {
+      "id": 24175,
+      "title": "Systems biology",
+      "parent_id": 24133,
+      "path": "/24130/24133/24175",
+      "source_id": "310114",
+      "taxonomy_id": 100
+    },
+    {
+      "id": 24160,
+      "title": "Proteomics and intermolecular interactions (excl. medical proteomics)",
+      "parent_id": 24133,
+      "path": "/24130/24133/24160",
+      "source_id": "310109",
+      "taxonomy_id": 100
+    }
+  ],
+  "references": [
+    "http://biorxiv.org/content/early/2017/04/15/127662"
+  ],
+  "has_linked_file": false,
+  "citation": "Gosztolai, Adam; Schumacher, J\u00f6rg; Behrends, Volker; G Bundy, Jacob; Buck, Martin; Barahona, Mauricio; et al. (2018). Proteomic/metabolic data and mathematical model of nitrogen assimilation. figshare. Dataset. https://doi.org/10.6084/m9.figshare.4880003.v3",
+  "related_materials": [
+    {
+      "id": 15962093,
+      "identifier": "http://biorxiv.org/content/early/2017/04/15/127662",
+      "title": "",
+      "relation": "References",
+      "identifier_type": "URL",
+      "is_linkout": false,
+      "link": "http://biorxiv.org/content/early/2017/04/15/127662"
+    }
+  ],
+  "is_embargoed": false,
+  "embargo_date": null,
+  "embargo_type": "file",
+  "embargo_title": "",
+  "embargo_reason": "",
+  "embargo_options": [],
+  "id": 4880003,
+  "title": "Proteomic/metabolic data and mathematical model of nitrogen assimilation",
+  "doi": "10.6084/m9.figshare.4880003.v3",
+  "handle": "",
+  "url": "https://api.figshare.com/v2/articles/4880003",
+  "published_date": "2018-12-18T07:30:29Z",
+  "thumb": "",
+  "defined_type": 3,
+  "defined_type_name": "dataset",
+  "group_id": null,
+  "url_private_api": "https://api.figshare.com/v2/account/articles/4880003",
+  "url_public_api": "https://api.figshare.com/v2/articles/4880003",
+  "url_private_html": "https://figshare.com/account/articles/4880003",
+  "url_public_html": "https://figshare.com/articles/dataset/Proteomic_metabolic_data_and_mathematical_model_of_nitrogen_assimilation/4880003",
+  "timeline": {
+    "posted": "2018-12-18T07:30:29",
+    "firstOnline": "2018-12-18"
+  },
+  "resource_title": null,
+  "resource_doi": null
+}

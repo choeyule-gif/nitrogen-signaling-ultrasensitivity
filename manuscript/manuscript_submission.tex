@@ -598,7 +598,7 @@ The third result is a conditional measurement strategy. Resolve PII states to te
 
 \subsubsection*{State measurements target the ambiguity left by mean titrations}
 
-State distributions provide both an attribution measurement and a test of the assumed separable ladder. For a homogeneous positive ladder, adjacent-state contrasts satisfy
+State distributions provide both an attribution measurement and a test of the assumed separable ladder. The adjacent-state invariant below is the established distributive-modification invariant of Gunawardena \cite{r76}, applied here to distinguish specified ladder and population alternatives; it is not a new general theorem. For a homogeneous positive ladder, adjacent-state contrasts satisfy
 \[
 C_i(G):=\frac{p_{i-1}(G)p_{i+1}(G)}{p_i(G)^2}
 =\frac{c_{i-1}c_{i+1}}{c_i^2},\qquad i=1,\ldots,n-1. \tag{14}
@@ -636,6 +636,20 @@ With factor-two uncertainty in $K$, GlnD occupancy ranges overlap for $\lambda\l
 
 Occupancy assays retain a model-class limit: splitting a regulatory state into hidden active and inactive conformations can preserve both binding and target output (S27). Figure 11 therefore distinguishes its specified mechanism classes and nuisance ranges. Unrestricted microscopic identification requires additional observations or independently justified catalytic-state restrictions.
 
+\subsubsection*{A calibrated second paralog can report sequestration without identifying the GlnD switch}
+
+Paired GlnB and GlnK measurements offer a complementary observation strategy. Independent in vivo measurements report modified and unmodified peptides for both paralogs \cite{r7}; they do not resolve intact trimer distributions. Purified AmtB binds fully deuridylylated GlnK, with ATP and 2-oxoglutarate also controlling the interaction \cite{r77}. Consider stationary independent-site free ladders, an unsequestered GlnB reporter, a constant relative catalytic specificity $\rho$, and binding restricted to unmodified GlnK. If $q_B$ is the free GlnB modified-site fraction, $q_K$ the total GlnK modified-site fraction, and $s$ the bound GlnK trimer fraction, then
+\[
+ F_\rho(q_B)=\frac{\rho q_B}{1-q_B+\rho q_B},\qquad
+ q_K=(1-s)F_\rho(q_B),\qquad
+ s=1-\frac{q_K}{F_\rho(q_B)}.
+\]
+The common GlnD driving ratio cancels. This elementary identity supplies a conditional assay design rather than a new general invariant: a control without AmtB binding calibrates $\rho$ from the ratio of modification odds, provided relative specificities are unchanged. A defined reconstitution can control this condition more directly than a cellular deletion. Without that calibration, the two means do not identify $s$; unrestricted $\rho$ leaves only the generic bound $s\le1-q_K$.
+
+Monotonicity propagates bounded calibration and measurement errors to an interval for $s$. As a synthetic design example, control fractions $q_B\in[0.48,0.52]$, $q_K\in[0.73,0.77]$ imply $\rho\in[2.50,3.63]$. Assay fractions $q_B\in[0.48,0.52]$, $q_K\in[0.35,0.39]$ then imply $s\in[0.441,0.561]$. Allowing an additional absolute error of 0.10 in the free-pool relation widens the interval to $[0.347,0.610]$. These are deterministic synthetic ranges, not measurements or confidence intervals. Independent stationary-generator solutions verify the construction; 10,000 admissible synthetic configurations verify interval containment (S1 Data).
+
+The published time series motivates this design but does not establish its stationarity or specificity calibration. Its available means, SE and sample counts lack replicate-level covariance. We therefore retain the observations as an independent data source and do not interpret their separation as measured sequestration. Time-dependent modification, protein synthesis, reporter sequestration and altered free-site ladders must be controlled or bounded before the stationary reconstruction is applied.
+
 \section*{Discussion}
 
 Three conclusions organize the study. Complete target-state measurements can remain mechanistically ambiguous; protein conservation can bound the resulting differences in total readouts; and the unresolved ambiguity determines which complementary measurement is useful. Figures 7--8 construct the regulatory equivalences, Figs 9--10 establish their reaction and observation boundaries, and Fig 11 turns selected ambiguities into binding designs.
@@ -646,7 +660,7 @@ The second conclusion connects that ambiguity to experimental conditions. The pr
 
 The third conclusion makes measurement choice conditional on mechanism class. State-resolved PII addresses ladder and population alternatives; target-free GlnD occupancy and normalized GlnE binding address the regulatory families. Nuisance profiling separates alternatives that require better precision from those requiring another observable. Hidden conformations can preserve both target output and ligand occupancy, so these assays do not uniquely identify an unrestricted microscopic mechanism.
 
-These results remain a conditional theory of nitrogen signaling. Partly modified PII recognition, GS interactions, and complex affinities are specified scenarios. Modification-count ladders do not resolve spatial arrangements of modified sites; local cooperativity in a distinct CTD phosphorylation system illustrates why such arrangements can matter \cite{r41}. Glutamine:2-oxoglutarate regulation of GlnD in \textit{Herbaspirillum seropedicae} further motivates controlling both inputs, but is not an \textit{E. coli} parameter constraint \cite{r75}. ATP/ADP, UTP, 2-oxoglutarate, metabolism, and expression feedback are not dynamically modeled; bound-enzyme regulatory exchange can alter the topology. Published coordinates lack replicate-level errors, and historical assays varied GlnD as well as PII. Noise models and nuisance ranges therefore require experimental calibration. Selected integrations and root searches verify realizations, not global convergence or uniqueness. The study's practical output is a set of falsifiable observation choices with explicit validity conditions.
+These results remain a conditional theory of nitrogen signaling. Partly modified PII recognition, GS interactions, and complex affinities are specified scenarios. Modification-count ladders do not resolve spatial arrangements of modified sites; local cooperativity in a distinct CTD phosphorylation system illustrates why such arrangements can matter \cite{r41}. Glutamine:2-oxoglutarate regulation of GlnD in \textit{Herbaspirillum seropedicae} further motivates controlling both inputs, but is not an \textit{E. coli} parameter constraint \cite{r75}. The core equivalence analysis does not dynamically model ATP/ADP, UTP, 2-oxoglutarate, metabolism, or expression feedback; bound-enzyme regulatory exchange can alter the topology. Published coordinates lack replicate-level errors, and historical assays varied GlnD as well as PII. Noise models and nuisance ranges therefore require experimental calibration. Selected integrations and root searches verify realizations, not global convergence or uniqueness. The study's practical output is a set of falsifiable observation choices with explicit validity conditions.
 
 \section*{Materials and methods}
 
@@ -721,9 +735,13 @@ For experimental design, nuisance ranges vary independently under the two hypoth
 
 The new reaction generator enumerates regulatory binding, dissociation, and catalytic release with explicit stoichiometry. Complex balances reduce the buffered-input steady state to two free-protein pool balances; no time-scale approximation is used to verify these stationary states. We checked 8,200 paired conditions, 60 randomized realizations with two root initializations, and three independent BDF integrations of the full reaction system. Additional sweeps examined 861 silent-state comparisons, 360 productive-route compensation conditions, 90 recognition-weight conditions, and 62 total-glutamine comparisons. S24--S27 provide proofs, reaction definitions, parameter provenance, and limitations. All new parameters beyond the transported GlnD fit and stated GlnE scales are illustrative; no additional experimental fit is claimed.
 
+\subsection*{Independent paralog data and interval reconstruction}
+
+The unchanged Gosztolai et al. workbook and source model were obtained from \href{https://doi.org/10.6084/m9.figshare.4880003}{doi:10.6084/m9.figshare.4880003}. Extraction retains source cells, means, SE and sample counts. The paired-peptide fraction is modified divided by modified plus unmodified signal; it differs from normalization by a separately measured total. SE propagation uses a conservative first-order bound because cross-assay covariance is unavailable. Neither this approximation nor marginal intervals establish joint confidence coverage. Source copy-per-cell values are retained; the original model's concentration scale corresponds to $0.00161\,\mu$M per copy per cell. The workbook's inconsistent printed unit is documented with the extraction. Paired-reporter calculations solve five-state generators independently of the closed form. Interval calculations use monotonic endpoint evaluation and include an explicitly specified free-relation error; its magnitude requires external justification. A fresh environment regenerated all pre-existing analysis layers and passed the 22 baseline checks, matched-model verification and three extension test groups. The paired-paralog checks are supplied separately through the integrated test entry point.
+
 \section*{Data and code availability}
 
-No new experimental data were generated. Digitized published coordinates, cascade summary values, parameter records, prediction grids, and analysis scripts are supplied as S1 Data. The complete research code, including matched-model, regulatory-state, protein-conserving cascade and measurement-design extensions, is publicly released as version 1.1.0 at \href{https://github.com/choeyule-gif/nitrogen-signaling-ultrasensitivity/releases/tag/v1.1.0}{GitHub release v1.1.0}. The earlier baseline version 1.0.0 is separately archived at \href{https://doi.org/10.5281/zenodo.22731769}{doi:10.5281/zenodo.22731769}; that baseline archive does not contain the subsequent extensions. S1 Data contains the analysis source and numerical data needed to reproduce the current study.
+No new experimental data were generated. Digitized published coordinates, cascade summary values, parameter records, prediction grids, and analysis scripts are supplied as S1 Data. The complete research code, including matched-model, regulatory-state, protein-conserving cascade and measurement-design extensions, is publicly released as version 1.1.0 at \href{https://github.com/choeyule-gif/nitrogen-signaling-ultrasensitivity/releases/tag/v1.1.0}{GitHub release v1.1.0}. Version 1.1.0 is archived at \href{https://doi.org/10.5281/zenodo.22735182}{doi:10.5281/zenodo.22735182}. The paired-paralog extension added in this revision is not part of that archived version and is retained in the working revision pending a new release. The earlier baseline version 1.0.0 is separately archived at \href{https://doi.org/10.5281/zenodo.22731769}{doi:10.5281/zenodo.22731769}; that baseline archive does not contain the subsequent extensions. S1 Data contains the analysis source and numerical data needed to reproduce the current study.
 
 \section*{Acknowledgments}
 
@@ -744,67 +762,72 @@ The author declares no competing interests.
 
 \begin{singlespace}
 \begin{thebibliography}{99}
-\bibitem{r1} Goldbeter A, Koshland DE. An amplified sensitivity arising from covalent modification in biological systems. Proc Natl Acad Sci USA. 1981;78:6840--6844. \href{https://doi.org/10.1073/pnas.78.11.6840}{doi:10.1073/pnas.78.11.6840}.
+\bibitem{r1}Goldbeter A, Koshland DE. An amplified sensitivity arising from covalent modification in biological systems. Proc Natl Acad Sci USA. 1981;78:6840--6844. \href{https://doi.org/10.1073/pnas.78.11.6840}{doi:10.1073/pnas.78.11.6840}.
 
-\bibitem{r2} Ferrell JE, Ha SH. Ultrasensitivity part III: cascades, bistable switches, and oscillators. Trends Biochem Sci. 2014;39(12):612-618. \href{https://doi.org/10.1016/j.tibs.2014.10.002}{doi:10.1016/j.tibs.2014.10.002}.
+\bibitem{r2}Ferrell JE, Ha SH. Ultrasensitivity part III: cascades, bistable switches, and oscillators. Trends Biochem Sci. 2014;39(12):612-618. \href{https://doi.org/10.1016/j.tibs.2014.10.002}{doi:10.1016/j.tibs.2014.10.002}.
 
-\bibitem{r5} van Heeswijk WC, Westerhoff HV, Boogerd FC. Nitrogen Assimilation in Escherichia coli: Putting Molecular Data into a Systems Perspective. Microbiol Mol Biol Rev. 2013;77(4):628-695. \href{https://doi.org/10.1128/mmbr.00025-13}{doi:10.1128/mmbr.00025-13}.
+\bibitem{r5}van Heeswijk WC, Westerhoff HV, Boogerd FC. Nitrogen Assimilation in Escherichia coli: Putting Molecular Data into a Systems Perspective. Microbiol Mol Biol Rev. 2013;77(4):628-695. \href{https://doi.org/10.1128/mmbr.00025-13}{doi:10.1128/mmbr.00025-13}.
 
-\bibitem{r6} Ninfa AJ, Atkinson MR. PII signal transduction proteins. Trends Microbiol. 2000;8:172--179. \href{https://doi.org/10.1016/s0966-842x(00)01709-1}{doi:10.1016/s0966-842x(00)01709-1}.
+\bibitem{r6}Ninfa AJ, Atkinson MR. PII signal transduction proteins. Trends Microbiol. 2000;8:172--179. \href{https://doi.org/10.1016/s0966-842x(00)01709-1}{doi:10.1016/s0966-842x(00)01709-1}.
 
-\bibitem{r7} Gosztolai A, Schumacher J, Behrends V, Bundy JG, Heydenreich F, Bennett MH, et al. GlnK Facilitates the Dynamic Regulation of Bacterial Nitrogen Assimilation. Biophys J. 2017;112:2219--2230. \href{https://doi.org/10.1016/j.bpj.2017.04.012}{doi:10.1016/j.bpj.2017.04.012}.
+\bibitem{r7}Gosztolai A, Schumacher J, Behrends V, Bundy JG, Heydenreich F, Bennett MH, et al. GlnK Facilitates the Dynamic Regulation of Bacterial Nitrogen Assimilation. Biophys J. 2017;112:2219--2230. \href{https://doi.org/10.1016/j.bpj.2017.04.012}{doi:10.1016/j.bpj.2017.04.012}.
 
-\bibitem{r12} Jiang P, Ninfa AJ. A Source of Ultrasensitivity in the Glutamine Response of the Bicyclic Cascade System Controlling Glutamine Synthetase Adenylylation State and Activity in Escherichia coli. Biochemistry. 2011;50(50):10929-10940. \href{https://doi.org/10.1021/bi201410x}{doi:10.1021/bi201410x}.
+\bibitem{r12}Jiang P, Ninfa AJ. A Source of Ultrasensitivity in the Glutamine Response of the Bicyclic Cascade System Controlling Glutamine Synthetase Adenylylation State and Activity in Escherichia coli. Biochemistry. 2011;50(50):10929-10940. \href{https://doi.org/10.1021/bi201410x}{doi:10.1021/bi201410x}.
 
-\bibitem{r13} Ventura AC, Jiang P, Van Wassenhove L, Del Vecchio D, Merajver SD, Ninfa AJ. Signaling properties of a covalent modification cycle are altered by a downstream target. Proc Natl Acad Sci U S A. 2010;107(22):10032-10037. \href{https://doi.org/10.1073/pnas.0913815107}{doi:10.1073/pnas.0913815107}.
+\bibitem{r13}Ventura AC, Jiang P, Van Wassenhove L, Del Vecchio D, Merajver SD, Ninfa AJ. Signaling properties of a covalent modification cycle are altered by a downstream target. Proc Natl Acad Sci U S A. 2010;107(22):10032-10037. \href{https://doi.org/10.1073/pnas.0913815107}{doi:10.1073/pnas.0913815107}.
 
-\bibitem{r9} Mutalik VK, Shah P, Venkatesh KV. Allosteric Interactions and Bifunctionality Make the Response of Glutamine Synthetase Cascade System of Escherichia coli Robust and Ultrasensitive. J Biol Chem. 2003;278(29):26327-26332. \href{https://doi.org/10.1074/jbc.m300129200}{doi:10.1074/jbc.m300129200}.
+\bibitem{r9}Mutalik VK, Shah P, Venkatesh KV. Allosteric Interactions and Bifunctionality Make the Response of Glutamine Synthetase Cascade System of Escherichia coli Robust and Ultrasensitive. J Biol Chem. 2003;278(29):26327-26332. \href{https://doi.org/10.1074/jbc.m300129200}{doi:10.1074/jbc.m300129200}.
 
-\bibitem{r10} Bruggeman FJ, Boogerd FC, Westerhoff HV. The multifarious short-term regulation of ammonium assimilation of Escherichia coli: dissection using an in silico replica. FEBS J. 2005;272(8):1965-1985. \href{https://doi.org/10.1111/j.1742-4658.2005.04626.x}{doi:10.1111/j.1742-4658.2005.04626.x}.
+\bibitem{r10}Bruggeman FJ, Boogerd FC, Westerhoff HV. The multifarious short-term regulation of ammonium assimilation of Escherichia coli: dissection using an in silico replica. FEBS J. 2005;272(8):1965-1985. \href{https://doi.org/10.1111/j.1742-4658.2005.04626.x}{doi:10.1111/j.1742-4658.2005.04626.x}.
 
-\bibitem{r40} Ortega F, Ehrenberg M, Acerenza L, Westerhoff HV, Mas F, Cascante M. Sensitivity Analysis of Metabolic Cascades Catalyzed by Bifunctional Enzymes. Mol Biol Rep. 2002;29(1-2):211-215. \href{https://doi.org/10.1023/a:1020334014497}{doi:10.1023/a:1020334014497}.
+\bibitem{r40}Ortega F, Ehrenberg M, Acerenza L, Westerhoff HV, Mas F, Cascante M. Sensitivity Analysis of Metabolic Cascades Catalyzed by Bifunctional Enzymes. Mol Biol Rep. 2002;29(1-2):211-215. \href{https://doi.org/10.1023/a:1020334014497}{doi:10.1023/a:1020334014497}.
 
-\bibitem{r46} Ortega F, Acerenza L, Westerhoff HV, Mas F, Cascante M. Product dependence and bifunctionality compromise the ultrasensitivity of signal transduction cascades. Proc Natl Acad Sci USA. 2002;99:1170--1175. \href{https://doi.org/10.1073/pnas.022267399}{doi:10.1073/pnas.022267399}.
+\bibitem{r46}Ortega F, Acerenza L, Westerhoff HV, Mas F, Cascante M. Product dependence and bifunctionality compromise the ultrasensitivity of signal transduction cascades. Proc Natl Acad Sci USA. 2002;99:1170--1175. \href{https://doi.org/10.1073/pnas.022267399}{doi:10.1073/pnas.022267399}.
 
-\bibitem{r66} Straube R. Sensitivity and Robustness in Covalent Modification Cycles with a Bifunctional Converter Enzyme. Biophys J. 2013;105(8):1925-1933. \href{https://doi.org/10.1016/j.bpj.2013.09.010}{doi:10.1016/j.bpj.2013.09.010}.
+\bibitem{r66}Straube R. Sensitivity and Robustness in Covalent Modification Cycles with a Bifunctional Converter Enzyme. Biophys J. 2013;105(8):1925-1933. \href{https://doi.org/10.1016/j.bpj.2013.09.010}{doi:10.1016/j.bpj.2013.09.010}.
 
-\bibitem{r67} Straube R. Reciprocal Regulation as a Source of Ultrasensitivity in Two-Component Systems with a Bifunctional Sensor Kinase. PLoS Comput Biol. 2014;10(5):e1003614. \href{https://doi.org/10.1371/journal.pcbi.1003614}{doi:10.1371/journal.pcbi.1003614}.
+\bibitem{r67}Straube R. Reciprocal Regulation as a Source of Ultrasensitivity in Two-Component Systems with a Bifunctional Sensor Kinase. PLoS Comput Biol. 2014;10(5):e1003614. \href{https://doi.org/10.1371/journal.pcbi.1003614}{doi:10.1371/journal.pcbi.1003614}.
 
-\bibitem{r36} Jiang P, Zhang Y, Atkinson MR, Ninfa AJ. The Robustness of the Escherichia coli Signal-Transducing UTase/UR-PII Covalent Modification Cycle to Variation in the PII Concentration Requires Very Strong Inhibition of the UTase Activity of UTase/UR by Glutamine. Biochemistry. 2012;51(45):9032-9044. \href{https://doi.org/10.1021/bi3005736}{doi:10.1021/bi3005736}.
+\bibitem{r36}Jiang P, Zhang Y, Atkinson MR, Ninfa AJ. The Robustness of the Escherichia coli Signal-Transducing UTase/UR-PII Covalent Modification Cycle to Variation in the PII Concentration Requires Very Strong Inhibition of the UTase Activity of UTase/UR by Glutamine. Biochemistry. 2012;51(45):9032-9044. \href{https://doi.org/10.1021/bi3005736}{doi:10.1021/bi3005736}.
 
-\bibitem{r4} Adair GS, Bock AV, Field H Jr. The hemoglobin system: VI. The oxygen dissociation curve of hemoglobin. J Biol Chem. 1925;63(2):529--545. \href{https://doi.org/10.1016/S0021-9258(18)85018-9}{doi:10.1016/S0021-9258(18)85018-9}.
+\bibitem{r4}Adair GS, Bock AV, Field H Jr. The hemoglobin system: VI. The oxygen dissociation curve of hemoglobin. J Biol Chem. 1925;63(2):529--545. \href{https://doi.org/10.1016/S0021-9258(18)85018-9}{doi:10.1016/S0021-9258(18)85018-9}.
 
-\bibitem{r22} Thomson M, Gunawardena J. The rational parameterisation theorem for multisite post-translational modification systems. J Theor Biol. 2009;261:626--636. \href{https://doi.org/10.1016/j.jtbi.2009.09.003}{doi:10.1016/j.jtbi.2009.09.003}.
+\bibitem{r22}Thomson M, Gunawardena J. The rational parameterisation theorem for multisite post-translational modification systems. J Theor Biol. 2009;261:626--636. \href{https://doi.org/10.1016/j.jtbi.2009.09.003}{doi:10.1016/j.jtbi.2009.09.003}.
 
-\bibitem{r23} Feliu E, Wiuf C. Variable elimination in post-translational modification reaction networks with mass-action kinetics. J Math Biol. 2013;66(1-2):281-310. \href{https://doi.org/10.1007/s00285-012-0510-4}{doi:10.1007/s00285-012-0510-4}.
+\bibitem{r23}Feliu E, Wiuf C. Variable elimination in post-translational modification reaction networks with mass-action kinetics. J Math Biol. 2013;66(1-2):281-310. \href{https://doi.org/10.1007/s00285-012-0510-4}{doi:10.1007/s00285-012-0510-4}.
 
-\bibitem{r24} Feliu E, Wiuf C. Variable Elimination in Chemical Reaction Networks with Mass-Action Kinetics. SIAM J Appl Math. 2012;72:959--981. \href{https://doi.org/10.1137/110847305}{doi:10.1137/110847305}.
+\bibitem{r24}Feliu E, Wiuf C. Variable Elimination in Chemical Reaction Networks with Mass-Action Kinetics. SIAM J Appl Math. 2012;72:959--981. \href{https://doi.org/10.1137/110847305}{doi:10.1137/110847305}.
 
-\bibitem{r25} Xu Y, Gunawardena J. Realistic enzymology for post-translational modification: Zero-order ultrasensitivity revisited. J Theor Biol. 2012;311:139--152. \href{https://doi.org/10.1016/j.jtbi.2012.07.012}{doi:10.1016/j.jtbi.2012.07.012}.
+\bibitem{r25}Xu Y, Gunawardena J. Realistic enzymology for post-translational modification: Zero-order ultrasensitivity revisited. J Theor Biol. 2012;311:139--152. \href{https://doi.org/10.1016/j.jtbi.2012.07.012}{doi:10.1016/j.jtbi.2012.07.012}.
 
-\bibitem{r26} Abeliovich H. An Empirical Extremum Principle for the Hill Coefficient in Ligand-Protein Interactions Showing Negative Cooperativity. Biophys J. 2005;89:76--79. \href{https://doi.org/10.1529/biophysj.105.060194}{doi:10.1529/biophysj.105.060194}.
+\bibitem{r26}Abeliovich H. An Empirical Extremum Principle for the Hill Coefficient in Ligand-Protein Interactions Showing Negative Cooperativity. Biophys J. 2005;89:76--79. \href{https://doi.org/10.1529/biophysj.105.060194}{doi:10.1529/biophysj.105.060194}.
 
-\bibitem{r27} Briggs WE. Cooperativity and extrema of the Hill slope for symmetric protein-ligand binding polynomials. J Theor Biol. 1984;108(1):77-83. \href{https://doi.org/10.1016/s0022-5193(84)80170-8}{doi:10.1016/s0022-5193(84)80170-8}.
+\bibitem{r27}Briggs WE. Cooperativity and extrema of the Hill slope for symmetric protein-ligand binding polynomials. J Theor Biol. 1984;108(1):77-83. \href{https://doi.org/10.1016/s0022-5193(84)80170-8}{doi:10.1016/s0022-5193(84)80170-8}.
 
-\bibitem{r70} Silk D, Kirk PDW, Barnes CP, Toni T, Stumpf MPH. Model Selection in Systems Biology Depends on Experimental Design. PLoS Comput Biol. 2014;10(6):e1003650. \href{https://doi.org/10.1371/journal.pcbi.1003650}{doi:10.1371/journal.pcbi.1003650}.
+\bibitem{r70}Silk D, Kirk PDW, Barnes CP, Toni T, Stumpf MPH. Model Selection in Systems Biology Depends on Experimental Design. PLoS Comput Biol. 2014;10(6):e1003650. \href{https://doi.org/10.1371/journal.pcbi.1003650}{doi:10.1371/journal.pcbi.1003650}.
 
-\bibitem{r72} Castro M, de Boer RJ. Testing structural identifiability by a simple scaling method. PLoS Comput Biol. 2020;16(11):e1008248. \href{https://doi.org/10.1371/journal.pcbi.1008248}{doi:10.1371/journal.pcbi.1008248}.
+\bibitem{r72}Castro M, de Boer RJ. Testing structural identifiability by a simple scaling method. PLoS Comput Biol. 2020;16(11):e1008248. \href{https://doi.org/10.1371/journal.pcbi.1008248}{doi:10.1371/journal.pcbi.1008248}.
 
-\bibitem{r73} Villaverde AF, Massonis G. On testing structural identifiability by a simple scaling method: Relying on scaling symmetries can be misleading. PLoS Comput Biol. 2021;17(10):e1009032. \href{https://doi.org/10.1371/journal.pcbi.1009032}{doi:10.1371/journal.pcbi.1009032}.
+\bibitem{r73}Villaverde AF, Massonis G. On testing structural identifiability by a simple scaling method: Relying on scaling symmetries can be misleading. PLoS Comput Biol. 2021;17(10):e1009032. \href{https://doi.org/10.1371/journal.pcbi.1009032}{doi:10.1371/journal.pcbi.1009032}.
 
-\bibitem{r18} Zhang Y, Pohlmann EL, Serate J, Conrad MC, Roberts GP. Mutagenesis and Functional Characterization of the Four Domains of GlnD, a Bifunctional Nitrogen Sensor Protein. J Bacteriol. 2010;192(11):2711-2721. \href{https://doi.org/10.1128/jb.01674-09}{doi:10.1128/jb.01674-09}.
+\bibitem{r18}Zhang Y, Pohlmann EL, Serate J, Conrad MC, Roberts GP. Mutagenesis and Functional Characterization of the Four Domains of GlnD, a Bifunctional Nitrogen Sensor Protein. J Bacteriol. 2010;192(11):2711-2721. \href{https://doi.org/10.1128/jb.01674-09}{doi:10.1128/jb.01674-09}.
 
-\bibitem{r17} Jiang P, Peliska JA, Ninfa AJ. Enzymological Characterization of the Signal-Transducing Uridylyltransferase/Uridylyl-Removing Enzyme (EC 2.7.7.59) of Escherichia coli and Its Interaction with the PII Protein. Biochemistry. 1998;37(37):12782-12794. \href{https://doi.org/10.1021/bi980667m}{doi:10.1021/bi980667m}.
+\bibitem{r17}Jiang P, Peliska JA, Ninfa AJ. Enzymological Characterization of the Signal-Transducing Uridylyltransferase/Uridylyl-Removing Enzyme (EC 2.7.7.59) of Escherichia coli and Its Interaction with the PII Protein. Biochemistry. 1998;37(37):12782-12794. \href{https://doi.org/10.1021/bi980667m}{doi:10.1021/bi980667m}.
 
-\bibitem{r51} Grant GA. The ACT Domain: A Small Molecule Binding Domain and Its Role as a Common Regulatory Element. J Biol Chem. 2006;281:33825--33829. \href{https://doi.org/10.1074/jbc.r600024200}{doi:10.1074/jbc.r600024200}.
+\bibitem{r51}Grant GA. The ACT Domain: A Small Molecule Binding Domain and Its Role as a Common Regulatory Element. J Biol Chem. 2006;281:33825--33829. \href{https://doi.org/10.1074/jbc.r600024200}{doi:10.1074/jbc.r600024200}.
 
-\bibitem{r71} Jiang P, Mayo AE, Ninfa AJ. Escherichia coli glutamine synthetase adenylyltransferase (ATase, EC 2.7.7.49): kinetic characterization of regulation by PII, PII-UMP, glutamine, and alpha-ketoglutarate. Biochemistry. 2007;46:4133--4146. \href{https://doi.org/10.1021/bi0620510}{doi:10.1021/bi0620510}.
+\bibitem{r71}Jiang P, Mayo AE, Ninfa AJ. Escherichia coli glutamine synthetase adenylyltransferase (ATase, EC 2.7.7.49): kinetic characterization of regulation by PII, PII-UMP, glutamine, and alpha-ketoglutarate. Biochemistry. 2007;46:4133--4146. \href{https://doi.org/10.1021/bi0620510}{doi:10.1021/bi0620510}.
 
-\bibitem{r41} Callenbach A, Dorešić D, Düster R, Nakonecnij V, Dudkin E, Geyer M, et al. Quantitative modelling of P-TEFb mediated CTD phosphorylation identifies local cooperativity. PLoS Comput Biol. 2026;22(7):e1014531. \href{https://doi.org/10.1371/journal.pcbi.1014531}{doi:10.1371/journal.pcbi.1014531}.
+\bibitem{r76}Gunawardena J. Distributivity and processivity in multisite phosphorylation can be distinguished through steady-state invariants. Biophys J. 2007;93(11):3828--3834. \href{https://doi.org/10.1529/biophysj.107.110866}{doi:10.1529/biophysj.107.110866}.
 
-\bibitem{r75} Emori MT, Tomazini LF, Souza EM, Pedrosa FO, Chubatsu LS, Oliveira MAS. The deuridylylation activity of Herbaspirillum seropedicae GlnD protein is regulated by the glutamine:2-oxoglutarate ratio. Biochim Biophys Acta Proteins Proteom. 2018;1866(12):1216--1223. \href{https://doi.org/10.1016/j.bbapap.2018.09.009}{doi:10.1016/j.bbapap.2018.09.009}.
+\bibitem{r77}Durand A, Merrick M. In vitro analysis of the Escherichia coli AmtB-GlnK complex reveals a stoichiometric interaction and sensitivity to ATP and 2-oxoglutarate. J Biol Chem. 2006;281(40):29558--29567. \href{https://doi.org/10.1074/jbc.M602477200}{doi:10.1074/jbc.M602477200}.
 
-\bibitem{r74} Raue A, Kreutz C, Maiwald T, Bachmann J, Schilling M, Klingm{\"u}ller U, et al. Structural and practical identifiability analysis of partially observed dynamical models by exploiting the profile likelihood. Bioinformatics. 2009;25(15):1923--1929. \href{https://doi.org/10.1093/bioinformatics/btp358}{doi:10.1093/bioinformatics/btp358}.
+\bibitem{r41}Callenbach A, Dorešić D, Düster R, Nakonecnij V, Dudkin E, Geyer M, et al. Quantitative modelling of P-TEFb mediated CTD phosphorylation identifies local cooperativity. PLoS Comput Biol. 2026;22(7):e1014531. \href{https://doi.org/10.1371/journal.pcbi.1014531}{doi:10.1371/journal.pcbi.1014531}.
+
+\bibitem{r75}Emori MT, Tomazini LF, Souza EM, Pedrosa FO, Chubatsu LS, Oliveira MAS. The deuridylylation activity of Herbaspirillum seropedicae GlnD protein is regulated by the glutamine:2-oxoglutarate ratio. Biochim Biophys Acta Proteins Proteom. 2018;1866(12):1216--1223. \href{https://doi.org/10.1016/j.bbapap.2018.09.009}{doi:10.1016/j.bbapap.2018.09.009}.
+
+\bibitem{r74}Raue A, Kreutz C, Maiwald T, Bachmann J, Schilling M, Klingm{\"u}ller U, et al. Structural and practical identifiability analysis of partially observed dynamical models by exploiting the profile likelihood. Bioinformatics. 2009;25(15):1923--1929. \href{https://doi.org/10.1093/bioinformatics/btp358}{doi:10.1093/bioinformatics/btp358}.
+
 \end{thebibliography}
 \end{singlespace}
 

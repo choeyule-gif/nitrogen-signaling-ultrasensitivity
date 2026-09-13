@@ -1,0 +1,30 @@
+[
+  {
+    "lam": 1.0,
+    "max_BDF_LSODA_difference": 7.498760523638737e-08,
+    "LSODA": {
+      "min_state": -2.6184004855931153e-20,
+      "mass_error": 4.107825191113079e-15,
+      "max_bound": 0.5738111708118372
+    },
+    "BDF": {
+      "min_state": 0.0,
+      "mass_error": 2.220446049250313e-15,
+      "max_bound": 0.573811095824232
+    }
+  },
+  {
+    "lam": 4.0,
+    "max_BDF_LSODA_difference": 1.0352580903649766e-08,
+    "LSODA": {
+      "min_state": 2.0427419097453086e-21,
+      "mass_error": 1.5543122344752192e-15,
+      "max_bound": 0.5704406933382008
+    },
+    "BDF": {
+      "min_state": 0.0,
+      "mass_error": 1.1102230246251565e-15,
+      "max_bound": 0.5704406949900109
+    }
+  }
+]
