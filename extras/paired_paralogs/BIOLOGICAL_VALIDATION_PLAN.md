@@ -24,3 +24,11 @@ First determine a no-binding calibration curve over the intended input range. Us
 Disjoint intervals reject the jointly specified calibration/observation assumptions. Overlap establishes compatibility at those conditions, not universal mechanistic correctness. Multiple held-out input settings are needed to examine transferability. Calibration controls, selectivity measurements and validation occupancy measurements have distinct roles and should not be reused as if independent evidence.
 
 No new wet-laboratory measurements are present in this repository. The current result is a better specified, less restrictive testable assay and a documented route to biological validation, not completed biological validation.
+
+## Published perturbation evidence for the observation limitation
+
+Radchenko MV, Thornton J, Merrick M (2014). Association and dissociation of the GlnK–AmtB complex in response to cellular nitrogen status can occur in the absence of GlnK post-translational modification. Frontiers in Microbiology 5:731. https://doi.org/10.3389/fmicb.2014.00731
+
+Figure 3 reports changing membrane association of unmodifiable GlnK Y51A after ammonium shock, despite unchanged modification state. Native PAGE and membrane Western blots were repeated three times. The methods specify 5–10 micrograms of membrane protein per lane. These observations provide a biological example of modification state failing to determine partition. They do not supply calibrated absolute occupancy or a matched GlnB reporter curve, so they cannot validate the quantitative reconstruction. No band intensities have been converted into absolute sequestration fractions here.
+
+Coutts et al. (2002), *Membrane sequestration of the signal transduction protein GlnK by the ammonium transporter AmtB*, https://pmc.ncbi.nlm.nih.gov/articles/PMC125854/, additionally reports membrane-associated modified GlnK under some preparation conditions and GlnB association when GlnK is absent. This cautions against treating either strict modification selectivity or a universally free GlnB reporter as a condition-independent fact. The bounded-departure formulation is appropriate only when those bounds have experimental justification.
