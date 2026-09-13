@@ -29,4 +29,4 @@ The source DOI is 10.6084/m9.figshare.4880003. Cell-level provenance, mean/SE/n 
 
 ## Manuscript and packaging
 
-The working main manuscript currently has 11 figures; the mapping is in README.md. Final compression and a synchronized submission ZIP are pending. Do not use the old release package as the revised manuscript. Compile the current LaTeX sources twice with pdfLaTeX; upload main figure files separately according to the journal's submission workflow. Archive v1.1.0 has DOI 10.5281/zenodo.22735182 and does not contain the new paired-paralog extension.
+The working main manuscript has five main figures and 17 supporting figures; the mapping is in README.md. Extended analyses are preserved in S2 Appendix. A synchronized working submission ZIP is built separately from the released archive. Do not use the old release package as the revised manuscript. Compile the current LaTeX sources twice with pdfLaTeX; upload main figure files separately according to the journal's submission workflow. Archive v1.1.0 has DOI 10.5281/zenodo.22735182 and does not contain the new paired-paralog extension.

@@ -1,4 +1,4 @@
-# Discriminating mechanisms of ultrasensitivity in bacterial nitrogen signaling
+# Mechanistic equivalence and measurement design in models of bacterial nitrogen signaling
 
 Code, numerical outputs and manuscript sources for Yule Choi's nitrogen-signaling study. This is a conditional analysis of mechanistic equivalence and measurement design; the calculations do not establish a unique native GlnD–PII–GlnE–GS mechanism.
 
@@ -14,6 +14,8 @@ python tests/run_research_suite.py --regenerate
 ```
 
 The command regenerates the baseline, matched-model, finite-mechanism, regulatory-state, robust-design and closed-cascade numerical layers and runs their checks, followed by the paired-reporter checks. Run without `--regenerate` to check saved baseline results while freshly solving extension identities. See `REPRODUCIBILITY.md` for scope and independent-data extraction. A passing calculation verifies its stated model, not physiological truth or global parameter optimality.
+
+Build the full current S1 Data archive after regeneration with `python scripts/package_research_data.py`. The older `scripts/make_s1_data.py` called by the baseline runner produces a baseline export folder only; it is not the submission archive.
 
 ## Research layout
 
@@ -32,6 +34,16 @@ The command regenerates the baseline, matched-model, finite-mechanism, regulator
 
 ## Current figure mapping
 
-The working manuscript still contains 11 main figures pending compression. Figure 1 is the author's pathway diagram. Figure 2 covers architecture and ladder constraints; Figure 3 sensitivity; Figure 4 titration; Figure 5 matched models; Figure 6 cascade comparison; Figure 7 GlnD states; Figure 8 GlnE states; Figure 9 finite reaction boundaries; Figure 10 closed cascades; Figure 11 measurement design. S1–S10 figures remain separate supporting items. Earlier script names are not submission figure numbers. The paired-paralog analysis currently appears as text and equations, with diagnostic plots retained in its research folder.
+The compressed working manuscript has five main figures and 17 supporting figures. The original pathway diagram is unchanged.
+
+| Main figure | Subject | Previous main figure |
+|---|---|---|
+| 1 | Author's pathway diagram | 1 |
+| 2 | GlnD regulatory equivalence and complementary observables | 7 |
+| 3 | Protein-conserving cascade and topology bounds | 10 |
+| 4 | Nuisance-aware measurement design | 11 |
+| 5 | Independent paired-paralog data and conditional assay | New |
+
+Previous main figures 2, 3, 4, 5, 6, 8 and 9 are now S11, S12, S13, S14, S15, S16 and S17 Figs. Original S1–S10 Figs remain. All extended pre-compression result and method arguments are retained in S2 Appendix; S1 Appendix contains S1–S29, including prior-art comparison and the paired-reporter derivation. Old script names are not current submission figure numbers.
 
 Code is MIT licensed. The Gosztolai et al. source workbook and model retain their CC BY 4.0 license and attribution, documented in `extras/paired_paralogs/README.md`. Other published measurements retain their source provenance in `data/README.md`.

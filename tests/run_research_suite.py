@@ -10,6 +10,8 @@ commands=[]
 if a.regenerate:
  (R/'results').mkdir(exist_ok=True)
  commands=[['run_all.py'],['extras/matched_models/run.py'],['extras/finite_mechanism/run.py'],['extras/regulatory_states/code/analyze.py'],['extras/robust_design/code/analyze.py']]+[[f'extras/closed_cascade/code/{n}.py'] for n in ['analyze','topology','total_input','verify_algebra']]
+if a.regenerate:
+ commands += [[f'extras/paired_paralogs/code/{n}.py'] for n in ['extract_data','state_bounds']]
 commands += [['tests/test_reproduce.py'],['extras/matched_models/code/verify_final.py'],['tests/test_extensions.py']]
 commands += [[f'extras/paired_paralogs/code/{n}.py'] for n in ['paired_reporter','reporter_intervals']]
 (R/'results').mkdir(exist_ok=True)

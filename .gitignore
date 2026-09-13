@@ -13,3 +13,8 @@ results/*.log
 S1_Data/
 figures/
 results/panels/
+
+# Generated research checks and paired-paralog renderings
+results/research_suite.json
+extras/paired_paralogs/results/*.png
+extras/paired_paralogs/results/*.pdf

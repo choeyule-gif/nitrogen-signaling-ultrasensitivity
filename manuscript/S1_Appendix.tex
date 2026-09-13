@@ -3,6 +3,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage{lmodern,amsmath,amssymb,graphicx,geometry,microtype,setspace,booktabs,caption}
 \usepackage[hidelinks]{hyperref}
+\usepackage{array}
 \geometry{letterpaper,margin=1in}
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{0.55em}
@@ -150,14 +151,14 @@ The thresholds here belong to the same free-target response; changing the ordina
 
 \section*{S5 Reciprocal regulation and plateau identities}
 
-For f(l)=C l(1+$A_{UT}$ l)/(1+$A_{UR}$ l), direct logarithmic differentiation gives main-text Eq. (6). If $A_{UT}$>$A_{UR}$, differentiating once more locates the maximum at l=$1/\sqrt{A_{UT}A_{UR}}$, where
+For f(l)=C l(1+$A_{UT}$ l)/(1+$A_{UR}$ l), direct logarithmic differentiation gives Eq. (6) in S2 Appendix. If $A_{UT}$>$A_{UR}$, differentiating once more locates the maximum at l=$1/\sqrt{A_{UT}A_{UR}}$, where
 
 
 \[
 \eta_{\max}=\frac{2\sqrt{A_{UT}}}{\sqrt{A_{UT}}+\sqrt{A_{UR}}}. \tag{S14}
 \]
 
-If the affinities are equal, $\eta$=1. If $A_{UT}$<$A_{UR}$, the stationary point is a minimum and the supremum is one at the limiting inputs. The $\mathrm{Mg}^{2+}$ and $\mathrm{Mn}^{2+}$ values in Fig. 2B use inverse reported kinetic concentrations as model affinities: 80/70 and 700/150 for the two ratios. This is an explicit model identification, not an independent equilibrium-binding measurement.
+If the affinities are equal, $\eta$=1. If $A_{UT}$<$A_{UR}$, the stationary point is a minimum and the supremum is one at the limiting inputs. The $\mathrm{Mg}^{2+}$ and $\mathrm{Mn}^{2+}$ values in S12 Fig B use inverse reported kinetic concentrations as model affinities: 80/70 and 700/150 for the two ratios. This is an explicit model identification, not an independent equilibrium-binding measurement.
 
 
 On an independent ladder, take f=w+(v-w)$l^2$/($K_L^2$+$l^2$), with v>w>0. Substitution into $\theta$=K/(K+f) gives $\theta_0$=K/(K+w), $\theta_\infty$=K/(K+v), and
@@ -178,7 +179,7 @@ For a general fitted Hill curve with plateaus a and b, b>a, exponent h, and x=$(
 n_H^{\rm loc}(l)=\frac{h(b-a)x}{(1+x)^2\theta(1-\theta)}. \tag{S16}
 \]
 
-At the fitted midpoint, this gives 1.725 for the reconstructed curve, whereas its range coefficient is 2.018. Figure 2C displays this distinction directly. The fitted exponent coincides with a ligand count only in a separately specified regulatory limit.
+At the fitted midpoint, this gives 1.725 for the reconstructed curve, whereas its range coefficient is 2.018. S12 Fig C displays this distinction directly. The fitted exponent coincides with a ligand count only in a separately specified regulatory limit.
 
 
 \section*{S6 A sufficient uniqueness criterion and the independent-site reduction}
@@ -693,7 +694,7 @@ v(T)=\frac{k_PK_U}{k_RK_P\theta}(1-\theta)^3
 \left(1+\frac{\beta'G}{\alpha_1K_G}\right)
 +\frac{k_PK_U\beta G}{k_RK_G\theta}\frac1T.
 \]
-Only the PII-independent AT state supplies the inverse-$T$ term. The remaining pathway terms are concentration invariant at fixed free-state fractions. With independent GS sites, $v=Y/(1-Y)$; for a different downstream observation law the affine prediction applies to the effective drive rather than automatically to measured GS odds. In Fig 8D, the analytic $T\to\infty$ intercept is subtracted only to display the concentration-dependent contribution. The three historical cascade assays do not by themselves test this relation because free inputs were not held fixed and GlnD concentrations also changed.
+Only the PII-independent AT state supplies the inverse-$T$ term. The remaining pathway terms are concentration invariant at fixed free-state fractions. With independent GS sites, $v=Y/(1-Y)$; for a different downstream observation law the affine prediction applies to the effective drive rather than automatically to measured GS odds. In S16 Fig D, the analytic $T\to\infty$ intercept is subtracted only to display the concentration-dependent contribution. The three historical cascade assays do not by themselves test this relation because free inputs were not held fixed and GlnD concentrations also changed.
 
 Let the normalized positive contributions to the AT numerator be $w_P,w_G,w_{PG}$ from $p,\beta g,\beta'pg/\alpha_1$. At fixed $P,U$,
 \[
@@ -744,7 +745,7 @@ Two models with the same $q,E_T,T_T$ lie in the same interval of width $\epsilon
 
 The numerical realization sets $k_{\rm cat}^+=a/h^+$, $k_{\rm cat}^-=b/h^-$, $k_{\rm off}=k_{\rm cat}$, and $k_{\rm on}=2h k_{\rm cat}$. A shared scale makes the reference summed capacity at $G=K$ equal to one. The illustrative asymmetric affinities are $h^+=(0.2,2,10)$ and $h^-=(5,0.3,0.1)$ in reciprocal target-concentration units. Target total is one; enzyme/target ratios range from $10^{-4}$ to one. Random verification uses 300 positive cases with all affinity coordinates independently spanning $10^{-2}$--$10^2$, binding-rate multipliers $10^{-3}$--$10^3$, and target totals $10^{-1}$--$10$. Full balances, conserved totals, the pairwise bound, and the symmetric-affinity identity are checked. Two BDF integrations from initially free enzyme and unmodified target converge to the independently constructed steady states.
 
-For the finite-binding transient in Fig 9C, enzyme fractions obey $\dot o=Q_Eo$ and the dilute target obeys $\dot q=(o\cdot a)(1-q)-(o\cdot b)q$. The glutamine step is $10K\to K$, initialized at the preceding steady state. Binding multipliers span 0.01--100. These equations are an unsaturated mean-field conversion model with explicit regulatory relaxation, distinct from the 11-concentration saturation model. The units are reference times, not fitted seconds or minutes.
+For the finite-binding transient in S17 Fig C, enzyme fractions obey $\dot o=Q_Eo$ and the dilute target obeys $\dot q=(o\cdot a)(1-q)-(o\cdot b)q$. The glutamine step is $10K\to K$, initialized at the preceding steady state. Binding multipliers span 0.01--100. These equations are an unsaturated mean-field conversion model with explicit regulatory relaxation, distinct from the 11-concentration saturation model. The units are reference times, not fitted seconds or minutes.
 
 \textbf{Exchange in substrate-bound complexes.} Adding ligand exchange to $C^+$ and $C^-$ retains the constructed steady state if their generators annihilate the vectors $w_jh_j^+$ and $w_jh_j^-$. This is a sufficient kinetic compatibility condition and can hold for nonzero exchange rates. Thermodynamic compatibility of binding alone is weaker. Write $\rho_j=k_{\rm off,j}/k_{\rm cat,j}$; the equilibrium association constant is $k_{\rm on}/k_{\rm off}=h_j(1+\rho_j)/\rho_j$, which need not be proportional to the catalytic-complex weight $h_j$ across states.
 
@@ -786,7 +787,7 @@ Use the least-favourable null boundary and the prespecified sign of the alternat
 \]
 rounded upward. Applied to total-readout separation $\Delta\leq\epsilon$, it gives an optimistic necessary sample size $n\geq\sigma^2(z_{0.95}+z_{0.80})^2/\epsilon^2$ for one normally distributed fraction observable and two specified alternatives. With $\epsilon=0.01,\sigma=0.05$, this rounds up to 155; smaller actual separation or nuisance uncertainty can only worsen this bound. For the binding designs use $v=1$ for occupancy and $v=2$ for paired log halfpoints. Here $\Delta$ is the independently profiled interval gap, not a distance between two selected curves. At SD 0.20, five occupancy estimates yield worst-case power 0.862, and eight halfpoint estimates per condition yield 0.819. At occupancy SD 0.10, two estimates yield 0.965. The selected tests are independently verified by 100,000 synthetic null and alternative draws. These are prospective assay-error calculations, not experimentally established budgets. If independent full titrations are infeasible, a hierarchical joint fit needs a separate power analysis.
 
-\textbf{Conditional kinetic comparison.} The capacity multiplier is $R_\lambda(z)=(1+2z+z^2)/(1+2z/\lambda+z^2)$. An unknown speed absorbs a single-condition amplitude. Paired capacities cancel a shared speed, but reciprocal doses are uninformative because $R_\lambda(z)=R_\lambda(1/z)$. Searching 101 doses over $0.02K_0$--$50K_0$ selects approximately $0.020K_0$ and $0.855K_0$, with minimum log-multiplier contrast 0.363 over factor-two $K$ variation. This contrast requires independently calibrated baseline capacities and $K$; independently refitting the baseline shape can restore overlap. The data label its sample sizes conditional, and Fig 11 excludes them from the profiled guarantees.
+\textbf{Conditional kinetic comparison.} The capacity multiplier is $R_\lambda(z)=(1+2z+z^2)/(1+2z/\lambda+z^2)$. An unknown speed absorbs a single-condition amplitude. Paired capacities cancel a shared speed, but reciprocal doses are uninformative because $R_\lambda(z)=R_\lambda(1/z)$. Searching 101 doses over $0.02K_0$--$50K_0$ selects approximately $0.020K_0$ and $0.855K_0$, with minimum log-multiplier contrast 0.363 over factor-two $K$ variation. This contrast requires independently calibrated baseline capacities and $K$; independently refitting the baseline shape can restore overlap. The data label its sample sizes conditional, and Fig 4 excludes them from the profiled guarantees.
 
 
 
@@ -875,8 +876,54 @@ This is not a slope bound. The implementation solves the buffered-input protein 
 
 A stationary occupancy assay distinguishes the specific diagonal families only within its assumed state space. To see the limit, split a regulatory state of weight $w$ into two unobserved conformations with the same ligand stoichiometry and weights $fw$ and $(1-f)w$, $0<f<1$. Give the first conformation opposing specificities $a^{\pm}/f$ and the second no catalytic branches. The summed binding weight remains $w$, and the opposing catalytic numerators remain $wa^{\pm}$. Thus ligand occupancy and the target stationary response are both preserved in this reduced construction. If target-complex association coefficients on the active conformation are also $h^{\pm}/f$, their stationary contributions are preserved as well. Positive active-branch rates can be realized as in S24; the inactive conformation has absent catalytic edges rather than a negative rate. A connected reversible conformational network can realize the prescribed free-state weights.
 
-This is a counterexample, not evidence for hidden GlnD/GlnE conformations or identical transients. Figure 11 distinguishes only its specified classes and nuisance ranges. A larger state space requires another discriminating observable or independent restrictions on catalytic states.
+This is a counterexample, not evidence for hidden GlnD/GlnE conformations or identical transients. Fig 4 distinguishes only its specified classes and nuisance ranges. A larger state space requires another discriminating observable or independent restrictions on catalytic states.
 
 
-\clearpage
+\section*{S28. Established theory and present contributions}
+
+\begin{center}\small
+\begin{tabular}{>{\raggedright\arraybackslash}p{0.20\textwidth}>{\raggedright\arraybackslash}p{0.32\textwidth}>{\raggedright\arraybackslash}p{0.38\textwidth}}
+\toprule
+Result & Established foundation & Contribution and restriction here\\\midrule
+Stationary ladder & Rational parameterization and catalytic-complex elimination: Thomson and Gunawardena (2009); Feliu and Wiuf (2013). & A reduction under specified shared-enzyme and regulatory-exchange restrictions. It is a method, not a new general parameterization theorem.\\[0.7em]
+Adjacent-state contrast & Gunawardena (2007), Eqs. 3--5, doi:10.1529/biophysj.107.110866. & Application to fixed-ladder and refractory alternatives. The invariant itself is established and its constancy does not prove a native mechanism.\\[0.7em]
+Variance and sensitivity & Binding-polynomial differentiation; Adair (1925), Briggs (1984), Abeliovich (2005). & Separating physical local slopes from fitted or range coefficients prevents estimator-dependent attribution errors.\\[0.7em]
+Regulatory compensation & Scaling non-identifiability: Castro and de Boer (2020), with limits clarified by Villaverde and Massonis (2021). & Explicit GlnD and source-topology GlnE families preserve target output but separate binding and kinetics. They do not enumerate all equivalent mechanisms.\\[0.7em]
+Cascade fraction bound & Conservation, bounded support and logit sensitivity inequalities. & Combining stoichiometric sequestration capacity with downstream free-pool elasticity gives a sufficient assay concentration criterion in the specified closed cascade. It is not a universal Hill-slope bound.\\[0.7em]
+Measurement design & Design-dependent model discrimination: Silk et al. (2014). & Nuisance-profiled occupancy and binding designs, including depletion correction and overlapping-range limits, for the explicit biochemical families.\\[0.7em]
+Paired-paralog assay & Elementary odds cancellation; GlnB/GlnK observations of Gosztolai et al. (2017); AmtB binding of Durand and Merrick (2006). & A binding-disabled calibration control converts two means into a conditional sequestration interval. Without calibrated specificity or stationarity it supplies no unique occupancy estimate.\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The cited papers' full bibliographic entries are in the main manuscript. This comparison distinguishes established mathematical ingredients from the present biochemical construction; it does not assert priority over every possible assay using an internal reporter.
+
+\section*{S29. Paired-paralog reconstruction and deterministic uncertainty}
+
+Let the free GlnB ladder have binomial weights $\binom3i u^i$ and free GlnK have weights $\binom3i(\rho u)^i$. Only unmodified GlnK binds AmtB, and the bound class cannot be modified. At steady state the terminal binding branch has zero net flux; cutting each modification edge then gives the free binomial ladder. This result allows finite association and dissociation rates but assumes no bound catalytic route. A buffered free AmtB construction has five GlnK weights
+\[
+ (1,3v,3v^2,v^3,\beta),\qquad v=\rho u,\quad\beta\geq0.
+\]
+Their normalizer is $(1+v)^3+\beta$. The bound fraction is $s=\beta/[(1+v)^3+\beta]$, while total modified-site fraction is $q_K=(1-s)v/(1+v)$. Since $q_B=u/(1+u)$, elimination of $u$ gives the main-text reconstruction. The algebra does not require determining $\beta$ or the GlnD switching law. A conserved finite AmtB pool instead determines $\beta$ through free transporter; the reconstruction still holds at a stationary point satisfying these same branch and ladder conditions.
+
+Without binding, the control obeys $\rho=\operatorname{odds}(q_K^0)/\operatorname{odds}(q_B^0)$. The control may have another driving ratio $u$ but must preserve relative catalytic specificity and ladder shape. Interior intervals $q_B^0\in[B_-,B_+]$, $q_K^0\in[K_-,K_+]$ therefore give
+\[
+ \rho_- =\frac{\operatorname{odds}(K_-)}{\operatorname{odds}(B_+)},\qquad
+ \rho_+ =\frac{\operatorname{odds}(K_+)}{\operatorname{odds}(B_-)}.
+\]
+Endpoint saturation makes odds calibration poorly conditioned; it is not repaired by assuming exact endpoints from noisy data.
+
+For assay intervals $q_B\in[b_-,b_+]$, $q_K\in[k_-,k_+]$, impose an independently justified model-error bound
+\[
+ |q_{K,\rm free}-F_\rho(q_B)|\leq\delta.
+\]
+Monotonicity yields $f_- =\max(0,F_{\rho_-}(b_-)-\delta)$ and $f_+=\min(1,F_{\rho_+}(b_+)+\delta)$. If $k_->f_+$ the assumptions and input intervals are jointly incompatible. Otherwise, for $f_+>0$,
+\[
+ s_-=\begin{cases}0,&f_-\leq k_+,\\1-k_+/f_-,&f_->k_+,\end{cases}
+ \qquad s_+=1-k_-/f_+.
+\]
+If $f_+=0$ and the total interval includes zero, every $s\in[0,1]$ is feasible. The endpoints are attainable within the stipulated independent interval box; correlations or shared calibration biases can shrink the feasible set and require a different propagation. Confidence coverage follows only if the joint input box and model-error bound have the claimed coverage. A measurement SE alone does not justify $\delta$.
+
+Two thousand random stationary constructions are checked by independent five-state generator solves. Ten thousand randomly generated admissible configurations check interval containment, including separate zero and incompatible cases. Neither verification establishes physiological stationarity. The source data are transient paired-peptide measurements, and native binding also depends on ATP and 2-oxoglutarate. A practical validation would compare the reconstructed fraction with a direct AmtB--GlnK binding assay under controlled inputs, avoiding saturation in the calibration and testing that both reporter fractions have stabilized.
+
 \end{document}

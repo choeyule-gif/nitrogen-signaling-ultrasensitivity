@@ -3,6 +3,7 @@ import csv,json,math
 import openpyxl
 R=Path(__file__).resolve().parents[1];s=openpyxl.load_workbook(R/'sources/Data.xlsx',data_only=True).active
 cols={'GlnB_total':9,'GlnB_unmodified':12,'GlnB_UMP':15,'GlnK_total':18,'GlnK_unmodified':21,'GlnK_UMP':24,'GS_total':27,'GS_unmodified':30,'GS_AMP':33,'aKG':36,'glutamine':39}
+(R/'results').mkdir(exist_ok=True)
 rows=[]
 for strain,ran in [('WT',range(8,20)),('delta_glnB',range(25,37)),('delta_glnK',range(42,54))]:
  for ri in ran:

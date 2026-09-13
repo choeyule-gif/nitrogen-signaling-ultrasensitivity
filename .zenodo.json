@@ -1,7 +1,7 @@
 {
-  "title": "Code for: Discriminating mechanisms of ultrasensitivity in bacterial nitrogen signaling",
+  "title": "Code for: Mechanistic equivalence and measurement design in models of bacterial nitrogen signaling",
   "upload_type": "software",
-  "description": "Reproducible code, digitized published-data coordinates, parameter provenance, figure data and numerical verification for the manuscript Discriminating mechanisms of ultrasensitivity in bacterial nitrogen signaling. Includes baseline response constraints; data-matched ladder and population alternatives; finite GlnD/GlnE regulatory-state equivalences; protein-conserving cascade bounds and topology/input extensions; and conditional measurement design. No new experimental data were generated. The models use explicitly stated reaction assumptions and illustrative parameter scenarios.",
+  "description": "Reproducible code, digitized published-data coordinates, parameter provenance, figure data and numerical verification for the manuscript Mechanistic equivalence and measurement design in models of bacterial nitrogen signaling. Includes baseline response constraints; data-matched ladder and population alternatives; finite GlnD/GlnE regulatory-state equivalences; protein-conserving cascade bounds and topology/input extensions; and conditional measurement design. No new experimental data were generated. The models use explicitly stated reaction assumptions and illustrative parameter scenarios.",
   "creators": [
     {
       "name": "Choi, Yule"

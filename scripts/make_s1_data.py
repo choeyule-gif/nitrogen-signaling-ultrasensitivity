@@ -1,4 +1,5 @@
-"""Assemble S1 Data, the Supporting Information package that accompanies the manuscript.
+"""Assemble the legacy baseline data export (not the complete submission archive).
+Use package_research_data.py after the integrated suite for the current S1 Data ZIP.
 
 Copies the inputs, the values behind every figure panel, and the tables and draws the text
 cites into S1_Data/, and writes S1_Data/README.md listing what each file is.  The folder is
