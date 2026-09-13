@@ -13,7 +13,7 @@ if a.regenerate:
 if a.regenerate:
  commands += [[f'extras/paired_paralogs/code/{n}.py'] for n in ['extract_data','state_bounds']]
 commands += [['tests/test_reproduce.py'],['extras/matched_models/code/verify_final.py'],['tests/test_extensions.py']]
-commands += [[f'extras/paired_paralogs/code/{n}.py'] for n in ['paired_reporter','reporter_intervals']]
+commands += [[f'extras/paired_paralogs/code/{n}.py'] for n in ['paired_reporter','reporter_intervals','robust_calibration']]
 (R/'results').mkdir(exist_ok=True)
 report=[]
 for args in commands:

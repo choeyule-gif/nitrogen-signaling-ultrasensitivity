@@ -1,0 +1,49 @@
+{
+  "regenerated": false,
+  "steps": [
+    {
+      "command": [
+        "tests/test_reproduce.py"
+      ],
+      "exit_code": 0,
+      "seconds": 0.057539939880371094
+    },
+    {
+      "command": [
+        "extras/matched_models/code/verify_final.py"
+      ],
+      "exit_code": 0,
+      "seconds": 0.6041290760040283
+    },
+    {
+      "command": [
+        "tests/test_extensions.py"
+      ],
+      "exit_code": 0,
+      "seconds": 5.040902853012085
+    },
+    {
+      "command": [
+        "extras/paired_paralogs/code/paired_reporter.py"
+      ],
+      "exit_code": 0,
+      "seconds": 0.40754103660583496
+    },
+    {
+      "command": [
+        "extras/paired_paralogs/code/reporter_intervals.py"
+      ],
+      "exit_code": 0,
+      "seconds": 0.33068418502807617
+    },
+    {
+      "command": [
+        "extras/paired_paralogs/code/robust_calibration.py"
+      ],
+      "exit_code": 0,
+      "seconds": 7.000804901123047
+    }
+  ],
+  "completed": true,
+  "passed": true
+}

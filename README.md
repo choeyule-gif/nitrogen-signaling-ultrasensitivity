@@ -34,7 +34,7 @@ Build the full current S1 Data archive after regeneration with `python scripts/p
 
 ## Current figure mapping
 
-The compressed working manuscript has five main figures and 17 supporting figures. The original pathway diagram is unchanged.
+The compressed working manuscript has five main figures and six supporting figures. The original pathway diagram is unchanged.
 
 | Main figure | Subject | Previous main figure |
 |---|---|---|
@@ -44,6 +44,6 @@ The compressed working manuscript has five main figures and 17 supporting figure
 | 4 | Nuisance-aware measurement design | 11 |
 | 5 | Independent paired-paralog data and conditional assay | New |
 
-Previous main figures 2, 3, 4, 5, 6, 8 and 9 are now S11, S12, S13, S14, S15, S16 and S17 Figs. Original S1–S10 Figs remain. All extended pre-compression result and method arguments are retained in S2 Appendix; S1 Appendix contains S1–S29, including prior-art comparison and the paired-reporter derivation. Old script names are not current submission figure numbers.
+Current S1–S6 Figs correspond to the v1.2.0 S11, S12, S13, S14, S16 and S17 figures. S1 Appendix (A1–A15) contains core mechanisms, proofs and prior art; S2 Appendix (D1–D7) contains data and sensitivity analyses. The unchanged former supplements and all 17 older figures are preserved in `docs/extended_analyses/v1.2.0/`. Old script/input filenames are not current submission figure numbers. The generalized calibration extension postdates v1.2.0; its code and proofs are in the current working tree and S1 Data.
 
 Code is MIT licensed. The Gosztolai et al. source workbook and model retain their CC BY 4.0 license and attribution, documented in `extras/paired_paralogs/README.md`. Other published measurements retain their source provenance in `data/README.md`.

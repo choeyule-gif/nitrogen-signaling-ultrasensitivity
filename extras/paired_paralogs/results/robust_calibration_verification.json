@@ -1,0 +1,46 @@
+{
+  "reporter_lp_cases": 500,
+  "max_reporter_lp_discrepancy": 0.0,
+  "mixture_lp_cases": 3000,
+  "max_lp_discrepancy": 0.0,
+  "arbitrary_ladder_pairs": 1000,
+  "max_curve_inversion_error": 1.982104480546809e-10,
+  "synthetic_selectivity_scenarios": [
+    {
+      "bound_modification_max": 0,
+      "s_interval": [
+        0.4428571428571428,
+        0.5625
+      ]
+    },
+    {
+      "bound_modification_max": 0.05,
+      "s_interval": [
+        0.4428571428571428,
+        0.6000000000000001
+      ]
+    },
+    {
+      "bound_modification_max": 0.15,
+      "s_interval": [
+        0.4428571428571428,
+        0.6923076923076924
+      ]
+    },
+    {
+      "bound_modification_max": 0.5,
+      "s_interval": [
+        0.4428571428571428,
+        1.0
+      ]
+    },
+    {
+      "bound_modification_max": 1,
+      "s_interval": [
+        0.4428571428571428,
+        1.0
+      ]
+    }
+  ],
+  "scope": "Observation-level identifiability under externally justified calibration/interval coverage. No native occupancy validation."
+}

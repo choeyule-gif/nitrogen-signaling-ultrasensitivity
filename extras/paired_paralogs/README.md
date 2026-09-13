@@ -15,6 +15,7 @@ python extras/paired_paralogs/code/extract_data.py
 python extras/paired_paralogs/code/state_bounds.py
 python extras/paired_paralogs/code/paired_reporter.py
 python extras/paired_paralogs/code/reporter_intervals.py
+python extras/paired_paralogs/code/robust_calibration.py
 ```
 
 The first program re-extracts the original workbook. The remaining programs check sharp moment bounds, solve 2,000 independent count-state generators, and verify interval coverage for 10,000 admissible synthetic configurations. These are mathematical checks, not experimental coverage guarantees.
@@ -28,3 +29,5 @@ The first program re-extracts the original workbook. The remaining programs chec
 Main Figure 5 is rendered by `python extras/paired_paralogs/code/plot_paired_reporter.py` after data extraction and state-bound calculation. It uses 7.5-inch width, Arial labels and 600-dpi raster export. Panel D propagates the observation-model alternatives into binding ceilings; it is not an occupancy estimate.
 
 The bound sK <= 1 - qK is a fraction of GlnK protein subunits if bound GlnK is unmodified. It equals a particle fraction for homotrimers. GlnB/GlnK heterotrimers occur in vivo (van Heeswijk et al., 2000, doi:10.1073/pnas.97.8.3942); the paired-reporter model therefore requires controlled oligomer composition and a free GlnB reporter. No mixed-particle count is inferred from peptide means.
+
+`ROBUST_CALIBRATION.md` derives a response-curve extension beyond independent sites, permits bounded reporter sequestration and imperfect bound-target selectivity, and separates experimentally supplied bounds from inferred quantities. It includes independent linear-program verification.
