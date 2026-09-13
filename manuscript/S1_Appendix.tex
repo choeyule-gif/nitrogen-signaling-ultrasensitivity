@@ -1,0 +1,882 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern,amsmath,amssymb,graphicx,geometry,microtype,setspace,booktabs,caption}
+\usepackage[hidelinks]{hyperref}
+\geometry{letterpaper,margin=1in}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.55em}
+\setlength{\emergencystretch}{2em}
+\captionsetup{labelfont=bf,font=small}
+\renewcommand{\refname}{References}
+\begin{document}
+\begin{center}{\Large\bfseries S1 Appendix\\[0.5em] Mathematical derivations and reconstruction methods}\\[1em]Yule Choi\end{center}
+\onehalfspacing
+\section*{S1 Reaction network and the steady-state invariant}
+
+Let E be free enzyme, L free effector, and $S_i$ a free target with i modified sites, for i=0,\ldots{},n. The core network is
+
+
+\[
+E+L \mathrel{\mathop{\rightleftharpoons}^{a_1}_{a_2}} EL, \tag{S1}
+\]
+
+\[
+E+S_i \mathrel{\mathop{\rightleftharpoons}^{b_{1i}}_{b_{2i}}} B_i
+\mathrel{\mathop{\longrightarrow}^{b_{3i}}} E+S_{i+1}, \tag{S2}
+\]
+
+\[
+EL+S_{i+1} \mathrel{\mathop{\rightleftharpoons}^{g_{1i}}_{g_{2i}}} G_i
+\mathrel{\mathop{\longrightarrow}^{g_{3i}}} EL+S_i,\qquad i=0,\ldots,n-1. \tag{S3}
+\]
+
+All rate constants are positive. The catalytic mechanism is distributive and each complex contains one enzyme and one target. Lower-case symbols denote the concentrations of the corresponding species, with $\varepsilon$=[EL], $\beta_i$=[$B_i$], and $\gamma_i$=[$G_i$]. Define
+
+
+\[
+A=\frac{a_1}{a_2},\quad
+\widehat B_i=\frac{b_{1i}}{b_{2i}+b_{3i}},\quad
+\widehat G_i=\frac{g_{1i}}{g_{2i}+g_{3i}},\quad
+\rho_i=\frac{b_{3i}}{g_{3i}}. \tag{S4}
+\]
+
+The conserved totals are
+
+
+\[
+\begin{aligned}
+T_E=e+\varepsilon+\sum_i(\beta_i+\gamma_i),\\
+T_L=l+\varepsilon+\sum_i\gamma_i,\\
+T_S=\sum_{i=0}^{n}s_i+\sum_i(\beta_i+\gamma_i).
+\end{aligned} \tag{S5}
+\]
+
+At a positive steady state, the $G_i$ balances give $\gamma_i$=$\widehat G_i$ $\varepsilon$$s_{i+1}$. Substituting their balances into the EL balance cancels all target-binding contributions, leaving $a_1$el=$a_2$$\varepsilon$. Thus $\varepsilon$=Ael. The corresponding $B_i$ balances give $\beta_i$=$\widehat B_i$ e$s_i$.
+
+
+The target modification states form a chain. Summing the balances on one side of each cut gives equality of the forward and reverse catalytic fluxes across it: $b_{3i}$$\beta_i$=$g_{3i}$$\gamma_i$. Substitution therefore yields
+
+
+\[
+\frac{s_{i+1}}{s_i}=\frac{K_{i+1}}{l},\qquad
+K_{i+1}=\frac{b_{3i}\widehat B_i}{A g_{3i}\widehat G_i}. \tag{S6}
+\]
+
+This relation does not assume fast binding or small enzyme concentration. It is an identity at each positive steady state of the stated network. It does not establish how many such states exist, whether they are stable, or how fast they are approached. The enzyme pool cancels from ratios; absolute free-target concentrations can still vary with conserved totals.
+
+
+\section*{S2 Distribution and local factorization}
+
+Suppose more generally that adjacent ratios have the separable form $s_i$/$s_{i-1}$=$K_i$/f(l), with $K_i$ independent of input. This is an assumption about the effective regulation in an extended network, not a consequence of bifunctionality alone. Fix a consistent concentration unit so that $K_i$/f(l) is dimensionless. Let u=1/f(l), $c_0$=1, and $c_i$ be the product of $K_1$ through $K_i$. Then
+
+
+\[
+s_i=s_0c_i u^i,\qquad P(u)=\sum_{i=0}^{n}c_i u^i,\qquad
+p_i=\frac{c_i u^i}{P(u)}. \tag{S7}
+\]
+
+Let $\mu$=$\Sigma$\_i i $p_i$ and $\theta$=$\mu$/n. Direct differentiation gives d $p_i$/dlog u=(i-$\mu$)$p_i$, and hence d$\mu$/dlog u=Var(i). Consequently,
+
+
+\[
+-\frac{d\log[\theta/(1-\theta)]}{d\log l}
+=\frac{n\operatorname{Var}(i)}{\mu(n-\mu)}\frac{d\log f}{d\log l}
+=\nu\eta. \tag{S8}
+\]
+
+The product applies to the physical free-target mean at a common input. It does not imply a product rule for fitted exponents or response-range coefficients. If f is increasing, the mean decreases and the chosen negative derivative is positive. An increasing readout uses the corresponding positive derivative.
+
+
+For modification count i in [0,n], the inequality $i^2$$\le$ni implies Var(i)$\le$$\mu$(n-$\mu$). Therefore 0<$\nu$$\le$n. With n>1 and strictly positive weights on intermediate states, the upper inequality is strict. Its supremum is approached as intermediate weights vanish and the distribution becomes concentrated on i=0 and i=n. For n=1, $\nu$=1 identically.
+
+
+For identical independent sites, $K_i$=(n-i+1)$\widehat K$/i. Therefore P(u)=$(1+\widehat K u)^n$ and $\theta$=$\widehat K$ u/(1+$\widehat K$ u). Its ladder factor is one for every u. Conversely, if $\nu$=1 throughout an open input interval, then dlog[$\theta$/(1-$\theta$)]/dlog u=1. Integration gives $\theta$=Ku/(1+Ku) for a positive constant K, and integrating uP'/P=n$\theta$ gives P=$(1+Ku)^n$ after imposing P(0)=1. Equality $\nu$=1 at a single input does not establish this global form.
+
+
+The state-distribution example in S8 Fig D uses n=12 and weights proportional to binomial(12,i) exp[J$(i-6)^2$]. At u=1, symmetry fixes $\theta$=1/2 for every J. Choosing J$\approx$0.109876 gives $\nu$=2.2, whereas J=0 gives $\nu$=1. Both distributions are explicitly normalized in S1 Data. This is an illustrative family rather than an inferred biochemical ladder.
+
+
+\section*{S3 Opposing effectors and inactive complexes}
+
+For two free effectors L\_1 and L\_2 binding E independently into mutually exclusive competent forms, $\varepsilon$\_1=A\_1el\_1 and $\varepsilon$\_2=A\_2el\_2. If EL\_1 catalyzes the forward reaction and EL\_2 the reverse, flux balance gives
+
+
+\[
+\frac{s_{i+1}}{s_i}=\frac{b_{3i}\widehat B_i A_1}{g_{3i}\widehat G_i A_2}\frac{l_1}{l_2}. \tag{S9}
+\]
+
+Thus f=l\_2/l\_1 after absorbing constant prefactors into the ladder. If both effectors depend on an external signal, the switch factor is the log derivative of their ratio with respect to that signal. Additional direct regulation can be absorbed into a common f only if the resulting factor is shared across all ladder steps. Productive target-bridging complexes or modification-state-dependent regulatory functions can break this separation.
+
+
+A reversible dead-end species whose only reactions are formation and dissociation has zero net formation flux at steady state. Adding finitely many such species therefore leaves the balance identities underlying Eq. (S6) unchanged at fixed free inputs. This statement concerns the invariant, not the free-to-total map. Added complexes change conservation relations, and complexes carrying more than one target require a corresponding change to target-sequestration bounds. A reduced-rate catalytic complex is not a dead end and is not covered by this argument.
+
+
+\section*{S4 Free and total observables}
+
+Assume that no enzyme molecule can carry more than h effector molecules, including all complexes being counted. Writing $T_L$=l+L\_bound gives 0$\le$L\_bound$\le$h$T_E$ and
+
+
+\[
+\max(0,T_L-hT_E)\le l\le T_L. \tag{S10}
+\]
+
+For the core one-target-per-complex model, let q be the fraction of target held in enzyme complexes and $\theta_b$ its mean fractional modification. Then $\theta_{\mathrm{total}}$=(1-q)$\theta_{\mathrm{free}}$+q$\theta_b$. Since both fractions lie in [0,1],
+
+
+\[
+|\theta_{\rm total}-\theta_{\rm free}|\le q\le
+\min(1,T_E/T_S). \tag{S11}
+\]
+
+Neither concentration nor amplitude bounds alone control derivatives. A finite-range statement can nevertheless be obtained without bounding a derivative. On a monotone branch, let $l_a$<$l_b$ be the free-input values at two prescribed free-target response thresholds. Put $\delta$=h$T_E$. Their corresponding total inputs satisfy $T_a$ in [$l_a$,$l_a$+$\delta$] and $T_b$ in [$l_b$,$l_b$+$\delta$]. Therefore
+
+
+\[
+\frac{l_b}{l_a+\delta}\le \frac{T_b}{T_a}\le\frac{l_b+\delta}{l_a}. \tag{S12}
+\]
+
+If $l_b$>$l_a$+$\delta$, the induced response-range coefficient obeys
+
+
+\[
+\frac{\log81}{\log[(l_b+\delta)/l_a]}
+\le n_{H,\rm total\ input}^{\rm range}
+\le\frac{\log81}{\log[l_b/(l_a+\delta)]}. \tag{S13}
+\]
+
+The thresholds here belong to the same free-target response; changing the ordinate to total target requires a separate treatment. This qualification avoids using a small sequestration pool as a universal local-slope bound. It also separates enzyme dilution from fast binding, which is a dynamical assumption absent from Eq. (S10).
+
+
+\section*{S5 Reciprocal regulation and plateau identities}
+
+For f(l)=C l(1+$A_{UT}$ l)/(1+$A_{UR}$ l), direct logarithmic differentiation gives main-text Eq. (6). If $A_{UT}$>$A_{UR}$, differentiating once more locates the maximum at l=$1/\sqrt{A_{UT}A_{UR}}$, where
+
+
+\[
+\eta_{\max}=\frac{2\sqrt{A_{UT}}}{\sqrt{A_{UT}}+\sqrt{A_{UR}}}. \tag{S14}
+\]
+
+If the affinities are equal, $\eta$=1. If $A_{UT}$<$A_{UR}$, the stationary point is a minimum and the supremum is one at the limiting inputs. The $\mathrm{Mg}^{2+}$ and $\mathrm{Mn}^{2+}$ values in Fig. 2B use inverse reported kinetic concentrations as model affinities: 80/70 and 700/150 for the two ratios. This is an explicit model identification, not an independent equilibrium-binding measurement.
+
+
+On an independent ladder, take f=w+(v-w)$l^2$/($K_L^2$+$l^2$), with v>w>0. Substitution into $\theta$=K/(K+f) gives $\theta_0$=K/(K+w), $\theta_\infty$=K/(K+v), and
+
+
+\[
+\theta=\theta_\infty+\frac{\theta_0-\theta_\infty}{1+l^2/S^2},\qquad
+S^2=K_L^2\frac{K+w}{K+v}. \tag{S15}
+\]
+
+Taking the ratio of the two plateau odds gives v/w. If v/w is the change in reverse-to-forward capacity, it equals reverse activation times forward inhibition. This identity requires a regulatory interpretation of both plateaus and the stated ladder. It does not hold as a mechanistic interpretation when the measured floor is instead a refractory fraction of target.
+
+
+For a general fitted Hill curve with plateaus a and b, b>a, exponent h, and x=$(l/S)^h$, $\theta$=a+(b-a)/(1+x). Its physical local coefficient is
+
+
+\[
+n_H^{\rm loc}(l)=\frac{h(b-a)x}{(1+x)^2\theta(1-\theta)}. \tag{S16}
+\]
+
+At the fitted midpoint, this gives 1.725 for the reconstructed curve, whereas its range coefficient is 2.018. Figure 2C displays this distinction directly. The fitted exponent coincides with a ligand count only in a separately specified regulatory limit.
+
+
+\section*{S6 A sufficient uniqueness criterion and the independent-site reduction}
+
+This section concerns only the core single-effector, 1:1-binding network of Eqs. (S1)--(S3). Assume $\rho_i$=$\rho$ for all i. Write $r_i$=$s_i$/$s_0$, M=$\Sigma$\_i $r_i$, W=$\Sigma$\_i $\widehat B_i$ $r_i$, and $\omega$=W/M, with $\widehat B_n$=0. Let t=$\Sigma$\_i $s_i$ denote total free target. Summing complexes gives $\beta_{\mathrm{total}}$=et$\omega$ and $\gamma_{\mathrm{total}}$=$\rho$et$\omega$. Define
+
+
+\[
+\kappa=\frac{\rho}{1+\rho},\quad a=A(1-\kappa),\quad
+m=T_L-\kappa T_E,\quad c=1+\rho. \tag{S17}
+\]
+
+Combining the enzyme and effector balances gives m=l+e(al-$\kappa$), hence l(e)=(m+$\kappa$e)/(1+ae). The physical domain is e>$e_{\min}$=max(0,-m/$\kappa$). Eliminating t through target conservation reduces enzyme conservation to H(e)=$T_E$, where
+
+
+\[
+H(e)=e[1+Al(e)]+T_S\frac{q(e)}{1+q(e)},\qquad
+q(e)=c e\omega(l(e)). \tag{S18}
+\]
+
+Suppose 0$\le$dlog$\omega$/dlog l$\le$1 throughout this physical domain. Then H is strictly increasing. To see this, e l(e) has positive derivative: its derivative numerator is m+2$\kappa$e+$\kappa$$ae^2$, which is positive because m+$\kappa$e>0. If l'(e)$\ge$0, then q'(e)>0 because the elasticity of $\omega$ is nonnegative. If l'(e)<0, the positivity of d[e l(e)]/de implies dlog l/dlog e>-1; multiplying this negative elasticity by a number in [0,1] gives dlog q/dlog e>0. Both terms in H therefore increase strictly or nondecreasingly, with the first strictly increasing.
+
+
+At the lower endpoint, H tends to zero when m$\ge$0. When m<0, l tends to zero and $\omega$ tends to zero, because $\widehat B_n$=0 and the fully modified state dominates the positive ladder. Hence H tends to $e_{\min}$=$T_E$-$T_L$/$\kappa$<$T_E$. As e tends to infinity, H$\ge$e tends to infinity. Continuity and strict monotonicity prove that H(e)=$T_E$ has exactly one physical solution. This establishes existence and uniqueness under the two stated conditions.
+
+
+The elasticity has the useful representation
+
+
+\[
+\frac{d\log\omega}{d\log l}=-\frac{\operatorname{Cov}(\widehat B_i,i)}{\langle\widehat B_i\rangle}. \tag{S19}
+\]
+
+This is a weighted condition on the whole ladder. It is not equivalent to a requirement that every individual affinity be ordered monotonically. The criterion is sufficient, not necessary; its failure alone establishes neither multistationarity nor instability.
+
+
+For identical independent sites, $\widehat B_i$=(n-i)$\widehat B$, $\omega$=$\Pi$l/(l+$\widehat K$), and $\Pi$=n$\widehat B$. The elasticity equals $\widehat K$/(l+$\widehat K$), so the criterion is satisfied. Away from the removable parametrization singularity, set d=al-$\kappa$ and e=(m-l)/d. Clearing denominators in Eq. (S18) gives
+
+
+\[
+\begin{split}
+&[T_E d-(m-l)(1+Al)]\,[(l+\widehat K)d+c\Pi l(m-l)]\\
+&\hspace{8mm}-T_S c\Pi l(m-l)d=0. \end{split} \tag{S20}
+\]
+
+This polynomial has degree at most four, independently of n; special parameter relations can reduce its degree. A polynomial root must also satisfy the physical domain and the original conservation equations. At d=0 the e(l) parametrization is singular and Eq. (S18), rather than a cleared polynomial, should be used. Existence follows from the monotone-budget proof, not from the sign of a single polynomial coefficient. No stability conclusion or extension to h>1 or two conserved opposing effectors is inferred from this uniqueness proof. Section S13 separately states additional assumptions for a dynamical reduction.
+
+
+\section*{S7 Coordinate reconstruction and model comparison}
+
+The canonical input is the author-supplied CSV digitized by eye from an enlarged view of Fig. 2B in the published first-layer study, as documented in the accompanying data provenance. It contains twelve rounded coordinate pairs. As an independent consistency check, vector-marker coordinates from page 19, Fig. 5b of the supplied manuscript were transformed using
+
+
+\[
+\log_{10}(l/{\rm mM})=\frac{X-436.74244}{489.11522-436.74244},\qquad
+U=\frac{322.80995-Y}{322.80995-288.14189}. \tag{S21}
+\]
+
+Here X and Y are PDF points and Y is measured downward. The extracted coordinates agree with the supplied CSV to plotting precision. The unrounded extraction is retained as a consistency check, not as a more precise measurement. All reported numerical values agree at the displayed precision when fitted from either input. Neither source recovers experimental replicates or independently validates digitization against the original publication.
+
+
+The free-exponent fit has SSE=0.01487834, h=2.017894, S=0.559542 mM, $U_{\min}$=0.453502, and $U_{\max}$=2.967708. One hundred random-start fits returned the same SSE to a spread below 5$\times$$10^{-16}$. This is a numerical convergence check, not a proof of a global optimum.
+
+
+\begin{center}\begin{singlespace}\small
+\begin{tabular}{lrrrr}\toprule
+
+Model & SSE & k including variance & $\Delta$AIC & $\Delta$AICc \\
+\midrule
+
+h=1 & 0.527163 & 4 & 42.764 & 42.764 \\
+
+h=2 & 0.014937 & 4 & 0 & 0 \\
+
+h=3 & 0.119265 & 4 & 24.930 & 24.930 \\
+
+h free & 0.014878 & 5 & 1.953 & 6.238 \\
+
+\bottomrule\end{tabular}
+\end{singlespace}\end{center}
+
+The h=1 fit reaches the physical upper-plateau bound. Removing that bound gives $U_{\max}$=3.32303 and SSE=0.365830, reproducing the less penalized fit in the earlier analysis. Values above three cannot be interpreted as UMP occupancy per trimer. The displayed comparisons use the same physical bounds for every model and are descriptive model scores rather than tests of binding-site count.
+
+
+The nominal profile set for h is approximately [1.851,2.203]. Under the specified 2,000 coordinate perturbations, its median is 2.025 and its central 95\% range is [1.750,2.421]. These intervals answer different questions: conditional fit curvature and sensitivity to an imposed coordinate-error distribution. No MCMC posterior or experimental confidence interval is claimed.
+
+
+The regulatory-swing point estimate is 516.1 and the finite lower endpoint of the nominal profile set is 172.9. Its large-W tail remains inside the set. The coordinate perturbations give a 2.5th percentile of approximately 125 and an effectively unbounded upper range, with 519 fitted upper plateaus within $10^{-5}$ of three. The archive includes individual draws rather than summarizing this tail with a symmetric error bar. The reverse-activation ratio is treated as fixed; uncertainty in that assay is not included.
+
+
+\section*{S8 Cascade calculation and what is held fixed}
+
+Let $\theta$(l) be the fitted decreasing first-layer curve and $p_0$=$(1-\theta)^3$. The baseline response is Y=$\kappa$$p_0$/($\kappa$$p_0$+$\theta$), an increasing adenylylation response. We calculate its two limiting plateaus and choose $\kappa$ so that Y at the reported midpoint equals their arithmetic mean. The other reverse-input model replaces $\theta$ with 1-$p_0$.
+
+
+To score a curve, solve Y=$Y_{\mathrm{low}}$+q($Y_{\mathrm{high}}$-$Y_{\mathrm{low}}$) for q=0.1 and 0.9. Because Y is monotone in the upstream $\theta$, the target $\theta$ values can be found by a one-dimensional root solve on its plateau interval. The Hill inverse then gives
+
+
+\[
+\log l=\log S+\frac{1}{h}\log\frac{\theta_0-\theta}{\theta-\theta_\infty}. \tag{S22}
+\]
+
+The range coefficient is log81 divided by the absolute log-input difference. This convention refers to the dynamic range of each complete curve, not to absolute modification levels of 0.1 and 0.9. The latter may be unreachable when a plateau is nonzero. The primary study states that the coefficients were obtained graphically from 10\% to 90\% of the full response, supporting this comparison convention. This does not provide uncertainty estimates for the digitized endpoints or reported coefficients.
+
+
+\begin{center}\begin{singlespace}\small
+\begin{tabular}{lrrrr}\toprule
+
+PII $\mu$M & Midpoint mM & Reported & Calculated & Ratio \\
+\midrule
+
+0.5 & 0.600 & 5.23 & 3.552 & 1.472 \\
+
+5 & 0.530 & 6.46 & 3.779 & 1.709 \\
+
+36 & 0.225 & 4.48 & 4.915 & 0.912 \\
+
+\bottomrule\end{tabular}
+\end{singlespace}\end{center}
+
+The midpoint is calibrated, not predicted. Published coefficients and midpoints are held fixed in the perturbation analysis. Each upstream draw is refitted and passed through all three conditions, preserving their dependence through the shared upstream curve. The resulting residual percentile ranges are [1.27,1.66], [1.46,1.94], and [0.76,1.13] in increasing PII order. They omit uncertainty in the cascade measurements and the second-layer architecture. The calculations support a conditional baseline comparison, not a direct measurement of a missing local gain or a probability that one mechanism is true.
+
+
+\section*{S9 Reproducibility record}
+
+S1 Data contains the reconstructed titration, cascade comparison, model-comparison table, all coordinate-perturbation draws, illustrative state distributions, numerical summary, and verification report. The axis calibration above documents the independent twelve-marker consistency check. The supplied MATLAB scripts rebuild individual panels from the accompanying figure-data CSV files. The assembly script combines vector panels and adds panel letters. An independent Python calculation reproduces the numerical summaries and generates diagnostic plots in a separate directory. The independent verification script checks fit convergence, symbolic plateau identities, the stationary switch point, and the finite-range input bound.
+
+
+The uniqueness proof is restricted to the single-effector network and its stated conditions. The sensitivity identities apply at positive steady states without a uniqueness or stability assumption.
+
+
+\section*{S10 Numerical support, total observables, and robustness}
+
+The independent species-balance calculations in S1 Fig reproduce the ratio invariant over a 5,278-fold change in free enzyme. The maximum absolute deviation from the analytic adjacent ratios is approximately $5.0\times10^{-14}$. In the dead-end example, total rather than free effector is fixed. A small drift of approximately $5.37\times10^{-10}$ at $T_E/T_L\simeq1.11\times10^{-9}$ therefore reflects the free-input map. A separate 60-digit calculation gives a chain-identity error below $1.3\times10^{-29}$ while the ratios themselves drift by $5.37\times10^{-5}$ at $T_E/T_L\simeq1.11\times10^{-4}$. This distinction matters: dead ends preserve the identity at free input, not every titration against conserved input.
+
+
+For a general one-effector ladder, set $r_i=c_i l^{-i}$, $M=\sum_{i=0}^{n}r_i$, $W=\sum_{i=0}^{n-1}\widehat B_i r_i$, $V=\sum_{i=0}^{n-1}\widehat G_i l r_{i+1}$, and $Q=W+AV$. Here Q is a scalar binding sum, unrelated to the compartmental matrix used in S13. At fixed l, target conservation gives $s_0=T_S/(M+eQ)$. Enzyme conservation gives the quadratic
+
+
+\[
+(1+Al)Qe^2+[(1+Al)M+(T_S-T_E)Q]e-T_E M=0. \tag{S23}
+\]
+
+For every positive l its leading coefficient is positive and its constant term negative, so exactly one root e is positive. The rationalized expression $e=2T_E M/[b+\sqrt{b^2+4aT_E M}]$, with a and b the quadratic coefficients, avoids cancellation in numerical evaluation. The remaining effector balance is
+
+
+\[
+\mathcal R(l)=l+Ael+Aes_0V-T_L=0. \tag{S24}
+\]
+
+Every candidate root is checked in the original balances with $s_i=s_0r_i$, $\varepsilon=Ael$, $\beta_i=\widehat B_i e s_i$, and $\gamma_i=\widehat G_i\varepsilon s_{i+1}$. The total modified fraction is
+
+
+\[
+\theta_{\rm total}=\frac{\sum_{i=0}^{n} i s_i+
+\sum_{i=0}^{n-1}i\beta_i+\sum_{i=0}^{n-1}(i+1)\gamma_i}{nT_S}. \tag{S25}
+\]
+
+S3 Fig evaluates the negative logit derivative of this total fraction with respect to free l at its own half-point. Its specified family has $n=3$, $A=\widehat K=1$, $\widehat B_i=(3-i)0.4$, $\widehat G_i=(i+1)0.4$, and $K_m=1/(3\times0.4)$ in consistent concentration units. Across the supplied grid the coefficient ranges from 0.66670 to approximately one; restricting $T_E/T_S\le0.01$ gives 0.99745 to approximately one. Direct recalculation of all 2,116 grid points agrees with the supplied figure data within $10^{-9}$. These are finite-domain, parameter-specific calculations, not a proof that sequestration can never raise any measured slope.
+
+
+The distinction from absolute concentration robustness can also be made constructively. At fixed l, choose arbitrary positive e and $s_0$ and construct the remaining species from the invariant. The conserved totals are then determined by those choices; varying them changes species concentrations while preserving adjacent ratios. Thus the ratio identity does not fix an absolute species concentration across all positive compatibility classes. In the one-site alternative with reverse reaction $B_0+S_1\rightleftharpoons G\to B_0+S_0$, forward and reverse flux balance instead cancels $\beta_0$ and gives
+
+
+\[
+s_1^*=\frac{b_3(g_2+g_3)}{g_1g_3}. \tag{S26}
+\]
+
+This comparison concerns the stated architectures; it is not a universal classification of every bifunctional network. For the original core network there are $4n+4$ reaction complexes, three linkage classes, and stoichiometric rank $3n+1$, hence deficiency n. The rank follows from three independent conservation laws together with independent effector-binding, target-complex, and modification directions. At n=1 the usual sufficient structural pair for the deficiency-one ACR criterion is absent. Failure of that sufficient test is not the argument for absence of concentration robustness; the explicit positive-state parametrization is.
+
+
+\section*{S11 What the uniqueness counterexamples establish}
+
+S5 Fig compares four constructions using the same residual in Eq. (S24). Panel A uses independent-site binding multiplicities, $n=3$, $A=\widehat K=1$, $\widehat B_i=(3-i)1.5$, $\widehat G_i=(i+1)0.8$, and totals $(T_E,T_S,T_L)=(1,4,2)$. Its catalytic ratio is constant at $0.8/1.5$, and $\omega=4.5l/(l+1)$ has elasticity $1/(l+1)$. Both uniqueness conditions are therefore satisfied globally. A binomial distribution alone is not sufficient to certify these kinetic conditions: assigning constant stepwise binding constants while retaining binomial ladder coefficients would make the inferred catalytic ratios nonuniform.
+
+
+Panel B uses a four-site example with catalytic-ratio spread 2.89. Its three positive states are valid, but its binding elasticity is approximately -0.2454 and -0.1361 at the middle and upper roots. It therefore violates both conditions and cannot establish that condition (i) alone can be omitted. This example establishes multistationarity when both conditions are relaxed.
+
+
+Panel C uses the supplied four-site example with constant catalytic ratio $\rho=0.0401358$. At its middle root the binding elasticity is approximately 3.0592, above the allowed upper bound. It demonstrates multistationarity when condition (ii) is removed while condition (i) is retained. The additional supplied n=5 and n=6 examples were also rechecked and have three positive states.
+
+
+Panel D supplies an independently constructed example that violates only condition (i). Use n=5, $A=0.02$, $\widehat K=1$, $\widehat B_i=5-i$, and
+
+
+\[
+(\rho_0,\ldots,\rho_4)=(0.0004,0.2,0.07,128,0.13),\qquad
+\widehat G_i=\frac{(i+1)\rho_i}{A}. \tag{S27}
+\]
+
+Then the ladder is exactly binomial, $c=(1,5,10,10,5,1)$, and $\omega=5l/(l+1)$ has elasticity $1/(l+1)$ for every positive l. At totals $(550,960,196)$ there are exactly three physical positive steady states. The catalytic-ratio spread is 320,000, so this is a logical counterexample, not evidence that a small physiological perturbation produces multistationarity.
+
+
+\begin{center}\begin{singlespace}\small
+\begin{tabular}{lrrr}\toprule
+
+Case & n & Free-effector roots & Conditions violated \\
+\midrule
+
+Original B & 4 & 0.00115304; 0.0528373; 0.110316 & (i) and (ii) \\
+
+Uniform-ratio C & 4 & 0.00209669; 0.274698; 1.63335 & (ii) \\
+
+Binomial-ladder D & 5 & 0.00119699; 9.05656; 192.490 & (i) \\
+
+\bottomrule\end{tabular}
+\end{singlespace}\end{center}
+
+All listed states have positive species and satisfy conservation and elementary flux balances with maximum absolute residual below $3\times10^{-78}$ in 80-digit arithmetic. For panel D, exact rational elimination yields a degree-twelve factor with five positive real roots; two give negative free enzyme and are rejected. Rational root isolation and substitution leave the three physical roots shown above. Counting positive roots of an eliminated polynomial without checking species positivity would overcount this example.
+
+
+Positive elementary rates realizing the parameters are obtained with $a_2=1$, $a_1=A$, $g_{3i}=b_{2i}=g_{2i}=1$, $b_{3i}=\rho_i$, $b_{1i}=\widehat B_i(1+\rho_i)$, and $g_{1i}=2\widehat G_i$. Full parameter records and high-precision states accompany S1 Data. These examples show that neither hypothesis can be dropped from the general sufficient guarantee. They do not make either hypothesis necessary for uniqueness of an individual parameter set, and no claim of bistability follows without a stability calculation.
+
+
+\section*{S12 Estimator dependence, alternative pathways, and source checks}
+
+After rescaling the input, any positive three-site binding polynomial can be written with coefficients $(1,3a,3b,1)$. S2 Fig displays the numerically maximized local factor over input. The independent ladder is $a=b=1$; depletion of the two intermediate states approaches the ceiling three. The colored loci reproduce the descriptive trimer-to-monovalent coefficient ratio 1.11055 under a pure-power switch with exponent two and either a four-parameter fitted exponent or a response-range estimator. They are conditional shape constraints, not experimentally measured values of the local factor. Re-evaluating the supplied 17 fit-locus and 16 range-locus points reproduces the target ratio to within $5\times10^{-6}$.
+
+
+On the supplied locus the conversion from that curve-wide ratio to the local factor at the trimer half-point spans approximately 1.024--1.125 for the fitted estimator and 1.036--1.225 for the range estimator. A narrower interval obtained by selecting a few ladder families is not a universal conversion. Neither locus corrects for heterotrimer mixing, uncertain plateaus, or regulation that is not a pure power.
+
+
+For S4 Fig the downstream ladder is
+
+
+\[
+K_i=\frac{13-i}{i}\widehat K_2 w^{i-1},\qquad i=1,\ldots,12. \tag{S28}
+\]
+
+At each w and assay condition, $\widehat K_2$ is calibrated to the reported range midpoint and the full composite curve is scored. The local factor is evaluated separately at each condition's calibrated midpoint. The original plot used the mean of those three local factors as a common horizontal coordinate; S4 Fig instead uses the shared interaction parameter w and displays the three local factors separately. Raising w can remove underprediction at one condition while increasing overprediction at another. This construction is illustrative and is not a joint fit of microscopic rate constants.
+
+
+For S7 Fig, a direct input multiplies the forward capacity by $\phi(G)=(1+RG/K_G)/(1+G/K_G)$. Its contribution to the log derivative is
+
+
+\[
+\frac{d\log\phi}{d\log G}=
+\frac{(R-1)G/K_G}{(1+RG/K_G)(1+G/K_G)},\qquad
+\max_G\frac{d\log\phi}{d\log G}=\frac{\sqrt R-1}{\sqrt R+1}. \tag{S29}
+\]
+
+The maximum formula assumes $R>1$ and occurs at $G/K_G=1/\sqrt R$. With $f_2=\theta/[(1-\theta)^3\phi]$, the two local input contributions add exactly. At the specified middle-condition example with $R=3.7$ and $K_G=S$, the contributions are approximately 4.2168 and 0.3039, summing to 4.5207. This is the elasticity of the effective input ratio, not a four-parameter fitted exponent. Holding the downstream scale at the value calibrated before adding direct regulation gives a response-range gain of 0.951--1.173 as $K_G/S$ varies from 0.01 to 100. It is a test of that construction; it cannot establish that all direct pathways fail or that an alternative requires a particular number of cooperative sites. The companion panel showing a total-effector titration at high enzyme restores the concentration signature absent from the dilute-enzyme example in S8 Fig B.
+
+
+Primary-source checks resolve two experimental details. Jiang and Ninfa (2011), Methods and Fig. 2, explicitly use a graphical 10--90\% full-response measure. Their Fig. 2B upstream titration is measured within the reconstituted bicyclic system. In the three cascade conditions, PII is 0.5, 5, or 36 $\mu$M while UTase/UR is respectively 0.05, 0.5, or 0.8 $\mu$M; ATase is 0.1 $\mu$M. Thus attributing the condition dependence solely to changing PII is unwarranted. The corresponding ATase-to-total-PII ratios are 0.20, 0.020, and 0.00278, whereas GlnD-to-glutamine ratios at the reported midpoints are approximately $8.3\times10^{-5}$, $9.4\times10^{-4}$, and $3.6\times10^{-3}$. These concentration ratios do not establish fast binding or a derivative bound.
+
+
+The same primary study reports isolated downstream-cycle response-range coefficients from 1.39 to 2.11 at fixed PII/PII-UMP totals, and 1.83 without unmodified PII. These measurements motivate direct regulation but do not isolate its local gain. Ventura and colleagues (2010), Discussion, also describe a lower-PII upstream response near 1.4, compared with 2.21 in their displayed standard condition, without a corresponding plotted titration or complete conditions for the lower-PII comparison. This is a useful challenge for a matched concentration experiment; the present calculation neither explains it nor rules it out with an unrelated parameter sweep.
+
+
+The first coordinate in the supplied digitization uses 0.02 mM at approximately 2.97 UMP/trimer, whereas the source graph places the lowest-input point at zero before a broken logarithmic axis. The supplied digitization is retained for reproducibility, and this encoding is stated explicitly. Treating that input as zero gives h=2.0205; treating it as (0,3) gives h=1.9914; dropping it gives h=2.0298, compared with 2.0179 for the supplied CSV. Thus the near-two descriptive result is insensitive to these alternatives, but the CSV should not be described as exact original coordinates. None of these checks recovers experimental replicate uncertainty.
+
+
+\section*{S13 A scoped stability calculation and the Re F figure}
+
+The steady-state results do not require dynamical stability. To interpret S6 Fig, impose two additional assumptions: free effector is externally buffered, and effector binding equilibrates rapidly so that $\varepsilon=Ale$ during the reduced dynamics. A small enzyme-to-effector concentration ratio supports the first approximation but does not establish the second timescale separation.
+
+
+Let z contain the $3n+1$ target-bearing free states and complexes, and let Q be their column-conservative compartmental matrix at the steady state. Split its unbound-enzyme and ligand-bound-enzyme association terms from its unimolecular part $Q_0$. With $\chi$ the indicator of target-bearing enzyme complexes, the closed dynamics and Jacobian are
+
+
+\[
+\begin{aligned}
+\dot z&=[Q_0+e(z)(Q_1+AlQ_2)]z,\qquad
+ e(z)=\frac{T_E-\chi^Tz}{1+Al},\\
+J&=Q+uv^T,\quad
+u=(Q_1+AlQ_2)z^*=-Q_0z^*/e^*,\quad
+v=-\chi/(1+Al).
+\end{aligned}\tag{S30}
+\]
+
+Here the rank-one vector u is unrelated to the inverse-input variable used earlier. On the target-conserving subspace $\mathbf 1^T\delta z=0$, the restriction $Q_r$ is Hurwitz because the compartmental chain is irreducible. The matrix determinant lemma gives the loop function
+
+
+\[
+g(\lambda)=v^T(\lambda I-Q)^{-1}u,\qquad
+\det(\lambda I-J_r)=\det(\lambda I-Q_r)[1-g(\lambda)]. \tag{S31}
+\]
+
+The apparent zero-mode singularity is removable in this expression because $\mathbf 1^Tu=0$. A sufficient condition for stability is $\operatorname{Re}g(i\omega)\le0$ for all real frequencies. Under that condition, the Nyquist curve of $1-\kappa g$ remains in the half-plane with real part at least one for every $\kappa\ge0$, so no zero crosses into the right half-plane from the stable case $\kappa=0$. This is a sufficient positive-real condition, not a necessary condition for stability at the single physical gain $\kappa=1$.
+
+
+To relate it to the plotted quantity, put $L=Q^T$, $\sigma=\mathbf 1^Tz^*$, $\pi=z^*/\sigma$, and let $\varphi$ equal +1 on free target states and -1 on complexes. The graph is bipartite. Its exit rates are $q_x=-L_{xx}$, and stationarity gives $L^T\operatorname{diag}(\pi)\varphi=-2\operatorname{diag}(\pi)\operatorname{diag}(q)\varphi$. Consequently
+
+
+\[
+\begin{aligned}
+F(\lambda)&=\varphi^T\operatorname{diag}(\pi)(-L)(\lambda I-L)^{-1}\varphi,\\
+g(\lambda)&=-\frac{\sigma}{4e^*(1+Al)}F(\lambda).
+\end{aligned}\tag{S32}
+\]
+
+The identity follows by substituting $u=-Q_0z^*/e^*$ and $\chi=(\mathbf 1-\varphi)/2$ into Eq. (S31); the constant-vector term vanishes by stationary flow balance across the partition. In terms of the stationary parity autocorrelation $C(t)=\varphi^T\operatorname{diag}(\pi)e^{Lt}\varphi$, the correct relation is $F(\lambda)=1-\lambda\widehat C(\lambda)$. F is not the Laplace transform of C itself. Its zero-frequency limit is $F(0)=1-(\pi^T\varphi)^2>0$.
+
+
+A high-frequency sufficient bound can be stated without assuming reversibility. Define the jump matrix $P=I+\operatorname{diag}(q)^{-1}L$, the flux matrix $\mathcal J=\operatorname{diag}(\pi)L-L^T\operatorname{diag}(\pi)$, and $w=[I+P+i\omega\operatorname{diag}(q)^{-1}]^{-1}\mathbf 1$. Bipartite intertwining and the imaginary part of the equation for w give
+
+
+\[
+\operatorname{Re}F(i\omega)=\frac4\omega\left[
+\omega\sum_x\pi_x|w_x|^2+
+\sum_{x<y}\mathcal J_{xy}\operatorname{Im}(\bar w_xw_y)\right]. \tag{S33}
+\]
+
+To bound the flux term, write $w=p+ir$ with real p and r. It equals $p^T\mathcal J r$. Weighted Cauchy--Schwarz bounds its magnitude by $\|\Pi^{-1/2}\mathcal J\Pi^{-1/2}\|_2\|p\|_\pi\|r\|_\pi$, where $\Pi=\operatorname{diag}(\pi)$. Applying $2ab\le a^2+b^2$ proves
+
+
+\[
+\omega\ge\Omega_c:=\tfrac12\|\Pi^{-1/2}\mathcal J\Pi^{-1/2}\|_2
+\quad\Longrightarrow\quad\operatorname{Re}F(i\omega)\ge0. \tag{S34}
+\]
+
+Continuity and $F(0)>0$ also give a positive low-frequency neighborhood, without a common numerical radius. The interval between the low-frequency neighborhood and the high-frequency threshold is not decided by these two bounds. S6 Fig uses the same threshold convention at every n rather than assigning all n=1 frequencies to a separately claimed theorem.
+
+
+The numerical family in S6 Fig has $A=l=e=\widehat K=1$, $\widehat B=\widehat G=0.4$, all dissociation and catalytic rates equal to one, and independent-site association multiplicities. Time is normalized so the stationary mean exit rate is one. Direct evaluation of Eq. (S32) at 300 frequencies for each of n=1,2,3,4,6 agrees with the supplied projected-system implementation to within $6\times10^{-16}$ in Re F; the loop-reduction identity agrees within $2\times10^{-14}$. Every sampled value is positive. The zero-frequency markers are evaluated from the analytic limit, rather than from the smallest nonzero sampled frequency. These computations validate the plotted examples and implementation, not all-frequency positivity for every parameter set or stability of the unbuffered original model.
+
+\section*{S14 General plateau constraint and scope of the original inhibition calculation}
+
+Let a homogeneous positive ladder have $p_i=c_i u^i/P(u)$, $c_i>0$, and $\theta=\langle i\rangle/n$. For two limiting weights $u_0>u_\infty>0$, the fundamental theorem of calculus and the variance bound give
+\[
+\log\frac{\theta_0/(1-\theta_0)}{\theta_\infty/(1-\theta_\infty)}
+=\int_{\log u_\infty}^{\log u_0}\frac{d\log[\theta/(1-\theta)]}{d\log u}\,d\log u
+\le n\log(u_0/u_\infty). \tag{S35}
+\]
+Thus $u_0/u_\infty\ge\Omega^{1/n}$. The independent-site ladder has $\nu=1$ and yields $u_0/u_\infty=\Omega$. In the limiting two-endpoint ladder, $\theta=u^n/(1+u^n)$ after rescaling, and the lower inequality is approached. Strictly positive intermediate weights approach but do not attain that endpoint-only limit. If $u$ is the ratio of forward to reverse capacities, its limiting ratio is $R_{\mathrm{fwd}}R_{\mathrm{rev}}$. These assumptions do not identify the two factors separately.
+
+Using 173 from the original independent-response plateau profile illustrates the distinction: the corresponding unrestricted three-site requirement is only 5.572. The value 173 is retained as a conditional profile endpoint with its original residual assumptions; it is not refitted as a universal confidence bound over arbitrary switch functions. The transformation uses the same plateau uncertainty criterion, not new experimental errors. Division by a removing-activity ratio of 6.778 yields 0.822; if forward inhibition is constrained a priori to be at least one, this lower requirement is uninformative. Cross-assay transfer of that kinetic ratio remains an assumption.
+
+The refractory construction in S16 is outside the homogeneous ladder class. Moreover, a fully modified refractory population does not automatically imply a smaller regulation requirement in the accessible population. For $r<\theta_\infty$, the accessible-site odds swing is
+\[
+\Omega_q=\frac{(\theta_0-r)/(1-\theta_0)}{(\theta_\infty-r)/(1-\theta_\infty)}\ge\Omega,
+\]
+and it diverges as $r\uparrow\theta_\infty$. The population equivalence is an observation result, not evidence that refractory target eliminates all need for regulation. It is uncertainty in ladder shape and kinetic correspondence that prevents interpreting the independent-ladder 25.5-fold endpoint as a universal bound.
+
+\section*{S15 Finite-switch fits and exact mean-matched ladders}
+
+All new upstream comparisons use the twelve coordinates already documented in S7, including the author-supplied 0.02 mM first coordinate. The ordinary bounded Hill reference is $U(G)=b+(t-b)/(1+(G/S)^h)$. The bounds are $1.50001\le t\le2.999999$, $0.00001\le b\le1.49999$, $0.005\le S\le30$ mM, and $0.1\le h\le8$. The small numerical offsets keep inverse weights finite and exclude degenerate equal plateaus. They alter the original reference fit negligibly. The four optimized coordinates are $t,b,\log S,h$; inputs are not optimized as latent observations. The reference is fitted from twelve starts, each fixed-shape finite model from eight, and each profile point from two, using seeded starts and bounded least squares.
+
+For the finite-switch models, $c=(1,3e^{-2J},3e^{-2J},1)$ and $m_J(u)=\sum_i i c_i u^i/(3\sum_i c_i u^i)$. Set $u_0=m_J^{-1}(t/3)$, $u_\infty=m_J^{-1}(b/3)$, and $u_m=m_J^{-1}((t+b)/6)$. Define
+\[
+z(G)=\frac{u_0-u_m}{u_m-u_\infty}(G/S)^h,\qquad
+u(G)=u_\infty+\frac{u_0-u_\infty}{1+z(G)},\qquad U_J(G)=3m_J(u(G)). \tag{S36}
+\]
+This saturating forward/reverse weight is equivalent, by reciprocation and a scale change, to a basal saturating effective reverse/forward switch. It has the specified response endpoints and midpoint. The exponent is an effective regulation parameter, not ligand-binding stoichiometry. At $J=0$, Eq. (S36) equals the reference four-parameter Hill curve exactly. The fixed $J$ values are scenarios; they are not additional parameters covertly optimized in the three four-parameter fits. A separate 61-point profile over $[-1.5,1.5]$ is supplied as a sensitivity analysis and does not turn the chosen scenarios into independently selected models.
+
+\begin{center}\begin{tabular}{rrrrr}\toprule $J$ & Fitted $h$ & RMSE & LOO RMSE & $\Delta$AICc \\\midrule
+-0.7 & 3.115 & 0.0392 & 0.0634 & 2.56 \\
+0.0 & 2.018 & 0.0352 & 0.0499 & 0.00 \\
+0.7 & 1.414 & 0.0357 & 0.0503 & 0.31 \\
+\bottomrule\end{tabular}\end{center}
+
+
+Corrected AIC is $N\log(\mathrm{SSE}/N)+2k+2k(k+1)/(N-k-1)$, with $N=12$ and $k=5$, including an unknown common residual variance. Additive constants cancel between models. This working Gaussian residual comparison is not based on replicated assay errors. Leave-one-coordinate-out prediction refits all four parameters on eleven points using three starts; errors are in UMP groups per trimer. The 12 predictions for each model are supplied. The apparent similarity of these fits does not validate each molecular mechanism.
+
+For the exact construction, any positive ladder satisfies
+\[
+\frac{d m_c}{d\log u}=\frac{\operatorname{Var}(i)}n>0,\quad
+\lim_{u\to0}m_c=0,\quad\lim_{u\to\infty}m_c=1. \tag{S37}
+\]
+It therefore has a unique inverse, and $u_c(G)=m_c^{-1}(U(G)/3)$ gives the same full mean curve for each chosen ladder. For a decreasing mean, $u_c$ is decreasing and $f_c=1/u_c$ increasing. Positive birth--death rates with these adjacent ratios realize the distributions at each input; this does not prove a finite elementary ligand-binding implementation of the whole input function. Inversion is evaluated with a monotone interpolator and checked against independent bracketed roots. Exact mean matching is a structural construction, not a finite-dimensional fit assigned an AIC or evidence score.
+
+The ladder parameter convention is $\log c_i=\log {n\choose i}+J[(i-n/2)^2-(n/2)^2]$. For $n=3$, this gives the coefficients above. Its sign describes endpoint or intermediate-state enrichment, not necessarily thermodynamic site cooperativity: effective coefficients can also contain state-specific enzyme recognition and turnover. Neither the uniqueness nor stability claims for the original single-effector architecture are assumed for these effective switch functions.
+
+\section*{S16 Population equivalence and joint cascade calibration}
+
+Let $\theta(G)$ be the common decreasing mean fraction and $0\le r\le\min_G\theta$. Define $q=(\theta-r)/(1-r)$ and $p_i^{\mathrm R}=(1-r){n\choose i}q^i(1-q)^{n-i}+r\delta_{in}$. Summation gives $\sum_i p_i^{\mathrm R}=1$ and $\sum_i i p_i^{\mathrm R}=n\theta$. For the unmodified state,
+\[
+p_0^{\mathrm R}=(1-r)(1-q)^n
+=\frac{(1-\theta)^n}{(1-r)^{n-1}}. \tag{S38}
+\]
+Hence setting $\kappa_{\mathrm R}=\kappa_{\mathrm H}(1-r)^{n-1}$ preserves $v=\kappa p_0/\theta$ for all inputs. Any common response $Y=H(v,G)$ remains identical, not merely its midpoint. This includes the direct-route and downstream-ladder responses below. The proof does not hold if the reverse input is changed from total mean $\theta$ to accessible-population occupancy $q$, if a separate state such as $p_3$ regulates the reverse activity, or if gain is fixed independently rather than calibrated. Such alternatives are possible biochemical mechanisms, not excluded by this proof.
+
+We choose $r=b/3$ from the same Hill reference. Then $q=(t-b)/[3(1-r)(1+(G/S)^h)]$ tends to zero. The accessible reverse/forward ratio $(1-q)/q$ is positive for finite input and unbounded in the high-input limit. It should not be identified with a fully saturated finite removing activity and constant positive forward activity without an additional microscopic model. The population interpretation is explicitly hypothetical, and total-state measurements in the presence of enzyme-bound PII may require an observation correction.
+
+The cascade comparisons use only the three reported midpoint/coefficient pairs in the existing data file, not the previously calculated columns as new observations. The conditions $(T_{\mathrm{PII}},T_{\mathrm{GlnD}},G_{50},n_{\mathrm{range}})$ are $(0.5,0.05,0.600,5.23)$, $(5,0.5,0.530,6.46)$, and $(36,0.8,0.225,4.48)$, with protein concentrations in micromolar and glutamine in millimolar. They do not define a concentration-response law for either protein.
+
+For every candidate and every proposed shared-parameter vector, the gain is recalibrated to satisfy
+\[
+Y(G_{50})=\{Y(0)+Y(\infty)\}/2,\quad
+\widetilde Y(G)=\frac{Y(G)-Y(0)}{Y(\infty)-Y(0)},\quad
+n_{\mathrm{range}}=\frac{\log81}{\log(G_{90}/G_{10})}. \tag{S39}
+\]
+The baseline uses $Y=v/(1+v)$, $v=\kappa p_0/\theta$. Four exact mean-matched upstream scenarios are compared: $J=0,0.7,-0.7$ and the refractory mixture. Added downstream candidates are:
+\begin{itemize}
+\item Direct route: replace $v$ by $v(1+RG/K_G)/(1+G/K_G)$, with shared $1\le R\le100$ and $0.001\le K_G\le100$ mM. This domain is a sensitivity choice, not a biochemical confidence region.
+\item Transfer-power benchmark: $Y=v^\beta/(1+v^\beta)$, with shared $0.3\le\beta\le5$. This is phenomenological and is not an inference of GS site number or ligand stoichiometry.
+\item GS ladder: $Y=\sum_{i=0}^{12}i d_i v^i/(12\sum_{i=0}^{12}d_i v^i)$ with $d_i={12\choose i}\exp[J_{\mathrm{GS}}((i-6)^2-36)]$. The fixed-upstream comparisons use $-0.15\le J_{\mathrm{GS}}\le0.8$; the additional shared-upstream comparison explicitly widens this to $[-0.8,0.8]$. At zero coupling this reduces to the baseline.
+\end{itemize}
+The common objective is $\sum_{j=1}^3[\log(n_j^{\mathrm{pred}}/n_j^{\mathrm{reported}})]^2$. There are always three midpoint-calibration nuisance gains; added shape parameters are shared, not separately fitted in each condition. We do not combine the unknown error distributions of summary slopes and midpoints into an invented experimental likelihood. Calibration searches $\log\kappa\in[-35,35]$ on 141 points, retaining candidates with one detected sign crossing per condition and refining each root. This numerical branch convention is not a uniqueness proof. Bounded differential evolution fits shared parameters. Additional upstream $J$ ranges over $[-1.5,1.5]$, using two seeds, dense-grid refinement, and final 12,001-point scoring. Complete bounds, gains, and convergence flags are supplied. Root detection and optimizer agreement do not guarantee exhaustive search or a global minimum.
+
+\begin{center}\small\begin{tabular}{lrrrr}\toprule Shared shapes & $J$ & $n_{0.5}$ & $n_5$ & $n_{36}$ \\\midrule
+PII ladder & -0.595 & 5.314 & 5.772 & 5.975 \\
+PII + transfer power & -1.473 & 5.577 & 6.130 & 4.465 \\
+PII + direct route & -0.594 & 5.314 & 5.771 & 5.975 \\
+PII + GS ladder & -1.500 & 5.521 & 6.157 & 4.474 \\
+\bottomrule\end{tabular}\end{center}
+
+
+The shared PII-plus-GS comparison reaches an upstream search boundary and requires widely separated calibrated gains. Those gains have not been independently constrained by binding or turnover assays. Thus close summary agreement is evidence that the original discrepancy is not model-invariant, not evidence for a particular physiological ladder. The direct-route boundary optimum is likewise not a measurement of its affinity or maximal activation. With only three reported coefficients, these examples do not support likelihood-based model selection or out-of-sample validation of the shared shape parameters.
+
+As an additional asymmetric effective GS candidate with the independent PII input, we use
+\[
+\log d_i=\log{12\choose i}+A[(i-6)^2-36]+B(i-6)^3/6,
+\quad -0.5\le A,B\le0.5.
+\]
+This adds two shared parameters. It gives coefficients 5.916, 5.604, 4.509, with a maximum relative discrepancy of 13.3\%, and is therefore not an exact fit to the reported summaries. Applying the refractory transformation preserves its entire predicted cascade, with a maximum numerical difference below $3\times10^{-13}$. The observational equivalence is independent of whether the common downstream response adequately fits the experiments. Parameters, bounds, two-seed checks, and paired curves are supplied; this additional candidate does not alter the main conclusions.
+
+The original 2,000 upstream-coordinate sensitivity results remain in S9 Fig. For the new matched candidates, 300 draws share the original assumed errors (standard deviations 0.06 in log input and 0.06 UMP groups in output), seed 20260913. The same perturbed fit is used across every candidate in a draw. All draws converged and were retained; they are not independently resampled experiments. A separate summary-tolerance table recalibrates each midpoint at factors 0.9, 1, and 1.1 and compares the coefficient range with the reported coefficient multiplied by 0.9 and 1.1. These deterministic scenarios are not confidence intervals, and they are not jointly combined with the coordinate percentiles.
+
+\section*{S17 State observables, prospective separation, and numerical checks}
+
+For positive states in a fixed separable ladder,
+\[
+C_i=\frac{p_{i-1}p_{i+1}}{p_i^2}=\frac{c_{i-1}c_{i+1}}{c_i^2}. \tag{S40}
+\]
+These contrasts are unchanged by the input function or by the unavoidable rescaling $c_i\mapsto c_i a^i$, $u\mapsto u/a$. At a single input, state probabilities identify the ladder shape modulo that scale: $c_i c_0^{i-1}/c_1^i=p_i p_0^{i-1}/p_1^i$. At multiple inputs, changes in $C_i$ reject a fixed separable ladder for that observation model. State-dependent binding into experimentally counted complexes can also change total-state contrasts, so the test must be applied to the modeled observable.
+
+For the symmetric three-site family, $3C_1=3C_2=e^{2J}$. In the refractory mixture, the first three states belong entirely to the accessible binomial population. Consequently $3C_1=1$, while direct substitution gives $3C_2=1+r/[(1-r)q^3]$. Increasing glutamine decreases $q$ and increases the latter contrast, although rare-state noise can make the ratio unsuitable near the plateau. Direct measurement of $p_3$ avoids division by vanishing intermediate probabilities.
+
+For a practical separation calculation, let $D_{ab}(G)=\tfrac12\sum_{i=0}^3|p_i^{(a)}(G)-p_i^{(b)}(G)|$. We evaluate all six model pairs on 401 logarithmically spaced inputs from 0.02 to 10 mM and maximize $\min_{a<b}D_{ab}(G)$. The fixed candidates are the three exact mean-matched ladders and the refractory mixture. The selected input is 0.746758 mM and the minimum distance 0.159647. This is a maximin separation of latent trimer fractions, not a statistical power calculation or an optimum over all plausible mechanisms. No detection limit, band-specific bias, or instrument error covariance has been estimated.
+
+At this input and at 10 mM, 300 shared coordinate draws generate pointwise prediction percentiles for every state. At 10 mM, the independent and refractory $p_3$ medians are 0.00362 and 0.15115, with central ranges [0.00178,0.00670] and [0.11660,0.18711]. These ranges omit uncertainty in the fixed ladder and population assumptions. A measurement near the transition and another at high input address different ambiguities: distribution shape and the origin of the response floor, respectively. The complete state probabilities and draw-level results accompany S1 Data.
+
+Verification uses independent mathematical routes where available. Population equivalence is checked for 1,200 random cases over $n=1,\ldots,12$, with maximum relative identity error below $7\times10^{-13}$. Interpolated inverse weights agree with bracketed roots within $2.1\times10^{-9}$ in log weight over the verification grid. Finite differences of the mean agree with the variance derivative within $5.2\times10^{-11}$; the adjacent-state contrasts agree within $4.5\times10^{-15}$. An independent analytic gain calibration followed by bracketed threshold roots gives baseline coefficients 3.55184499, 3.77942277, and 4.91450595. A 20,001-point numerical calculation differs by at most $1.4\times10^{-5}$; population-equivalent exact coefficients differ by less than $5\times10^{-15}$. The generated verification file records these tolerances.
+
+\clearpage\renewcommand{\thefigure}{S\arabic{figure}}\setcounter{figure}{0}
+
+\section*{S18 Finite ligand and catalytic states realizing the population ambiguity}
+
+All quantities in this section refer to free target and buffered free glutamine unless otherwise stated. Three enzyme states have binding weights $w=(1,G/K_1,G^2/(K_1K_2))$ and nonnegative forward and reverse catalytic specificities $\alpha_j,\beta_j$. Their effective forward/reverse ratio is $A/B$, where $A=\sum_j\alpha_jw_j$ and $B=\sum_j\beta_jw_j$. Independent modification sites yield $\theta=A/(A+B)$ and binomial free-target state fractions.
+
+One explicit finite realization uses $E_0+G\rightleftharpoons E_1$ and $E_1+G\rightleftharpoons E_2$, with ligand binding only to the free enzyme states. For each $j=0,1,2$ and $i=0,1,2$, include
+\[
+E_j+S_i\rightleftharpoons B_{ji}\longrightarrow E_j+S_{i+1},\qquad
+E_j+S_{i+1}\rightleftharpoons C_{ji}\longrightarrow E_j+S_i.
+\]
+Choose forward specificities $(3-i)\alpha_j$ and reverse specificities $(i+1)\beta_j$. At steady state, eliminating each complex cancels its contribution to the free-enzyme balance. The ligand-binding ratios therefore retain weights $w$, and the target fluxes give the binomial ladder with input $A/B$. For example, in consistent nondimensional units, $k_{\rm off}=k_{\rm cat}=1$ and $k_{\rm on}=2$ times the desired specificity provide such a realization. Buffered nucleotide cofactors are absorbed into catalytic rates. This establishes the free-target result with explicit complexes; it does not identify closed-system total modification with free modification. The supplied verification constructs ten positive/nonnegative steady states and checks every species balance. Conserved totals are computed for each state and are not claimed to remain fixed across these constructed glutamine inputs.
+
+Let $r\le\min_j \alpha_j/(\alpha_j+\beta_j)$ and set $\alpha_j^{\rm R}=(1-r)\alpha_j-r\beta_j$ and $\beta_j^{\rm R}=\beta_j$. Then $A_{\rm R}=(1-r)A-rB$ and $A_{\rm R}+B=(1-r)(A+B)$, so $q=A_{\rm R}/(A_{\rm R}+B)=(\theta-r)/(1-r)$. A separate fully modified species with free fraction $r$ and no GlnD-mediated turnover gives the same total free mean. The refractory species is assumed available to the stated downstream recognition law. It is neither an experimentally established species nor a dynamically exchanging state. Vanishing catalytic coefficients denote omitted reactions. For $r=\alpha_2/(\alpha_2+\beta_2)$, the accessible model has $\alpha_2^{\rm R}=0$.
+
+For the independent-binding implementation, set $K_1=K/2$, $K_2=2K$, $\alpha_1=\alpha_2$ and $\beta_1=\beta_0$. Thus
+\[
+U(G)=\alpha_2+\frac{\alpha_0-\alpha_2}{(1+G/K)^2},\qquad
+R(G)=\beta_0+(\beta_2-\beta_0)\left(\frac{G/K}{1+G/K}\right)^2.
+\]
+These capacities are monotone for $\alpha_0\ge\alpha_2$ and $\beta_2\ge\beta_0$. The refractory transformation preserves monotonicity because it subtracts an increasing reverse capacity from a decreasing forward capacity. The model has independent ligand binding with state-dependent catalytic gating; it does not claim that enzyme activities respond independently to each binding event.
+
+The fit parameters are $q_0$, $q_2$, and $K$, where $q_j=\alpha_j/(\alpha_j+\beta_j)$. Fix the arbitrary common scale by $\alpha_0+\beta_0=1$. With transported specificity fold $F=6.752484$, set $d_2=F(1-q_0)/(1-q_2)$, $\alpha_2=d_2q_2$, and $\beta_2=d_2(1-q_2)$. Bounds are $0.9\le q_0\le0.999999$, $10^{-6}\le q_2\le0.499999$, and $0.001\le K\le10$ mM. Three initializations are supplied. Every leave-one-coordinate-out fit is independently optimized. Outputs report all fitted coefficients and errors. No microscopic binding data were included in the objective.
+
+For comparison, positive rational means are parameterized as
+\[
+\theta(G)=\frac{q_0+q_1G/(s\sqrt C)+q_2(G/s)^2}{1+G/(s\sqrt C)+(G/s)^2}.
+\]
+Here $C$ is an effective coefficient ratio, not generally $K_1/K_2$. A profile restricts $C$ to upper bounds 0.25, 1, 10, 100, and 10000 and fits ordered $q_0\ge q_1\ge q_2$. The upper boundary is reached in every scenario; this is evidence of limited identification within that chosen family, not an estimate of binding cooperativity. For a second, fixed-$C=100$ construction, set $q_1=q_0$, fix $F$ as above, and impose activity half-range $h=0.080$ mM using
+\[
+d_2=\frac{h^2}{s^2+sh/\sqrt C},\qquad q_0=1-d_2(1-q_2)/F.
+\]
+Only $q_2$ and $s$ are fitted. Choose $d_1=1$; the actual binding constants are $K_1=s\sqrt C$ and $K_2=sd_2/\sqrt C$. Their ratio is approximately 4500 in this transferred-kinetics construction. This is a strong, unmeasured cooperativity requirement. The independent-binding fit demonstrates that such a requirement is not inherent to the population equivalence.
+
+\section*{S19 What biochemical measurements constrain, and what remains unidentified}
+
+Jiang, Peliska and Ninfa (1998), Table 2, reports Mg-dependent UT glutamine inhibition at 70--80 $\mu$M and UR activation at 80 $\mu$M. The Mg-dependent UR specificity ratio calculated from the rounded $k_{\rm cat}$ and $K_m$ entries is $(6.5/0.82)/(2.7/2.3)=6.752484$. The older manuscript's rounded specificity entries 7.93 and 1.17 give 6.778 instead; this small arithmetic difference is retained explicitly rather than treated as a new measurement. The Mn-dependent entries are UT inhibition 150 $\mu$M and UR activation 0.70 mM, with the footnoted cofactor restrictions. Correcting transposed Mn metadata and the compensating plotting ratio preserves the numerical ceiling; S1 Data records both corrections.
+
+These measurements are apparent activity constants and catalytic summaries under their stated substrate/cofactor conditions. They are not measurements of the microscopic sequential ligand-binding constants in S18. In the independent-binding fit, transporting only the UR specificity fold gives an RMSE of 0.0366, but UT and UR half-ranges of approximately 0.022 and 0.126 mM. In the fixed-$C$ alternative, transporting the UR fold and 0.080 mM half-range gives an RMSE of 0.0378. A stricter test also transports the unliganded specificity ratio $(137/3)/(2.7/2.3)=38.9012$, fixing $q_0=0.974938$. Refitting the remaining parameter in that fixed-$C$ topology gives an RMSE of 0.540. Thus the partial success must not be presented as agreement with the full enzyme-kinetic dataset. Nor does failure of this cross-assay transfer rule out every finite model.
+
+Jiang, Mayo and Ninfa (2007), Tables 2--3, reports PII apparent activation constants from 0.015 to 2.5 $\mu$M in the selected rows without PII-UMP, as glutamine and other conditions change. Rows including PII-UMP reach approximately 6 and greater than 40 $\mu$M. Reported PII-UMP activation constants include 0.28, 0.35, and 0.85 $\mu$M under different conditions. These motivate a broad scenario envelope; pooling them does not produce an experimentally justified prior or confidence interval for $K_P$ or $K_Q$. Source-row identifiers and conditions are retained in S1 Data. Independent receptor sites are a candidate simplification.
+
+Write $P=T p_0$ and $Q=T\theta$. For a finite receptor with separate regulatory sites, the four aggregated occupancy classes have weights $(1,P/K_P,Q/K_Q,PQ/(K_PK_Q))$. The reverse input $Q$ is shorthand for three competing ligands $S_1,S_2,S_3$ with dissociation constants $3K_Q/i$ for state $i$ and equal effects after binding. The underlying receptor thus has eight microstates (forward site empty/bound, reverse site empty/bound to one of three states). This is a count-weighted recognition assumption. Adding identical glutamine regulation on both sides of the comparison preserves the following identity as long as the normalized input weights are preserved; it does not require PII-independent AT activity to be zero.
+
+The population construction gives $P_{\rm R}=cP_{\rm H}$ with $c=(1-r)^{-2}$ and leaves $Q$ unchanged. Setting $K_{P,\rm R}=cK_{P,\rm H}$ preserves every occupancy class. More generally, multiplying every dissociation constant for unmodified PII by $c$ preserves the corresponding binding weights, including condition-specific ones. In the independent-binding fitted pair, $c$ is approximately 1.37. This is one shared transformation over all glutamine and target levels, not a separate calibration at each data point. It establishes an identifiable combination of population composition and affinity under the chosen observation model. It does not demonstrate that either parameter set is biologically correct.
+
+If $K_P$ is known and held fixed, a separate-site saturated ratio $v=k[P/(K_P+P)]/[Q/(K_Q+Q)]$ is generally not preserved by a constant gain. The supplied 663 scenarios use three PII totals, 17 $K_P$ values, and 13 $K_Q$ values. At each setting, the homogeneous gain makes $Y=v/(1+v)=1/2$ at 0.53 mM and the refractory gain matches that response. The output is the maximum absolute GS-fraction difference across 401 inputs from 0.02 to 10 mM; it is not a response-range coefficient or a probability of experimental discrimination. Allowing the shared affinity transformation restores the full curve to numerical precision. State-specific reverse recognition, ligand/target sequestration, or independently fixed affinities can invalidate this result. No closed-total GlnE/PII conservation fit is claimed.
+
+Discriminating measurements are matched-condition UT/UR initial rates, high-input PII state fractions, and state-resolved GlnE binding. These remain prospective tests.
+
+
+\clearpage
+
+\section*{S20 GlnD occupancy--catalysis transformations}
+
+Use $E_0,E_1,E_2$ with the finite enzyme--target-complex realization in S18. Let $D_1=1+2z+z^2$, $z=G/K$, and $A=a_0+2a_1z+a_2z^2$, $B=b_0+2b_1z+b_2z^2$. The reference sets $a_1=a_2$ and $b_1=b_0$. For $\lambda>0$, change the middle binding weight to $2z/\lambda$ and middle catalytic coefficients to $\lambda a_1,\lambda b_1$. Equivalently, $K_1=\lambda K/2$ and $K_2=2K/\lambda$. Then $A$ and $B$ are unchanged, while $D_\lambda=1+2z/\lambda+z^2$. Both reduced capacities acquire the same positive multiplier
+\[
+\frac{U_\lambda}{U_1}=\frac{R_\lambda}{R_1}
+=\frac{D_1}{D_\lambda}.
+\]
+The free-target ratio, mean, and all binomial modification-state fractions are unchanged. The finite-complex stationary identity concerns free targets. The displayed kinetic multiplier additionally uses a fast-binding, unsaturated-conversion reduction in which the regulated free-enzyme ensemble provides the common rate scale. It should not be applied unchanged to a strongly sequestered closed-total assay.
+
+Ordered state activities ensure monotone capacities. For the fitted reference, the interval $1\le\lambda\le\min(b_2/b_0,a_0/a_1)$ preserves $a_0\ge\lambda a_1\ge a_2$ and $b_0\le\lambda b_1\le b_2$. Here the upper bound is the transported UR-fold scenario 6.752484, so $\lambda=1,2,4$ are all admissible. These are constructed alternatives, not three separately optimized explanations. The reference is refitted to the same twelve coordinates using three starts, with $q_0\in[0.9,0.999999]$, $q_2\in[10^{-6},0.499999]$, and $K\in[0.001,10]$ mM. The reference catalytic scale is arbitrary; only the ratios enter the mean fit. Complete coefficients are reported in S1 Data.
+
+At $G=K$, the singly liganded enzyme fraction is $1/(1+\lambda)$ and the capacity multiplier is $2\lambda/(1+\lambda)$. Thus the $\lambda=1$ and 4 models have fractions 0.5 and 0.2 and a speed ratio of 1.6. Both have mean ligand occupancy exactly one at that input. At $G=K/3$, their mean ligand occupancies are 0.5 and approximately 0.304; at $G=3K$, they are 1.5 and approximately 1.696. These flanking inputs are useful for an average-binding assay, whereas a central single-state or rate measurement addresses the same ambiguity differently. The fitted $K$ is a conditional model scale, not a directly measured glutamine dissociation constant.
+
+For the step-response illustration, $\dot\theta=s_D[U(G)(1-\theta)-R(G)\theta]$ and $\dot Y=s_E[v_{\rm AT}(1-Y)-v_{\rm AR}Y]$. The initial state is the steady state at $G=0.5$ mM, and the final free glutamine is 0.05 mM. $T=5\,\mu$M, and the downstream recognition law is $P=T(1-\theta)^3$, $U=T\theta$. Shared scales $s_D,s_E$ make the reference relaxation rates at the final steady state unity; transformed models retain those same scales. This is a prediction in nondimensional reference units, not a fit to experimental time courses. The source functions and generated file include both the PII and GS trajectories.
+
+\section*{S21 Identifiable combinations in the six-state GlnE model}
+
+The state activities and topology follow Fig 12 of Jiang, Mayo and Ninfa (2007). The ordered state weights are $(1,g,p,u,pg/\alpha_1,pu/\alpha_2)$ for $E$, $E$--Gln, $E$--PII, $E$--PII-UMP, $E$--Gln--PII, and $E$--PII--PII-UMP. AT activities are $k_P(0,\beta,1,0,\beta',0)$, and AR activities are $k_R(0,0,0,1,0,0)$. Glutamine and PII-UMP do not occupy the enzyme simultaneously in this topology. The recognition terms $P,U$ can be externally controlled free inputs. In the coupled illustrations, they are assigned the specified unmodified-trimer and count-weighted reverse inputs. This recognition assignment is distinct from the source topology itself.
+
+The common polynomial cancels from $v=v_{\rm AT}/v_{\rm AR}$. Accordingly, $\alpha_2$ is absent from this steady drive and $\alpha_1,\beta'$ enter only through $\beta'/\alpha_1$. For $c>0$, the transformation $(\alpha_1,\beta')\mapsto(c\alpha_1,c\beta')$ multiplies both catalytic rates by $Z_E/Z'_E$ but leaves their ratio unchanged. Changing $\alpha_2$ has the same common-rate effect with a different occupancy dependence. These identities preserve any downstream steady-state construction depending only on that drive, not only the independent-site GS example. Kinetic predictions require the conversion assumptions specified in the main Methods. Summing the three states bound to unmodified PII gives a binding isotherm with halfpoint
+\[
+K_{P,\mathrm{eff}}=K_P\frac{1+g+u}{1+g/\alpha_1+u/\alpha_2}.
+\]
+This prediction depends on $\alpha_1$ separately from $\beta'$, providing a complementary measurement. It is a predicted binding halfpoint, not an assumption that every published apparent activation constant equals a microscopic dissociation constant.
+
+A six-state continuous-time generator independently verifies the binding probabilities. Choose edges $E\leftrightarrow E$--Gln, $E\leftrightarrow E$--PII, $E\leftrightarrow E$--PII-UMP, $E$--Gln$\leftrightarrow E$--Gln--PII, $E$--PII$\leftrightarrow E$--Gln--PII, $E$--PII$\leftrightarrow E$--PII--PII-UMP, and $E$--PII-UMP$\leftrightarrow E$--PII--PII-UMP. Unit reverse rates and forward rates $(g,p,u,p/\alpha_1,g/\alpha_1,u/\alpha_2,p/\alpha_2)$ satisfy detailed balance with the stated weights. Stationary probabilities from linear solves agree with normalized weights in 250 random positive cases. These generator rates verify the equilibrium topology; they are not inferred binding-time constants.
+
+Parameter provenance is kept separate from calculation. The source's A1/A2 fitting example reports $K_G=15.6$ mM, $K_P=0.18\,\mu$M and $\alpha_1=0.17$. The selected $K_U=0.35\,\mu$M is an apparent activation-scale scenario from Table 3. Values $\beta=1$, $\beta'=10$, and $\alpha_2=4$ are chosen illustrations. The source reports $\alpha_2$ estimates 2.17--8.85 from other global fits; these motivate variants but are not a shared-condition confidence interval. The reference $k_P/k_R$ is set once so that the independent-GS mean equals 0.5 at $G=0.53$ mM and $T=5\,\mu$M. No other midpoint or response coefficient is fitted. The transformations retain this gain. Thus the steady-curve identities are exact mathematical consequences, while the numerical occupancy and time-scale differences are conditional predictions.
+
+For fixed $G,\theta$ and the coupled recognition law, write
+\[
+v(T)=\frac{k_PK_U}{k_RK_P\theta}(1-\theta)^3
+\left(1+\frac{\beta'G}{\alpha_1K_G}\right)
++\frac{k_PK_U\beta G}{k_RK_G\theta}\frac1T.
+\]
+Only the PII-independent AT state supplies the inverse-$T$ term. The remaining pathway terms are concentration invariant at fixed free-state fractions. With independent GS sites, $v=Y/(1-Y)$; for a different downstream observation law the affine prediction applies to the effective drive rather than automatically to measured GS odds. In Fig 8D, the analytic $T\to\infty$ intercept is subtracted only to display the concentration-dependent contribution. The three historical cascade assays do not by themselves test this relation because free inputs were not held fixed and GlnD concentrations also changed.
+
+Let the normalized positive contributions to the AT numerator be $w_P,w_G,w_{PG}$ from $p,\beta g,\beta'pg/\alpha_1$. At fixed $P,U$,
+\[
+\left.\frac{\partial\log v}{\partial\log G}\right|_{P,U}
+=w_G+w_{PG}\in[0,1].
+\]
+Along the coupled input path, define $a=-d\log\theta/d\log G$ and $b=3\theta a/(1-\theta)$. Then
+\[
+\frac{d\log v}{d\log G}=a+(w_P+w_{PG})b+(w_G+w_{PG}).
+\]
+The first two terms are mediated by PII and the last is the direct glutamine contribution. A centered logarithmic finite difference checks this identity over 701 inputs. This is a local drive decomposition; endpoint-normalized response-range coefficients and nonindependent GS ladder factors require separate calculations.
+
+The GlnD transformation and the two GlnE transformations combine without changing any steady target output under these assumptions. Thirty-six combinations of target total and mechanism are verified numerically. They define complementary experiments: resolve GlnD occupancy or PII relaxation to test the upstream family; measure GlnE binding and AT/AR initial rates across controlled ligand inputs to separate affinity and catalytic synergy; and vary free target total while monitoring its state fractions to test the PII-independent route. Parameter constraints and assay conservation must accompany a physiological interpretation.
+
+
+\clearpage
+
+\clearpage
+\section*{S22 Finite reaction realization, total-readout bound, and catalytic coupling}
+
+Let $X_0,X_1$ be two free states of one modification unit. Three free enzyme states exchange glutamine with finite rates. For $j=0,1,2$ introduce
+\[
+ E_j+X_0\mathop{\rightleftharpoons}^{k_{\rm on,j}^+}_{k_{\rm off,j}^+} C_j^+
+ \mathop{\longrightarrow}^{k_{\rm cat,j}^+} E_j+X_1,
+\qquad
+ E_j+X_1\mathop{\rightleftharpoons}^{k_{\rm on,j}^-}_{k_{\rm off,j}^-} C_j^-
+ \mathop{\longrightarrow}^{k_{\rm cat,j}^-} E_j+X_0.
+\]
+All inputs are buffered free glutamine; enzyme and target totals are conserved. Set $h_j^\pm=k_{\rm on,j}^\pm/(k_{\rm off,j}^\pm+k_{\rm cat,j}^\pm)$, $a_j=h_j^+k_{\rm cat,j}^+$, and $b_j=h_j^-k_{\rm cat,j}^-$. With ligand exchange restricted to free enzyme, the steady complex equations give $C_j^+=h_j^+E_jX_0$ and $C_j^-=h_j^-E_jX_1$. Each complex's net association minus release-and-catalysis is zero, leaving the free-enzyme equations $Q_EE=0$. Any positive common multiplier of the ligand-binding generator changes its relaxation but not its stationary weights $w=(1,G/K_1,G^2/(K_1K_2))$. Consequently
+\[
+ \frac{X_1}{X_0}=\frac{\sum_j a_jw_j}{\sum_j b_jw_j}
+\]
+is exact for this full reaction system, without a rapid-equilibrium or unsaturated-target approximation. The earlier $\lambda$ transformation preserves it. This statement concerns the stationary equations, not uniqueness for every possible topology or a universal first-order time course.
+
+Let $q=X_1/(X_0+X_1)$, $x=X_0+X_1$, and let $o_j=w_j/\sum w$. Define $H_+=\sum o_jh_j^+$, $H_-=\sum o_jh_j^-$, and $H=(1-q)H_++qH_-$. The free enzyme pool is $E_f=E_T/(1+Hx)$ and target conservation gives
+\[
+ Hx^2+[1+H(E_T-T_T)]x-T_T=0.
+\]
+Its positive root yields all 11 concentrations. The measured total modified fraction is $Y_T=(qx+E_fqxH_-)/T_T$. If $H_+=H_-$, then $Y_T=q$ exactly, including when most enzyme is complexed. Equality $h_j^+=h_j^-$ state by state is sufficient.
+
+For general affinities write $B=\sum(C_j^++C_j^-)$ and $M_B=\sum C_j^-$. Since $0\leq M_B\leq B\leq\min(E_T,T_T)$,
+\[
+Y_T=q+\frac{M_B-qB}{T_T},\qquad
+q-q\epsilon\leq Y_T\leq q+(1-q)\epsilon,
+\quad \epsilon=\min(1,E_T/T_T).
+\]
+Two models with the same $q,E_T,T_T$ lie in the same interval of width $\epsilon$, proving the pairwise bound in the main text. If one enzyme can bind more than one counted modification unit, the upper bound on $B$ must be adjusted to that stoichiometry. In particular, a monovalent unit calculation must not be relabelled a fully resolved trimer sequestration model. No derivative bound follows from the concentration bound alone.
+
+The numerical realization sets $k_{\rm cat}^+=a/h^+$, $k_{\rm cat}^-=b/h^-$, $k_{\rm off}=k_{\rm cat}$, and $k_{\rm on}=2h k_{\rm cat}$. A shared scale makes the reference summed capacity at $G=K$ equal to one. The illustrative asymmetric affinities are $h^+=(0.2,2,10)$ and $h^-=(5,0.3,0.1)$ in reciprocal target-concentration units. Target total is one; enzyme/target ratios range from $10^{-4}$ to one. Random verification uses 300 positive cases with all affinity coordinates independently spanning $10^{-2}$--$10^2$, binding-rate multipliers $10^{-3}$--$10^3$, and target totals $10^{-1}$--$10$. Full balances, conserved totals, the pairwise bound, and the symmetric-affinity identity are checked. Two BDF integrations from initially free enzyme and unmodified target converge to the independently constructed steady states.
+
+For the finite-binding transient in Fig 9C, enzyme fractions obey $\dot o=Q_Eo$ and the dilute target obeys $\dot q=(o\cdot a)(1-q)-(o\cdot b)q$. The glutamine step is $10K\to K$, initialized at the preceding steady state. Binding multipliers span 0.01--100. These equations are an unsaturated mean-field conversion model with explicit regulatory relaxation, distinct from the 11-concentration saturation model. The units are reference times, not fitted seconds or minutes.
+
+\textbf{Exchange in substrate-bound complexes.} Adding ligand exchange to $C^+$ and $C^-$ retains the constructed steady state if their generators annihilate the vectors $w_jh_j^+$ and $w_jh_j^-$. This is a sufficient kinetic compatibility condition and can hold for nonzero exchange rates. Thermodynamic compatibility of binding alone is weaker. Write $\rho_j=k_{\rm off,j}/k_{\rm cat,j}$; the equilibrium association constant is $k_{\rm on}/k_{\rm off}=h_j(1+\rho_j)/\rho_j$, which need not be proportional to the catalytic-complex weight $h_j$ across states.
+
+To test this distinction without arbitrary inconsistent binding cycles, retain the same $h,a,b$ but choose $\rho^+=(0.1,1,10)$ and $\rho^-=(10,1,0.1)$. Set $k_{\rm on}=(1+\rho)h k_{\rm cat}$. For each complex chain, take reverse ligand-exchange rate $\eta$ and forward rate equal to $\eta$ times the free-chain association ratio times the adjacent ratio of $h(1+\rho)/\rho$. All noncatalytic binding cycles then satisfy the equilibrium ratio constraints. Catalysis can nevertheless sustain regulatory currents; the buffered nucleotide-driven conversion is not assumed at thermodynamic equilibrium.
+
+Positive log-concentration stationary solves cover $G/K=0.3,1,3,10,30$, $\eta=0$ and 25 logarithmically spaced values from $10^{-4}$ to $10^2$, $E_T/T_T=0.1$, and both $\lambda$ values. The full ODE residual and both conservation laws are checked; independent BDF integrations at $G=10K,\eta=1$ verify two stationary solutions. In this scenario the maximum scanned free-fraction gaps are about 0.035 at $10K$ and 0.070 at $30K$, occurring near $\eta=0.1$. These values establish a conditional counterexample to unrestricted topology invariance; they are not estimates of biological rates or evidence that this coupling occurs in GlnD.
+
+\clearpage
+\section*{S23 Nuisance elimination, effect-size classes, and assay precision}
+
+\textbf{GlnD occupancy.} In a target-free equilibrium binding assay,
+\[
+ o_1(z,\lambda)=\frac{2z/\lambda}{1+2z/\lambda+z^2},\qquad z=G/K.
+\]
+At nominal $G=K_0$, allow $K/K_0\in[1/2,2]$ separately under each hypothesis. For $\lambda=1$, the fraction lies in $[4/9,1/2]$; for $\lambda=4$, it lies in $[1/6,1/5]$. The minimum gap is $4/9-1/5=11/45$. This interval separation profiles the nuisance ranges independently, rather than imposing the same unknown $K$ on the two candidates. The catalytic scale and substrate affinities do not enter this target-free assay. The nominal concentration is approximately 0.0520 mM from the reference fit; the factor-two range is a design scenario, not an inferred confidence interval.
+
+For a general alternative $\lambda\geq1$, its largest single-state occupancy over the same range is $1/(1+\lambda)$. The worst-case gap from the reference is $4/9-1/(1+\lambda)$, positive only when $\lambda>5/4$. When ranges overlap, replication of this scalar measurement alone cannot give uniform discrimination over the nuisance classes. Multiple glutamine levels or a tighter independently supported $K$ range are then required.
+
+\textbf{GlnE binding and depletion.} Set PII-UMP to zero and keep glutamine buffered. The three PII-bound states reduce to the unmodified-PII and glutamine--PII complexes, and the PII-bound enzyme fraction is $P_f/(K_{\rm eff}+P_f)$, where
+\[
+ K_{\rm eff}=K_P\frac{1+G/K_G}{1+G/(\alpha_1K_G)}.
+\]
+If $P_T=P_f+E_T P_f/(K_{\rm eff}+P_f)$, half occupancy implies $P_T^{1/2}=K_{\rm eff}+E_T/2$. Thus a measured enzyme total corrects the nominal halfpoint before normalization across glutamine conditions. This correction assumes one PII binding unit per enzyme in the stated topology and does not correct glutamine depletion; the latter must be prevented or modelled separately.
+
+The normalized ratio $r(G)=K_{\rm eff}(G)/K_{\rm eff}(0)$ eliminates $K_P$. For $\alpha_1\ne1$,
+\[
+ \frac{G}{1-r(G)}=\frac{\alpha_1K_G}{1-\alpha_1}+\frac{G}{1-\alpha_1}.
+\]
+Two distinct nonzero glutamine levels plus the zero-glutamine baseline determine the line's slope $m$ and intercept $b$, hence $\alpha_1=1-1/m$ and $K_G=b(1-\alpha_1)/\alpha_1$. At $\alpha_1=1$, $r=1$ and $K_G$ is not identifiable from this observation. This is a noise-free identifiability statement; noisy titration data should be fitted with the original binding model because transforming ratios changes their errors and shares the baseline error. Numerical inversion at 1 and 10 mM checks the formula across the declared parameter range.
+
+For prospective discrimination at 0 and 10 mM, use two disjoint effect-size classes $\alpha_1\in[0.136,0.2125]$ and $[0.544,0.850]$. In both, allow $K_G\in[7.8,31.2]$ mM independently. Monotonicity of the ratio gives log-ratio intervals $[-1.51931,-0.64158]$ and $[-0.38589,-0.04194]$. The minimum gap is 0.25570. These classes specify the alternatives being tested; neither is a confidence region from the published experiments. If each nominal $\alpha_1$ instead spans a factor of two, the classes touch and there is no strictly positive worst-case guarantee. The three-titration design then provides an alternative to an unjustified binary claim.
+
+\textbf{Statistical assumptions and test.} Let each occupancy estimate have independent normal error with known SD $\sigma$, or let each independent halfpoint estimate have normal log error with known SD $\sigma$. Background-corrected fraction estimates are not clipped in this error model. Precision must be established in pilot measurements; the calculations do not include uncertain error variance, condition-dependent calibration bias, or fitted biological variability. A single GlnE halfpoint estimate is obtained from an entire titration, not one concentration point. For $n$ independent estimates per condition, the occupancy mean has variance $\sigma^2/n$, while the difference of two mean log halfpoints has variance $2\sigma^2/n$.
+
+Use the least-favourable null boundary and the prespecified sign of the alternative. A one-sided size-0.05 normal test has worst-case power
+\[
+ \Phi\!\left(\frac{\sqrt n\,\Delta}{\sqrt v\,\sigma}-z_{0.95}\right),
+ \qquad n\geq\frac{v\sigma^2(z_{0.95}+z_{0.80})^2}{\Delta^2},
+\]
+rounded upward. Applied to total-readout separation $\Delta\leq\epsilon$, it gives an optimistic necessary sample size $n\geq\sigma^2(z_{0.95}+z_{0.80})^2/\epsilon^2$ for one normally distributed fraction observable and two specified alternatives. With $\epsilon=0.01,\sigma=0.05$, this rounds up to 155; smaller actual separation or nuisance uncertainty can only worsen this bound. For the binding designs use $v=1$ for occupancy and $v=2$ for paired log halfpoints. Here $\Delta$ is the independently profiled interval gap, not a distance between two selected curves. At SD 0.20, five occupancy estimates yield worst-case power 0.862, and eight halfpoint estimates per condition yield 0.819. At occupancy SD 0.10, two estimates yield 0.965. The selected tests are independently verified by 100,000 synthetic null and alternative draws. These are prospective assay-error calculations, not experimentally established budgets. If independent full titrations are infeasible, a hierarchical joint fit needs a separate power analysis.
+
+\textbf{Conditional kinetic comparison.} The capacity multiplier is $R_\lambda(z)=(1+2z+z^2)/(1+2z/\lambda+z^2)$. An unknown speed absorbs a single-condition amplitude. Paired capacities cancel a shared speed, but reciprocal doses are uninformative because $R_\lambda(z)=R_\lambda(1/z)$. Searching 101 doses over $0.02K_0$--$50K_0$ selects approximately $0.020K_0$ and $0.855K_0$, with minimum log-multiplier contrast 0.363 over factor-two $K$ variation. This contrast requires independently calibrated baseline capacities and $K$; independently refitting the baseline shape can restore overlap. The data label its sample sizes conditional, and Fig 11 excludes them from the profiled guarantees.
+
+
+
+\section*{S24. Constructive stationary compensation and admissibility}
+
+Consider a connected free-enzyme regulatory network with a positive stationary weight vector $w(x)$ at fixed free ligands $x$. Binding may be reversible with thermodynamically consistent cycle products; more generally the free-state linear network must admit these weights. A catalytic intermediate $C_{ji}^{+}$ is formed from regulatory state $E_j$ and target $S_i$ and dissociates or catalyzes to $E_j+S_{i+1}$. All catalytic branches return the same regulatory state. Regulatory exchange on a catalytic intermediate is absent. At any positive stationary point,
+\[
+ C_{ji}^{+}=h_{ji}^{+}E_jS_i,\qquad
+ h_{ji}^{+}=\frac{k_{\mathrm{on},ji}^{+}}{k_{\mathrm{off},ji}^{+}+k_{\mathrm{cat},ji}^{+}},\qquad
+ a_{ji}^{+}=h_{ji}^{+}k_{\mathrm{cat},ji}^{+},
+\]
+with analogous reverse branches. Eliminating these branches from the free-enzyme balance leaves its regulatory network, so $E_j=e_0w_j$. Zero target flux across each ladder cut gives
+\[
+ \frac{S_{i+1}}{S_i}=\frac{\sum_jw_ja_{ji}^{+}}{\sum_jw_ja_{j,i+1}^{-}}.
+\]
+For constants $s_j>0$, the transformation $w'_j=s_jw_j$, $(a_{ji}^{\pm})'=a_{ji}^{\pm}/s_j$ preserves every edge ratio. This holds at stationary state without assuming fast catalytic binding. Positive specificities and association coefficients have a finite realization: choose $k_{\rm cat}=a/h$, $k_{\rm off}=a/h$, and $k_{\rm on}=2a$. The binding constants generating $w'$ must be physically admissible within the chosen regulatory network; arbitrary independently rescaled equilibrium edges are not admissible if they violate a binding cycle. Changing the weights of states with no catalytic branches also leaves the flux numerators unchanged.
+
+This is a sufficient construction, not a converse. More general equivalences can involve redistribution of states, distinct monomials, or non-scaling transformations. Moreover the free-enzyme normalization, protein sequestration, and relaxation times can change. The statement concerns normalized free-target stationary distributions; it does not establish dynamic unidentifiability or equality at fixed total ligand. Applying it to both cascade layers requires additional closure arguments because one layer's free protein pool is the next layer's ligand supply.
+
+\section*{S25. Explicit state-resolved, protein-conserving cascade}
+
+\textbf{Species and conserved quantities.} The buffered-input reference contains free PII trimers $P_i$, $i=0,\ldots,3$ (four species); free GS dodecamers $S_k$, $k=0,\ldots,12$ (thirteen); free GlnD states $D_j$, $j=0,1,2$ (three); eighteen GlnD--PII catalytic intermediates; ten GlnE regulatory states; and seventy-two GlnE--GS catalytic intermediates. These total 120 species and 300 directed reactions. The GlnE states are
+\[
+ E,\ EG,\ EP_0,\ EU_1,\ EU_2,\ EU_3,\ EGP_0,\ EP_0U_1,\ EP_0U_2,\ EP_0U_3.
+\]
+Here $U_i$ denotes a bound PII trimer carrying $i$ UMP groups, not a distinct free protein species. The EPU states contain two regulatory PII trimers. A GS-bound GlnE retains its regulatory ligands. The stoichiometric matrix has four exact conserved protein totals: PII, GS, GlnD, and GlnE. Modification counts in catalytic complexes refer to the pre-catalytic target state. Glutamine is buffered in the base construction; ATP/ADP, UTP and products are not explicit species. Thus ``protein-conserving'' does not mean metabolically or energetically closed.
+
+\textbf{Regulatory binding.} GlnD has sequential binding weights $(1,G/K_1,G^2/(K_1K_2))$. The GlnE weights are
+\[
+ (1,g,p,u_1,u_2,u_3,pg/\alpha_1,pu_1/\alpha_2,pu_2/\alpha_2,pu_3/\alpha_2),
+\]
+where $g=G/K_G$, $p=P_0/K_P$, and $u_i=(i/3)P_i/K_U$. Summing the $u_i$ recovers the earlier six-class denominator. The recognition weight $i/3$ is a modeling choice, not a measured affinity of every partially uridylylated trimer. All four edges around each binding square are included with compatible equilibrium products. Reverse regulatory rates are one in arbitrary time units; forward rates are the corresponding ligand concentration divided by its dissociation constant. Regulatory exchange occurs only when the enzyme is free of its catalytic target. GlnD does not modify GlnE-bound PII in this construction.
+
+\textbf{Catalytic edges.} GlnD forward and reverse specificities are $a_j(3-i)$ and $b_ji$, respectively. Base catalytic association coefficients in $\mu$M$^{-1}$ are $(0.2,2,10)$ forward and $(5,0.3,0.1)$ reverse, multiplied by the same available-site counts. GlnE ATase-active states are EG, EP, EGP, with specificity multipliers $k\beta$, $k$, and $k\beta'$; AR-active states are $EU_i$, each with multiplier one. Available GS sites give factors $12-k$ forward and $k$ reverse. For the interaction scenario, the forward factor is instead $(12-k)\exp[J(2k+1-12)]$, giving
+\[
+ c_k={12\choose k}\exp[J(k^2-12k)],\qquad \pi_k\propto c_kr^k.
+\]
+The GS catalytic association coefficient is 0.1 $\mu$M$^{-1}$ times the corresponding site factor. Each positive branch is realized using the rates in S24. With the direct route removed, EG catalytic branches and their twelve complexes are absent (the numerical state vector retains zero-valued slots). All other baseline rates are positive. For the productive-route extension, EPU states acquire ATase specificity $k\eta$; thirty-six further GS complexes give 156 species for $\eta>0$.
+
+\textbf{Parameters and provenance.} Concentrations in the new code are uniformly micromolar. The transported GlnD reference is $K_1=26.02223$, $K_2=104.08892$, with specificity vectors
+\[\begin{aligned}
+ a&=(0.99889564,0.0012739725,0.0012739725),\\
+ b&=(0.0011043614,0.0011043614,0.0074571831).
+\end{aligned}\]
+ Its $\lambda$ transformation multiplies $K_1,a_1,b_1$ by $\lambda$ and divides $K_2$ by $\lambda$. GlnE uses $K_G=15600$, $K_P=0.18$, $K_U=0.35$, $\alpha_1=0.17$, $\alpha_2=4$, $\beta=1$, $\beta'=10$, and $k=1.4877648555$, with the source/calibration distinctions stated in S20--S21 and the regulatory-state parameter records. The $\sigma$ transformation multiplies both $\alpha_1$ and $\beta'$ by $\sigma$. Catalytic association coefficients, binding time scales, recognition weights, protein-pool scenarios, and $J$ are chosen stress-test parameters, not newly estimated biological constants. Setting $\beta=0$ removes direct glutamine catalysis.
+
+\textbf{Steady-state solution and verification.} At fixed free $G$, normalized free PII follows the binomial distribution with fraction $q_D=(w\cdot a)/(w\cdot(a+b))$. For candidate free pools $T$ and $V$, set $P_i=T\pi_i$ and $S_k=V\pi_k(r)$. Free-enzyme normalizations follow directly from their totals and the sum of regulatory and catalytic-complex weights. The two remaining equations impose total PII and GS conservation. We solve these equations numerically, then insert every constructed species into the independently enumerated mass-action vector field. No quasi-steady-state approximation is used in this stationary verification. The reaction generator records all species, stoichiometry, and rates and checks the conservation matrix exactly.
+
+The paired sweep uses 82 distinct glutamine doses: 41 logarithmically spaced from 20 to 10000 $\mu$M and 41 linearly spaced from 450 to 650 $\mu$M. Twenty-five logarithmic capacities from $10^{-4}$ to 0.8, two direct-route settings, and $J=0,0.4$ give 8,200 paired comparisons. Totals are $P_T=5$, $S_T=10$, $D_T=2.5\epsilon_P$, and $E_T=1.25\epsilon_P$. Random verification additionally samples 60 cases with log-uniform $G\in[10,10^4]$, $P_T\in[10^{-0.3},10]$, $S_T\in[1,100]$, $D_T,E_T\in[10^{-3},10^{-0.3}]$, and uniform $\lambda\in[1,6]$, $\sigma\in[1,5]$, $J\in[0,0.4]$. Each case uses two free-pool initial guesses. Independent BDF integrations start with free unmodified PII and GS, unliganded GlnD and GlnE, and all complexes absent. They use $G=530$, $P_T=5$, $S_T=10$, $D_T=0.5$, $E_T=0.25$ and $(\lambda,\sigma,J)=(1,1,0),(4,4,0),(4,4,0.1)$, with relative tolerance $2\times10^{-8}$ and absolute tolerance $2\times10^{-11}$. Time units are arbitrary, not biological seconds. Numerical maxima and tolerances are supplied in the machine-readable summary. These integrations and root comparisons do not establish global stability or uniqueness.
+
+\section*{S26. Cascade-wide bounds and observation boundaries}
+
+\textbf{Total PII distributions.} Suppose two mechanisms have the same normalized free PII distribution $\pi$ at fixed free glutamine and identical protein totals. Let $b_m$ be the fraction of PII bound to any enzyme in model $m$, and $q_m$ its bound-state distribution. Then $p_m=(1-b_m)\pi+b_mq_m$. Since a GlnD contains at most one PII and a GlnE at most two, including GlnE--GS complexes,
+\[
+ b_m\leq \epsilon_P=\min\{1,(D_T+2E_T)/P_T\}.
+\]
+The two distributions share at least $1-\max(b_1,b_2)$ mass in $\pi$, so their total-variation distance, and hence their mean modified-fraction difference, is at most $\epsilon_P$. This extends the one-target sequestration argument to a downstream enzyme that can bind two upstream trimers.
+
+\textbf{GS propagation.} For $\epsilon_P<1$, the free PII pool lies in $T\in[P_T(1-\epsilon_P),P_T]$. At common free-state fractions write $p=cT$ and $u=dT$. The specified GlnE drive is
+\[
+ r(T)=k\frac{cT+\beta g+\beta'cgT/\alpha_1}{dT}
+     =a+\frac{b}{T},\quad
+ a=\frac{kc(1+\beta'g/\alpha_1)}d,\quad b=\frac{k\beta g}d.
+\]
+The diagonal transformations preserve $a,b$. Positivity gives $|\Delta\log r|\leq L=\log[1/(1-\epsilon_P)]$. For a shared positive GS ladder, $d\,\operatorname{logit}\theta/d\log r=\nu(r)\leq\nu_*$, where $\nu_*=1$ for independent sites and 12 suffices for any positive twelve-site ladder. Integrating and maximizing the difference of two logistic values at fixed logit separation gives
+\[
+ |\Delta\theta_{GS,\mathrm{free}}|\leq\tanh(\nu_*L/4).
+\]
+Bound GS is at most $\epsilon_S=\min(1,E_T/S_T)$ of total GS. Coupling the two free-state contributions, with the remaining bound mass allowed to vary arbitrarily, adds at most $\epsilon_S$. This yields the main-text bound. If $\epsilon_P\geq1$, only the trivial unit bound is guaranteed by this argument. If $\beta=0$, $b=0$ and free GS distributions coincide exactly, leaving only $\epsilon_S$. A tighter condition-specific bound replaces the hyperbolic tangent by the difference between the GS fractions evaluated at the two allowed free-pool endpoints. The sweep verifies both bounds. No derivative or fitted Hill-coefficient bound follows from these fraction bounds.
+
+At $\epsilon_P=0.01$ and $\epsilon_S=0.001$, the conservative bounds are approximately 0.003513 for independent GS and 0.03114 for the unrestricted twelve-site ladder. For a tolerated fraction difference $\delta>\epsilon_S$, inversion yields the sufficient protein-pool requirement
+\[
+ \epsilon_P\leq1-\exp\left[-\frac{4}{\nu_*}\operatorname{artanh}(\delta-\epsilon_S)\right].
+\]
+With $\delta=0.01$ and $\epsilon_S=0.001$, this gives 0.03536 for independent sites and 0.002996 for the general twelve-site ladder. These are allowed upper limits, not expected separations or empirical noise estimates. A null total-readout result within those limits cannot select an equivalence member. Conversely, a difference exceeding the applicable bound rejects at least one of the shared-topology, input-control, pool-size, or equivalence assumptions; it does not identify which one.
+
+\textbf{Recognition and productive-route checks.} Replacing $i/3$ by $(i/3)^\chi$, $\chi=0.5,1,2$, preserves $u=dT$ and hence the proof. Ninety selected combinations verify this extension. In contrast, making EPU catalytically productive adds $k\eta pu/\alpha_2$ to the ATase numerator. After division by $u$, the drive gains $k\eta p/\alpha_2$, destroying the silent-state $\alpha_2$ invariance and the particular $a+b/T$ closure. For $\alpha_2=2.17$ versus 8.85, 21 values of $\eta$ (zero and twenty logarithmic values from $10^{-4}$ to one) and 41 glutamine doses give 861 comparisons. The largest selected fixed-free-pool GS fraction separation is 0.15449 at $G=447.214\,\mu$M and $\eta=1$. The corresponding total-GS difference is 0.15301 with $P_T=5,S_T=10,D_T=0.05,E_T=0.025$. For the original $\lambda/\sigma$ pair at common $\alpha_2$, however, $a,b,c$ are unchanged and $r=a+b/T+cT$ satisfies $|d\log r/d\log T|=|cT-b/T|/(a+b/T+cT)\leq1$. Thus the general fraction bound survives this extension; only the special $b=0$ exact-invariance conclusion is lost when $c>0$. An additional 360 paired conditions verify this surviving bound. The productive route is a countermodel, not an experimentally demonstrated activity of EPU. The earlier bound-complex exchange construction in S22 supplies a different topology boundary.
+
+\textbf{Conserved glutamine.} If only regulatory glutamine binding is added to input conservation, each GlnD binds at most two glutamines and each GlnE at most one, whether or not a catalytic target is attached. Thus
+\[
+ \max(0,G_T-2D_T-E_T)\leq G\leq G_T.
+\]
+This is not a slope bound. The implementation solves the buffered-input protein balances inside a scalar glutamine-balance root. Across 31 total inputs from 10 to 2000 $\mu$M at each of two protein scales, the two transformed models acquire different free inputs. The larger-scale scenario $P_T=50,S_T=100,D_T=5,E_T=2.5$ gives a selected maximum free-PII total-variation difference $6.34\times10^{-4}$, illustrating a small but nonzero loss of the exact fixed-free-input identity. This steady-state extension has not been independently validated by integration of a glutamine-dynamic reaction system. Metabolic glutamine consumption, transport, and other binding partners are outside its scope.
+
+\section*{S27. A resolution limit for complementary stationary measurements}
+
+A stationary occupancy assay distinguishes the specific diagonal families only within its assumed state space. To see the limit, split a regulatory state of weight $w$ into two unobserved conformations with the same ligand stoichiometry and weights $fw$ and $(1-f)w$, $0<f<1$. Give the first conformation opposing specificities $a^{\pm}/f$ and the second no catalytic branches. The summed binding weight remains $w$, and the opposing catalytic numerators remain $wa^{\pm}$. Thus ligand occupancy and the target stationary response are both preserved in this reduced construction. If target-complex association coefficients on the active conformation are also $h^{\pm}/f$, their stationary contributions are preserved as well. Positive active-branch rates can be realized as in S24; the inactive conformation has absent catalytic edges rather than a negative rate. A connected reversible conformational network can realize the prescribed free-state weights.
+
+This is a counterexample, not evidence for hidden GlnD/GlnE conformations or identical transients. Figure 11 distinguishes only its specified classes and nuisance ranges. A larger state space requires another discriminating observable or independent restrictions on catalytic states.
+
+
+\clearpage
+\end{document}

@@ -1,0 +1,863 @@
+% Template for PLoS
+% Version 3.8 Apr 2026
+%
+% % % % % % % % % % % % % % % % % % % % % %
+%
+% -- IMPORTANT NOTE
+%
+% This template contains comments intended 
+% to minimize problems and delays during our production 
+% process. Please follow the template instructions
+% whenever possible.
+%
+% % % % % % % % % % % % % % % % % % % % % % % 
+%
+% Once your paper is accepted for publication, 
+% PLEASE REMOVE ALL TRACKED CHANGES in this file 
+% and leave only the final text of your manuscript. 
+% PLOS recommends the use of latexdiff to track changes during review, as this will help to maintain a clean tex file.
+% Visit https://www.ctan.org/pkg/latexdiff?lang=en for info.
+%
+%
+% IMPORTANT
+% Below are a few tips to help format manuscript according to our specifications. For more tips to help reduce the possibility of formatting errors during conversion, please see our LaTeX guidelines at http://journals.plos.org/plosone/s/latex
+%
+% There are no restrictions on package use within the LaTeX files except that no packages listed in the template may be deleted.
+%
+% Please do not include colors or graphics in the text.
+%
+% The manuscript LaTeX source should be contained within a single file (do not use \input, \externaldocument, or similar commands).
+%
+% % % % % % % % % % % % % % % % % % % % % % %
+%
+% -- FIGURES AND TABLES
+%
+% Please include tables/figure captions directly after the paragraph where they are first cited in the text.
+%
+% DO NOT INCLUDE GRAPHICS IN YOUR MANUSCRIPT
+% - Figures should be uploaded separately from your manuscript file. 
+% - Figures generated using LaTeX should be extracted and removed from the PDF before submission. 
+% - Figures containing multiple panels/subfigures must be combined into one image file before submission.
+% For figure citations, please use "Fig" instead of "Figure".
+% See http://journals.plos.org/plosone/s/figures for PLOS figure guidelines.
+%
+% Tables should be cell-based and may not contain:
+% - spacing/line breaks within cells to alter layout or alignment
+% - do not nest tabular environments (no tabular environments within tabular environments)
+% - no graphics or colored text (cell background color/shading OK)
+% See http://journals.plos.org/plosone/s/tables for table guidelines.
+%
+% For tables that exceed the width of the text column, use the adjustwidth environment as illustrated in the example table in text below.
+%
+% % % % % % % % % % % % % % % % % % % % % % % %
+%
+% -- EQUATIONS, MATH SYMBOLS, OTHER SPECIAL FORMATTING
+%
+% - For bold symbols, use the \boldsymbol command and not \mathbf. 
+% - For inline equations, please be sure to include all portions of an equation in the math environment.  For example, x$^2$ is incorrect; this should be formatted as $x^2$ (or $\mathrm{x}^2$ if the romanized font is desired).
+% - Do not include text that is not math in the math environment. For example, CO2 should be written as CO\textsubscript{2} instead of CO$_2$.
+% - Avoid capturing simple text as equations, for example $<$.
+% - For inline equations, please do not include punctuation (commas, etc) within the math environment unless this is part of the equation.
+% - When adding superscript or subscripts outside of brackets/braces, please group using {}.  For example, change "[U(D,E,\gamma)]^2" to "{[U(D,E,\gamma)]}^2". 
+% - Do not use \cal for caligraphic font.  Instead, use \mathcal{}.
+% - Avoid splitting for fragmenting a single equation into multiple objects/environments, for example $f(x)$ = $g(x)$ + $h(x)$.
+% - Use math environment for all equations, do not mimic using text.
+% - Avoid using single letters in math mode where possible.
+% - Always use matching parentheses and delimiters, avoid mixing math and text brackets.
+% - Insert spaces around inline equations to ensure proper display after conversion.
+% - Do not use forced numbers for display equation labeling or suppress numbering with \nonumber. 
+%
+% % % % % % % % % % % % % % % % % % % % % % % % 
+%
+% Please contact customercare@plos.org with any questions.
+%
+% % % % % % % % % % % % % % % % % % % % % % % %
+
+\documentclass[10pt,letterpaper]{article}
+\usepackage[top=0.85in,left=2.75in,footskip=0.75in]{geometry}
+
+% amsmath and amssymb packages, useful for mathematical formulas and symbols
+\usepackage{amsmath,amssymb}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{booktabs}
+
+% Use adjustwidth environment to exceed column width (see example table in text)
+\usepackage{changepage}
+
+% textcomp package and marvosym package for additional characters
+\usepackage{textcomp,marvosym}
+
+% cite package, to clean up citations in the main text. Do not remove.
+\usepackage{cite}
+
+% Use nameref to cite supporting information files (see Supporting Information section for more info)
+\usepackage{nameref,hyperref}
+\hypersetup{hidelinks}
+
+% line numbers
+\usepackage[right]{lineno}
+
+% ligatures disabled
+\usepackage[nopatch=eqnum]{microtype}
+\DisableLigatures[f]{encoding = *, family = * }
+
+% color can be used to apply background shading to table cells only
+\usepackage[table]{xcolor}
+
+% array package and thick rules for tables
+\usepackage{array}
+
+% create "+" rule type for thick vertical lines
+\newcolumntype{+}{!{\vrule width 2pt}}
+
+% create \thickcline for thick horizontal lines of variable length
+\newlength\savedwidth
+\newcommand\thickcline[1]{%
+  \noalign{\global\savedwidth\arrayrulewidth\global\arrayrulewidth 2pt}%
+  \cline{#1}%
+  \noalign{\vskip\arrayrulewidth}%
+  \noalign{\global\arrayrulewidth\savedwidth}%
+}
+
+% \thickhline command for thick horizontal lines that span the table
+\newcommand\thickhline{\noalign{\global\savedwidth\arrayrulewidth\global\arrayrulewidth 2pt}%
+\hline
+\noalign{\global\arrayrulewidth\savedwidth}}
+
+
+% Remove comment for double spacing
+\usepackage{setspace}
+\doublespacing
+
+% Text layout
+\raggedright
+\setlength{\parindent}{0.5cm}
+\textwidth 5.25in
+\textheight 8.75in
+
+% Bold the 'Figure #' in the caption and separate it from the title/caption with a period
+% Captions will be left justified
+\usepackage[aboveskip=1pt,labelfont=bf,labelsep=period,justification=raggedright,singlelinecheck=off]{caption}
+\renewcommand{\figurename}{Fig}
+
+% Please use the included `plos2025.bst` as your BibTeX style
+\bibliographystyle{plos2025}
+
+% Remove brackets from numbering in List of References
+\makeatletter
+\renewcommand{\@biblabel}[1]{\quad#1.}
+\makeatother
+
+
+
+% Header and Footer with logo
+\usepackage{lastpage,fancyhdr,graphicx}
+\usepackage{epstopdf}
+%\pagestyle{myheadings}
+\pagestyle{fancy}
+\fancyhf{}
+%\setlength{\headheight}{27.023pt}
+%\lhead{\includegraphics[width=2.0in]{PLOS-submission.eps}}
+\rfoot{\thepage/\pageref{LastPage}}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrule}{\hrule height 2pt \vspace{2mm}}
+\fancyheadoffset[L]{2.25in}
+\fancyfootoffset[L]{2.25in}
+\lfoot{\today}
+
+%% Include all user-defined macros below
+
+
+\setlength{\emergencystretch}{2em}
+%% END MACROS SECTION
+
+
+\begin{document}
+\vspace*{0.2in}
+\begin{flushleft}
+{\Large\textbf{Discriminating mechanisms of ultrasensitivity in bacterial nitrogen signaling}}
+\\
+Yule Choi\textsuperscript{1*}
+\\
+\bigskip
+\textbf{1} Korea Science Academy of KAIST, Busan, Republic of Korea
+\\
+\bigskip
+* \href{mailto:25-117@ksa.hs.kr}{25-117@ksa.hs.kr}
+\end{flushleft}
+\noindent\textbf{Short title:} Mechanisms and measurements in nitrogen signaling
+
+\section*{Abstract}
+
+A biochemical response can be precisely measured yet remain mechanistically ambiguous. We establish three linked results for bacterial nitrogen signaling. First, explicit GlnD and GlnE binding--catalysis transformations preserve complete stationary target-state distributions or downstream responses, extending the ambiguity beyond matching a mean titration. Second, in a specified protein-conserving cascade with all PII and GS modification-count states, sequestration bounds the differences between total observations of free-state-equivalent mechanisms. These bounds account for downstream ladder amplification and yield sufficient enzyme-to-target conditions for controlling interpretation error. Third, the surviving ambiguity determines the useful measurement: state-resolved PII distinguishes ladder and population alternatives, whereas target-free GlnD occupancy and normalized GlnE binding curves distinguish the specified regulatory-state families. Independent nuisance variation determines when improved precision is sufficient and when another observable is required. Established response decomposition and stationary elimination provide the mathematical foundation. Productive regulatory complexes, total-input control, and hidden conformations delimit the conclusions: the constructions do not identify an unrestricted native mechanism or validate the complete physiological nitrogen network. The study connects explicit mechanistic alternatives to quantitative limits on interpretation and experimentally testable observation choices.
+
+\section*{Author summary}
+
+Different molecular mechanisms can give the same protein response, even when every modification state is measured. We use bacterial nitrogen signaling to ask what can still be learned in that situation. We construct indistinguishable mechanisms, calculate how protein binding can separate their experimentally measured total responses, and identify measurements that address the remaining ambiguity. The resulting bounds specify protein concentrations at which a shared free-protein prediction remains an accurate description of the total readout. This matters because experiments commonly measure both free and enzyme-bound protein together, while many theoretical predictions concern only free protein. Binding measurements can distinguish selected mechanisms that target measurements cannot, but their usefulness depends on uncertainty and on which enzyme states are allowed. We show how to choose between improving measurement precision and changing the observable. The proposed experiments are conditional predictions rather than new observations. Together, the results connect the limitations of response curves to concrete ways of testing competing molecular explanations.
+
+\clearpage
+\newgeometry{top=0.85in,left=1in,right=1in,footskip=0.75in}
+% Line numbers omitted at author request.
+
+\section*{Introduction}
+
+Ultrasensitivity describes a sharp input--output response, but the shape of that response does not uniquely identify its molecular source. Enzyme saturation, interactions among modification sites, reciprocal regulation, and downstream recognition can produce similar titrations \cite{r1,r2}. A useful mechanistic analysis must therefore answer two questions: which response properties follow from the reaction architecture, and which observations distinguish competing explanations of the same measured response?
+
+The \textit{Escherichia coli} nitrogen-signaling cascade provides a concrete setting for both questions. Glutamine regulates the bifunctional enzyme GlnD, which adds and removes UMP groups on trimeric PII. PII modification states regulate GlnE, which adds and removes adenylyl groups on the twelve-subunit glutamine synthetase (GS) complex \cite{r5,r6,r7}. Both layers combine multisite targets with opposing activities of a shared enzyme. Figure 1 summarizes the regulatory directions and state classes.
+
+\begin{figure}[!ht]
+\begin{singlespace}
+\caption{\textbf{The GlnD--PII--GlnE--GS nitrogen-signaling cascade.} Low free glutamine favors the UTase activity of GlnD, increasing PII uridylylation; uridylylated PII favors the adenylyl-removing (AR) activity of GlnE, driving GS toward lower adenylylation. High free glutamine favors the UR activity of GlnD, increasing unmodified PII; unmodified PII favors GlnE ATase, driving GS toward higher adenylylation. PII trimers carry 0--3 UMP groups, and GS dodecamers carry 0--12 adenylyl groups. The schematic summarizes regulatory direction and state classes rather than a kinetic model.}
+\end{singlespace}
+\label{fig1}
+\end{figure}
+
+Published measurements report a glutamine response coefficient near two for the GlnD--PII cycle and approximately 4.5--6.5 for the full cascade, depending on PII concentration \cite{r12,r13}. Proposed explanations include allosteric regulation and bifunctionality \cite{r9,r10}, zero-order and multistep effects \cite{r13}, and selective GlnE activation by fully unmodified PII \cite{r12}. Bifunctionality can suppress sensitivity in some architectures but permit it through sequestration or additional enzyme--substrate complexes in others \cite{r40,r46,r66,r67}. Reconstituted-cycle studies also show that concentration robustness depends on strong glutamine inhibition of UTase and on the enzyme construct \cite{r36}. These alternatives make the observation rule and assay conditions central to any quantitative attribution.
+
+We organize the analysis around three results. Explicit regulatory transformations can preserve complete stationary target-state distributions, not just fitted response coefficients. Protein conservation then bounds departures from this equivalence in a specified two-layer cascade and translates them into assay concentration conditions. Finally, complementary measurements distinguish the stated alternatives only when their predictions remain separated after nuisance variation. Exact response decomposition and stationary elimination supply the foundation \cite{r4,r22,r23,r24,r25,r26,r27,r46}; scaling symmetries and design-dependent identifiability have established precedents \cite{r70,r72,r73}. The contribution is the biochemical construction and the connection between its validity conditions and the next informative observation.
+
+\section*{Results}
+
+
+
+\subsection*{Different mechanisms can preserve the complete stationary target response}
+
+Our first result is an explicit hierarchy of indistinguishable mechanisms. Matching the mean leaves ladder and population alternatives unresolved; the GlnD construction preserves every free PII state fraction, and GlnE compensation can preserve a downstream response. We first state the response constraints needed to compare these alternatives, then construct the regulatory families.
+
+\subsubsection*{A shared enzyme pool separates the modification ladder from the effector switch}
+
+We consider free target states $S_0,\ldots,S_n$, indexed by modification count. Free enzyme E modifies the target, whereas effector-bound EL demodifies it. Each catalytic complex contains one enzyme and one target, released after each event. All rate constants are positive. The steady-state derivation retains catalytic intermediates without a quasi-steady-state approximation.
+
+
+Rates depend on modification count, not the identities of modified sites; arbitrary count-dependent interactions are allowed. Productive complexes cannot contain two targets. These restrictions define the invariant's scope and matter for interpreting GlnD's two catalytic domains \cite{r18}. Fig 2 shows the independent-site consequence; S1 Appendix gives the reaction scheme and proof.
+\begin{figure}[!ht]
+\begin{singlespace}
+\caption{\textbf{Independent-site invariance and the experimentally accessible readout.} (A) Free-target mean modified fractions for n=1, 2, 3, and 12 identical independent sites coincide, with dimensionless input and unit midpoint. (B) Their local coefficients equal one throughout. (C) Local coefficient of the total-target readout at half-response across enzyme-to-target ratio and target saturation in the specified three-site model; the dashed line marks $T_E$/$T_S$=0.01. (D) Representative slices. For $T_E$/$T_S$ at most 0.01 the coefficient remains at least 0.99745 across the plotted saturation range. Panels C and D are numerical calculations for the stated model; the exact invariant in A and B concerns free target.}
+\end{singlespace}
+\label{fig2}
+\end{figure}
+
+
+
+At positive steady state, complex balances give free effector-bound enzyme $\varepsilon$=Ael, with free enzyme e, free effector l, and association constant A. Zero net target flux across each ladder cut then gives
+
+
+\[
+\frac{s_i}{s_{i-1}}=\frac{K_i}{l},\qquad i=1,\ldots,n. \tag{1}
+\]
+
+Each $K_i$ combines step-specific binding and catalytic constants with effector association. The common enzyme factor e cancels: adjacent free-target ratios are independent of enzyme abundance at fixed free effector. Absolute concentrations and relaxation times need not be invariant.
+
+
+More generally, write the ratio as $s_i/s_{i-1}$=$K_i$/f(l), where f describes how the effector changes the balance of enzyme activities. With u=1/f(l), $c_0$=1, and $c_i=\prod_{j=1}^{i}K_j$, the normalized free-target distribution is
+
+
+\[
+P(u)=\sum_{i=0}^{n}c_i u^i,\qquad p_i=\frac{c_i u^i}{P(u)},\qquad
+\theta=\frac{\langle i\rangle}{n}=\frac{1}{n}\frac{d\log P}{d\log u}. \tag{2}
+\]
+
+Although the catalytic cycle is not at equilibrium, its free-target distribution has the form of an Adair binding polynomial. This representation relates response steepness to the variance of the number of modified sites. For a response that decreases with l,
+
+
+\[
+\begin{aligned}
+n_H^{\mathrm{loc}}(l)=-\frac{d\log[\theta/(1-\theta)]}{d\log l}
+=\nu(u)\eta(l),\\
+\nu=\frac{n\operatorname{Var}(i)}{\langle i\rangle(n-\langle i\rangle)},
+\quad
+\eta=\frac{d\log f}{d\log l}.
+\end{aligned} \tag{3}
+\]
+
+The ladder factor $\nu$ combines target-site interactions with state-dependent enzyme recognition and turnover; it is not intrinsic cooperativity alone. The switch factor $\eta$ describes effector control of opposing activities. A single aggregate titration generally cannot identify these factors separately.
+
+
+We distinguish the local derivative $n_H^{\mathrm{loc}}$ from a fitted four-parameter Hill exponent $n_H^{\mathrm{fit}}$ and a ten-to-ninety coefficient $n_H^{\mathrm{range}}$ defined between limiting plateaus. Logit derivatives are negative for decreasing first-layer modification and positive for increasing downstream adenylylation. The measures coincide for ideal zero-to-one Hill responses, but need not otherwise (Fig 3C). Equation (3) therefore applies to local slopes; curve-wide coefficients are calculated from complete responses.
+\begin{figure}[!ht]
+\begin{singlespace}
+\caption{\textbf{Local factorization and estimator-dependent ladder constraints.} (A) Gray contours denote local products nu eta of 1, 3, and 4. The blue contour is a numerical reference at 2.018, not a measured local sensitivity. Red marks eta=2, the ceiling of the specified reciprocal switch, and dark blue marks the trimer bound nu=3. (B) Maximum switch elasticity for Eq. (6) when $A_{UT}$/$A_{UR}$ is at least one. Markers use the Mg and Mn kinetic-constant ratios discussed in the text. (C) Physical-occupancy local slope of the fitted first-layer curve, its fitted exponent of 2.018 (dashed), and midpoint local slope of 1.725 (circle). (D) Three-site ladder coefficients (1,3a,3b,1): distinct parameter loci reproduce coefficient ratio 1.11055 under fitted-exponent (blue) and response-range (orange) estimators. Color gives the maximum local ladder factor over input; the circle is the independent ladder. The loci are conditional calculations and show that the coefficient alone does not identify a unique ladder.}
+\end{singlespace}
+\label{fig3}
+\end{figure}
+
+
+
+The cancellation also holds when $EL_1$ and $EL_2$ carry opposing activities: their concentrations $A_1$e$l_1$ and $A_2$e$l_2$ give target ratios proportional to $l_1/l_2$. Equations (2)--(3) apply with $f=l_2/l_1$ and elasticity relative to the external input. Regulation common to all ladder steps can enter f; other topologies require a separate derivation.
+
+
+
+
+
+\subsubsection*{Independent sites and enzyme saturation do not add sensitivity to the free-target response}
+
+Because modification count lies between zero and n, $\operatorname{Var}(i)\le\langle i\rangle(n-\langle i\rangle)$ and $0<\nu\le n$ \cite{r26,r27}. For n>1 with positive intermediate weights, the upper bound is approached as occupancy concentrates at the two endpoints. Site number limits, but does not determine, ladder amplification.
+
+
+For identical independent sites, $K_i=(n-i+1)\widehat K/i$ and P(u)=$(1+\widehat K u)^n$. The mean modified fraction simplifies to
+
+
+\[
+\theta(l)=\frac{\hat K}{\hat K+f(l)},\qquad \nu\equiv1. \tag{4}
+\]
+
+Increasing the number of identical independent sites leaves mean fractional modification unchanged. With f(l)=l the response is hyperbolic. A downstream reader selective for particular target states can nevertheless exploit the multisite distribution.
+
+
+Within this network, enzyme saturation does not add a factor to Eq. (3). At fixed free effector, enzyme or target totals change pool sizes but not normalized free-target states. Target abundance alone therefore cannot produce zero-order sharpening of this readout, extending the single-site result \cite{r40,r46}. Additional productive complexes can change that conclusion.
+
+
+Complexes that only form and dissociate have zero net steady-state flux. They redistribute free and bound material without changing Eq. (1). Productive two-target complexes can instead introduce free-target concentration into the flux ratio.
+
+
+Experiments usually control total effector and measure total modification, so both qualifications matter. If each enzyme molecule carries at most h effector molecules, conservation gives
+
+
+\[
+\max(0,T_L-hT_E)\le l\le T_L. \tag{5}
+\]
+
+Equation (5) bounds input concentrations, not $\mathrm{d}\log l/\mathrm{d}\log T_L$; slopes require the conservation relation or additional regularity. Near the first-layer midpoint, $T_E/T_L\approx9\times10^{-5}$, making depletion small even for h=2. The ratio reaches 0.2 in the low-PII second-layer assay, where the correction must be calculated.
+
+
+If a fraction q of target is enzyme-bound, total and free modified fractions differ by at most q, with $q\le T_E/T_S$ for one target per complex. This amplitude bound does not bound slopes. S1 Appendix also bounds finite-range sensitivity by applying Eq. (5) at both response thresholds.
+
+
+Independent balances verify invariance under enzyme and dead-end perturbations (S1 Fig). The specified total-target model gives local half-response coefficients between 0.99745 and approximately one across five decades of target saturation when $T_E/T_S\le0.01$; coefficients decrease at larger enzyme fractions (Fig 2C,D; S3 Fig). This numerical map is not a universal slope bound.
+
+
+
+
+\subsubsection*{The invariant and uniqueness answer different questions}
+
+Fixed-free-input invariance does not imply uniqueness at fixed totals. Constant catalytic ratios $\rho_i$ and ladder-averaged forward-binding elasticity in $[0,1]$ make the core enzyme budget monotone. Independent sites satisfy both conditions and yield a polynomial of degree at most four for every n (S1 Appendix).
+
+
+S5 Fig supplies multistationary counterexamples when either condition is removed, including a binomial ladder with a large, nonphysiological catalytic-ratio spread. Conservation and flux balances establish multiplicity, not stability.
+
+
+Ratio invariance also differs from absolute concentration robustness: free concentrations can vary with conserved ratios, whereas a complex-mediated reverse reaction can fix an absolute modified-target concentration (S1 Appendix).
+
+
+
+
+\subsubsection*{Regulatory affinities constrain the amplification available from a specified switch}
+
+The factorization allows a regulatory mechanism to be evaluated using its own parameters. Consider a switch with effective activity ratio proportional to l(1+$A_{UT}$ l)/(1+$A_{UR}$ l). Its local elasticity is
+
+
+\[
+\eta(l)=1+\frac{(A_{\mathrm{UT}}-A_{\mathrm{UR}})l}{(1+A_{\mathrm{UT}}l)(1+A_{\mathrm{UR}}l)}. \tag{6}
+\]
+
+For $A_{UT}$>$A_{UR}$, the maximum is $\frac{2\sqrt{A_{UT}}}{\sqrt{A_{UT}}+\sqrt{A_{UR}}}$, attained at l=$1/\sqrt{A_{UT}A_{UR}}$. Equal affinities give $\eta$=1; if their order is reversed, the interior response is attenuated and the supremum is one at the extremes. The bound of two therefore belongs to this specified switch function, and is approached only with a large affinity disparity (Fig 3B).
+
+
+The reported glutamine constants for inhibition of transferase and activation of removing activity are similar in the $\mathrm{Mg}^{2+}$ assays: approximately 70--80 $\mu$M and 80 $\mu$M \cite{r17}. Identifying their reciprocals with $A_{UT}$ and $A_{UR}$ gives a maximum of approximately 1.03. The corresponding $\mathrm{Mn}^{2+}$ constants, 150 $\mu$M and 0.70 mM, give approximately 1.37. Reciprocal regulation can thus have little amplifying capacity even when it strongly affects both activities: the relevant quantity for this model is the separation of its effective regulatory constants.
+
+
+Kinetic half-activation concentrations need not equal equilibrium dissociation constants. The numerical ceilings evaluate this identification within the reduced switch, not all glutamine mechanisms. Comparisons with curve-wide coefficients still require the complete response; the $\nu$--$\eta$ plane contains local quantities only (Fig 3A).
+
+
+State-dependent recognition or turnover changes $\nu$; regulation common to every step changes f, $\eta$, or the input scale. The distinction directs the corresponding kinetic measurements.
+
+
+
+
+
+\subsubsection*{Published first-layer measurements constrain response shape more strongly than mechanism}
+
+Ventura and colleagues compared wild-type PII with heterotrimers assembled from wild-type subunits and a deletion variant lacking the uridylylation site \cite{r13}. The reported fitted response coefficients were 2.21$\pm$0.07 and 1.99$\pm$0.18, respectively. The predominantly monovalent preparation retained a steep response, indicating that the full trimer is not required for most of the observed first-layer ultrasensitivity. A genuinely monovalent target has $\nu$=1 at every input, making a controlled valency comparison a useful way to examine the effector contribution.
+
+
+For coefficients (1,3a,3b,1), distinct (a,b) pairs reproduce coefficient ratio 1.11055, with different loci under fitted-exponent and response-range estimators (Fig 3D; S2 Fig). Surface height is the maximum local factor over input, not its midpoint value. A curve-wide ratio therefore cannot identify ladder shape, microscopic interactions, or local $\nu$ without the switch law and operating point.
+
+
+First-order propagation gives an experimental exponent ratio of 1.11$\pm$0.11. It does not measure $\nu$: preparation composition, concentrations, half-points, and local switch elasticity differ. The comparison is consistent with limited ladder amplification but establishes neither an exact local factor nor independent PII sites.
+
+
+The heterotrimer preparation also contains some modification-competent species with multiple active subunits. For random assembly with an active-subunit fraction of 1/7, approximately 15\% of trimers containing at least one active subunit have more than one; these carry approximately 27\% of the active sites. This mixture prevents a literal identification with a pure one-site target. Measuring the modification-state distribution of each preparation would make the attribution less dependent on assumptions about the mixture and enzyme regulation.
+
+
+We next analyze the author-supplied twelve-point digitization of a published glutamine titration \cite{r12}. The digitized coordinates and provenance are provided in S1 Data. A physically bounded four-parameter Hill fit gives $n_H^{\mathrm{fit}}$=2.018, a midpoint of 0.560 mM, and limiting occupancies of 2.968 and 0.454 UMP groups per trimer (Fig 4A). Coordinate perturbations with an assumed 6\% log-input standard deviation and 0.06 UMP-per-trimer ordinate standard deviation give a median exponent of 2.025 and a central 95\% range of 1.75--2.42. This range is sensitivity to the specified coordinate-error model, not an interval estimated from experimental replicates.
+\begin{figure}[!ht]
+\begin{singlespace}
+\caption{\textbf{Information in the digitized first-layer titration.} (A) Digitized coordinates and bounded fits with h=1, 2, and 3. The fitted exponent, 2.018, nearly coincides with h=2. Shading spans pointwise 2.5th--97.5th percentiles under coordinate perturbations. (B) Fixed-exponent residuals divided by the common h=2 residual scale, approximately 0.0407 UMP per trimer. (C) Fitted-exponent cumulative distribution from 2,000 coordinate perturbations; dotted lines mark the central 95\% range. This is not an experimental replicate distribution. (D) Profile-likelihood loss for the regulatory swing. The horizontal criterion is 3.841 and its finite lower endpoint is approximately 173. The reciprocal-regulation interpretation is conditional on the plateau model.}
+\end{singlespace}
+\label{fig4}
+\end{figure}
+
+
+
+Fixed-exponent fits with h=1 and h=3 fit less well than h=2, with differences in corrected AIC of 42.8 and 24.9 under the physical plateau bounds (Fig 4B; S1 Appendix). Allowing an unphysical upper plateau above three reduces the h=1 penalty, so the bounds are stated explicitly. The free-exponent fit improves the residual error only slightly relative to h=2. Model-comparison penalties favoring the simpler curve do not establish integer molecular stoichiometry.
+
+
+A reverse-competent weight proportional to $l^h$ on an independent ladder produces a Hill response of exponent h. GlnD's two ACT domains \cite{r18,r51} thus motivate testing a two-ligand mechanism, but domain number establishes neither ligand occupancy nor which occupied states are active.
+
+
+For the alternative ratio l(1+cl), switch elasticity is (1+2cl)/(1+cl), varying between one and two. Basal removing activity \cite{r17,r18} also departs from fully liganded control. Joint occupancy and activity measurements are needed to distinguish these implementations.
+
+
+
+
+
+\subsubsection*{Plateau constraints depend on the effective ladder}
+
+The fitted lower plateau is approximately 0.454 UMP groups per trimer. If both plateaus arise from enzyme regulation on an independent ladder, a basal saturating switch,
+\[
+f(l)=w_0+(f_{\max}-w_0)\frac{(l/K_L)^2}{1+(l/K_L)^2}, \tag{7}
+\]
+produces the four-parameter Hill response
+\[
+\theta(l)=\theta_\infty+\frac{\theta_0-\theta_\infty}{1+(l/S)^2},
+\qquad S=K_L\sqrt{\frac{\widehat K+w_0}{\widehat K+f_{\max}}}. \tag{8}
+\]
+Its plateau odds ratio is
+\[
+\Omega:=\frac{\theta_0/(1-\theta_0)}{\theta_\infty/(1-\theta_\infty)}
+=\frac{f_{\max}}{w_0}=R_{\mathrm{fwd}}R_{\mathrm{rev}}. \tag{9}
+\]
+For this model, the previously specified profile criterion gives a lower endpoint near 173 for the product. Dividing by the separately measured removing-activity ratio 7.93/1.17 gives approximately 25.5 for forward inhibition \cite{r17}. This is a conditional calculation, not a measured inhibition factor or a lower bound covering all model uncertainty. The assumed coordinate perturbations instead give a 2.5th percentile near 125 for the product; S1 Appendix retains the original profile and refractory-floor comparison.
+
+The ladder bound yields a more general statement. For a homogeneous positive $n$-site ladder with regulatory plateaus, integrating $0<\nu\le n$ gives
+\[
+\log\Omega=\int_{u_\infty}^{u_0}\nu(u)\,d\log u
+\le n\log\frac{u_0}{u_\infty},\qquad
+R_{\mathrm{fwd}}R_{\mathrm{rev}}\ge\Omega^{1/n}. \tag{10}
+\]
+Equality in Eq. (9) is the independent-site case, not a property of every multisite ladder. Applying the same illustrative plateau endpoint to an unrestricted three-site ladder gives $173^{1/3}=5.57$, rather than 173. Dividing 5.57 by 6.78 yields 0.82 and therefore does not require forward inhibition greater than one. This does not demonstrate that inhibition is absent; it shows why the stronger requirement cannot be separated from the independent-ladder assumption. The calculation retains the same plateau criterion and cross-assay kinetic correspondence, and does not apply to an arbitrary population mixture (S14).
+
+
+
+\subsubsection*{Different ladders reproduce the same first-layer measurements}
+
+We first compare finite-dimensional alternatives on the same twelve digitized coordinates. Let the three-site weights be $c=(1,3a,3a,1)$ with $a=\exp(-2J)$. Positive $J$ enriches the endpoint states and negative $J$ enriches intermediate states at fixed input weight. For each fixed scenario $J=-0.7,0,0.7$, we fit a basal saturating effective switch with the same four adjustable parameters and the same physical response bounds. These scenarios give root-mean-square errors of 0.0392, 0.0352, and 0.0357 UMP groups per trimer, respectively (Fig 5A). Relative to independence, corrected-AIC differences are 2.56 and 0.31; leave-one-coordinate-out errors are 0.0634, 0.0499, and 0.0503. These small-sample diagnostics compare predictive fits, not experimentally estimated model probabilities. The switch exponents are 3.11, 2.02, and 1.41, showing that similar observed steepness need not imply the same enzyme-switch exponent (S15).
+
+There is also an exact structural ambiguity when the switch law is not specified. Define $m_c(u)=\sum_i i c_i u^i/(n\sum_i c_i u^i)$. Since $d m_c/d\log u=\operatorname{Var}(i)/n>0$, $m_c$ maps $(0,\infty)$ bijectively to $(0,1)$. Any observed mean curve $0<\theta(G)<1$ can therefore be reproduced by
+\[
+u_c(G)=m_c^{-1}(\theta(G)),\qquad
+p_i(G)=\frac{c_i u_c(G)^i}{\sum_j c_j u_c(G)^j}. \tag{11}
+\]
+We exactly match the fitted mean for all three ladders by this inverse construction. It defines effective rates, not necessarily a finite GlnD binding mechanism. No finite-parameter information criterion is assigned to this functionally flexible family.
+
+A distinct population mechanism also preserves the mean. Let a fraction $r$ of trimers remain fully uridylylated and the remaining fraction have independent-site occupancy $q(G)$. For any $r\le\min_G\theta(G)$,
+\[
+\theta=r+(1-r)q,\qquad
+p_i^{\mathrm R}=(1-r){n\choose i}q^i(1-q)^{n-i}+r\,\delta_{in}. \tag{12}
+\]
+With $r=\theta_\infty=0.1512$, the accessible population approaches zero modification at high input while preserving the fitted mean. Equation (12) represents fully modified refractory trimers, not arbitrary refractory subunits. A mixture variance cannot be interpreted using the homogeneous-ladder factorization.
+
+The matched models differ in quantities hidden by the mean. At mean modification one-half, the independent, endpoint-enriched, and intermediate-enriched models have $p_0=p_3$ equal to 0.125, 0.287, and 0.038. Their variances are 0.750, 1.400, and 0.402, and their local ladder factors are 1, 1.87, and 0.54. These values are predictions of data-matched alternatives, not measured PII state distributions.
+
+\begin{figure}[!ht]
+\begin{singlespace}
+\caption{\textbf{Data-matched mechanisms and discriminating PII states.} (A) Separate four-parameter finite-switch fits at three fixed ladder shapes. (B) State distributions from exact mean-matched alternatives at 0.747 mM glutamine, including a fully modified refractory fraction. These inverse-constructed models differ from the finite-switch fits in A. Connecting lines guide the eye between discrete states. (C) Predicted fully uridylylated fractions at 10 mM. Points and intervals are medians and central 95\% ranges from 300 shared coordinate perturbations; they exclude uncertainty in the assumed model structures and future measurement errors. (D) Pairwise total-variation distances between predicted distributions (gray); the dark curve is the smallest of the six distances. Its maximum on the specified 401-point grid is 0.160 at 0.747 mM. This is a candidate-dependent separation criterion, not an experimentally validated optimal design.}
+\end{singlespace}
+\label{fig5}
+\end{figure}
+
+\subsubsection*{Downstream calibration can preserve the population ambiguity}
+
+The downstream baseline reads the fully unmodified PII fraction through $Y=\kappa p_0/(\kappa p_0+\theta)$, consistent with selective forward recognition and a mean-uridylylation reverse input \cite{r12}. For a homogeneous independent population, $p_0^{\mathrm H}=(1-\theta)^n$. Equation (12) instead gives
+\[
+p_0^{\mathrm R}=\frac{(1-\theta)^n}{(1-r)^{n-1}},\qquad
+\kappa_{\mathrm R}=\kappa_{\mathrm H}(1-r)^{n-1}. \tag{13}
+\]
+Thus $\kappa_{\mathrm R}p_0^{\mathrm R}/\theta=\kappa_{\mathrm H}p_0^{\mathrm H}/\theta$ at every input. Any downstream readout of this ratio, including a common direct glutamine factor, is unchanged after gain calibration (Fig 6A). Measuring gain or PII states, or using a state-resolved reverse law, can distinguish the alternatives. This identity concerns the specified observation model, not the complete biochemical cascade (S16).
+
+To compare other alternatives fairly, we recalibrate each candidate to the same three reported cascade midpoints and score the complete response range. At 0.5, 5, and 36 $\mu$M PII, the independent baseline gives coefficients 3.552, 3.779, and 4.915 versus reported values 5.23, 6.46, and 4.48. The refractory construction gives the same results. In contrast, the mean-matched endpoint-enriched ladder gives 2.520, 2.590, and 3.245, while the intermediate-enriched ladder gives 5.691, 6.195, and 6.114 (Fig 6B). The low-PII discrepancy therefore changes magnitude and can change sign without changing the upstream mean. It is not an observable downstream amplification factor.
+
+Within the independent baseline, the lower two discrepancies persist under the original 2,000-coordinate perturbation analysis and under a separate sensitivity scenario allowing each midpoint and reported coefficient to vary by 10\%. The latter is a stated tolerance scenario, not a reconstruction of experimental errors. Neither check establishes robustness to the alternative ladders. All comparisons also share the assumption that one upstream mean applies across the three assays: UTase/UR concentrations changed from 0.05 to 0.5 to 0.8 $\mu$M as PII changed from 0.5 to 5 to 36 $\mu$M. These are not isolated PII perturbations.
+
+The isolated downstream cycle responds directly to glutamine, with reported range coefficients of 1.39--2.11 at fixed PII/PII-UMP totals and 1.83 without unmodified PII \cite{r12}. These observations motivate a direct route without identifying its local contribution. We next fit downstream parameters jointly across the three conditions, retaining one midpoint-calibration gain per condition. The candidates add either a shared direct factor $\varphi(G)=(1+RG/K_G)/(1+G/K_G)$, a shared twelve-site GS ladder coupling, or a shared power of the input ratio as a phenomenological benchmark. The objective is the sum of squared log deviations from the three reported response-range coefficients; there is no replicate-based likelihood. Every candidate is recalibrated after its parameters change. For the fixed independent PII ladder, the best direct-route construction in the stated domain gives 4.168, 4.473, and 5.654. Fitting the added route therefore improves some conditions while worsening another, rather than assigning a fixed gain to an uncalibrated curve (Fig 6C). The original fixed-$\kappa$, $R=3.7$ scan is retained as a different conditional calculation in S7 Fig.
+
+Allowing the shared upstream ladder parameter to vary provides a mathematical sensitivity analysis (Fig 6D), rather than a biochemical plausibility test. The ladder-plus-transfer-power benchmark reaches coefficients 5.577, 6.130, and 4.465, within 6.6\% of the summaries, using two shared shape parameters rather than a separate exponent for each condition. Its fitted power is below one, so a requirement for additional downstream sharpening does not survive this broader observation model. The effective switch is inverse-constructed and the power is phenomenological; this is a counterexample to unique attribution, not identification of a molecular mechanism. A shared PII-plus-GS ladder fit gives coefficients 5.521, 6.157, 4.474, with a maximum relative discrepancy of 5.6\%. The complete parameter bounds, two-seed optimization checks, and condition-specific gains are reported in S16 and S1 Data. That fit reaches the upstream ladder boundary and uses calibrated gains ranging from approximately $1.3\times10^2$ to $1.5\times10^6$, which have not been independently measured. Neither close summary agreement nor a better objective establishes a mechanism, particularly when only three coefficients constrain the shared shape parameters. The direct-route optimum also reaches a search boundary, precluding a unique kinetic interpretation. These comparisons identify the conclusions that fail when the ladder is changed rather than selecting a preferred microscopic model.
+
+\begin{figure}[!ht]
+\begin{singlespace}
+\caption{\textbf{Matched calibration separates observational equivalence from model-dependent discrepancy.} (A) Identical independent-population and refractory-population cascade curves after gain rescaling, shown at the middle-condition midpoint. Curves are predictions; the cross is a calibration target. (B) Baseline response-range predictions from three exact mean-matched ladders and reported summaries. (C) Predicted-to-reported ratios after joint fitting for fixed independent or intermediate-enriched PII ladders. Parentheses give the number of added shared downstream parameters; all models also use three condition-specific midpoint gains. (D) Joint comparisons allowing one additional shared upstream ladder parameter. The transfer-power model is a phenomenological benchmark. No summary errors are available for likelihood-based selection. Smooth lines connect the three assay conditions and do not establish a concentration law.}
+\end{singlespace}
+\label{fig6}
+\end{figure}
+
+
+
+\subsubsection*{GlnD catalytic states distinguish ligand binding from modification output}
+
+GlnD's NT/HD catalytic functions and ACT-dependent sensing motivate finite regulatory states \cite{r18}. The domain data establish neither two independent glutamine sites nor a sequential activation order; we do not assign the model's states to individual ACT domains.
+
+Let three free enzyme states have weights $w=(1,G/K_1,G^2/(K_1K_2))$ and catalytic specificities $a_j,b_j$ for UT and UR. The independent-target steady state depends on $A/B$, where $A=\sum_j a_jw_j$ and $B=\sum_j b_jw_j$. These specificities can be realized by explicit enzyme--target complexes for the free-target steady state (S18). A reference model with two identical independent ligand sites, $K_1=K/2$ and $K_2=2K$, sets $a_1=a_2$ and $b_1=b_0$. The three-parameter fit to the twelve coordinates gives an RMSE of 0.0366 UMP groups per trimer and $K=0.0520$ mM. The UR specificity-fold scenario is retained from S18; the coefficients are not independently measured microscopic rates.
+
+Now change the first and second binding constants in opposite directions and rescale the singly liganded state's two catalytic coefficients:
+\[
+K_1\mapsto\lambda K_1,\qquad K_2\mapsto K_2/\lambda,
+\qquad (a_1,b_1)\mapsto\lambda(a_1,b_1).
+\]
+The singly liganded weight decreases by $\lambda$, so both $A$ and $B$ remain exactly unchanged. Consequently, every PII modification-state fraction, not only its mean, is preserved. For $\lambda=1,2,4$, the binding ratios $K_1/K_2$ are 0.25, 1, and 4. All three constructions retain monotonically decreasing UT and increasing UR capacities (Fig 7A; S20). They differ in enzyme occupancy and catalytic speed, rather than requiring a refractory target population.
+
+At $G=K$, the singly liganded enzyme fractions are $1/2$, $1/3$, and $1/5$. In the rapid-binding, unsaturated conversion model, both opposing capacities are multiplied by the same factor, giving PII relaxation-rate ratios of 1, $4/3$, and $8/5$ (Fig 7B--D). The mean number of bound ligands is nevertheless one at this input for all three models. An assay of average ligand occupancy should therefore sample concentrations flanking $K$; resolving singly liganded enzyme or measuring relaxation can use the central region directly. This distinction prevents confusing an informative enzyme-state measurement with an uninformative average at a symmetry point.
+
+\begin{figure}[!ht]
+\centering
+\begin{singlespace}
+\caption{\textbf{GlnD mechanisms with identical PII states predict different enzyme occupancies and kinetics.} (A) Three finite binding-and-catalysis constructions preserve the same fitted mean and every binomial PII state fraction. Points are the digitized coordinates. (B) Singly liganded enzyme fractions differ, reaching 0.5, 0.333, and 0.2 at the common binding scale. (C) PII relaxation-rate ratios in the rapid-binding, unsaturated conversion reduction; both capacities share the same multiplier. (D) An illustrative glutamine decrease from 0.5 to 0.05 mM gives different PII time courses with the same endpoint. Time is in reference-model units, not experimentally estimated minutes. The baseline is fitted once; the other models are obtained by the exact transformation in S20.}
+\end{singlespace}
+\label{fig7}
+\end{figure}
+
+
+\subsubsection*{A published GlnE regulatory model separates equilibrium output from catalytic speed}
+
+For GlnE, we use the six-state regulatory topology proposed by Jiang, Mayo and Ninfa \cite{r71}, rather than introducing an unconstrained downstream switch. Its states are free enzyme and complexes with glutamine, PII, PII-UMP, glutamine plus PII, and PII plus PII-UMP. With $g=G/K_G$, $p=P/K_P$, and $u=U/K_U$, their common binding polynomial is
+\[
+Z_E=1+g+p+u+pg/\alpha_1+pu/\alpha_2.
+\]
+Here $\alpha_1$ and $\alpha_2$ describe the binding interactions of PII with glutamine and PII-UMP. The three AT-active states and the single AR-active state give
+\[
+v_{\rm AT}=k_P\frac{p+\beta g+\beta'pg/\alpha_1}{Z_E},\qquad
+v_{\rm AR}=k_R\frac{u}{Z_E}.
+\]
+The $\beta g$ term retains the experimentally observed AT activity without unmodified PII. This source topology is not a global reconstitution of all historical assays.
+
+The steady-state drive is therefore
+\[
+v=\frac{k_P}{k_R}\frac{p+\beta g+\beta'pg/\alpha_1}{u}.
+\]
+Two ambiguities follow at every free input: $\alpha_2$ cancels from the rate ratio, and common scaling of $\alpha_1$ and $\beta'$ preserves it. Weaker binding synergy can therefore be offset by stronger catalysis of the doubly occupied state. Coupling any such GlnE variant to the GlnD family preserves the steady GS curve under the stated conversion law, without condition-specific recalibration (Fig 8A).
+
+The equivalent mechanisms predict distinct PII-binding curves and relaxation rates. At $G=10$ mM and $U=0.3\,\mu$M, multiplying $\alpha_1$ and $\beta'$ by four shifts the predicted PII-binding halfpoint from approximately 0.090 to 0.208 $\mu$M (Fig 8B). At $P=1\,\mu$M under those conditions, the reduced GS relaxation rate increases 2.08-fold (Fig 8C). These are prospective model predictions, not measured changes. They specify how joint binding and initial-rate measurements can distinguish affinity-mediated synergy from catalytic synergy.
+
+The model also provides a concentration test of the PII-independent route. For the illustrative recognition law $P=T(1-\theta)^3$ and $U=T\theta$, at fixed $G$ and free-state fraction $\theta$, the drive takes the form $v(T)=a(G)+b(G)/T$. Its inverse-concentration term comes entirely from glutamine-activated AT without unmodified PII. For independent GS sites, $v=Y/(1-Y)$, so GS modification odds are affine in $1/T$ (Fig 8D). This prediction requires shared kinetic parameters and controlled free inputs; it is not inferred from the three historical assays that also varied GlnD concentration. S21 additionally shows that the direct glutamine contribution to the local log-drive sensitivity lies between zero and one. That is a bound on a partial elasticity, not on a fitted cascade Hill coefficient.
+
+\begin{figure}[!ht]
+\centering
+\begin{singlespace}
+\caption{\textbf{Binding and catalytic regulation in the published six-state GlnE topology.} (A) Coupled GS steady-state curves are identical after a shared binding/catalysis transformation or a change in the PII--PII-UMP interaction parameter. One reference gain sets $Y=0.5$ at 0.53 mM glutamine and $T=5\,\mu$M; it is unchanged in every variant. (B) PII-binding isotherms at fixed $G=10$ mM and $U=0.3\,\mu$M distinguish binding from catalytic synergy. (C) Reduced GS relaxation rates at separately controlled $P=1\,\mu$M and $U=0.3\,\mu$M differ along a glutamine titration. These are not the coupled inputs in A. (D) The PII-independent route gives a drive affine in inverse free-target total at fixed glutamine and modification fraction. Its analytic large-pool limit is subtracted to display the concentration-dependent term. Lines are predictions, not additional observations. S21 separates source-reported fitted constants from chosen parameters and states the rapid-binding and independent-GS assumptions.}
+\end{singlespace}
+\label{fig8}
+\end{figure}
+
+
+\subsubsection*{A constructive compensation rule connects the regulatory mechanisms}
+
+The transformations in Figs 7--8 are instances of a common sufficient condition. Let free-enzyme regulatory states have positive relative weights $w_j(x)$ at fixed free inputs $x$, and let $a_{ji}^{+}$ and $a_{ji}^{-}$ denote effective catalytic specificities for opposing transitions on target edge $i$. When regulatory exchange occurs only on free enzyme and each catalytic intermediate returns to the same regulatory state, the stationary edge ratio depends on $\sum_j w_j a_{ji}^{+}/\sum_j w_j a_{ji}^{-}$. Thus
+\[
+ w'_j=s_jw_j,\qquad (a_{ji}^{\pm})'=a_{ji}^{\pm}/s_j,\qquad s_j>0
+\]
+preserves every normalized free-target state fraction, provided the transformed weights admit the specified binding network. Enzyme occupancy and absolute rates need not be preserved. For GlnD, $s_1=1/\lambda$; for the GlnE binding--synergy transformation, $s_{EGP}=1/\sigma$. Changing a catalytically silent state's weight also preserves the ratios. S24 derives this finite-reaction statement and its admissibility conditions. It is a constructive family of stationary equivalences, not an exhaustive structural-identifiability test \cite{r72,r73}.
+
+\subsection*{Protein conservation bounds departures from free-state equivalence}
+
+The second result connects an exact free-state prediction to a total-protein measurement. Finite binding alone need not destroy stationary equivalence. Sequestration and downstream amplification determine the allowed departure, while changes in catalytic coupling can alter the equivalence itself.
+
+\subsubsection*{Finite reaction kinetics delimit equivalence in free and total observations}
+
+The GlnD equivalence does not require instantaneous ligand equilibration at steady state. We replace averaged catalytic capacities by three free enzyme states, six enzyme--target complexes, and two target modification states, with finite mass-action association, dissociation, and catalysis. When regulatory ligand exchange occurs on free enzyme, complex balances recover the same catalytic specificities and free-target ratio at any positive binding-rate scale (S22). Explicit saturation and enzyme conservation therefore retain the free-state identity. The target here is one modification unit; this calculation does not assign the same sequestration stoichiometry to a whole PII trimer.
+
+Total modification can nevertheless differ because complexes are counted in the assay (Fig 9A,B). For one target unit per enzyme complex, two mechanisms with the same free modified fraction and the same totals obey
+\[
+ |Y_{\mathrm{tot}}^{(1)}-Y_{\mathrm{tot}}^{(2)}|
+ \leq \min(1,E_{\mathrm{tot}}/T_{\mathrm{tot}}).
+\]
+The bound follows from conservation, not from a low-occupancy expansion. If forward and reverse effective substrate affinities are equal within each enzyme state, total and free fractions coincide even at saturation. Otherwise the enzyme/target ratio bounds how much the observation rule alone can separate the models. This is a fraction bound, not a bound on titration slopes or Hill coefficients. It also limits experimental information: if $E_T/T_T=0.01$ and a single total-fraction estimate has known Gaussian SD 0.05, even a separation attaining the bound requires at least 155 independent estimates for 80\% power at one-sided size 0.05. The calculation is an optimistic lower bound under specified errors, not a measured assay budget; it motivates a complementary observable when sequestration effects are small.
+
+Finite ligand-binding rates change transients even when the endpoints remain identical (Fig 9C). Extending ligand exchange to substrate-bound enzyme probes a different restriction. Exchange that balances the catalytic-complex weights retains the constructed steady state. However, thermodynamically consistent binding cycles with state-dependent dissociation/catalysis ratios can produce regulatory currents and break the identity. In a disclosed scenario, the free-fraction difference reaches 0.035 at $G=10K$ and 0.070 at $G=30K$ across the scanned exchange rates (Fig 9D; S22). These are sensitivity scenarios, not estimated physiological effects. They show why persistence under slow binding and failure under altered catalytic coupling are different questions.
+
+
+\begin{figure}[!ht]\centering
+\caption{\textbf{Reaction and observation assumptions define different boundaries.} (A) Explicit enzyme--target complexes preserve the free modified fraction but change total fractions; enzyme/target total is 0.3. (B) Total-fraction separation between $\lambda=1,4$ across enzyme/target ratios for one disclosed asymmetric-affinity scenario. Conservation bounds this separation by $\min(1,E_{\rm tot}/T_{\rm tot})$ in the stated monovalent model. (C) Finite regulatory binding changes the transient without changing its steady endpoint. Binding rates and time are dimensionless reference units. (D) Ligand exchange in substrate-bound complexes with state-dependent dissociation/catalysis ratios breaks free-state equivalence. This extension preserves thermodynamic binding-cycle ratios but permits catalytic regulatory currents. Its parameters and positive steady-state checks are specified in S22. All curves are calculations, not new observations.}
+\end{figure}
+
+\subsubsection*{Protein conservation gives a cascade-wide observation bound}
+
+We extended the finite construction to four PII states, thirteen GS states, three GlnD regulatory states, and a ten-state refinement of the six GlnE classes. Explicit catalytic complexes give 120 species and 300 directed reactions, conserving PII, GS, GlnD, and GlnE. Partly modified PII has recognition weight $i/3$, a chosen extension tested against alternative weights rather than an established binding law. Glutamine and nucleotide pools are initially buffered; regulatory exchange on catalytic complexes is excluded (S25).
+
+At fixed free glutamine, the GlnD transformation preserves the entire free PII distribution even in this coupled system. Let $P_T,S_T,D_T,E_T$ be total PII trimers, GS dodecamers, GlnD, and GlnE, and define $\epsilon_P=(D_T+2E_T)/P_T<1$ and $\epsilon_S=\min(1,E_T/S_T)$. One GlnD binds at most one PII and one GlnE at most two, including GS-bound GlnE. Consequently, the total-variation distance between the two total PII distributions is at most $\epsilon_P$.
+
+Downstream closure requires more than the upstream invariant. For the specified GlnE topology the ATase/AR drive at free PII pool size $T$ is $r(T)=a+b/T$, with $a,b\geq0$. The direct glutamine route supplies $b$. Combining the allowed range of $T$ with the ladder sensitivity bound gives
+\[
+ |\Delta\theta_{GS,\mathrm{total}}|\leq
+ \min\left\{1,\tanh\!\left[\frac{\nu_*}{4}\log\frac{1}{1-\epsilon_P}\right]+\epsilon_S\right\}.
+\]
+Here $\nu_*=1$ for independent GS sites, while $\nu_*=12$ covers any positive twelve-site ladder shared by the compared models. Removing the direct route sets $b=0$, making free GS fractions exactly invariant and reducing the total-GS bound to $\epsilon_S$. These are fraction bounds, not Hill-slope bounds (S26).
+
+Figure 10 verifies the bounds across 8,200 paired conditions. Interacting GS can amplify a small free-pool difference, although the selected numerical differences remain far below the conservative bounds. Three independent full-reaction integrations agree with the constructed stationary states within $3\times10^{-10}\,\mu$M; this verifies selected realizations, not global stability. Inverting the bound turns this into an assay condition: to limit the total-GS difference to 0.01 with $\epsilon_S=0.001$, it is sufficient to keep $\epsilon_P$ at most 0.0354 for independent sites or 0.00300 for an unrestricted twelve-site ladder. These sufficient limits control interpretation error; exceeding them does not guarantee discrimination.
+
+\begin{figure}[!ht]\centering
+\begin{singlespace}\caption{\textbf{Protein conservation and reaction topology delimit cascade equivalence.} (A) Total PII state-distribution distance for paired GlnD/GlnE transformations $(\lambda,\sigma)=(1,1)$ and $(4,4)$, with its conservation bound. Free PII distributions coincide. (B) Total GS adenylylation differences with and without the direct glutamine route; independent sites. (C) Free GS differences for independent and interacting ladders, with the universal twelve-site upper bound. In A--C, curves are maxima over 82 specified glutamine doses at each sequestration capacity, not optimized maxima over all parameters. $P_T=5$, $S_T=10$, $D_T=2.5\epsilon_P$, and $E_T=1.25\epsilon_P$, in micromolar; $J=0.4$ is an illustrative interaction strength. (D) Allowing the previously silent EPU class to catalyze adenylylation makes $\alpha_2$ observable in GS output. Curves compare $\alpha_2=2.17$ and 8.85 over 41 doses, at matched free protein pools or conserved totals. $\eta=0$ recovers the silent class; $\eta>0$ defines a 156-species extension. These are model calculations, not new biological measurements.}\end{singlespace}\label{fig10}\end{figure}
+
+\subsubsection*{Topology and input control define the limit of the inference}
+
+A productive EPU route replaces the silent denominator term by an additional ATase numerator term. Varying its catalytic coefficient from zero to the reference scale exposes the formerly silent $\alpha_2$: the selected fixed-free-pool GS fraction difference reaches 0.154 (Fig 10D). This construction identifies a reaction whose existence would change the interpretation; it does not establish that reaction in native GlnE. Likewise, fixing total rather than free glutamine can break the upstream identity because the compared enzymes bind different amounts of input. Here $0\leq G_T-G\leq2D_T+E_T$; additional glutamine-binding partners require a different bound. Sixty-two conserved-input comparisons illustrate the distinction (S26). The productive EPU route does not destroy every result: for the unchanged $\lambda/\sigma$ family at common $\alpha_2$, its drive is $a+b/T+cT$, whose log-elasticity magnitude remains at most one. The general GS fraction bound survives, although removing the direct route no longer guarantees exact free-GS invariance.
+
+\subsection*{The unresolved mechanism determines the informative measurement}
+
+The third result is a conditional measurement strategy. Resolve PII states to test ladder and population alternatives; measure enzyme binding when the target distribution is invariant. Predictions must remain separated after nuisance variation before greater precision can be expected to help (Fig 11).
+
+\subsubsection*{State measurements target the ambiguity left by mean titrations}
+
+State distributions provide both an attribution measurement and a test of the assumed separable ladder. For a homogeneous positive ladder, adjacent-state contrasts satisfy
+\[
+C_i(G):=\frac{p_{i-1}(G)p_{i+1}(G)}{p_i(G)^2}
+=\frac{c_{i-1}c_{i+1}}{c_i^2},\qquad i=1,\ldots,n-1. \tag{14}
+\]
+The input weight cancels. For the three-site scenarios, $3C_1=3C_2=\exp(2J)$, whereas an independent ladder gives one. In the refractory mixture, $3C_1=1$ but $3C_2=1+r/[(1-r)q^3]$, which changes with input. Thus state-resolved titrations can test a fixed ladder as well as distinguish its shapes. Ratios involving rare states are error-sensitive; direct fractions are preferable when an intermediate band approaches the detection limit (S17).
+
+For the four fixed mean-matched candidates, maximizing the minimum pairwise total-variation distance over 0.02--10 mM selects 0.747 mM, where the smallest separation is 0.160 (Fig 5B,D). This criterion uses predicted state fractions, not a model of instrument noise, and its optimum depends on the candidate set. A complementary high-input measurement directly addresses the plateau mechanism. At 10 mM, the independent and refractory models predict approximately 0.0036 and 0.151 fully uridylylated trimers, respectively. Across 300 shared coordinate perturbations, their central 95\% ranges are 0.0018--0.0067 and 0.117--0.187 (Fig 5C). These are coordinate-sensitivity ranges under fixed mechanisms, not experimental confidence intervals or guaranteed detection power.
+
+State measurements near 0.75 and 10 mM address the ladder and refractory alternatives; gain, GlnE binding, or turnover measurements test the downstream law. S8 Fig retains complementary uncalibrated occupancy and concentration designs. However, the GlnD family preserves every PII state and requires enzyme occupancy or kinetics (Fig 7). State resolution resolves specific ambiguities, not all mechanisms.
+
+\clearpage
+
+
+\subsubsection*{Complementary binding measurements remain informative after nuisance variation}
+
+Discrimination must survive nuisance variation within each candidate \cite{r70}. Refitting a common speed can match one relaxation curve; rescaling PII affinity can match one GlnE isotherm. We therefore eliminate these scales or require separated prediction ranges (S23).
+
+For GlnD, measure the singly liganded enzyme fraction without target at the nominal binding concentration. Allow the true $K$ to range independently from half to twice that concentration in each mechanism. The $\lambda=1$ model then predicts a fraction between 0.444 and 0.500, while $\lambda=4$ predicts 0.167--0.200 (Fig 11A). Their minimum separation is 0.244, independent of a shared catalytic speed. In contrast, mean ligand occupancy at the central symmetry point is uninformative. The target-free binding assay also avoids the substrate-sequestration and bound-state catalytic currents examined in Fig 9.
+
+For GlnE, perform PII-binding titrations with PII-UMP absent, at zero and nonzero buffered glutamine. The normalized halfpoint is
+\[
+ r(G)=\frac{K_{P,\mathrm{eff}}(G)}{K_{P,\mathrm{eff}}(0)}
+      =\frac{1+G/K_G}{1+G/(\alpha_1K_G)}.
+\]
+The unknown PII affinity cancels, and removing PII-UMP removes its interaction parameter. If enzyme binding appreciably depletes PII, the nominal total-PII halfpoint is $K_{P,\mathrm{eff}}+E_{\mathrm{tot}}/2$; subtracting the measured half-enzyme concentration restores the free halfpoint. Titrations at 0, 1, and 10 mM glutamine can additionally identify both $K_G$ and $\alpha_1$ in the ideal six-state binding model, except at the no-synergy degeneracy $\alpha_1=1$ (S23). This supplies a continuous parameter-estimation design as well as a comparison of specified mechanisms.
+
+We quantify prospective precision requirements using independently varying nuisance ranges, not experimental confidence intervals. At 0 and 10 mM glutamine, the classes $\alpha_1\in[0.136,0.2125]$ and $[0.544,0.850]$, each with $K_G\in[7.8,31.2]$ mM, have a minimum log-halfpoint-ratio gap of 0.256 (Fig 11B). With known independent Gaussian measurement errors, a one-sided 5\% test has at least 80\% power with five GlnD occupancy estimates at fraction SD 0.20, or eight independent GlnE halfpoint estimates per condition at log SD 0.20 (Fig 11C). A halfpoint estimate requires a complete binding titration; these counts are not numbers of individual concentration points. Pilot measurements must establish precision and control systematic bias before these calculations are used as an experimental budget.
+
+With factor-two uncertainty in $K$, GlnD occupancy ranges overlap for $\lambda\le1.25$, so replication cannot resolve those alternatives (Fig 11D). Overlapping GlnE classes likewise require other conditions or constraints. Paired GlnD capacity ratios remove common speed but still require baseline-shape calibration. The design distinguishes the need for a new observable from the need for greater precision.
+
+
+\begin{figure}[!ht]\centering
+\caption{\textbf{Nuisance-aware designs identify informative measurements and required precision.} (A) Target-free singly liganded GlnD fractions; shading allows $K$ to vary independently by a factor of two in each candidate. At nominal $G=K$, prediction ranges are separated by at least 0.244. (B) GlnE PII-binding halfpoints normalized to zero glutamine, with PII-UMP absent. Shading independently varies $K_G$ from 7.8 to 31.2 mM and $\alpha_1$ within the two stated effect-size classes; it is not a confidence band. (C) Independent assay estimates required for at least 80\% power at one-sided size 0.05. GlnD SD is in fraction units; GlnE SD is in log-halfpoint units. GlnE counts apply to complete titration estimates at each of two glutamine conditions. (D) Smaller GlnD alternatives require more precise measurements; overlapping nuisance ranges cannot be separated by replication alone. The Gaussian error model assumes known precision and no uncorrected condition-dependent bias. S23 gives the test and depletion correction.}
+\end{figure}
+
+Occupancy assays retain a model-class limit: splitting a regulatory state into hidden active and inactive conformations can preserve both binding and target output (S27). Figure 11 therefore distinguishes its specified mechanism classes and nuisance ranges. Unrestricted microscopic identification requires additional observations or independently justified catalytic-state restrictions.
+
+\section*{Discussion}
+
+Three conclusions organize the study. Complete target-state measurements can remain mechanistically ambiguous; protein conservation can bound the resulting differences in total readouts; and the unresolved ambiguity determines which complementary measurement is useful. Figures 7--8 construct the regulatory equivalences, Figs 9--10 establish their reaction and observation boundaries, and Fig 11 turns selected ambiguities into binding designs.
+
+The first conclusion limits what can be inferred from response shape. Different ladders and population mixtures can match a mean titration, while the GlnD transformation preserves every free PII state fraction. GlnE binding and catalytic synergy can compensate downstream. These constructions use established elimination, binding-polynomial, and scaling principles \cite{r4,r22,r23,r24,r26,r27,r40,r46,r72,r73}; their contribution is to identify explicit biochemical alternatives that increasingly detailed target observations still cannot resolve. Stationary equivalence does not imply identical transients.
+
+The second conclusion connects that ambiguity to experimental conditions. The protein-conserving cascade retains both modification-count ladders and explicit catalytic complexes. Its fraction bounds account for sequestration, direct glutamine regulation, and downstream ladder sensitivity. Inverting the bounds specifies sufficient protein-pool conditions for controlling interpretation error. The bounds are conservative: selected numerical differences are much smaller, and no Hill-slope bound or guaranteed discrimination follows. Productive EPU coupling breaks the silent-state equivalence while preserving a different compensation bound, illustrating why topology changes must be assessed conclusion by conclusion.
+
+The third conclusion makes measurement choice conditional on mechanism class. State-resolved PII addresses ladder and population alternatives; target-free GlnD occupancy and normalized GlnE binding address the regulatory families. Nuisance profiling separates alternatives that require better precision from those requiring another observable. Hidden conformations can preserve both target output and ligand occupancy, so these assays do not uniquely identify an unrestricted microscopic mechanism.
+
+These results remain a conditional theory of nitrogen signaling. Partly modified PII recognition, GS interactions, and complex affinities are specified scenarios. Modification-count ladders do not resolve spatial arrangements of modified sites; local cooperativity in a distinct CTD phosphorylation system illustrates why such arrangements can matter \cite{r41}. Glutamine:2-oxoglutarate regulation of GlnD in \textit{Herbaspirillum seropedicae} further motivates controlling both inputs, but is not an \textit{E. coli} parameter constraint \cite{r75}. ATP/ADP, UTP, 2-oxoglutarate, metabolism, and expression feedback are not dynamically modeled; bound-enzyme regulatory exchange can alter the topology. Published coordinates lack replicate-level errors, and historical assays varied GlnD as well as PII. Noise models and nuisance ranges therefore require experimental calibration. Selected integrations and root searches verify realizations, not global convergence or uniqueness. The study's practical output is a set of falsifiable observation choices with explicit validity conditions.
+
+\section*{Materials and methods}
+
+
+
+\subsection*{Mathematical analysis}
+
+We use mass-action kinetics with positive rate constants. Every catalytic complex in the core network contains one enzyme and one target; the target is released after each modification event. At a positive steady state, catalytic complex balances and zero net flux across each cut give Eq. (1). The normalized distribution follows by iteration, and the variance identity follows by differentiating its mean with respect to log u. S1 Appendix provides the complete reaction scheme, proofs of the factorization and bounds, the opposing-effector extension, and a sufficient uniqueness criterion for the single-effector network.
+
+
+The figure calculations evaluate the closed-form distributions and response functions. Tests compare the variance expression with the independent-site value across input and site number, check numerical versus analytic derivatives, and verify every calibrated midpoint. These tests validate the closed-form calculations; the additional full mass-action models and independent integrations are described below. All figure inputs and numerical outputs are retained in S1 Data.
+
+
+
+
+\subsection*{Coordinate provenance and fitting}
+
+The first-layer input consists of twelve author-supplied coordinates digitized by eye from an enlarged view of Fig 2B in the published glutamine titration \cite{r12}. The source assay measured the upstream cycle within the reconstituted bicyclic system, using 0.5 $\mu$M PII and 0.05 $\mu$M UTase/UR \cite{r12}. The supplied CSV retains the rounded digitization used in the analysis, including 0.02 mM for the lowest-input point. The source graph places that point at zero before a broken logarithmic axis; treating its input as zero changes the fitted exponent from 2.0179 to 2.0205. S1 Appendix records additional endpoint checks. An independent extraction of vector markers from the original manuscript reproduces these coordinates to plotting precision. These are digitized published measurements, not original experimental replicates; the coordinate perturbations assess sensitivity to an assumed digitization-error model.
+
+
+We fit U(l)=$U_{\min}$+($U_{\max}$-$U_{\min}$)/(1+$(l/S)^h$) by bounded nonlinear least squares. Parameters are $U_{\min}$, $U_{\max}$, log S, and h. Bounds are 0$\le$$U_{\min}$$\le$1.5, 1.5$\le$$U_{\max}$$\le$3, -8$\le$log S$\le$5, and 0.1$\le$h$\le$8, with l expressed numerically in mM. The broad bounds separate the two plateaus and retain their physical 0--3 occupancy range. Fixed-exponent fits optimize the other three parameters under the same bounds. Multi-start checks and model-comparison tables are included in S1 Appendix.
+
+
+Conditional likelihood comparisons use independent Gaussian residuals with an unknown common variance. Corrected AIC includes this variance in the parameter count: k=5 for the free-exponent curve and k=4 for fixed-exponent curves. Profile likelihood loss is N log(SSE\_constrained/SSE\_free), with N=12. Profile likelihood is used to assess parameter constraints within the stated model \cite{r74}. A threshold of 3.841 specifies the nominal 95\% one-parameter profile-likelihood set. Its finite-sample coverage and boundary behavior are not established by this calculation. The refractory-target alternative fixes $U_{\max}$=3 and estimates the floor, midpoint, and exponent.
+
+
+
+
+\subsection*{Coordinate perturbations and regulatory swing}
+
+We perturb each input multiplicatively by exp(Z), where Z is normal with mean zero and standard deviation 0.06, and each output additively by an independent normal error with standard deviation 0.06 UMP per trimer. These are specified sensitivity-analysis assumptions, not estimated measurement errors. We refit 2,000 datasets with seed 20260909; all fits used in the analysis were retained. Central 95\% ranges are empirical percentiles of the resulting parameter or prediction distributions. Curve bands are pointwise percentiles, not simultaneous confidence bands.
+
+
+For the regulatory swing W, the constraint is imposed through the plateaus: $\theta_0$=W$\theta_\infty$/(1-$\theta_\infty$+W$\theta_\infty$). At each W, the lower plateau, midpoint, and exponent are reoptimized. Dividing the lower profile endpoint by 7.93/1.17 gives the conditional forward-inhibition requirement. Coordinate perturbations are also propagated through W, but uncertainty in the kinetic activation measurement and uncertainty between plateau mechanisms are not modeled as sampling distributions. These qualifications accompany the numerical bound.
+
+
+
+
+\subsection*{Matched models, response scoring, and cascade comparison}
+
+Finite-switch alternatives use the same unweighted twelve-coordinate residuals, four adjustable parameters, and physical plateau bounds. The fixed ladder scenarios are $J=-0.7,0,0.7$; a separate 61-point profile explores $-1.5\le J\le1.5$. Corrected AIC counts four curve parameters and one unknown common Gaussian residual scale, solely as a comparison under that working residual model. Leave-one-coordinate-out fits assess prediction within the same digitization rather than independent biological validation. Exact mean-matched ladders and the refractory mixture are constructed separately from the common bounded Hill fit and are not assigned finite-parameter information criteria (S15).
+
+For every downstream candidate, a positive gain is recalibrated at each reported midpoint to half of that candidate's full limiting response range. The coefficient is then $\log81/\log(G_{90}/G_{10})$ using its own normalized endpoints. Added parameters are shared across the three conditions. We minimize squared log deviations from the three reported coefficients without an experimental likelihood or model-selection probability. Parameter domains and optimization checks are given in S16. A phenomenological transfer power is distinguished from an explicit twelve-site GS ladder. Candidate families are not fitted to invented cascade coordinates reconstructed from their summary coefficients.
+
+For new state predictions, 300 shared coordinate perturbations use the original error assumptions with seed 20260913. All 300 refits converged and are retained. Distribution and baseline-cascade predictions are propagated through every fixed candidate; the resulting ranges do not include structural uncertainty. Separate 10\% midpoint and coefficient scenarios are not treated as measured errors. A 401-point logarithmic input grid over the measured 0.02--10 mM range maximizes the minimum pairwise total-variation distance among four fixed predicted distributions. This criterion does not specify instrument precision or statistical detection power. Numerical inversion is checked against bracketed roots; an independent analytic calibration and threshold calculation verifies the baseline coefficients and population equivalence (S17).
+
+
+
+
+\subsection*{Finite reactions and biochemical constraint audit}
+
+The independent-binding model fits two plateau fractions and one ligand scale, fixes $\alpha_1=\alpha_2$ and $\beta_1=\beta_0$, and uses the transported UR specificity-fold scenario described in S18. Three starts and leave-one-coordinate-out refitting assess numerical and predictive behavior. A separate positive rational family profiles effective coefficient ratios; these are not microscopic binding ratios when total catalytic capacities differ between enzyme states. The cooperative realization has two fitted parameters after fixing its effective coefficient ratio and transporting the UR fold and half-range. A stricter transfer also fixes the unliganded UT/UR specificity ratio. These scenarios are compared by coordinate RMSE, without assigning experimental likelihoods to cross-assay constraints. Primary-source tables, assay contexts, and transcription corrections are documented in S19 and S1 Data.
+
+Finite reaction verification evaluates every enzyme, target, and complex balance at ten constructed free-input steady states. Saturation scenarios use 17 forward scales between 0.015 and 2.5 $\mu$M, 13 reverse scales between 0.28 and 0.85 $\mu$M, three target totals, and 401 glutamine inputs. Each fixed-affinity comparison matches one unnormalized GS response at 0.53 mM; it does not refit all three experimental cascade midpoints. For S10 Fig, the affinity-rescaling identity is verified for both the saturated input ratio and the receptor occupancy classes. Neither these scenarios nor the explicit complex verification constitutes a closed-total fit of the experimental cascade.
+
+
+\subsection*{Regulatory-state constructions and kinetic predictions}
+
+The GlnD reference fits $q_0$, $q_2$, and $K$ using the same twelve unweighted coordinates and three initializations. Its coefficient transformation generates the $\lambda=2,4$ alternatives without additional fitting. A 701-point input grid evaluates occupancy and catalytic-rate predictions; a separate design file evaluates $K/3,K,3K$. The GlnE topology is transcribed from Fig 12 of \cite{r71}. We retain the source-reported fit example $K_G=15.6$ mM, $K_P=0.18\,\mu$M and $\alpha_1=0.17$, use $K_U=0.35\,\mu$M as a selected apparent-scale scenario, and explicitly choose $\beta=1$, $\beta'=10$, and $\alpha_2=4$. Variants 2.17 and 8.85 for $\alpha_2$ are motivated by source fits under different conditions, not by a confidence interval. A single reference gain sets $Y=0.5$ at the middle-condition midpoint; none of the transformed models is recalibrated. We do not treat these illustrations as joint fits to the three cascade coefficients.
+
+Validation includes 100 independent stationary linear solves for PII ladders, 250 six-state receptor solves, finite-difference checks of the local sensitivity decomposition, and coupled-curve comparisons across three PII totals and twelve mechanism combinations. The step-response calculation uses buffered glutamine, a free target pool, fast regulatory binding, and unsaturated independent-site conversion. The reference PII and GS relaxation rates at the final input set shared time scales. Source constants, chosen values, transformations, initial conditions, and complete prediction grids accompany S1 Data.
+
+
+\subsection*{Assumption boundaries and prospective discrimination}
+
+The finite reaction model tracks 11 concentrations and conserves enzyme and monovalent target totals. Effective affinities $h_j^\pm$ and specificities $a_j,b_j$ define positive association, dissociation, and catalytic rates. We verify constructed steady states in 300 random parameter cases, including enzyme/target ratios $10^{-4}$--1 and effective affinities $10^{-2}$--$10^2$ in reciprocal target-concentration units. Two independent integrations from free enzyme and unmodified target check convergence. A second extension permits substrate-bound ligand exchange with binding-cycle ratios derived from association/dissociation constants; positive stationary solves cover five glutamine levels and 26 exchange rates for both mechanisms, with independent integrations at a selected condition. These scenarios distinguish exact identities from topology-dependent numerical predictions.
+
+For experimental design, nuisance ranges vary independently under the two hypotheses. GlnD occupancy bounds are analytic; GlnE ratio bounds follow the monotonic binding formula over specified parameter boxes. A normal test at the least-favourable null boundary controls the one-sided false-positive rate at 0.05. Sample sizes use known measurement SD and target power 0.80. Synthetic draws (100,000 per null and alternative for each selected assay) verify the probability calculations; they are not biological replicates. We separately report conditional GlnD capacity comparisons, for which calibration of the baseline shape is required. Full reaction rates, grids, observation definitions, design thresholds, and code are in S1 Data.
+
+
+\subsection*{State-resolved cascade and closure analysis}
+
+The new reaction generator enumerates regulatory binding, dissociation, and catalytic release with explicit stoichiometry. Complex balances reduce the buffered-input steady state to two free-protein pool balances; no time-scale approximation is used to verify these stationary states. We checked 8,200 paired conditions, 60 randomized realizations with two root initializations, and three independent BDF integrations of the full reaction system. Additional sweeps examined 861 silent-state comparisons, 360 productive-route compensation conditions, 90 recognition-weight conditions, and 62 total-glutamine comparisons. S24--S27 provide proofs, reaction definitions, parameter provenance, and limitations. All new parameters beyond the transported GlnD fit and stated GlnE scales are illustrative; no additional experimental fit is claimed.
+
+\subsection*{Use of artificial intelligence tools}
+
+OpenAI ChatGPT and Codex assisted with model construction, mathematical derivations, analysis and verification code, manuscript drafting and revision, and figure preparation. This assistance affected the main text, supporting derivations, analysis scripts, and computational figures. AI-assisted schematic artwork was incorporated into the author-assembled pathway illustration in Fig 1; it represents modification-state classes, not an experimentally determined protein structure. Computational outputs were checked using the conservation identities, independent stationary solves, reaction integrations, derivative comparisons, and reproducibility checks described above and in S1 Appendix. Published-data coordinates remain identified as digitized measurements; model predictions and synthetic perturbations are labeled separately. No new experimental measurements were generated by these tools.
+
+\section*{Data and code availability}
+
+No new experimental data were generated. Digitized published coordinates, cascade summary values, parameter records, prediction grids, and analysis scripts are supplied as S1 Data. The complete research code, including matched-model, regulatory-state, protein-conserving cascade and measurement-design extensions, is publicly released as version 1.1.0 at \href{https://github.com/choeyule-gif/nitrogen-signaling-ultrasensitivity/releases/tag/v1.1.0}{GitHub release v1.1.0}. The earlier baseline version 1.0.0 is separately archived at \href{https://doi.org/10.5281/zenodo.22731769}{doi:10.5281/zenodo.22731769}; that baseline archive does not contain the subsequent extensions. S1 Data contains the analysis source and numerical data needed to reproduce the current study.
+
+\section*{Acknowledgments}
+
+I would like to express my sincere gratitude to Dr Seonhwa Park for introducing me to the practice of research and for her guidance and encouragement.
+
+\section*{Author contributions}
+
+Yule Choi: conceptualization, methodology, formal analysis, software, investigation, validation, visualization, writing -- original draft, writing -- review and editing.
+
+
+
+
+\section*{Competing interests}
+
+The author declares no competing interests.
+
+
+
+\begin{singlespace}
+\begin{thebibliography}{99}
+\bibitem{r1} Goldbeter A, Koshland DE. An amplified sensitivity arising from covalent modification in biological systems. Proc Natl Acad Sci USA. 1981;78:6840--6844. \href{https://doi.org/10.1073/pnas.78.11.6840}{doi:10.1073/pnas.78.11.6840}.
+
+\bibitem{r2} Ferrell JE, Ha SH. Ultrasensitivity part III: cascades, bistable switches, and oscillators. Trends Biochem Sci. 2014;39(12):612-618. \href{https://doi.org/10.1016/j.tibs.2014.10.002}{doi:10.1016/j.tibs.2014.10.002}.
+
+\bibitem{r5} van Heeswijk WC, Westerhoff HV, Boogerd FC. Nitrogen Assimilation in Escherichia coli: Putting Molecular Data into a Systems Perspective. Microbiol Mol Biol Rev. 2013;77(4):628-695. \href{https://doi.org/10.1128/mmbr.00025-13}{doi:10.1128/mmbr.00025-13}.
+
+\bibitem{r6} Ninfa AJ, Atkinson MR. PII signal transduction proteins. Trends Microbiol. 2000;8:172--179. \href{https://doi.org/10.1016/s0966-842x(00)01709-1}{doi:10.1016/s0966-842x(00)01709-1}.
+
+\bibitem{r7} Gosztolai A, Schumacher J, Behrends V, Bundy JG, Heydenreich F, Bennett MH, et al. GlnK Facilitates the Dynamic Regulation of Bacterial Nitrogen Assimilation. Biophys J. 2017;112:2219--2230. \href{https://doi.org/10.1016/j.bpj.2017.04.012}{doi:10.1016/j.bpj.2017.04.012}.
+
+\bibitem{r12} Jiang P, Ninfa AJ. A Source of Ultrasensitivity in the Glutamine Response of the Bicyclic Cascade System Controlling Glutamine Synthetase Adenylylation State and Activity in Escherichia coli. Biochemistry. 2011;50(50):10929-10940. \href{https://doi.org/10.1021/bi201410x}{doi:10.1021/bi201410x}.
+
+\bibitem{r13} Ventura AC, Jiang P, Van Wassenhove L, Del Vecchio D, Merajver SD, Ninfa AJ. Signaling properties of a covalent modification cycle are altered by a downstream target. Proc Natl Acad Sci U S A. 2010;107(22):10032-10037. \href{https://doi.org/10.1073/pnas.0913815107}{doi:10.1073/pnas.0913815107}.
+
+\bibitem{r9} Mutalik VK, Shah P, Venkatesh KV. Allosteric Interactions and Bifunctionality Make the Response of Glutamine Synthetase Cascade System of Escherichia coli Robust and Ultrasensitive. J Biol Chem. 2003;278(29):26327-26332. \href{https://doi.org/10.1074/jbc.m300129200}{doi:10.1074/jbc.m300129200}.
+
+\bibitem{r10} Bruggeman FJ, Boogerd FC, Westerhoff HV. The multifarious short-term regulation of ammonium assimilation of Escherichia coli: dissection using an in silico replica. FEBS J. 2005;272(8):1965-1985. \href{https://doi.org/10.1111/j.1742-4658.2005.04626.x}{doi:10.1111/j.1742-4658.2005.04626.x}.
+
+\bibitem{r40} Ortega F, Ehrenberg M, Acerenza L, Westerhoff HV, Mas F, Cascante M. Sensitivity Analysis of Metabolic Cascades Catalyzed by Bifunctional Enzymes. Mol Biol Rep. 2002;29(1-2):211-215. \href{https://doi.org/10.1023/a:1020334014497}{doi:10.1023/a:1020334014497}.
+
+\bibitem{r46} Ortega F, Acerenza L, Westerhoff HV, Mas F, Cascante M. Product dependence and bifunctionality compromise the ultrasensitivity of signal transduction cascades. Proc Natl Acad Sci USA. 2002;99:1170--1175. \href{https://doi.org/10.1073/pnas.022267399}{doi:10.1073/pnas.022267399}.
+
+\bibitem{r66} Straube R. Sensitivity and Robustness in Covalent Modification Cycles with a Bifunctional Converter Enzyme. Biophys J. 2013;105(8):1925-1933. \href{https://doi.org/10.1016/j.bpj.2013.09.010}{doi:10.1016/j.bpj.2013.09.010}.
+
+\bibitem{r67} Straube R. Reciprocal Regulation as a Source of Ultrasensitivity in Two-Component Systems with a Bifunctional Sensor Kinase. PLoS Comput Biol. 2014;10(5):e1003614. \href{https://doi.org/10.1371/journal.pcbi.1003614}{doi:10.1371/journal.pcbi.1003614}.
+
+\bibitem{r36} Jiang P, Zhang Y, Atkinson MR, Ninfa AJ. The Robustness of the Escherichia coli Signal-Transducing UTase/UR-PII Covalent Modification Cycle to Variation in the PII Concentration Requires Very Strong Inhibition of the UTase Activity of UTase/UR by Glutamine. Biochemistry. 2012;51(45):9032-9044. \href{https://doi.org/10.1021/bi3005736}{doi:10.1021/bi3005736}.
+
+\bibitem{r4} Adair GS, Bock AV, Field H Jr. The hemoglobin system: VI. The oxygen dissociation curve of hemoglobin. J Biol Chem. 1925;63(2):529--545. \href{https://doi.org/10.1016/S0021-9258(18)85018-9}{doi:10.1016/S0021-9258(18)85018-9}.
+
+\bibitem{r22} Thomson M, Gunawardena J. The rational parameterisation theorem for multisite post-translational modification systems. J Theor Biol. 2009;261:626--636. \href{https://doi.org/10.1016/j.jtbi.2009.09.003}{doi:10.1016/j.jtbi.2009.09.003}.
+
+\bibitem{r23} Feliu E, Wiuf C. Variable elimination in post-translational modification reaction networks with mass-action kinetics. J Math Biol. 2013;66(1-2):281-310. \href{https://doi.org/10.1007/s00285-012-0510-4}{doi:10.1007/s00285-012-0510-4}.
+
+\bibitem{r24} Feliu E, Wiuf C. Variable Elimination in Chemical Reaction Networks with Mass-Action Kinetics. SIAM J Appl Math. 2012;72:959--981. \href{https://doi.org/10.1137/110847305}{doi:10.1137/110847305}.
+
+\bibitem{r25} Xu Y, Gunawardena J. Realistic enzymology for post-translational modification: Zero-order ultrasensitivity revisited. J Theor Biol. 2012;311:139--152. \href{https://doi.org/10.1016/j.jtbi.2012.07.012}{doi:10.1016/j.jtbi.2012.07.012}.
+
+\bibitem{r26} Abeliovich H. An Empirical Extremum Principle for the Hill Coefficient in Ligand-Protein Interactions Showing Negative Cooperativity. Biophys J. 2005;89:76--79. \href{https://doi.org/10.1529/biophysj.105.060194}{doi:10.1529/biophysj.105.060194}.
+
+\bibitem{r27} Briggs WE. Cooperativity and extrema of the Hill slope for symmetric protein-ligand binding polynomials. J Theor Biol. 1984;108(1):77-83. \href{https://doi.org/10.1016/s0022-5193(84)80170-8}{doi:10.1016/s0022-5193(84)80170-8}.
+
+\bibitem{r70} Silk D, Kirk PDW, Barnes CP, Toni T, Stumpf MPH. Model Selection in Systems Biology Depends on Experimental Design. PLoS Comput Biol. 2014;10(6):e1003650. \href{https://doi.org/10.1371/journal.pcbi.1003650}{doi:10.1371/journal.pcbi.1003650}.
+
+\bibitem{r72} Castro M, de Boer RJ. Testing structural identifiability by a simple scaling method. PLoS Comput Biol. 2020;16(11):e1008248. \href{https://doi.org/10.1371/journal.pcbi.1008248}{doi:10.1371/journal.pcbi.1008248}.
+
+\bibitem{r73} Villaverde AF, Massonis G. On testing structural identifiability by a simple scaling method: Relying on scaling symmetries can be misleading. PLoS Comput Biol. 2021;17(10):e1009032. \href{https://doi.org/10.1371/journal.pcbi.1009032}{doi:10.1371/journal.pcbi.1009032}.
+
+\bibitem{r18} Zhang Y, Pohlmann EL, Serate J, Conrad MC, Roberts GP. Mutagenesis and Functional Characterization of the Four Domains of GlnD, a Bifunctional Nitrogen Sensor Protein. J Bacteriol. 2010;192(11):2711-2721. \href{https://doi.org/10.1128/jb.01674-09}{doi:10.1128/jb.01674-09}.
+
+\bibitem{r17} Jiang P, Peliska JA, Ninfa AJ. Enzymological Characterization of the Signal-Transducing Uridylyltransferase/Uridylyl-Removing Enzyme (EC 2.7.7.59) of Escherichia coli and Its Interaction with the PII Protein. Biochemistry. 1998;37(37):12782-12794. \href{https://doi.org/10.1021/bi980667m}{doi:10.1021/bi980667m}.
+
+\bibitem{r51} Grant GA. The ACT Domain: A Small Molecule Binding Domain and Its Role as a Common Regulatory Element. J Biol Chem. 2006;281:33825--33829. \href{https://doi.org/10.1074/jbc.r600024200}{doi:10.1074/jbc.r600024200}.
+
+\bibitem{r71} Jiang P, Mayo AE, Ninfa AJ. Escherichia coli glutamine synthetase adenylyltransferase (ATase, EC 2.7.7.49): kinetic characterization of regulation by PII, PII-UMP, glutamine, and alpha-ketoglutarate. Biochemistry. 2007;46:4133--4146. \href{https://doi.org/10.1021/bi0620510}{doi:10.1021/bi0620510}.
+
+\bibitem{r41} Callenbach A, Dorešić D, Düster R, Nakonecnij V, Dudkin E, Geyer M, et al. Quantitative modelling of P-TEFb mediated CTD phosphorylation identifies local cooperativity. PLoS Comput Biol. 2026;22(7):e1014531. \href{https://doi.org/10.1371/journal.pcbi.1014531}{doi:10.1371/journal.pcbi.1014531}.
+
+\bibitem{r75} Emori MT, Tomazini LF, Souza EM, Pedrosa FO, Chubatsu LS, Oliveira MAS. The deuridylylation activity of Herbaspirillum seropedicae GlnD protein is regulated by the glutamine:2-oxoglutarate ratio. Biochim Biophys Acta Proteins Proteom. 2018;1866(12):1216--1223. \href{https://doi.org/10.1016/j.bbapap.2018.09.009}{doi:10.1016/j.bbapap.2018.09.009}.
+
+\bibitem{r74} Raue A, Kreutz C, Maiwald T, Bachmann J, Schilling M, Klingm{\"u}ller U, et al. Structural and practical identifiability analysis of partially observed dynamical models by exploiting the profile likelihood. Bioinformatics. 2009;25(15):1923--1929. \href{https://doi.org/10.1093/bioinformatics/btp358}{doi:10.1093/bioinformatics/btp358}.
+\end{thebibliography}
+\end{singlespace}
+
+\section*{Supporting information}
+
+\paragraph{S1 Appendix. Mathematical derivations and reconstruction methods.}
+Detailed proofs, model definitions, numerical procedures, and robustness checks. Supplementary figures are supplied separately.
+
+\paragraph{S1 Data. Data, parameters, and analysis source.}
+Machine-readable digitized coordinates, parameter records, prediction grids, verification outputs, and reproducible analysis code.
+
+\noindent\textbf{S1 Fig.} Numerical checks of the steady-state invariant. (A) Adjacent free-target ratios over a 5,278-fold enzyme sweep at fixed free effector in a four-site nonidentical ladder. (B) A three-site example with a reversible dead end swept over eleven decades at fixed total effector. The small ratio drift reflects the changed free effector; it is not a violation of the free-input identity. See S10 and the source parameter records.
+
+\medskip
+
+\noindent\textbf{S2 Fig.} Three-site ladder shapes and estimator-dependent constraints. The surface is the numerically maximized local factor for coefficients $(1,3a,3b,1)$. The circle marks the independent ladder. Curves give the supplied shapes reproducing coefficient ratio 1.11055 under a pure-power switch, using a fitted exponent (blue) or a response-range coefficient (orange). Surface height is the maximum over input, not the local factor at the titration midpoint. The constraints are conditional model calculations, not measured local factors.
+
+\medskip
+
+\noindent\textbf{S3 Fig.} Concentration dependence of a total-target readout in a specified independent-site model. The plotted coefficient is the local negative logit slope with respect to free effector, evaluated where total modified fraction equals one-half. Parameters are $n=3$, $A=\widehat K=1$, $\widehat B=\widehat G=0.4$, and $K_m=1/(n\widehat B)$. Over the grid with $T_E/T_S\le0.01$, the coefficient lies between 0.99745 and approximately one. The result is a concentration-dependent total-response example; the exact free-target invariant concerns a different observable.
+
+\medskip
+
+\noindent\textbf{S4 Fig.} Downstream ladder interactions and condition-specific local factors. (A) Reported-to-calculated response-range ratios versus the interaction parameter w in Eq. (S28). Each condition has its own calibrated midpoint. (B) The corresponding local ladder factors at those midpoints. These factors need not coincide and are not replaced by their average. Increasing w does not automatically fit every condition jointly. Curves are illustrative calculations, not fitted microscopic interaction strengths.
+
+\medskip
+
+\noindent\textbf{S5 Fig.} Uniqueness conditions and verified multistationarity. (A) Corrected independent-site kinetic example satisfying both conditions. (B) Original four-site example with catalytic-ratio spread 2.89: three positive states, but both conditions are violated. (C) Constant catalytic ratios with condition (ii) violated. (D) An exact binomial ladder satisfying condition (ii) globally, with condition (i) violated and three physical states. Panels C and D use residual divided by total effector with symmetric logarithmic vertical axes. Markers are refined roots, not neighboring grid points. S11 and S1 Data specify all parameters, positivity checks, and the exact root count for D. Stability is not encoded by the marker style.
+
+\medskip
+
+\noindent\textbf{S6 Fig.} A frequency-domain sufficient condition under buffered-effector, fast-binding assumptions. Direct resolvent evaluation of Re F for the independent-site family specified in S13, with time in units of mean exit rate. Blue portions satisfy the analytic frequency threshold in Eq. (S34); orange portions fall below that threshold and are not classified by this bound. This convention is applied to every n. All sampled values remain positive, including below the threshold. Open circles at the left edge denote the analytic zero-frequency limits, placed there for visibility. Gray marks on the floor denote the thresholds. This is a numerical example and a partial analytic certificate, not an all-parameter stability proof.
+
+\medskip
+
+\noindent\textbf{S7 Fig.} Additional consequences and competing contributions. (A) Composite response-range coefficient divided by the fitted upstream exponent as the downstream scale varies, using the linear reverse input. (B) Gain from the specified direct-activation law with R=3.7 while retaining the downstream scale calibrated before adding that law; the gain ranges approximately 0.95--1.17. (C) The high-enzyme total-effector titration from the original experimental-design figure, with baseline $T_E=0.6$, $T_S=1$ and the same independent-site constants as S8 Fig B. Legend factors vary enzyme and target independently. Curves are model predictions, not experimental traces.
+
+\medskip
+
+\noindent\textbf{S8 Fig.} \textbf{Measurements that discriminate unresolved mechanisms.} (A) Illustrative one-ligand and concerted two-ligand binding laws, expressed as ligands per enzyme. Activity measurements must accompany occupancy to identify productive states. (B) Illustrative minimal-model total-target responses at two enzyme and two target levels. Parameters are n=3, A=1, $\widehat B$=Ghat=0.4, $\widehat K$=1, baseline $T_E$=0.0001 and $T_S$=1 in consistent concentration units; the four curves nearly coincide because the enzyme pool is dilute. (C) An illustrative active target-bridging extension with one modification site and relation s\_1=$s_0$/(l-0.35$s_0$), with total free target 1 or 4. Target levels separate; enzyme levels coincide in this reduced construction. These examples are not fits to the measured titration. (D) Twelve-site distributions with the same mean modification but $\nu$=1 or $\nu$=2.2, generated by exponential reweighting of binomial states as specified in S1 Appendix. These distributions are not fits to glutamine synthetase.
+
+\medskip
+
+\noindent\textbf{S9 Fig.} \textbf{Conditional accounting of cascade sensitivity and a direct glutamine route.} (A) Calculated downstream responses normalized between their limiting plateaus. Points mark calibrated reported midpoints; curves are model outputs, not experimental traces. (B) Calculated response-range coefficients and reported cascade coefficients at three PII concentrations. PII concentrations of 0.5, 5, and 36 micromolar correspond to UTase/UR concentrations of 0.05, 0.5, and 0.8 micromolar. (C) Ratios of reported to calculated coefficients. Error bars span central 95\% ranges from upstream coordinate perturbations only; connected points aid reading and do not establish a non-monotonic mechanism. (D) Gain produced by the illustrative direct activation law with R=3.7 while retaining the downstream scale calibrated before adding the route. The gain spans approximately 0.95--1.17 and does not supply the middle-condition discrepancy in this specified construction.
+
+\medskip
+
+\noindent\textbf{S10 Fig.} \textbf{Finite population alternatives and affinity-rescaling scenarios.} The prior finite homogeneous/refractory comparison is retained with S18--S19. (A) Mean fits. (B) Distinct PII state predictions. (C) Reduced catalytic capacities. (D) Fixed-affinity saturation can distinguish the populations, whereas rescaling an unknown forward affinity restores the stipulated occupancy equivalence. The binding and kinetic assumptions differ from the six-state GlnE development in main Fig 8.
+
+\medskip
+
+\end{document}
