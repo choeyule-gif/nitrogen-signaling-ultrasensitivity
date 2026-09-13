@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "checks": {
+    "quadratic_vs_mass_balance_max_error": 5.340727859959316e-13,
+    "exact_curve_recovery_max_error": 2.220446049250313e-16,
+    "null_envelope_points": 3000,
+    "independently_recounted_trials": 8700,
+    "shared_baseline_covariance_checks": 500,
+    "coefficient_threshold_recomputed": 0.049999999999999906,
+    "baseline_default_model_cases": 2,
+    "fresh_full_reaction_pair_passed": true
+  }
+}

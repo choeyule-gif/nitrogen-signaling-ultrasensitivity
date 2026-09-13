@@ -1,25 +1,25 @@
 \documentclass[11pt,a4paper]{article}
-\usepackage[margin=0.9in]{geometry}
+\usepackage[margin=0.85in]{geometry}
 \usepackage[T1]{fontenc}\usepackage{lmodern}\usepackage[hidelinks]{hyperref}\usepackage{microtype}
-\pagestyle{empty}\setlength{\parindent}{0pt}\setlength{\parskip}{9pt}
+\pagestyle{empty}\setlength{\parindent}{0pt}\setlength{\parskip}{8pt}
 \begin{document}
 Dear Editors,
 
 Please consider my manuscript, ``Mechanistic equivalence and measurement design in models of bacterial nitrogen signaling,'' as a Research Article in PLOS Computational Biology.
 
-Similar biochemical dose--response curves can support different molecular explanations. This study uses the GlnD--PII--GlnE--GS cascade to connect explicit mechanistic ambiguity to quantitative limits on interpretation and to the choice of the next measurement.
+The study asks which experimental decisions remain possible when different enzyme mechanisms predict the same target response. Using the GlnD--PII--GlnE--GS cascade, it links explicit mechanistic equivalence to a concentration decision and tests a complementary measurement from raw titration points through statistical discrimination.
 
-The manuscript develops three linked results. First, finite GlnD and GlnE binding--catalysis transformations preserve complete stationary target-state distributions or downstream responses. The ambiguity therefore persists beyond fitting the same mean titration. Second, a specified protein-conserving cascade with all PII and GS modification-count states bounds differences between total observations of free-state-equivalent mechanisms. Inverting these bounds gives sufficient enzyme-to-target conditions for controlling interpretation error. Third, the unresolved mechanism determines the informative assay: state-resolved PII addresses ladder and population alternatives, while target-free GlnD occupancy and normalized GlnE binding distinguish the specified regulatory families after nuisance variation.
+First, finite binding--catalysis transformations preserve complete stationary target-state distributions or downstream responses. Second, a concurrent PII modification count sharpens a conservation-based bound on differences between total GS observations. In a source-anchored prospective example, the general bound is 0.370 while the observation-conditioned bound is 0.041, sufficient for a prescribed 0.05 tolerance after a fivefold reduction in GlnE. The result does not require independent PII sites or a known downstream catalytic gain. Its practical value is the concentration choice it can certify when a general bound cannot.
 
-The contribution is the connection between these biochemical constructions, their reaction and observation boundaries, and conditional measurement design. Response decomposition and general identifiability principles are treated as established foundations. Productive regulatory complexes, conserved rather than free glutamine, and hidden conformations delimit the conclusions. The analysis does not claim to identify an unrestricted native mechanism or validate the complete physiological nitrogen network.
+Third, a binding-assay benchmark includes finite ligand depletion, shared baselines, enzyme-total errors, systematic dose bias and estimated variance. Independent concentration standards correct the tested bias, but a hidden affinity mixture still produces misleading single-class mechanistic attribution despite small residuals. A separate GlnD constraint profile shows that improved titration agreement can reduce the occupancy contrast targeted by an assay. These results make biochemical constraints and measurement controls part of the decision itself.
 
-An additional paired GlnB/GlnK design uses a binding-disabled response-curve calibration, allowing conditional sequestration intervals without identifying the GlnD switch. The construction permits interacting free ladders, bounded reporter partition and imperfect bound-target selectivity when the required calibration and uncertainty bounds hold. Independent published peptide measurements establish available observables, but are not presented as measured sequestration.
+The work is methodological and theoretical; no new experimental measurements were generated. Source assay conditions and a conflicting supplementary unit are documented explicitly. The concentration gate and coefficient envelope require confirmation in the proposed assay. Neither finite-model checks nor synthetic discrimination validate the complete physiological cascade. A paired-paralog application is presented as prospective because matched calibration transfer and direct occupancy validation are not yet available.
 
-The five-figure manuscript combines exact derivations, published measurements, and independently checked numerical reaction models. No new experimental measurements were generated. Digitized coordinates, prediction grids, parameter provenance, and verification outputs are supplied as S1 Data; the existing analysis is publicly available through GitHub and its versioned archive. The generalized calibration extension is supplied with the current S1 Data.
+The manuscript contains five main figures, two appendices and six supporting figures. Data, executable analyses, numerical checks and manuscript sources accompany the synchronized version. Established stationary elimination and identifiability principles are acknowledged as foundations; the contribution is their connection to a biochemical interpretation guarantee and an observation-level design benchmark.
 
-I believe the explicit link from model ambiguity to experimentally testable observation choices will interest computational biologists studying signaling, parameter identifiability, and experimental design.
+I believe this explicit connection between mechanistic ambiguity, measurable constraints and experimental decisions will interest readers studying signaling and quantitative experiment design.
 
-Thank you for considering this manuscript.
+Thank you for considering the manuscript.
 
 Sincerely,\\Yule Choi\\Korea Science Academy of KAIST\\Busan, Republic of Korea\\25-117@ksa.hs.kr
 \end{document}

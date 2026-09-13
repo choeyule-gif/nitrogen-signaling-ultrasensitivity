@@ -1,0 +1,32 @@
+{
+  "seed": 9142026,
+  "P_uM": [
+    0.0,
+    0.005,
+    0.01,
+    0.02,
+    0.05,
+    0.1,
+    0.2,
+    0.5,
+    1.0,
+    2.0,
+    5.0
+  ],
+  "G_mM": [
+    0.0,
+    15.6,
+    31.2
+  ],
+  "E_uM": 0.04,
+  "alpha_reference": 0.17,
+  "KG_nuisance_mM": [
+    7.8,
+    15.6
+  ],
+  "technical_replicates": 2,
+  "independent_experiments": 8,
+  "monte_carlo_trials": 100,
+  "test": "one-sided Student t on each independent experiment mean log-ratio score; shared baseline retained",
+  "scope": "Known source-model reference alpha, independently profiled KG range; measurement/noise settings are scenarios, not estimated experimental uncertainty. Misspecified scenarios test limits."
+}

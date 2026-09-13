@@ -122,20 +122,7 @@ Discriminating measurements are matched-condition UT/UR initial rates, high-inpu
 
 \clearpage
 
-\paragraph{Assay transfer audit and source-anchored benchmark.}
-The 1998 Mg-UT assay uses 100 mM Tris, pH 7.5, 100 mM KCl, 25 mM MgCl$_2$, 0.5 mM ATP and a default 33 $\mu$M 2-OG; Mg-UR uses 50 mM MgCl$_2$, 0.5 mM ATP and default 0.1 mM 2-OG. Both are at $30^\circ$C, but their substrate and effector conditions differ. The 2011 coupled assay uses 50 mM Tris, 10 mM MgCl$_2$, 100 mM KCl, 1 mM ATP, 0.5 mM UTP, 1 mM phosphate and 0.1 mM 2-OG at the same pH and temperature. Its PII/GlnD pairs are $(0.5,0.05),(5,0.5),(36,0.8)\,\mu$M, with GlnE 0.1 $\mu$M. It verifies stationary values using multiple time points. These differences prevent interpreting every apparent specificity ratio as a microscopic coefficient already validated in the coupled system. The proposed concentration example explicitly counts GS in dodecamers; monomer/dodecamer conversions must be checked when transferring other assay quantities.
-
-To investigate the constant-capacity stress result, we fix $a_0/b_0=38.9012346$ and $b_2/b_0=6.7524842$, set $b_0=1$, and fit positive two-ligand weights while imposing $a_0\geq a_1\geq a_2$ and $b_0\leq b_1\leq b_2$. Unlike the fixed-$C$ model, $a_j+b_j$ may differ across states. Fifty starts minimize unweighted residuals at the twelve digitized points, with $\log K_1,\log K_2\in[-12,5]$ (mM) and bounded logistic coordinates for monotone capacities. RMSE is 0.0409346, with $K_1=148.413$ mM at the upper bound and $K_2=0.000443$ mM. This boundary optimum is not evidence for a plausible affinity. The exact transformation remains admissible for
-\[
- \max(a_2/a_1,b_0/b_1)\leq\lambda\leq\min(a_0/a_1,b_2/b_1).
-\]
-It preserves the transported endpoint ratios as well as the response, while changing the intermediate state. A profile fixing $K_1$ uses twelve starts per value and the same monotonic constraints. At $K_1=0.3,1,10,100$ mM, RMSE is $0.0493,0.0430,0.0411,0.0409$ and maximum singly liganded contrast at $G=\sqrt{K_1K_2}$ is $0.242,0.0954,0.0108,0.00109$. This contrast is the width over the admissible transformed family, not a confidence interval or a claim that every pair is distinguishable. The profile is a sensitivity analysis, not a global likelihood confidence calculation. Source ratios transferred across assays remain stress assumptions.
-
-The GlnE benchmark is more directly tied to a reported fit. Jiang et al. (2007) supplement \href{https://doi.org/10.1021/bi0620510.s001}{doi:10.1021/bi0620510.s001}, Fig S10 (PDF p.16), uses GlnE 0.04 $\mu$M, GS 2.5 $\mu$M, ATP 0.5 mM and 2-OG 0.05 mM. It reports $K_G=15.6$ mM, $\alpha_1=0.17$ and EP/EG/EGP catalytic coefficients $7.5/175/1315$, giving $\beta=23.3333$ and $\beta'=175.3333$. The main article states $K_P=0.18\,\mu$M and a sixfold reduction relative to the direct apparent scale, whereas the S10 legend prints 0.18 mM. We use the main-text unit and explicitly calculate the literal supplementary alternative. Neither is an independently measured microscopic uncertainty distribution. The $K_G\in[7.8,15.6]$ mM benchmark spans the main article's approximately twofold direct-scale comparison and joint fit, not a measured confidence region. The 2007 s002 supplementary file has a different figure sequence and is not substituted for s001.
-
-The main concentration example combines these source-fit coefficients with reconstitution-motivated protein scales as a declared prospective scenario. It does not claim that the assays constitute one matched dataset. A concurrently measured PII count upper bound and an independently supported coefficient envelope are the operational requirements for applying A11. In particular, the rounded 0.65 coordinate at 2 mM does not establish $M\leq0.67$ with any confidence level. The older illustrative coefficients $\beta=1,\beta'=10$ remain only in the original stress sweeps documented in A10.
-
-\section*{D5 Binding observables and assay performance}
+\section*{D5 Nuisance elimination, effect-size classes, and assay precision}
 
 \textbf{GlnD occupancy.} In a target-free equilibrium binding assay,
 \[
@@ -159,7 +146,7 @@ Two distinct nonzero glutamine levels plus the zero-glutamine baseline determine
 
 For prospective discrimination at 0 and 10 mM, use two disjoint effect-size classes $\alpha_1\in[0.136,0.2125]$ and $[0.544,0.850]$. In both, allow $K_G\in[7.8,31.2]$ mM independently. Monotonicity of the ratio gives log-ratio intervals $[-1.51931,-0.64158]$ and $[-0.38589,-0.04194]$. The minimum gap is 0.25570. These classes specify the alternatives being tested; neither is a confidence region from the published experiments. If each nominal $\alpha_1$ instead spans a factor of two, the classes touch and there is no strictly positive worst-case guarantee. The three-titration design then provides an alternative to an unjustified binary claim.
 
-\textbf{Earlier analytic budget: known variance.} Let each occupancy estimate have independent normal error with known SD $\sigma$, or let each independent halfpoint estimate have normal log error with known SD $\sigma$. Background-corrected fraction estimates are not clipped in this error model. Precision must be established in pilot measurements; this analytic special case does not include uncertain error variance or condition-dependent calibration bias; the end-to-end benchmark below addresses both. A single GlnE halfpoint estimate is obtained from an entire titration, not one concentration point. For $n$ independent estimates per condition, the occupancy mean has variance $\sigma^2/n$, while the difference of two mean log halfpoints has variance $2\sigma^2/n$.
+\textbf{Statistical assumptions and test.} Let each occupancy estimate have independent normal error with known SD $\sigma$, or let each independent halfpoint estimate have normal log error with known SD $\sigma$. Background-corrected fraction estimates are not clipped in this error model. Precision must be established in pilot measurements; the calculations do not include uncertain error variance, condition-dependent calibration bias, or fitted biological variability. A single GlnE halfpoint estimate is obtained from an entire titration, not one concentration point. For $n$ independent estimates per condition, the occupancy mean has variance $\sigma^2/n$, while the difference of two mean log halfpoints has variance $2\sigma^2/n$.
 
 Use the least-favourable null boundary and the prespecified sign of the alternative. A one-sided size-0.05 normal test has worst-case power
 \[
@@ -172,38 +159,7 @@ rounded upward. Applied to total-readout separation $\Delta\leq\epsilon$, it giv
 
 
 
-\paragraph{Observation-to-decision benchmark.}
-The proposed observable is a solution signal proportional to the fraction of GlnE bound by PII, with PII-UMP absent. Free and saturating-ligand controls, label perturbation checks and glutamine-dependent signal controls would be required experimentally. The simulation assumes this readout, rather than asserting measured instrument performance. For free halfpoint $H$ and total enzyme $E$, the exact one-class bound fraction at total PII $P$ is
-\[
- f(P;H,E)=\frac{2P}{P+H+E+\sqrt{(P+H+E)^2-4EP}}.
-\]
-It follows from $P=P_f+Ef$ and $f=P_f/(H+P_f)$; at half occupancy $P=H+E/2$. Halfpoints follow $H(G)=0.18(1+G/K_G)/(1+G/(\alpha_1K_G))\,\mu$M.
-
-Each independent experiment contains $G=0,15.6,31.2$ mM and total PII doses 0, 0.005, 0.01, 0.02, 0.05, 0.1, 0.2, 0.5, 1, 2 and 5 $\mu$M, with two technical readings per dose. True $E=0.04\,\mu$M uses the source enzyme scale. In nonideal scenarios, one shared PII-stock multiplier has log SD 0.10 and the estimated enzyme total has log SD 0.20. One shared background has SD 0.01 and one shared signal gain has log SD 0.03 in every scenario. Independent observation noise has SD $\sqrt{0.025^2+(0.02f)^2}$; signals are not clipped. ``Ideal'' means exact dose and enzyme calibration, not noiseless observations.
-
-The dose-bias scenario additionally multiplies the actual nonzero-glutamine PII doses by $\exp(-0.10)$, a systematic error that remains on replication. In the corrected scenario, independent concentration-standard readings estimate this factor for each nonzero-glutamine solution in each experiment, with log SD 0.02; these measured doses are used in fitting. The shared stock error and enzyme-total error remain. These magnitudes are declared sensitivity settings, not estimates from the source papers.
-
-Three log halfpoints and a shared background/gain are fitted jointly by bounded nonlinear least squares, accounting for finite depletion with the estimated enzyme total. Starting halfpoints are $0.2,0.1,0.1\,\mu$M; allowable halfpoints are $[10^{-4},10]\,\mu$M, background $[-0.2,0.2]$ and gain $[0.5,1.5]$. Fits stop with $10^{-8}$ convergence tolerances or 150 evaluations. A failed optimizer or active parameter bound invalidates the entire trial and is counted as a nondiscovery. Every scheduled fit in the reported main and local-effect grids is valid.
-
-For experiment $j$, define $R_{j1}=\log(\widehat H_{j1}/\widehat H_{j0})$, $R_{j2}=\log(\widehat H_{j2}/\widehat H_{j0})$ and $Z_j=(R_{j1}+R_{j2})/2$. Eight independent experiments give $\overline Z$ and sample SD $s_Z$. Under the reference $\alpha_1\leq0.17$, with $K_G\in[7.8,15.6]$ mM, the largest mean score in the noiseless one-class model is
-\[
- z_0=\max_{K_G}\frac12\sum_{k=1}^2\log\frac{1+G_k/K_G}{1+G_k/(0.17K_G)}=-1.34194257.
-\]
-Both ratios increase with $K_G$ for $\alpha_1<1$, so the maximum is at 15.6 mM. Reject when $(\overline Z-z_0)/(s_Z/\sqrt8)>t_{0.95,7}$. This approximate test is evaluated empirically through the complete nonlinear estimation pipeline; a Student distribution is not asserted exactly for fitted halfpoints. The shared baseline covariance is retained because $s_Z^2=(s_{R1}^2+s_{R2}^2+2s_{R1,R2})/4$. The supplied comparison omits the covariance term to document the effect of a naive independence assumption. At the noise-only null boundary the mean within-trial ratio correlation is 0.652.
-
-Five scenarios, three true $K_G$ values $7.8,11.7,15.6$ mM and $\alpha_1=0.17,0.25,0.34,0.50,0.68$ give 75 configurations, each with 100 Monte Carlo trials. Twelve additional corrected-dose configurations use $\alpha_1=0.18,0.19,0.20,0.22$ and the same three $K_G$ values. Seeds are 9142026 and 9142027. All 8,700 trial summaries and aggregate counts are supplied; each trial contains eight complete experiments, or 528 technical readings. Wilson intervals quantify Monte Carlo uncertainty only.
-
-At $\alpha_1=0.17,K_G=15.6$ mM, rejection counts per 100 trials are 6 (ideal calibration), 3 (stock and enzyme errors), 96 (systematic dose bias), 0 (independently corrected bias), and 100 (the misspecified mixture below). Corresponding 95\% Wilson intervals are $[0.028,0.125]$, $[0.010,0.085]$, $[0.902,0.984]$, $[0,0.037]$ and $[0.963,1]$. These counts do not prove a universal false-positive guarantee. At corrected $\alpha_1=0.20$, rejection is 0, 0.46 and 0.98 as true $K_G$ increases across the grid; at $\alpha_1=0.25$ it is 1 in all three tested settings. Thus nuisance variation still controls small-effect power. Interpolating plotted points does not establish performance between tested settings.
-
-The misspecified generator has two affinity classes with halfpoints $H$ and $5H$. Their high-affinity fraction changes from 0.9 at zero glutamine to 0.6 at nonzero glutamine. At each dose, the free ligand solves
-\[
- P=P_f+E\left[w\frac{P_f}{H+P_f}+(1-w)\frac{P_f}{5H+P_f}\right].
-\]
-The data are nevertheless fitted with one class. At the reference boundary this gives 100/100 rejections, while mean fit RMSE is 0.0279, close to 0.0267--0.0271 for the four other scenarios. The changed class weights are an unmodeled regulatory mechanism; a single-class rejection cannot identify a specific change in $\alpha_1$. This deliberately tests the observation-model boundary rather than claiming robustness to all heterogeneity.
-
-Finally, singly liganded GlnD is a more demanding prospective observable. It requires discrimination of zero-, one- and two-glutamine enzyme states. A native intact-protein MS pilot would need apo/ligand assignments, titration and ACT controls, and checks for ligand loss or adducts. GlnD state resolution remains unvalidated. The original 0.244 gap and five-estimate budget therefore remain illustrative rather than the central assay recommendation.
-
-\section*{D6 Independent peptide data and normalization uncertainty}
+\section*{D6 Independent peptide observations and observation-model sensitivity}
 The unchanged source workbook and model accompany the Figshare dataset of Gosztolai et al. (2017), doi:10.6084/m9.figshare.4880003, under CC BY 4.0. The article is in Biophysical Journal, doi:10.1016/j.bpj.2017.04.012. Extraction retains source cells, means, standard errors and sample counts in \texttt{observations.csv}. The source model converts protein copies to micromolar with factor 0.00161; the workbook label is retained and the conversion is documented rather than silently interpreted as molar. Peptide measurements quantify modified and unmodified subunits, not intact oligomer distributions.
 
 For modified signal $U$, unmodified signal $V$ and a separately measured total $T$, paired normalization is $U/(U+V)$ whereas separate-total normalization is $U/T$. These are different observation models. Five separate-total point ratios exceed one; they are recorded as infeasible fractions rather than treated as valid occupancies. Unknown replicate covariance prevents reconstructing a joint likelihood from the published summary statistics. First-order SE bounds in Fig 5A and interval bounds in Fig 5D have different meanings.

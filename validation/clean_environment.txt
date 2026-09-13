@@ -1,7 +1,7 @@
 contourpy==1.4.0
 cycler==0.12.1
 # Editable install with no version control (esbm==1.0.0)
--e /Users/choiyule/Documents/Codex/2026-09-09/dl-x20/tmp/research_clean/repository
+-e .
 fonttools==4.65.0
 kiwisolver==1.5.1
 matplotlib==3.11.2

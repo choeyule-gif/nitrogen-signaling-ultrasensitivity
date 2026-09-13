@@ -1,0 +1,322 @@
+{
+  "scope": "Specified source topology, fixed Et/St=.001; condition bound uses disclosed regulatory coefficients and free PII composition. Not a measured uncertainty region.",
+  "rows": 3100,
+  "decisions": [
+    {
+      "J": 0.0,
+      "newly_certified_conditions": 928,
+      "all_dose_condition_limit": 0.6415919699029601,
+      "all_dose_universal_limit": 0.029216216762692034,
+      "sweep": [
+        {
+          "epsilon_P": 0.00401,
+          "max_universal": 0.002004515064277016,
+          "max_condition": 0.0010096387592097291,
+          "max_actual": 1.7003939563053905e-06
+        },
+        {
+          "epsilon_P": 0.005000062579469637,
+          "max_universal": 0.0022531505233940033,
+          "max_condition": 0.0010120304773222335,
+          "max_actual": 1.7007324042417338e-06
+        },
+        {
+          "epsilon_P": 0.006234570024591662,
+          "max_universal": 0.002563520254654764,
+          "max_condition": 0.001015019363033636,
+          "max_actual": 1.701156153943728e-06
+        },
+        {
+          "epsilon_P": 0.007773875381307699,
+          "max_universal": 0.00295105989163238,
+          "max_condition": 0.0010187565877884377,
+          "max_actual": 1.701687261990159e-06
+        },
+        {
+          "epsilon_P": 0.0096932327659693,
+          "max_universal": 0.0034351246764547606,
+          "max_condition": 0.0010234327543848223,
+          "max_actual": 1.7023537856042381e-06
+        },
+        {
+          "epsilon_P": 0.01208647641576361,
+          "max_universal": 0.0040400185853450826,
+          "max_condition": 0.0010292888371019873,
+          "max_actual": 1.7031916058618535e-06
+        },
+        {
+          "epsilon_P": 0.015070608090798491,
+          "max_universal": 0.004796312692452155,
+          "max_condition": 0.001036630525416248,
+          "max_actual": 1.7042469108163871e-06
+        },
+        {
+          "epsilon_P": 0.01879151709841743,
+          "max_universal": 0.005742544743356996,
+          "max_condition": 0.0010458472348089656,
+          "max_actual": 1.7055795911158356e-06
+        },
+        {
+          "epsilon_P": 0.02343111258235932,
+          "max_universal": 0.0069274270604494075,
+          "max_condition": 0.0010574376282085343,
+          "max_actual": 1.707268047490551e-06
+        },
+        {
+          "epsilon_P": 0.029216216762692034,
+          "max_universal": 0.008412741673003335,
+          "max_condition": 0.001072044397775528,
+          "max_actual": 1.709416130535324e-06
+        },
+        {
+          "epsilon_P": 0.03642965390244639,
+          "max_universal": 0.010277179534625945,
+          "max_condition": 0.0010905025075736144,
+          "max_actual": 1.7121633889560783e-06
+        },
+        {
+          "epsilon_P": 0.04542407712235717,
+          "max_universal": 0.012621500995179391,
+          "max_condition": 0.0011139074835638798,
+          "max_actual": 1.7157007274892777e-06
+        },
+        {
+          "epsilon_P": 0.05663920903402519,
+          "max_universal": 0.015575585286658852,
+          "max_condition": 0.001143714378892934,
+          "max_actual": 1.720295005225303e-06
+        },
+        {
+          "epsilon_P": 0.07062333905780249,
+          "max_universal": 0.019308247648430275,
+          "max_condition": 0.001181885119610259,
+          "max_actual": 1.726329354911904e-06
+        },
+        {
+          "epsilon_P": 0.08806012839404359,
+          "max_universal": 0.024041226520531398,
+          "max_condition": 0.0012311148056691193,
+          "max_actual": 1.7343720054574518e-06
+        },
+        {
+          "epsilon_P": 0.1098020330988402,
+          "max_universal": 0.030069659022640857,
+          "max_condition": 0.0012951919858475982,
+          "max_actual": 1.8178751017561279e-06
+        },
+        {
+          "epsilon_P": 0.13691197926364027,
+          "max_universal": 0.03779303372302896,
+          "max_condition": 0.0013795967702533432,
+          "max_actual": 2.4534102141286415e-06
+        },
+        {
+          "epsilon_P": 0.17071532772998774,
+          "max_universal": 0.04776381425924012,
+          "max_condition": 0.0014925442984827222,
+          "max_actual": 3.400469885735981e-06
+        },
+        {
+          "epsilon_P": 0.21286466880912897,
+          "max_universal": 0.0607674527689839,
+          "max_condition": 0.001646917567138694,
+          "max_actual": 4.843327867647129e-06
+        },
+        {
+          "epsilon_P": 0.2654206147141456,
+          "max_universal": 0.0779618084708701,
+          "max_condition": 0.0018641234123785702,
+          "max_actual": 7.15640569128994e-06
+        },
+        {
+          "epsilon_P": 0.3309525395142214,
+          "max_universal": 0.10113832285032072,
+          "max_condition": 0.0021825516918406998,
+          "max_actual": 1.1175901716927242e-05
+        },
+        {
+          "epsilon_P": 0.4126641916223205,
+          "max_universal": 0.13326024062241965,
+          "max_condition": 0.0026786454595102696,
+          "max_actual": 1.8748028508503572e-05
+        },
+        {
+          "epsilon_P": 0.5145503198049509,
+          "max_universal": 0.17972945639719132,
+          "max_condition": 0.0035297714632561697,
+          "max_actual": 3.496686618979783e-05
+        },
+        {
+          "epsilon_P": 0.6415919699029601,
+          "max_universal": 0.2520384490834558,
+          "max_condition": 0.005263425871769866,
+          "max_actual": 7.677176267478769e-05
+        },
+        {
+          "epsilon_P": 0.8,
+          "max_universal": 0.38296601125010515,
+          "max_condition": 0.010465957310670043,
+          "max_actual": 0.0002193189479117591
+        }
+      ]
+    },
+    {
+      "J": 0.4,
+      "newly_certified_conditions": 1528,
+      "all_dose_condition_limit": 0.3309525395142214,
+      "all_dose_universal_limit": null,
+      "sweep": [
+        {
+          "epsilon_P": 0.00401,
+          "max_universal": 0.013053601021783986,
+          "max_condition": 0.0010683199502480858,
+          "max_actual": 1.7027687367887623e-06
+        },
+        {
+          "epsilon_P": 0.005000062579469637,
+          "max_universal": 0.016036680725329096,
+          "max_condition": 0.0010852725470633087,
+          "max_actual": 1.7028514593953048e-06
+        },
+        {
+          "epsilon_P": 0.006234570024591662,
+          "max_universal": 0.019760057076518754,
+          "max_condition": 0.0011064578886805223,
+          "max_actual": 1.702954587567973e-06
+        },
+        {
+          "epsilon_P": 0.007773875381307699,
+          "max_universal": 0.0244084713930112,
+          "max_condition": 0.0011329474813273612,
+          "max_actual": 1.7030831516162692e-06
+        },
+        {
+          "epsilon_P": 0.0096932327659693,
+          "max_universal": 0.030213239296499467,
+          "max_condition": 0.001166092320084854,
+          "max_actual": 1.703243417860989e-06
+        },
+        {
+          "epsilon_P": 0.01208647641576361,
+          "max_universal": 0.03746416115697702,
+          "max_condition": 0.0012076004314875424,
+          "max_actual": 1.703443178513453e-06
+        },
+        {
+          "epsilon_P": 0.015070608090798491,
+          "max_universal": 0.04652448249214048,
+          "max_condition": 0.00125963853985439,
+          "max_actual": 1.703692157684067e-06
+        },
+        {
+          "epsilon_P": 0.01879151709841743,
+          "max_universal": 0.05784960092260175,
+          "max_condition": 0.0013249668123537775,
+          "max_actual": 1.7040024554715316e-06
+        },
+        {
+          "epsilon_P": 0.02343111258235932,
+          "max_universal": 0.07201024006295803,
+          "max_condition": 0.0014071197484548095,
+          "max_actual": 1.7267413061627934e-06
+        },
+        {
+          "epsilon_P": 0.029216216762692034,
+          "max_universal": 0.08972064000515168,
+          "max_condition": 0.0015106527011284334,
+          "max_actual": 1.8633590462835414e-06
+        },
+        {
+          "epsilon_P": 0.03642965390244639,
+          "max_universal": 0.11187167031997414,
+          "max_condition": 0.0016414837982118837,
+          "max_actual": 2.04011573623486e-06
+        },
+        {
+          "epsilon_P": 0.04542407712235717,
+          "max_universal": 0.13956706380786493,
+          "max_condition": 0.0018073779385490698,
+          "max_actual": 2.2709077166505054e-06
+        },
+        {
+          "epsilon_P": 0.05663920903402519,
+          "max_universal": 0.17415698646321526,
+          "max_condition": 0.0020186481732233355,
+          "max_actual": 2.575723832221044e-06
+        },
+        {
+          "epsilon_P": 0.07062333905780249,
+          "max_universal": 0.21725453077360532,
+          "max_condition": 0.002289199921536255,
+          "max_actual": 3.127871825658879e-06
+        },
+        {
+          "epsilon_P": 0.08806012839404359,
+          "max_universal": 0.27070315527367717,
+          "max_condition": 0.0026381346375493045,
+          "max_actual": 3.886571345645962e-06
+        },
+        {
+          "epsilon_P": 0.1098020330988402,
+          "max_universal": 0.3364300160814144,
+          "max_condition": 0.003092302668569246,
+          "max_actual": 4.9460295618031225e-06
+        },
+        {
+          "epsilon_P": 0.13691197926364027,
+          "max_universal": 0.4160656537848586,
+          "max_condition": 0.0036905409202326314,
+          "max_actual": 6.468921642688308e-06
+        },
+        {
+          "epsilon_P": 0.17071532772998774,
+          "max_universal": 0.5101453580849983,
+          "max_condition": 0.004491064702722035,
+          "max_actual": 8.740358023562322e-06
+        },
+        {
+          "epsilon_P": 0.21286466880912897,
+          "max_universal": 0.616709450683336,
+          "max_condition": 0.0055851564884187846,
+          "max_actual": 1.229371901156906e-05
+        },
+        {
+          "epsilon_P": 0.2654206147141456,
+          "max_universal": 0.7294286911005486,
+          "max_condition": 0.00712446510237824,
+          "max_actual": 1.8211053876449057e-05
+        },
+        {
+          "epsilon_P": 0.3309525395142214,
+          "max_universal": 0.8363852326409904,
+          "max_condition": 0.009380859817774756,
+          "max_actual": 2.8926608990342828e-05
+        },
+        {
+          "epsilon_P": 0.4126641916223205,
+          "max_universal": 0.9221363163488315,
+          "max_condition": 0.012895369029121306,
+          "max_actual": 5.071719251747986e-05
+        },
+        {
+          "epsilon_P": 0.5145503198049509,
+          "max_universal": 0.9751626336370721,
+          "max_condition": 0.018921762812492415,
+          "max_actual": 0.0001030998091468005
+        },
+        {
+          "epsilon_P": 0.6415919699029601,
+          "max_universal": 0.9967696451197103,
+          "max_condition": 0.03117726286839112,
+          "max_actual": 0.0002652635835396211
+        },
+        {
+          "epsilon_P": 0.8,
+          "max_universal": 1.0,
+          "max_condition": 0.0676610323158004,
+          "max_actual": 0.0009984323896077285
+        }
+      ]
+    }
+  ]
+}

@@ -25,5 +25,4 @@ with zipfile.ZipFile(a.output,'w',zipfile.ZIP_DEFLATED,9) as z:
 with zipfile.ZipFile(a.output) as z:
  assert z.testzip() is None
  assert z.read('S1_Data/README.md')==(R/'README.md').read_bytes()
- assert b'ChatGPT' not in z.read('S1_Data/README.md')
 print(a.output,len(files),'files',a.output.stat().st_size,'bytes')

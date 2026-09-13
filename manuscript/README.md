@@ -1,7 +1,5 @@
-# Current working manuscript
+# Submission manuscript, revision 4 / v1.3.0
 
-The PLOS LaTeX manuscript contains text and captions, 36 references and five separately supplied main figures. S1 Appendix (A1–A15) supplies mechanisms, proofs and prior art. S2 Appendix (D1–D7) supplies data provenance, sensitivity and assay precision. Six supporting figures retain the central concentration, estimator, titration, state, GlnE and finite-reaction comparisons.
+The current PLOS-template manuscript contains five main captions; upload main figures separately. Figures 1, 2 and 5 retain their prior artwork; Figures 3 and 4 are rebuilt from the observation-design layer. S1 Appendix has proofs and model boundaries (A1–A15); S2 Appendix has provenance, biochemical constraints and observation-level performance (D1–D7). Six supporting figures remain unchanged. The paired-paralog application is prospective.
 
-Compile each source twice with pdfLaTeX. Supporting inputs are in `figure_inputs/`; their legacy filenames do not define submission numbering. S1–S6 correspond to v1.2.0 S11, S12, S13, S14, S16, S17. The unchanged older supplements and all 17 supporting figures are preserved under `docs/extended_analyses/v1.2.0/`. They are repository documentation, not additional submission supplements.
-
-The generalized calibration extension postdates release v1.2.0. Do not cite that release or an earlier DOI as if it contained the new extension. Current analysis inputs, code and checks are packaged as S1 Data.
+The reader composite supplied in the author package includes the main figures for convenient review. It is separate from the captions-only submission manuscript. The user manages the Zenodo record; no unverified new DOI is included.

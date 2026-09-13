@@ -1,0 +1,69 @@
+{
+  "parameters": {
+    "Pt": 5.0,
+    "St": 0.5,
+    "Dt": 0.5,
+    "Et": 0.02,
+    "m_upper": 0.67,
+    "G": 2.0,
+    "KG": 15.6,
+    "KP": 0.18,
+    "alpha": 0.17,
+    "beta": 23.333333333333332,
+    "beta_prime": 175.33333333333334
+  },
+  "scenarios": {
+    "source_fit_units": {
+      "bound": 0.041175682604129245,
+      "generic_bound": 0.37003491711572006,
+      "p0_lower": 0.24887892376681608,
+      "ell_upper_uM": 0.016239531819423815,
+      "epsilon_P": 0.10800000000000001,
+      "epsilon_S": 0.04,
+      "log_drive_ratio": 0.00039189438193914985
+    },
+    "literal_SI_KP_units": {
+      "bound": 0.29953357055104235,
+      "generic_bound": 0.37003491711572006,
+      "p0_lower": 0.24887892376681608,
+      "ell_upper_uM": 16.239531819423817,
+      "epsilon_P": 0.10800000000000001,
+      "epsilon_S": 0.04,
+      "log_drive_ratio": 0.08853607526774177
+    },
+    "apparent_scale_sensitivity": {
+      "bound": 0.04643091948704074,
+      "generic_bound": 0.37003491711572006,
+      "p0_lower": 0.24887892376681608,
+      "ell_upper_uM": 0.0902196212190212,
+      "epsilon_P": 0.10800000000000001,
+      "epsilon_S": 0.04,
+      "log_drive_ratio": 0.0021436693810548448
+    },
+    "original_E_concentration": {
+      "bound": 0.20177980297917827,
+      "generic_bound": 0.6239261389337094,
+      "p0_lower": 0.22093023255813948,
+      "ell_upper_uM": 0.018293907333988644,
+      "epsilon_P": 0.13999999999999999,
+      "epsilon_S": 0.2,
+      "log_drive_ratio": 0.000593268286158328
+    },
+    "no_PII_observation": {
+      "bound": 0.37003491711572006,
+      "generic_bound": 0.37003491711572006,
+      "p0_lower": 0.0,
+      "ell_upper_uM": null,
+      "epsilon_P": 0.10800000000000001,
+      "epsilon_S": 0.04,
+      "log_drive_ratio": 0.11428914640212769
+    }
+  },
+  "ell_limit_for_five_percent": 0.14179910005080484,
+  "nominal_coefficient_headroom": 8.731723403577526,
+  "random_ladder_checks": 5000,
+  "random_mixture_checks": 5000,
+  "max_ladder_violation": 0.0,
+  "max_mixture_violation": 0.0,
+  "scope": "A prospective observation gate m_total<=.67, not a confidence interval inferred from rounded digitization. GlnE source-fit coefficients follow main-text KP units; literal SI units shown separately. Source assay rates are not transported as a validated full-cascade physiological fit."
+}

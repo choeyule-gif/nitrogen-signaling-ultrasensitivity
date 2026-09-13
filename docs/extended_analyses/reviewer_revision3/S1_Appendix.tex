@@ -358,39 +358,6 @@ With $\delta=0.01$ and $\epsilon_S=0.001$, this gives 0.03536 for independent si
 \]
 This is not a slope bound. The implementation solves the buffered-input protein balances inside a scalar glutamine-balance root. Across 31 total inputs from 10 to 2000 $\mu$M at each of two protein scales, the two transformed models acquire different free inputs. The larger-scale scenario $P_T=50,S_T=100,D_T=5,E_T=2.5$ gives a selected maximum free-PII total-variation difference $6.34\times10^{-4}$, illustrating a small but nonzero loss of the exact fixed-free-input identity. This steady-state extension has not been independently validated by integration of a glutamine-dynamic reaction system. Metabolic glutamine consumption, transport, and other binding partners are outside its scope.
 
-\paragraph{A11 extension: a count-conditioned, gain-independent certificate.}
-All counts here use PII trimers, GS dodecamers and enzyme monomers. Let $\epsilon=(D_T+2E_T)/P_T<1$, $e=E_T/S_T$, and let $\pi_i$ denote the common free PII distribution. If $s_P\leq\epsilon$ is the bound PII fraction, its total mean UMP count is
-\[
- m_{\rm tot}=(1-s_P)m_f+s_Pm_b,\qquad m_f=\sum_{i=0}^3i\pi_i,\quad m_b\geq0.
-\]
-A concurrently justified $m_{\rm tot}\leq M$ therefore implies $m_f\leq M/(1-\epsilon)$. Because $m_f\geq1-\pi_0$, we obtain $\pi_0\geq p_{\min}=\max\{0,1-M/(1-\epsilon)\}$. One measured member of the free-equivalent family suffices to constrain the common $\pi_0$; candidate realizations must respect the observation assumptions. No independent-site PII model is used.
-
-In the nonproductive source topology, set $P=T\pi_0$ and $U=T\sum_i\omega_i\pi_i$. For fixed free glutamine and common positive recognition normalizer, the GlnE drive is $k(a+b/T)$ with
-\[
- a=\frac{\pi_0}{K_P}(1+\beta'g/\alpha_1),\quad b=\beta g,\quad g=G/K_G.
-\]
-The positive multiplier $k$ includes AR gain and modified-PII recognition. It is common to the pair, although its value need not be known. When $a>0$, write $\ell=b/a$. The permitted free-PII range is $L=P_T(1-\epsilon)\leq T\leq T_+=P_T$. Consequently
-\[
- |\log r_1-\log r_2|\leq d(\ell)
- =\log(1+\ell/L)-\log(1+\ell/T_+).
-\]
-Both $d(\ell)$ and the corresponding GS bound increase with $\ell$, since $d'(\ell)=1/(L+\ell)-1/(T_++\ell)\geq0$. Substitution of the lower bound on $\pi_0$ gives
-\[
- \ell\leq\ell_{\max}=\frac{\beta gK_P}{p_{\min}(1+\beta'g/\alpha_1)},\quad
- |\Delta\theta_{GS,\rm tot}|\leq\min\{1,e+\tanh[\nu_*d(\ell_{\max})/4]\}.
-\]
-This is the preceding ladder inequality composed with an observation and a free-pool interval. It holds for any shared positive GS ladder with $\nu_*=12$, or independent GS sites with $\nu_*=1$. If $p_{\min}=0$, take $\ell_{\max}=\infty$ and recover $d=-\log(1-\epsilon)$. If $b=0$, $d=0$. If the recognition normalizer vanishes, the positive-drive argument needs its appropriate limit; the plotted cases all have positive drive. A productive EPU route instead contributes $cT$ and requires the generic bound or a new condition-specific analysis. The refined formula is not applied to that extension.
-
-For a prescribed tolerance $\tau>e$, let $R=\exp[4\operatorname{arctanh}(\tau-e)/\nu_*]$. When $1/L-R/T_+>0$, it is sufficient that
-\[
- \ell\leq\frac{R-1}{1/L-R/T_+}.
-\]
-If $R\geq T_+/L$, the generic drive bound already suffices. If $\tau\leq e$, this certificate supplies no positive drive allowance. Large upper bounds do not imply experimentally detectable differences, nor is a small difference in one computed realization a uniform guarantee.
-
-The main prospective example uses $(P_T,S_T,D_T,E_T)=(5,0.5,0.5,0.02)\,\mu$M, $G=2$ mM, $M=0.67$, and the GlnE source-fit ratios listed in D4. This gives $\epsilon=0.108$, $e=0.04$, $p_{\min}=0.248879$, $\ell_{\max}=0.0162395\,\mu$M and a bound 0.0411757, versus the general 0.370035. For $\tau=0.05$, the sufficient coefficient limit is 0.141799 $\mu$M, 8.73 times the nominal upper value. At $E_T=0.10\,\mu$M the refined bound is 0.201780. With $K_P=1\,\mu$M it is 0.0464309 at the lower enzyme total; with the literal supplementary $K_P=180\,\mu$M it is 0.299534. These calculations expose the source-unit and observation dependence rather than turning a fitted coefficient into a known constant. The concentration choice is conditional on a concurrently valid gate, not on transporting a historical rounded point.
-
-Verification independently evaluates 5,000 random positive ladders (one to twelve sites) over unknown common gains and 5,000 random free/bound PII mixtures. It also compares 120 paired 120-species realizations: $G=1.3,2,10$ mM; $K_P=0.18,1\,\mu$M; gains $0.001,0.01,0.1,1,10$; $E_T=0.10,0.04,0.02,0.01\,\mu$M; $P_T=5,S_T=0.5,D_T=0.5\,\mu$M. The GlnD pair uses $\lambda=1,4$ and GlnE $\sigma=1$ to retain the reference source-fit rate ratios. For each pair the plotted count gate is the larger actual total count, a conservative choice. No bound violations occur and the largest stationary vector-field residual is $1.23\times10^{-15}$. The selected GS realizations are independent-site examples; arbitrary-ladder validity comes from the proof and separate ladder checks. Native kinetics and equilibration remain unvalidated.
-
 \section*{A12 A resolution limit for complementary stationary measurements}
 
 A stationary occupancy assay distinguishes the specific diagonal families only within its assumed state space. To see the limit, split a regulatory state of weight $w$ into two unobserved conformations with the same ligand stoichiometry and weights $fw$ and $(1-f)w$, $0<f<1$. Give the first conformation opposing specificities $a^{\pm}/f$ and the second no catalytic branches. The summed binding weight remains $w$, and the opposing catalytic numerators remain $wa^{\pm}$. Thus ligand occupancy and the target stationary response are both preserved in this reduced construction. If target-complex association coefficients on the active conformation are also $h^{\pm}/f$, their stationary contributions are preserved as well. Positive active-branch rates can be realized as in A9; the inactive conformation has absent catalytic edges rather than a negative rate. A connected reversible conformational network can realize the prescribed free-state weights.
@@ -464,14 +431,14 @@ Stationary ladder & Rational parameterization and catalytic-complex elimination:
 Adjacent-state contrast & Gunawardena (2007), Eqs. 3--5, doi:10.1529/biophysj.107.110866. & Application to fixed-ladder and refractory alternatives. The invariant itself is established and its constancy does not prove a native mechanism.\\[0.7em]
 Variance and sensitivity & Binding-polynomial differentiation; Adair (1925), Briggs (1984), Abeliovich (2005). & Separating physical local slopes from fitted or range coefficients prevents estimator-dependent attribution errors.\\[0.7em]
 Regulatory compensation & Scaling non-identifiability: Castro and de Boer (2020), with limits clarified by Villaverde and Massonis (2021). & Explicit GlnD and source-topology GlnE families preserve target output but separate binding and kinetics. They do not enumerate all equivalent mechanisms.\\[0.7em]
-Cascade fraction bound & Conservation, bounded support and logit sensitivity inequalities. & A measured PII count tightens an unknown-gain cascade bound, certifying concentration choices for the specified topology and ladder class.\\[0.7em]
-Measurement design & Design-dependent model discrimination: Silk et al. (2014). & Raw binding measurements propagate depletion, shared-baseline covariance, calibration errors and hidden-state misspecification into decisions.\\[0.7em]
+Cascade fraction bound & Conservation, bounded support and logit sensitivity inequalities. & Combining stoichiometric sequestration capacity with downstream free-pool elasticity gives a sufficient assay concentration criterion in the specified closed cascade. It is not a universal Hill-slope bound.\\[0.7em]
+Measurement design & Design-dependent model discrimination: Silk et al. (2014). & Nuisance-profiled occupancy and binding designs, including depletion correction and overlapping-range limits, for the explicit biochemical families.\\[0.7em]
 Paired-paralog assay & Mixture conservation, monotone calibration and elementary odds cancellation; GlnB/GlnK observations of Gosztolai et al. (2017); AmtB binding of Durand and Merrick (2006). & A binding-disabled curve calibration and independently bounded reporter partition and bound-target modification give sharp protein-fraction intervals. The binomial odds relation is a special case; transferable calibration remains required.\\
 \bottomrule
 \end{tabular}
 \end{center}
 
-Full references appear in the main manuscript. The comparison concerns these constructions and their assumptions, not a general priority claim.
+The cited papers' full bibliographic entries are in the main manuscript. This comparison distinguishes established mathematical ingredients from the present biochemical construction; it does not assert priority over every possible assay using an internal reporter.
 
 
 \end{document}
