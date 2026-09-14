@@ -1,0 +1,28 @@
+{
+  "version": "1.3.3",
+  "scope": "Final initial-submission preparation; scientific models, results and figures are unchanged from v1.3.2.",
+  "reproducibility_tests": {
+    "passed": 22,
+    "failed": 0,
+    "skipped": 0
+  },
+  "pdf_builds": {
+    "cover_letter_pages": 1,
+    "manuscript_pages": 18,
+    "s1_appendix_pages": 20,
+    "s2_appendix_pages": 13,
+    "fatal_latex_errors": 0,
+    "undefined_references": 0,
+    "visual_review_passed": true
+  },
+  "submission_package": {
+    "upload_items": 16,
+    "reader_pages": 23,
+    "zip_integrity_passed": true,
+    "per_file_manifest_passed": true,
+    "portable_latex_archive_built": true
+  },
+  "scientific_figures_byte_identical_to_v1.3.2": true,
+  "ai_contribution_language_present": false,
+  "zenodo_version_doi_asserted": false
+}

@@ -1,4 +1,4 @@
-# Submission manuscript, revision 4, minor corrections / v1.3.2
+# Submission manuscript, final preparation / v1.3.3
 
 The current PLOS-template manuscript contains five main captions; upload main figures separately. Figures 1, 2 and 5 retain their prior artwork; Figures 3 and 4 are rebuilt from the observation-design layer. S1 Appendix has proofs and model boundaries (A1–A15); S2 Appendix has provenance, biochemical constraints and observation-level performance (D1–D7). Six supporting figures remain unchanged. The paired-paralog application is prospective.
 
