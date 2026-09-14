@@ -1,7 +1,7 @@
 {
   "version": "1.3.4",
   "date": "2026-09-14",
-  "scope": "Final framing update; scientific models, numerical results and figure artwork are unchanged from v1.3.3.",
+  "scope": "Final framing and DOI update; scientific models, numerical results and figure artwork are unchanged from v1.3.3.",
   "research_suite": {
     "baseline_checks": 22,
     "baseline_failures": 0,
@@ -17,15 +17,22 @@
     "passed": true
   },
   "manuscript": {
+    "title_characters": 124,
+    "abstract_words": 229,
     "main_pages": 18,
     "cover_letter_pages": 1,
+    "reader_pages": 23,
     "bibliography_entries": 36,
     "missing_citation_keys": 0,
     "uncited_bibliography_entries": 0,
     "latex_errors": 0,
     "overfull_boxes": 0,
-    "visual_pages_reviewed": 18,
-    "visual_defects": 0
+    "portable_documents_compiled_twice": 10,
+    "pdf_fonts_embedded": true,
+    "visual_pages_reviewed": 24,
+    "visual_defects": 0,
+    "zenodo_version_doi": "10.5281/zenodo.22741777",
+    "zenodo_concept_doi": "10.5281/zenodo.22731768"
   },
   "interpretation": "The checks verify the stated calculations and final document integrity under the declared model assumptions; they do not establish physiological validity."
 }
