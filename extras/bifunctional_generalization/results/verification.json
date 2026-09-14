@@ -1,0 +1,119 @@
+{
+  "passed": true,
+  "free_coefficient_matrix": [
+    [
+      0.0009758905000000002,
+      0.0066489622370835885,
+      0.010515896943191385
+    ],
+    [
+      0.0014754831,
+      0.010081968375505852,
+      0.01599300322051176
+    ],
+    [
+      0.0038478426,
+      0.033259421789456865,
+      0.07187051778948883
+    ]
+  ],
+  "normalized_columns": [
+    [
+      0.15492252829804448,
+      0.13300490829929457,
+      0.10689122950691529
+    ],
+    [
+      0.2342328082023919,
+      0.20167828172967944,
+      0.16256452369052524
+    ],
+    [
+      0.6108446634995637,
+      0.6653168099710259,
+      0.7305442468025596
+    ]
+  ],
+  "coefficient_rank": 3,
+  "polynomial_check_max": 1.765254609153999e-14,
+  "column_scaling_max": 1.8762769116165146e-14,
+  "checked_free_enzyme_points": 101,
+  "closed_stationary_pairs": 900,
+  "ode_checks": [
+    {
+      "IDH_dimer_uM": 1.0,
+      "AceK_uM": 0.001,
+      "max_species_error": 1.989852727035668e-12,
+      "enzyme_conservation_error": 9.584347204771859e-17
+    },
+    {
+      "IDH_dimer_uM": 1.0,
+      "AceK_uM": 0.1,
+      "max_species_error": 9.522693744656863e-11,
+      "enzyme_conservation_error": 8.862355294070312e-14
+    }
+  ],
+  "observation_gate_checks": [
+    {
+      "IDH_dimer_uM": 1.0,
+      "AceK_uM": 0.02,
+      "phosphate_count_lower": 1.435,
+      "phosphate_count_upper": 1.475,
+      "generic_interval": [
+        0.14864524900756113,
+        0.17182407773208358
+      ],
+      "conditioned_interval": [
+        0.14864524900756115,
+        0.1694727717712911
+      ],
+      "generic_width": 0.023178828724522454,
+      "conditioned_width": 0.020827522763729955,
+      "compatible_samples": 1000,
+      "total_samples": 1000,
+      "max_violation": 0.0
+    },
+    {
+      "IDH_dimer_uM": 1.0,
+      "AceK_uM": 0.05,
+      "phosphate_count_lower": 1.435,
+      "phosphate_count_upper": 1.475,
+      "generic_interval": [
+        0.14018147739604028,
+        0.19717640188314223
+      ],
+      "conditioned_interval": [
+        0.14018147739604028,
+        0.17643846306241395
+      ],
+      "generic_width": 0.056994924487101944,
+      "conditioned_width": 0.03625698566637367,
+      "compatible_samples": 790,
+      "total_samples": 1000,
+      "max_violation": 0.0
+    },
+    {
+      "IDH_dimer_uM": 1.0,
+      "AceK_uM": 0.1,
+      "phosphate_count_lower": 1.435,
+      "phosphate_count_upper": 1.475,
+      "generic_interval": [
+        0.1279388769979142,
+        0.23943027546824006
+      ],
+      "conditioned_interval": [
+        0.12793887699791423,
+        0.1856411767044402
+      ],
+      "generic_width": 0.11149139847032585,
+      "conditioned_width": 0.05770229970652596,
+      "compatible_samples": 451,
+      "total_samples": 1000,
+      "max_violation": 0.0
+    }
+  ],
+  "published_overexpression_fold": 15.000000000000002,
+  "published_active_activity_ratio": 1.0,
+  "source": "Dexter & Gunawardena 2013 Tables 1-2, with published kinetic values; LaPorte 1985 Table II",
+  "scope": "Mathematical and numerical validation of a source-parameterized model. Column scalings are a constructed dwell-time family, not a measured kinetic confidence set. In vivo table retained as an independent observation constraint, not yet a quantitative matched-assay validation."
+}

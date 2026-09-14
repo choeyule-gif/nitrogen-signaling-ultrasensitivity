@@ -1,5 +1,6 @@
-# Submission manuscript, final framing / v1.3.4
+# Current submission sources / v1.4.0
 
-The current PLOS-template manuscript contains five main captions; upload main figures separately. Figures 1, 2 and 5 retain their prior artwork; Figures 3 and 4 are rebuilt from the observation-design layer. S1 Appendix has proofs and model boundaries (A1–A15); S2 Appendix has provenance, biochemical constraints and observation-level performance (D1–D7). Six supporting figures remain unchanged. The paired-paralog application is prospective.
+Compile each `.tex` document twice with pdfLaTeX, from this directory.
+`manuscript_submission.tex` produces the captions-only, double-spaced manuscript with continuous line numbering. `manuscript_reader.tex` uses exactly the same source and embeds all five main figures; it is suitable for reading and the journal's single-PDF initial-submission option. Figures are also supplied separately in the submission package.
 
-The reader composite supplied in the author package includes the main figures for convenient review. It is separate from the captions-only submission manuscript. The archived source is identified by the verified v1.3.4 DOI and its version-independent Zenodo concept DOI.
+The five main figures cover the pathway, equivalence, conditional concentration criterion, expanded raw-assay calibration and AceK generalization. The user's Fig. 1 artwork is unchanged. S1–S3 Appendices and S1–S9 Figs preserve the proofs, data details and prospective paired-paralog extension. Source metadata consistently identifies v1.4.0 and the version-independent Zenodo concept DOI; the earlier v1.3.4 archive is not represented as containing this revision.

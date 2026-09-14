@@ -1,7 +1,7 @@
 {
-  "title": "Code for: Observation-conditioned bounds enable experimental decisions despite mechanistic equivalence in bacterial nitrogen signaling",
+  "title": "Code for: Observation-conditioned bounds define experimental decision criteria for bifunctional enzyme systems",
   "upload_type": "software",
-  "description": "Reproducible code, published-data records, figures and manuscript sources for Observation-conditioned bounds enable experimental decisions despite mechanistic equivalence in bacterial nitrogen signaling. Version 1.3.4 aligns the title, abstract, Author Summary, cover letter and the messages of Figures 3--4 around the observation-conditioned concentration certificate and end-to-end binding benchmark. It retains the v1.3.2 scientific corrections and v1.3.1 verification fixes. The fitted predictions and figures are unchanged. No new experimental measurements were generated. Native-assay applications remain conditional on the stated observation, biochemical and calibration assumptions. Original code is MIT licensed; the retained Gosztolai et al. workbook and model retain their CC BY 4.0 attribution. Primary literature PDFs are not redistributed.",
+  "description": "Reproducible code, source measurement summaries, numerical results, figures and manuscript sources for Observation-conditioned bounds define experimental decision criteria for bifunctional enzyme systems. Version 1.4.0 adds a general positive-polynomial graph enclosure, a second application to AceK–IDH including doubly enzyme-bound target complexes, six published kinetic summaries and three withheld ATPase halfpoint checks. Expanded raw-assay calibration uses 3,000 trials per null setting and 2,000 per independent evaluation setting, with 8,016,000 nonlinear fits across two paired fitting strategies. Concentration decisions are prospective conditional criteria; matched native-assay certification is not claimed. Independent verification reports and source provenance are included. Original code is MIT licensed; the retained Gosztolai et al. workbook and model retain CC BY 4.0 attribution. Primary literature PDFs are not redistributed.",
   "creators": [
     {
       "name": "Choi, Yule"
@@ -16,8 +16,12 @@
     "PII",
     "GlnD",
     "nitrogen assimilation",
-    "Hill coefficient"
+    "Hill coefficient",
+    "AceK",
+    "isocitrate dehydrogenase",
+    "observation-conditioned bounds",
+    "parametric bootstrap"
   ],
   "language": "eng",
-  "version": "1.3.4"
+  "version": "1.4.0"
 }

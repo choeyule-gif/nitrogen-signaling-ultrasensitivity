@@ -1,0 +1,98 @@
+{
+  "regenerated": false,
+  "steps": [
+    {
+      "command": [
+        "tests/test_reproduce.py"
+      ],
+      "exit_code": 0,
+      "seconds": 0.021207809448242188
+    },
+    {
+      "command": [
+        "extras/matched_models/code/verify_final.py"
+      ],
+      "exit_code": 0,
+      "seconds": 0.2852616310119629
+    },
+    {
+      "command": [
+        "tests/test_extensions.py"
+      ],
+      "exit_code": 0,
+      "seconds": 3.5463693141937256
+    },
+    {
+      "command": [
+        "extras/paired_paralogs/code/paired_reporter.py"
+      ],
+      "exit_code": 0,
+      "seconds": 0.15378952026367188
+    },
+    {
+      "command": [
+        "extras/paired_paralogs/code/reporter_intervals.py"
+      ],
+      "exit_code": 0,
+      "seconds": 0.1535952091217041
+    },
+    {
+      "command": [
+        "extras/paired_paralogs/code/robust_calibration.py"
+      ],
+      "exit_code": 0,
+      "seconds": 4.7178425788879395
+    },
+    {
+      "command": [
+        "extras/observation_design/code/verify_revision.py"
+      ],
+      "exit_code": 0,
+      "seconds": 0.5892829895019531
+    },
+    {
+      "command": [
+        "tests/test_observation_independent.py"
+      ],
+      "exit_code": 0,
+      "seconds": 0.6928160190582275
+    },
+    {
+      "command": [
+        "extras/bootstrap_design/code/verify_bootstrap.py"
+      ],
+      "exit_code": 0,
+      "seconds": 1.135859489440918
+    },
+    {
+      "command": [
+        "extras/bifunctional_generalization/code/acek_certificate.py"
+      ],
+      "exit_code": 0,
+      "seconds": 0.844428300857544
+    },
+    {
+      "command": [
+        "extras/bifunctional_generalization/code/acek_kinetic_ambiguity.py"
+      ],
+      "exit_code": 0,
+      "seconds": 0.28920984268188477
+    },
+    {
+      "command": [
+        "extras/bifunctional_generalization/code/acek_holdout.py"
+      ],
+      "exit_code": 0,
+      "seconds": 0.17113542556762695
+    },
+    {
+      "command": [
+        "extras/bifunctional_generalization/code/verify_general_graph.py"
+      ],
+      "exit_code": 0,
+      "seconds": 0.8960189819335938
+    }
+  ],
+  "completed": true,
+  "passed": true
+}

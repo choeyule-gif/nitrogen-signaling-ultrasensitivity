@@ -1,0 +1,47 @@
+{
+  "seed": 20260915,
+  "experiments_per_trial": 8,
+  "technical_replicates": 2,
+  "condition_affine": true,
+  "null_alpha": 0.17,
+  "kg_grid": [
+    7.8,
+    11.7,
+    15.6
+  ],
+  "P_uM": [
+    0.0,
+    0.005,
+    0.01,
+    0.02,
+    0.05,
+    0.1,
+    0.2,
+    0.5,
+    1.0,
+    2.0,
+    5.0
+  ],
+  "G_mM": [
+    0.0,
+    15.6,
+    31.2
+  ],
+  "enzyme_uM": 0.04,
+  "noise_absolute": 0.025,
+  "noise_proportional": 0.02,
+  "stock_logsd": "0.10 * calibration",
+  "enzyme_logsd": "0.20 * calibration",
+  "background_sd": "0.015 * signal",
+  "gain_logsd": "0.05 * signal",
+  "test": "Grid-supremum fixed-null parametric bootstrap; each trial includes eight nonlinear raw-curve refits.",
+  "independent_seeds": "SeedSequence([seed,phase,cell,trial]); phase 0 calibration, phases 1-4 audit",
+  "failed_rule": "A failed or active-bound fit invalidates its whole trial; invalid trials do not reject and remain in the denominator.",
+  "runtime_seconds": 220.01918816566467,
+  "host": "yulee",
+  "python": "3.12.3",
+  "numpy": "2.3.5",
+  "scipy": "1.17.1",
+  "workers": 16,
+  "limitations": "Scenario errors are stipulated, not estimated from assay replicates. Finite-grid calibration is not native biology validation."
+}

@@ -1,0 +1,106 @@
+{
+  "passed": true,
+  "source_kinetic_rows": 6,
+  "finite_network_ODE_checks": [
+    {
+      "protein": "WT",
+      "activity": "kinase",
+      "model": "ordered",
+      "max_species_error": 4.884981308350689e-15,
+      "solver": "matrix exponential of the finite reaction generator",
+      "time_in_inverse_kcat": 20.0
+    },
+    {
+      "protein": "WT",
+      "activity": "kinase",
+      "model": "random",
+      "max_species_error": 1.1102230246251565e-15,
+      "solver": "matrix exponential of the finite reaction generator",
+      "time_in_inverse_kcat": 0.03528999498651398
+    },
+    {
+      "protein": "AceK3",
+      "activity": "kinase",
+      "model": "ordered",
+      "max_species_error": 4.773959005888173e-15,
+      "solver": "matrix exponential of the finite reaction generator",
+      "time_in_inverse_kcat": 20.000000000000004
+    },
+    {
+      "protein": "AceK3",
+      "activity": "kinase",
+      "model": "random",
+      "max_species_error": 3.885780586188048e-16,
+      "solver": "matrix exponential of the finite reaction generator",
+      "time_in_inverse_kcat": 0.03243571798614866
+    },
+    {
+      "protein": "AceK4",
+      "activity": "kinase",
+      "model": "ordered",
+      "max_species_error": 1.2989609388114332e-14,
+      "solver": "matrix exponential of the finite reaction generator",
+      "time_in_inverse_kcat": 20.0
+    },
+    {
+      "protein": "AceK4",
+      "activity": "kinase",
+      "model": "random",
+      "max_species_error": 2.1094237467877974e-15,
+      "solver": "matrix exponential of the finite reaction generator",
+      "time_in_inverse_kcat": 0.03677169845813854
+    },
+    {
+      "protein": "WT",
+      "activity": "phosphatase",
+      "model": "ordered",
+      "max_species_error": 5.551115123125783e-16,
+      "solver": "matrix exponential of the finite reaction generator",
+      "time_in_inverse_kcat": 19.999999999999996
+    },
+    {
+      "protein": "WT",
+      "activity": "phosphatase",
+      "model": "random",
+      "max_species_error": 2.1649348980190553e-15,
+      "solver": "matrix exponential of the finite reaction generator",
+      "time_in_inverse_kcat": 0.036732209703205364
+    },
+    {
+      "protein": "AceK3",
+      "activity": "phosphatase",
+      "model": "ordered",
+      "max_species_error": 1.6653345369377348e-16,
+      "solver": "matrix exponential of the finite reaction generator",
+      "time_in_inverse_kcat": 20.000000000000004
+    },
+    {
+      "protein": "AceK3",
+      "activity": "phosphatase",
+      "model": "random",
+      "max_species_error": 2.498001805406602e-16,
+      "solver": "matrix exponential of the finite reaction generator",
+      "time_in_inverse_kcat": 0.020272231265023956
+    },
+    {
+      "protein": "AceK4",
+      "activity": "phosphatase",
+      "model": "ordered",
+      "max_species_error": 7.771561172376096e-16,
+      "solver": "matrix exponential of the finite reaction generator",
+      "time_in_inverse_kcat": 20.000000000000004
+    },
+    {
+      "protein": "AceK4",
+      "activity": "phosphatase",
+      "model": "random",
+      "max_species_error": 1.6653345369377348e-16,
+      "solver": "matrix exponential of the finite reaction generator",
+      "time_in_inverse_kcat": 0.02610464316047467
+    }
+  ],
+  "ordered": "Exact steady-state realization of Miller Eq. 1 in rescaled catalytic time.",
+  "random": "Finite mass-action random binding, converging to the same law as binding/catalysis ratio grows.",
+  "evidence": "Published kinetic-parameter summaries across WT and two mutants; no raw replicate fit or new experimental validation.",
+  "biological_limit": "These are compatible initial-rate mechanisms, not validated full AceK phosphorylation cycles. Protein binding under matched ATP/ADP and product conditions is a prospective discriminator. Dimer-level binding and double-AceK complexes are audited separately."
+}

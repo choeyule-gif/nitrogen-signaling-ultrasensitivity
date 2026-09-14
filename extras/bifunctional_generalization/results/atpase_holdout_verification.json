@@ -1,0 +1,9 @@
+{
+  "numerical_checks_passed": true,
+  "withheld_activity_parameters": 3,
+  "implication": "In the minimal ordered model with ATPase only from EA, Km_ATPase=Ka_kinase and ATPase vanishes at saturating protein.",
+  "outcome": "The printed withheld ATPase Km values differ from the kinase-derived predictions. The largest fold discrepancy is about 1.83. This challenges adopting the minimal embedding as a full AceK mechanism despite its exact kinase fit.",
+  "uncertainty": "No replicate likelihood or exact parameter covariance is available. These discrepancies are not assigned p values or called statistically significant.",
+  "extra_source": "Stueland et al. 1987, PMID 2824478, independently reports residual ATPase in the presence of saturating protein, qualitatively inconsistent with the EA-only ATPase embedding.",
+  "scope": "Source-summary calibration and independent-activity predictive check; not validation of the full physiological phosphorylation cycle."
+}

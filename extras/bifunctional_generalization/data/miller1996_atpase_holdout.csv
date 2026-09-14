@@ -1,0 +1,4 @@
+protein,Vmax_ATPase_nmol_mg_min,Km_ATPase_uM,source_doi,source_location
+WT,590,230,10.1074/jbc.271.32.19124,Table I ATPase rows withheld from initial-rate construction
+AceK3,710,770,10.1074/jbc.271.32.19124,Table I ATPase rows withheld from initial-rate construction
+AceK4,650,2900,10.1074/jbc.271.32.19124,Table I ATPase rows withheld from initial-rate construction

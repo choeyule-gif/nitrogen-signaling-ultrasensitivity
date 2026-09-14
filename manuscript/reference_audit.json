@@ -1,5 +1,6 @@
 {
-  "references": 31,
+  "source_version": "1.4.0",
+  "references": 39,
   "citation_order": [
     "r1",
     "r2",
@@ -15,31 +16,42 @@
     "r66",
     "r67",
     "r36",
-    "r4",
     "r22",
     "r23",
     "r24",
     "r25",
-    "r26",
-    "r27",
     "r70",
     "r72",
     "r73",
+    "r82",
     "r18",
     "r17",
     "r51",
     "r71",
+    "r4",
+    "r76",
+    "r81",
+    "r84",
+    "r83",
+    "r77",
+    "r78",
+    "r79",
+    "r80",
     "r41",
     "r75",
-    "r74"
-  ],
-  "author_summary_words": 157,
-  "resolved_uncited": [
-    "r36",
-    "r41"
-  ],
-  "added": [
     "r74",
-    "r75"
-  ]
+    "r85"
+  ],
+  "all_citations_resolved": true,
+  "first_citation_order_verified": true,
+  "abstract_words": 231,
+  "author_summary_words": 162,
+  "new_primary_sources": {
+    "r81": "10.1371/journal.pone.0036321",
+    "r82": "10.1186/1752-0509-6-120",
+    "r83": "10.1074/jbc.271.32.19124",
+    "r84": "10.1074/jbc.M112.339226",
+    "r85": "10.1016/S0021-9258(19)85122-0"
+  },
+  "scope": "Current citation integrity plus primary-source reading for the additions. Earlier source audits retain their historical scope; this is not a new independent re-review of every scientific inference in all cited papers."
 }

@@ -1,0 +1,157 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}\usepackage[utf8]{inputenc}
+\usepackage{lmodern,amsmath,amssymb,graphicx,geometry,microtype,setspace,booktabs,array}
+\usepackage[hidelinks]{hyperref}
+\geometry{letterpaper,margin=1in}\setlength{\parindent}{0pt}\setlength{\parskip}{.5em}
+\setlength{\emergencystretch}{2em}
+\begin{document}
+\begin{center}{\Large\bfseries S3 Appendix: General enclosure and expanded observation design}\\[.5em]Yule Choi\end{center}
+\onehalfspacing
+\paragraph{Reading guide.} E1 derives the graph enclosure and observation program. E2 verifies the general algorithm and the AceK dimer network. E3 distinguishes a source-summary kinetic construction from a finite-binding approximation; E4 tests an additional activity against withheld biochemical summaries. E5 specifies the expanded raw-assay calibration. E6 relates the construction to prior prediction methods. E7 preserves the paired-paralog interpretation moved out of the main narrative. All concentration gates and noise settings proposed here are explicitly conditional.
+
+\section*{E1 Graph construction and observation-conditioned enclosure}
+Fix buffered free ligands and a free converter concentration $e>0$. Each complex must contain one target molecule, possibly an oligomer. At fixed $e$, target-state transitions must form an irreducible finite linear generator $Q(e)$, with column sums zero and nonnegative polynomial off-diagonal rates. These conditions permit several converter molecules on one target; they do not permit two target molecules in one complex without changing the state description. The matrix-tree theorem gives positive stationary weights $\tau_i(e)$ as sums of directed spanning-tree products, and the normalized stationary distribution is $\tau/\sum_i\tau_i$ [1]. Tree-polynomial elimination is an established foundation.
+
+For the free-target subset $F$, write $\tau_F(e)=C(1,e,\ldots,e^n)^T$. The normalized free distribution is independent of $e$ on a positive open interval if and only if $C$ has rank one. Indeed, independence implies $\tau_i(e)=c_i H(e)$ for a common polynomial $H$; the identity on an open interval is a polynomial identity. Conversely, proportional polynomials normalize to a constant distribution. Removing a common polynomial factor does not alter this criterion. A positive column scaling $Q\mapsto QD$ changes stationary weights to $D^{-1}\tau$. Scaling only bound-state columns therefore preserves normalized free states at matched $e$, while changing dwell times and binding fractions. This construction does not imply that all such scalings satisfy additional measured rate constraints.
+
+For $e\in[L,U]$, set $e=L+(U-L)t$, $0\leq t\leq1$. Express the free weights in a Bernstein basis:
+\begin{equation}
+ \tau_i(L+(U-L)t)=\sum_{k=0}^n b_{ik}{n\choose k}t^k(1-t)^{n-k}.
+\end{equation}
+If the power coefficients $c_{ij}$ are nonnegative and $L\geq0$, then
+\begin{equation}
+ a_{ij}=\sum_{l=j}^n c_{il}{l\choose j}L^{l-j}(U-L)^j,
+ \qquad b_{ik}=\sum_{j=0}^k a_{ij}\frac{{k\choose j}}{{n\choose j}}
+\end{equation}
+are nonnegative. Normalize every nonzero column to $v_k=b_{:k}/\mathbf1^Tb_{:k}$ and collect these as $V$. Normalizing the polynomial sum proves
+\begin{equation}
+ \pi_F(e)\in\operatorname{conv}\{v_0,\ldots,v_n\}.
+\end{equation}
+Columns that vanish are omitted. At a reducible endpoint $e=0$, the enclosure uses the limit from positive input. It is an outer enclosure: every vertex mixture need not be kinetically realizable. Subdivision can tighten the interval enclosure; a rank-one coefficient matrix collapses it to one point.
+
+Let $\epsilon$ be a justified bound on the target-bound fraction. Introduce nonnegative free-vertex masses $\lambda$ and bound-state masses $z$, categorized by target modification state. The total distribution is $p=V\lambda+z$, with
+\begin{equation}
+ \mathbf1^T\lambda+\mathbf1^Tz=1,\qquad \mathbf1^Tz\leq\epsilon,
+ \qquad a\leq A(V\lambda+z)\leq b.
+\end{equation}
+The last inequalities encode matched observations. The minimum and maximum of $h^T(V\lambda+z)$ are linear programs and enclose every compatible stationary reporter. Their difference bounds pairwise disagreement in the declared class. An infeasible program indicates incompatibility and must not be reported as zero uncertainty. The construction accommodates any linear target-state reporter; nonlinear downstream reporters require an additional valid transformation or enclosure.
+
+The result is deterministic conditional on its graph, coefficient and observation inputs. It is not a statistical confidence interval unless the inputs have the requisite simultaneous coverage. It does not guarantee error relative to unknown biology. A more restricted biochemical class is contained in an outer class, so a valid bound remains valid when independent kinetic constraints exclude some outer-class members.
+
+\section*{E2 General algorithm and the full AceK--IDH network}
+The reusable implementation constructs $Q(e)$ from edges, derives cofactors with exact rational polynomial arithmetic, tests coefficient rank, forms Bernstein vertices and solves the observation programs. Four independent cyclic graphs with 3--6 states have polynomial degrees 2--5. Their stationary solutions agree with the polynomial calculation within $2.3\times10^{-16}$ over 404 input/mixture checks; no conditioned-enclosure violation occurs. A rank-one control collapses correctly, and an inconsistent observation returns an empty set. These numerical checks complement the proof; they do not establish that every biochemical system satisfies its assumptions.
+
+The AceK network follows Table 1 of Dexter and Gunawardena [2]. Free IDH dimers are $U_0,U_1,U_2$; singly bound dimers are $B_0,B_1,B_2$ and doubly bound dimers are $C_0,C_1,C_2$. Free AceK completes the ten-species conserved system. The source on-rates are $100\,\mu\mathrm{M}^{-1}\mathrm{s}^{-1}$, off-rates 23 and $40\,\mathrm{s}^{-1}$, and catalytic rates 0.098 and $0.065\,\mathrm{s}^{-1}$. On-rates are a source assumption; the catalytic and Michaelis values are based on biochemical measurements [3]. Buffered nucleotide conditions are part of this model.
+
+With the published reaction labels, elimination gives
+\begin{equation}
+ \frac{B_0}{B_1}=\frac{k_6+eb}{k_3+ea},\qquad
+ \frac{B_2}{B_1}=\frac{k_7+ec}{k_{10}+ed},
+\end{equation}
+where $a=k_{17}k_{20}/(k_{18}+k_{20})$, $b=k_{11}k_{14}/(k_{12}+k_{13}+k_{14})$, $c=k_{11}k_{13}/(k_{12}+k_{13}+k_{14})$ and $d=k_{15}k_{19}/(k_{16}+k_{19})$. Free balances give
+\begin{align}
+ ek_1U_0&=k_2B_0+k_6B_1,\\
+ ek_4U_1&=k_3B_0+k_5B_1+k_{10}B_2,\\
+ ek_8U_2&=k_7B_1+k_9B_2.
+\end{align}
+Clearing the positive linear denominators yields three positive quadratic weights. An independent exact cofactor calculation gives coefficient rank three and matches the separately derived coefficients within $3.6\times10^{-15}$ after common normalization. Thus free-state enzyme cancellation is not exact in this topology.
+
+For a total $I_T$ of IDH dimers and $E_T$ of AceK molecules, the target-bound fraction is at most $E_T/I_T$: every bound target contains at least one AceK, even when two bind. The free-enzyme interval $[0,E_T]$ and this fraction limit give the enclosure. Column-scaled bound-state dwell times define an outer class; they need not all match every microscopic rate measurement. Nine total-concentration settings and 900 positive dwell-time realizations satisfy conservation and the predicted intervals. Independent BDF integrations from initially unmodified IDH agree with the conserved stationary species to better than $10^{-9}$.
+
+At $I_T=1\,\mu$M and $E_T=0.05\,\mu$M, the total unphosphorylated-dimer fraction has general interval $[0.140181,0.197176]$, width 0.056995. A prospective matched mean phosphate count in $[1.435,1.475]$ yields $[0.140181,0.176438]$, width 0.036257. Of 1,000 constructed realizations at these totals, 790 satisfy that gate and none violates the conditioned interval. At $E_T=0.02$ and $0.10\,\mu$M the conditioned widths are 0.020828 and 0.057702. The gate is a proposed threshold, not a measured interval. The reporter is a modification-state fraction, not an assumed measure of physiological IDH activity.
+
+\section*{E3 Published kinetic summaries and finite binding ambiguity}
+Miller et al. [3] report wild-type, AceK3 and AceK4 kinase and phosphatase kinetics, giving six parameter summaries. Their sequential initial-rate law is
+\begin{equation}
+ v=V_{\max}\frac{AB}{K_aK_{mb}+K_{ma}B+K_{mb}A+AB}.
+\end{equation}
+$A$ is ATP and $B$ the appropriate IDH form. Concentrations are micromolar. The apparent binding constants and rounded interaction ratios in the source table are not exact algebraic identities; calculations use the printed $K_a,K_{ma},K_{mb}$ consistently. No synthetic reconstructed rate curve is labeled a raw experimental observation.
+
+An ordered realization has $E+A\rightleftharpoons EA$, $EA+B\rightleftharpoons EAB$ and catalytic return $EAB\to E$. In units with $k_{\rm cat}=1$, choose $k_{\rm on,A}=1/K_{ma}$, $k_{\rm off,A}=K_a/K_{ma}$, $k_{\rm on,B}=2/K_{mb}$ and $k_{\rm off,B}=1$. Steady elimination reproduces the reported law exactly. A random realization also allows $E+B\rightleftharpoons EB$ and $EB+A\rightleftharpoons EAB$. All four binding dissociation rates are $\gamma$, and association rates divided by ligand are respectively $\gamma/K_a$, $\gamma/K_b$, $\gamma/K_{mb}$ and $\gamma/K_{ma}$, with $K_b=K_aK_{mb}/K_{ma}$. The binding square satisfies thermodynamic consistency; the finite catalytic return remains in the generator.
+
+As $\gamma\to\infty$, random binding approaches the same initial-rate law. Direct stationary solutions at $\gamma=1,10,100,1000$ quantify the approximation over 625 ATP--protein pairs for each source summary, spanning 0.01--100 times the corresponding Michaelis scales. At 1,000 the maximum relative departure is 0.000979--0.001143. Twelve independent matrix-exponential initial-value solutions agree with the corresponding stationary probabilities. This linear solver avoids unnecessary late-time stiff integration after stationarity; it retains the finite catalytic reaction.
+
+At $A=0.01K_{ma}$ and $B=K_b$, the ordered and random mechanisms differ by 0.495--0.497 in protein-bound fraction. The random probability includes $EB$ and $EAB$, whereas ordered protein binding occurs in $EAB$. This is a prospective discriminator under matched nucleotide and product conditions. It is not proof of either native binding order, and these isolated initial-rate mechanisms are not the full bidirectional phosphorylation cycle. Agreement is calibration to source summaries rather than an independent replicate-level fit.
+
+\section*{E4 Independent biochemical observations constrain extrapolation}
+An additional ATPase reaction $EA\to E$ illustrates why the kinase fit alone is insufficient. Let its rate relative to kinase catalysis be the measured ratio of ATPase and kinase maxima. Reducing the ordinary $EA\to E$ dissociation rate by the same amount leaves the kinase generator, and hence its rate law, unchanged. All three kinase variants admit positive remaining dissociation rates. This minimal embedding nevertheless predicts $K_{m,\mathrm{ATPase}}=K_{a,\mathrm{kinase}}$ without fitting the ATPase halfpoint.
+\begin{center}\small
+\begin{tabular}{lrrr}\toprule
+Protein & Predicted ATPase $K_m$ & Withheld measured $K_m$ & Measured/predicted\\
+ & $\mu$M & $\mu$M & \\\midrule
+Wild type & 170 & 230 & 1.353\\
+AceK3 & 580 & 770 & 1.328\\
+AceK4 & 5300 & 2900 & 0.547\\\bottomrule
+\end{tabular}
+\end{center}
+The last column is descriptive. The publication states parameter standard errors below 20\% but does not supply the exact errors or joint covariance, so these discrepancies are not assigned $p$ values. They challenge adoption of the minimal embedding as a complete AceK mechanism despite an exact kinase fit. The independent observation that protein only partially inhibits ATPase also requires additional state behavior beyond an ATPase restricted to $EA$ [3]. These checks constrain biological extrapolation; they do not validate an unrestricted alternative.
+
+The in vivo activity table of LaPorte et al. [4] supplies a separate concentration-robustness observation. In the pBR322/pCK505 comparison, total activity increases from 2.3 to 34.5 units/mg, while reported active activity remains 0.6 units/mg. Rounded fractions need not reproduce the separately printed activities. Duplicate entries for untransformed and pBR322-bearing DEK2010 are not independent replicates. Units/mg cannot be converted to micromolar dimers without additional specific-activity, volume and normalization information; growth on acetate is not the in vitro assay condition of [3]. The nearly constant $U_0$ illustration in [2] additionally fixes monophosphorylated IDH. That is a biological/observation assumption, not a consequence of the two conservation laws alone. These data therefore remain an external constraint on model interpretation, rather than a retrospectively certified count gate.
+
+\section*{E5 Raw-assay parametric calibration and independent audit}
+Each complete GlnE titration uses total PII doses $(0,.005,.01,.02,.05,.1,.2,.5,1,2,5)\,\mu$M, glutamine $(0,15.6,31.2)$ mM, enzyme total $0.04\,\mu$M and two readings per dose. The free halfpoint is $H(G)=0.18(1+G/K_G)/(1+G/(\alpha_1K_G))\,\mu$M. For total ligand $P$ and enzyme $E$, the bound fraction is
+\begin{equation}
+ b(P,H,E)=\frac{2P}{P+H+E+\sqrt{(P+H+E)^2-4PE}}.
+\end{equation}
+Eight independent complete titrations constitute a trial. Shared stock and enzyme-total errors have log SDs $0.10c$ and $0.20c$, $c\in\{0,.5,1\}$. Background SD is $0.015s$ and gain log SD is $0.05s$, $s\in\{0,1,2\}$. Reading noise SD is $\sqrt{0.025^2+(0.02b)^2}$. These are sensitivity scenarios, not estimated assay uncertainty.
+
+Least-squares fits estimate three log-halfpoints and either one shared background/gain pair or three condition-specific pairs. Halfpoints are constrained to $[10^{-4},10]\,\mu$M, backgrounds to $[-.2,.2]$ and gains to $[.5,1.5]$. Analytic derivatives accelerate the finite-depletion fit. Fitting the two replicate means is algebraically equivalent to equally weighted fitting of both readings. Independent checks use both raw readings, free-ligand root solutions, a different start and Levenberg--Marquardt. Fifty refits agree in score within $1.38\times10^{-6}$.
+
+For each complete experiment, define $S=\tfrac12[\log(H_1/H_0)+\log(H_2/H_0)]$. The trial statistic is $(\overline S-S_0)/(s_S/\sqrt8)$, with $S_0$ the largest reference mean at $\alpha_1=.17$, $K_G\in[7.8,15.6]$ mM. A numerical 501-point profile verifies that the reference mean increases over this interval. Both ratios retain their common zero-glutamine estimate. This scalar score is conservative for effects that remain within the profiled nuisance envelope; its power is not the information-theoretic limit of the full data.
+
+For each fitting strategy, 3,000 fixed-null parametric trials are generated at all 27 combinations of $K_G\in\{7.8,11.7,15.6\}$ mM, $c$ and $s$. Every trial regenerates the raw readings and refits halfpoints. Let $N_c=3000$, $J=27$, $p=.95$ and $\delta=.05$. The cutoff in each cell is order statistic
+\begin{equation}
+ k=1+F_{\mathrm{Binomial}(N_c,p)}^{-1}(1-\delta/J).
+\end{equation}
+The maximum cell cutoff supplies simultaneous 95\% Monte Carlo confidence that the null tail is at most .05 over this finite grid. This is a fixed-null parametric reference calculation, not a data-dependent plug-in bootstrap. It does not prove a continuous nuisance supremum or native assay performance. The cutoffs are 2.062521 and 2.103560 for shared and condition-specific signal fits.
+
+Independent evaluation uses 2,000 trials in each of 210 cells: 108 effect/noise cells ($3K_G\times3c\times3s\times4\alpha_1$, with $\alpha_1=.17,.19,.25,.34$); 33 mixture cells; 42 systematic-dose cells; and 27 differential-signal cells. Dose log bias spans $[-.15,.15]$ in .05 steps, with or without independent correction of nonzero-glutamine doses using log SD .02 standards. Differential backgrounds span $[-.02,.02]$ in .01 steps, with separate log-gain shifts $-.10,-.05,.05,.10$. Baseline concentration and signal-error scales for the latter sensitivity series are $c=s=1$.
+
+The mixture path has two affinity classes with halfpoints $H$ and $5H$. Their high-affinity weights are $1-0.1m$ at zero glutamine and $1-0.4m$ otherwise, $m=0,.1,\ldots,1$. Free ligand is solved from its mass balance including both classes. This is a continuous misspecification path, not experimental evidence for those exact states. Rejection of the single-class reference under this generator is not identification of an altered $\alpha_1$.
+
+The two fitting strategies use matched seeds and therefore paired raw observations. Across both strategies, 8,016,000 nonlinear fits were completed. Calibration and evaluation have different seed phases. Stored records contain each trial's statistic, mean score, standard error, separate optimizer-failure and active-bound counts, mean residual error and fitting effort. Invalid trials do not reject and remain in the denominator. Evaluation contains no optimizer failures and 17/22 active-bound fits. All 840,000 evaluation decisions are independently recounted; selected complete trials replay exactly. Reported Wilson intervals quantify Monte Carlo sampling error. They are not intervals for unknown biological parameters.
+
+\section*{E6 Position relative to prior prediction methods}
+Prediction profile likelihood uses a specified likelihood to constrain a chosen prediction while optimizing nuisance parameters, and can yield finite prediction intervals despite parameter non-identifiability [5]. Model-discrimination design evaluates candidate observations to distinguish models under its stochastic and design assumptions [6]. Neither method requires every microscopic parameter to be identified. Consequently, non-identifiability alone is not a new reason to prefer the present method.
+
+The present construction instead supplies an outer stationary class from a graph and positive weights, combines it with stoichiometric conservation and bounded observations, and returns a sufficient decision interval. It may lose information by convex enclosure and by omitting a likelihood; it is not claimed to be universally tighter or computationally superior. Its reusable graph algorithm and AceK application provide an implemented example of this extension. A confidence interpretation requires valid input coverage, and kinetic data can restrict the outer dwell-time class. Published summaries, independent-activity checks and prospective gates therefore have separate roles.
+
+\section*{E7 Prospective extension: a second paralog as a sequestration reporter}
+
+Independent in vivo data measure both modified and unmodified GlnB and GlnK peptides [7]. Their trajectories separate after nitrogen upshift (S7 Fig A), but peptide measurements do not resolve intact trimer states. Purified AmtB binds fully deuridylylated GlnK, and ATP and 2-oxoglutarate regulate this interaction [8]. This supplies a kinetic-model-independent constraint before calibration: if AmtB-bound GlnK subunits are unmodified, their fraction $s_K$ obeys $s_K\leq1-q_K$, where $q_K$ is the total modified-site fraction. For a homotrimer population, $s_K$ is also the bound-trimer fraction and $s_K\leq p_0\leq1-q_K$. The protein-level ceiling requires neither stationarity nor independent sites, but does require calibrated peptide measurements and the stated binding selectivity. At 15 min before upshift, the paired-peptide point fraction is 0.968, giving a point ceiling of 0.032. The working simultaneous intervals for the component means relax it to 0.162; using a separately measured total instead gives 0.668 (S7 Fig D). Thus the available data can constrain binding under the observation model, while the choice and precision of normalization materially affect that constraint. These are upper limits, not occupancy estimates. A second target and a controlled calibration can sharpen the generic limit as follows.
+
+Assume stationary independent-site free ladders, an unsequestered GlnB reporter, constant relative catalytic specificity $\rho$, and binding restricted to unmodified GlnK. With free GlnB modified fraction $q_B$, total GlnK modified fraction $q_K$, and bound GlnK trimer fraction $s$,
+\[
+ F_\rho(q_B)=\frac{\rho q_B}{1-q_B+\rho q_B},\qquad
+ s=1-\frac{q_K}{F_\rho(q_B)}.
+\]
+The common GlnD drive cancels. A control without AmtB binding calibrates $\rho$ from the ratio of modification odds, provided relative specificities are unchanged. A defined reconstitution permits tighter input control than a cellular deletion. Without calibration, the means do not identify $s$: unrestricted $\rho$ leaves only the generic limit $s\leq1-q_K$.
+
+Monotonicity propagates control and assay intervals into deterministic sequestration intervals. In the disclosed synthetic example these give $s\in[0.441,0.561]$; allowing an additional absolute free-relation error of 0.10 widens the interval to $[0.347,0.610]$ (S7 Fig C). They are not experimental confidence intervals. A13 retains the inputs, derivation and independent generator checks.
+
+
+
+The odds formula extends to any positive free ladders sharing one scalar drive: monotonicity defines an increasing relation $C=m_K\circ m_B^{-1}$, which a no-binding titration can calibrate. Bounds on reporter partition, free-pool relation error and imperfect binding selectivity can then be propagated by a sharp mixture calculation (A14). For example, free GlnK fractions $[0.70,0.80]$ and total fractions $[0.35,0.39]$ imply $s\in[0.443,0.563]$ if the bound pool is unmodified; permitting its modified fraction to reach 0.15 widens this to $[0.443,0.692]$. The full inequalities and degeneracies remain in A14.
+
+The biological validation requirement is separate. Unmodifiable GlnK Y51A changes membrane association after ammonium shock despite unchanged modification [11], and GlnB/GlnK heterotrimers occur in vivo [9]. Thus modification alone need not identify partition or particle counts. The available cellular time series supplies neither a matched calibration nor direct occupancy validation. Native MS and surface plasmon resonance provide independent AmtB--GlnK binding endpoints [10], but measurements under matched conditions are needed to test calibration transfer. S7 Fig is a prospective application, not a validated biological reconstruction.
+
+
+\begin{thebibliography}{99}
+\bibitem{1}Gunawardena J. A linear framework for time-scale separation in nonlinear biochemical systems. PLoS One. 2012;7:e36321. doi:10.1371/journal.pone.0036321.
+\bibitem{2}Dexter JP, Gunawardena J. Dimerization and bifunctionality confer robustness to the isocitrate dehydrogenase regulatory system in Escherichia coli. J Biol Chem. 2013;288:5770--5778. doi:10.1074/jbc.M112.339226.
+\bibitem{3}Miller SP, Karschnia EJ, Ikeda TP, LaPorte DC. Isocitrate dehydrogenase kinase/phosphatase: kinetic characteristics of the wild-type and two mutant proteins. J Biol Chem. 1996;271:19124--19128. doi:10.1074/jbc.271.32.19124.
+\bibitem{4}LaPorte DC, Thorsness PE, Koshland DE Jr. Compensatory phosphorylation of isocitrate dehydrogenase. J Biol Chem. 1985;260:10563--10568. doi:10.1016/S0021-9258(19)85122-0.
+\bibitem{5}Kreutz C, Raue A, Timmer J. Likelihood based observability analysis and confidence intervals for predictions of dynamic models. BMC Syst Biol. 2012;6:120. doi:10.1186/1752-0509-6-120.
+\bibitem{6}Silk D, Kirk PDW, Barnes CP, Toni T, Stumpf MPH. Model selection in systems biology depends on experimental design. PLoS Comput Biol. 2014;10:e1003650. doi:10.1371/journal.pcbi.1003650.
+\bibitem{7}Gosztolai A, Schumacher J, Behrends V, Bundy JG, Heydenreich F, Bennett MH, et al. GlnK Facilitates the Dynamic Regulation of Bacterial Nitrogen Assimilation. Biophys J. 2017;112:2219--2230. \href{https://doi.org/10.1016/j.bpj.2017.04.012}{doi:10.1016/j.bpj.2017.04.012}.
+
+\bibitem{8}Durand A, Merrick M. In vitro analysis of the Escherichia coli AmtB-GlnK complex reveals a stoichiometric interaction and sensitivity to ATP and 2-oxoglutarate. J Biol Chem. 2006;281(40):29558--29567. \href{https://doi.org/10.1074/jbc.M602477200}{doi:10.1074/jbc.M602477200}.
+
+\bibitem{9}van Heeswijk WC, Wen D, Clancy P, Jaggi R, Ollis DL, Westerhoff HV, et al. The Escherichia coli signal transducers PII (GlnB) and GlnK form heterotrimers in vivo: fine tuning the nitrogen signal cascade. Proc Natl Acad Sci USA. 2000;97(8):3942--3947. \href{https://doi.org/10.1073/pnas.97.8.3942}{doi:10.1073/pnas.97.8.3942}.
+
+\bibitem{10}Cong X, Liu Y, Liu W, Liang X, Laganowsky A. Allosteric modulation of protein-protein interactions by individual lipid binding events. Nat Commun. 2017;8:2203. \href{https://doi.org/10.1038/s41467-017-02397-0}{doi:10.1038/s41467-017-02397-0}.
+
+\bibitem{11}Radchenko MV, Thornton J, Merrick M. Association and dissociation of the GlnK--AmtB complex in response to cellular nitrogen status can occur in the absence of GlnK post-translational modification. Front Microbiol. 2014;5:731. \href{https://doi.org/10.3389/fmicb.2014.00731}{doi:10.3389/fmicb.2014.00731}.
+
+\end{thebibliography}
+\end{document}

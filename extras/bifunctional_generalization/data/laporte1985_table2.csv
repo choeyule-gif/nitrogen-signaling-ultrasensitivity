@@ -1,0 +1,6 @@
+strain,plasmid,total_activity_units_mg,dephospho_fraction,activity_during_acetate_growth_units_mg,source_doi,source_location
+DEK2010,none,2.3,0.26,0.6,10.1016/S0021-9258(19)85122-0,Table II
+23559,none,2.2,0.36,0.8,10.1016/S0021-9258(19)85122-0,Table II
+DEK2015,none,1.3,0.54,0.7,10.1016/S0021-9258(19)85122-0,Table II
+DEK2010,pBR322,2.3,0.26,0.6,10.1016/S0021-9258(19)85122-0,Table II
+DEK2010,pCK505,34.5,0.02,0.6,10.1016/S0021-9258(19)85122-0,Table II

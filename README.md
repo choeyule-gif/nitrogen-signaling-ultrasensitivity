@@ -1,8 +1,10 @@
-# Observation-conditioned bounds enable experimental decisions despite mechanistic equivalence in bacterial nitrogen signaling
+# Observation-conditioned bounds define experimental decision criteria for bifunctional enzyme systems
 
-Code, numerical outputs and manuscript sources for Yule Choi's nitrogen-signaling study. This is a conditional analysis of mechanistic equivalence and measurement design; the calculations do not establish a unique native GlnD–PII–GlnE–GS mechanism.
+Code, published measurement summaries, numerical results and manuscript sources for Yule Choi's study. **Source version: v1.4.0.**
 
-**Current revision: v1.3.4.** This final framing patch aligns the title, abstract, Author Summary, cover letter and the messages of Figures 3–4 around the observation-conditioned concentration certificate and the end-to-end discrimination benchmark. It retains the v1.3.2 GlnD comparison, assay-range and Fig5C corrections and the v1.3.1 verification fixes. The archived v1.3.4 source is available at [doi:10.5281/zenodo.22741777](https://doi.org/10.5281/zenodo.22741777); the version-independent [concept DOI 10.5281/zenodo.22731768](https://doi.org/10.5281/zenodo.22731768) resolves to the latest archive.
+The contribution is an observation-conditioned enclosure for a declared biochemical model class. It derives sufficient conditions for decisions despite microscopic ambiguity, extends beyond enzyme-concentration cancellation to AceK–IDH, and checks how raw binding measurements support or confound discrimination. The nitrogen and AceK concentration gates are prospective requirements, not already verified native-assay decisions. Source-summary calibration, independent-activity checks and synthetic performance have distinct evidential roles.
+
+The version-specific source is [GitHub release v1.4.0](https://github.com/choeyule-gif/nitrogen-signaling-ultrasensitivity/releases/tag/v1.4.0). The [Zenodo concept DOI 10.5281/zenodo.22731768](https://doi.org/10.5281/zenodo.22731768) indexes the versioned archive; select **1.4.0** for this manuscript. The earlier v1.3.4 DOI 10.5281/zenodo.22741777 does not contain these new analyses. The final submission manifest records the independently verified archive identifier and file hashes.
 
 ## Reproduce
 
@@ -10,41 +12,34 @@ Code, numerical outputs and manuscript sources for Yule Choi's nitrogen-signalin
 python3 -m venv .venv
 source .venv/bin/activate
 pip install -e .
-python tests/run_research_suite.py --regenerate
+python tests/run_research_suite.py
 ```
 
-The command regenerates the baseline, matched-model, finite-mechanism, regulatory-state, robust-design and closed-cascade numerical layers and runs their checks, followed by the paired-reporter and observation-design layers. Run without `--regenerate` to check saved baseline results while freshly solving extension identities. See `REPRODUCIBILITY.md` for scope and independent-data extraction. A passing calculation verifies its stated model, not physiological truth or global parameter optimality.
+The current default suite has **13 stages**. It checks saved baseline outputs, independently recounts the stored observation trials, and freshly solves extension identities, reaction models, general graph enclosures and withheld-activity checks. It does not rerun all eight million nonlinear fits. `--regenerate` additionally recreates the earlier numerical layers; the new large Monte Carlo generator has separate commands in `extras/bootstrap_design/README.md`. Existing compatible Monte Carlo cells are resumable; use fresh output directories for clean regeneration. See `REPRODUCIBILITY.md` for the exact scope of each verification record.
 
-Build the full current S1 Data archive after regeneration with `python scripts/package_research_data.py`. The older `scripts/make_s1_data.py` called by the baseline runner produces a baseline export folder only; it is not the submission archive.
+Build the complete S1 Data archive with `python scripts/package_research_data.py`. The older `scripts/make_s1_data.py` produces only a legacy baseline export.
 
 ## Research layout
 
 | Location | Content |
 |---|---|
-| `esbm/`, `scripts/`, `data/`, `results/`, `figdata/` | Baseline theory, digitized titration, calculations and plot inputs |
-| `extras/matched_models/` | Matched titrations, different ladders and downstream calibration |
-| `extras/regulatory_states/` | Explicit GlnD/GlnE regulatory-state equivalences |
-| `extras/finite_mechanism/` | Finite reaction kinetics and assumption boundaries |
-| `extras/closed_cascade/` | Protein-conserving cascades, topology and free/total input bounds |
-| `extras/observation_design/` | Count-conditioned bounds, raw binding simulation, concentration controls and constraint profiles |
-| `extras/robust_design/` | Nuisance-aware occupancy and binding designs |
-| `extras/paired_paralogs/` | Independent published GlnB/GlnK data and calibrated reporter design |
-| `extras/revision_audited/`, `matlab/` | Figure calculations and rendering inputs; some filenames retain older numbering |
-| `manuscript/` | Working manuscript, appendix and supporting figures |
-| `validation/`, `tests/` | Clean-environment evidence and executable checks |
+| `esbm/`, `scripts/`, `data/`, `results/`, `figdata/` | Baseline theory, digitized titration and plot inputs |
+| `extras/matched_models/` | Matched mean responses, distinct ladders and downstream calibration |
+| `extras/regulatory_states/`, `extras/finite_mechanism/` | Finite GlnD/GlnE mechanisms and regulatory equivalences |
+| `extras/closed_cascade/` | Conserved cascades, topology and free/total-input boundaries |
+| `extras/observation_design/` | Count-conditioned bounds, GlnD profiles and earlier 8,700-trial benchmark |
+| `extras/bootstrap_design/` | Expanded raw-assay calibration: 27 × 3,000 calibration and 210 × 2,000 evaluation trials per fit strategy |
+| `extras/bifunctional_generalization/` | General graph/LP algorithm, full AceK dimer network, six source summaries and three withheld ATPase checks |
+| `extras/robust_design/` | Earlier nuisance-aware binding and occupancy designs |
+| `extras/paired_paralogs/` | Published GlnB/GlnK data and prospective calibrated reporter extension |
+| `extras/revision_audited/`, `matlab/` | Legacy figure calculations and rendering inputs |
+| `manuscript/` | Current LaTeX, figures, appendices and cover letter |
+| `validation/`, `tests/` | Version-scoped evidence and executable checks |
 
-## Current figure mapping
+## Figure and supplement mapping
 
-The compressed working manuscript has five main figures and six supporting figures. The original pathway diagram is unchanged.
+The five main figures are: (1) the author's unchanged pathway diagram; (2) GlnD equivalence; (3) the conditional nitrogen concentration criterion; (4) expanded raw-assay calibration; (5) generalization to AceK. The previous paired-paralog Fig. 5 is now **S7 Fig**, with its interpretation preserved in S3 Appendix E7. **S8 Fig** retains raw-titration and GlnD-profile diagnostics; **S9 Fig** shows every audited nuisance cell for the null and two alternative effects. S1–S6 Figs retain their earlier artwork.
 
-| Main figure | Subject | Previous main figure |
-|---|---|---|
-| 1 | Author's pathway diagram | 1 |
-| 2 | GlnD regulatory equivalence and complementary observables | 7 |
-| 3 | Count-conditioned concentration certificate and topology limits | Redesigned from 10 |
-| 4 | Raw binding data, discrimination, calibration and GlnD constraint profile | Replaces analytic-budget main panels |
-| 5 | Independent paired-paralog data and conditional assay | New |
+S1 Appendix contains A1–A15 (core mechanisms and proofs), S2 Appendix D1–D7 (provenance and earlier observation analyses), and S3 Appendix E1–E7 (general algorithm, AceK evidence, expanded statistics and preserved extension). The old 100-trial benchmark remains explicitly marked as exploratory and superseded for the main statistical claim. Earlier figures and text remain in `docs/extended_analyses/`; historical filenames do not imply current figure numbering.
 
-Current S1–S6 Figs correspond to the v1.2.0 S11, S12, S13, S14, S16 and S17 figures. S1 Appendix (A1–A15) contains core mechanisms, proofs and prior art; S2 Appendix (D1–D7) contains data and sensitivity analyses. The unchanged former supplements and all 17 older figures are preserved in `docs/extended_analyses/v1.2.0/`. Old script/input filenames are not current submission figure numbers. The generalized calibration extension and observation-design layer are included in v1.3.0 and S1 Data. Prior reviewer-revision text is also retained under `docs/extended_analyses/reviewer_revision3/`; current claims and numbering are in `manuscript/`.
-
-Code is MIT licensed. The Gosztolai et al. source workbook and model retain their CC BY 4.0 license and attribution, documented in `extras/paired_paralogs/README.md`. Other published measurements retain their source provenance in `data/README.md`.
+Original code is MIT licensed. The unchanged Gosztolai et al. workbook and model retain CC BY 4.0 attribution. Measurement-table provenance and cross-assay limits are recorded with each dataset. No primary literature PDFs are redistributed.

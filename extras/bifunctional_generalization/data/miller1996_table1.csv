@@ -1,0 +1,7 @@
+protein,activity,Vmax_nmol_mg_min,Km_ATP_uM,K_ATP_uM,Km_IDH_form_uM,K_IDH_form_uM,source_doi,source_location
+WT,kinase,90,16,170,0.23,2.4,10.1074/jbc.271.32.19124,Table I
+AceK3,kinase,450,100,580,0.25,1.4,10.1074/jbc.271.32.19124,Table I
+AceK4,kinase,500,320,5300,0.23,4.2,10.1074/jbc.271.32.19124,Table I
+WT,phosphatase,60,6,98,0.4,6,10.1074/jbc.271.32.19124,Table I
+AceK3,phosphatase,24,53,51,21,20,10.1074/jbc.271.32.19124,Table I
+AceK4,phosphatase,12,120,270,19,40,10.1074/jbc.271.32.19124,Table I

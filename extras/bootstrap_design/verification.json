@@ -1,0 +1,24 @@
+{
+  "passed": true,
+  "derivative_cases": 30,
+  "independent_raw_refits": 50,
+  "stored_trial_audits": [
+    {
+      "folder": "results",
+      "independently_recounted_trials": 420000,
+      "failed_fits": 0,
+      "active_bound_fits": 17,
+      "max_trial_replay_error": 0.0
+    },
+    {
+      "folder": "results_condition_affine",
+      "independently_recounted_trials": 420000,
+      "failed_fits": 0,
+      "active_bound_fits": 22,
+      "max_trial_replay_error": 0.0
+    }
+  ],
+  "maximum_derivative_error": 6.120973866652335e-11,
+  "maximum_score_difference": 1.3769387645634623e-06,
+  "null_profile_points": 501
+}

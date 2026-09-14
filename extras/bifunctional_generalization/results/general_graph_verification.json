@@ -1,0 +1,39 @@
+{
+  "passed": true,
+  "generic_graphs": [
+    {
+      "states": 3,
+      "edges": 6,
+      "polynomial_degree": 2,
+      "coefficient_rank": 3
+    },
+    {
+      "states": 4,
+      "edges": 8,
+      "polynomial_degree": 3,
+      "coefficient_rank": 4
+    },
+    {
+      "states": 5,
+      "edges": 10,
+      "polynomial_degree": 4,
+      "coefficient_rank": 5
+    },
+    {
+      "states": 6,
+      "edges": 12,
+      "polynomial_degree": 5,
+      "coefficient_rank": 6
+    }
+  ],
+  "conditioned_mixture_checks": 404,
+  "max_stationary_polynomial_error": 2.220446049250313e-16,
+  "max_enclosure_violation": 0.0,
+  "independent_AceK_tree_max_difference": 3.552713678800501e-15,
+  "AceK_exact_coefficient_rank": 3,
+  "rank_one_control_passed": true,
+  "infeasible_observation_control_passed": true,
+  "excluded_transient_state_control_passed": true,
+  "invalid_vertex_control_passed": true,
+  "scope": "Algorithmic verification for stated positive-polynomial irreducible graphs; no claim that all biochemical networks satisfy these assumptions."
+}
