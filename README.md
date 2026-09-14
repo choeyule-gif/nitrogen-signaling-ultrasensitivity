@@ -1,8 +1,8 @@
-# Mechanistic equivalence and measurement design in models of bacterial nitrogen signaling
+# Observation-conditioned bounds convert mechanistic equivalence into experimental decisions in bacterial nitrogen signaling
 
 Code, numerical outputs and manuscript sources for Yule Choi's nitrogen-signaling study. This is a conditional analysis of mechanistic equivalence and measurement design; the calculations do not establish a unique native GlnD–PII–GlnE–GS mechanism.
 
-**Current revision: v1.3.3.** This final submission-preparation patch sharpens and compresses the initial-submission cover letter. It retains the v1.3.2 GlnD comparison, assay-range and Fig5C corrections and the v1.3.1 verification fixes. The v1.3.0 extension adds the observation-conditioned concentration certificate, end-to-end binding measurements and biochemical constraint profiles, and synchronizes the main manuscript, appendices and Figures 3–4. The earlier [v1.1.0 archive](https://doi.org/10.5281/zenodo.22735182) and v1.2.0 release do not contain these extensions. A version DOI for this revision is not asserted until its archival record is verified.
+**Current revision: v1.3.4.** This final framing patch aligns the title, abstract, Author Summary, cover letter and the messages of Figures 3–4 around the observation-conditioned concentration certificate and the end-to-end discrimination benchmark. It retains the v1.3.2 GlnD comparison, assay-range and Fig5C corrections and the v1.3.1 verification fixes. The earlier [v1.1.0 archive](https://doi.org/10.5281/zenodo.22735182) and v1.2.0 release do not contain these extensions. A version DOI for this revision is not asserted until its archival record is verified.
 
 ## Reproduce
 

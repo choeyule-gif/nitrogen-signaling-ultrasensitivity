@@ -8,6 +8,8 @@ results/*.log
 *.log
 *.out
 .DS_Store
+output/
+tmp/
 
 # generated: the assembled Supporting Information package and every rendered figure
 S1_Data/
