@@ -1,4 +1,37 @@
 {
+  "GlnD_constraint_comparison": {
+    "cases": [
+      {
+        "model": "fixed_C",
+        "RMSE": 0.5399341622087674,
+        "UR_half_range_mM": 0.08000000000000002,
+        "state_capacities": [
+          1.0,
+          1.0,
+          0.28500427016081314
+        ],
+        "endpoint_ratios": [
+          38.90123456790124,
+          6.752484191508582
+        ]
+      },
+      {
+        "model": "two_endpoint_ratios",
+        "RMSE": 0.04093456889239124,
+        "UR_half_range_mM": 0.2566242923150519,
+        "state_capacities": [
+          39.90123456790123,
+          2.1578856190220663,
+          7.910369735715243
+        ],
+        "endpoint_ratios": [
+          38.90123456790123,
+          6.752484191508582
+        ]
+      }
+    ],
+    "interpretation": "The two endpoint ratios are retained; fixed C, the middle-state constraint and the UR half-range are jointly relaxed. RMSE improvement is not attributable to one relaxation."
+  },
   "high_precision": {
     "nominal_bound": "0.041175682604129241070431341477242930812387302282523642971975140436",
     "exact_ell_threshold": "0.14179910005080630758503873742043805218114013138535990976511470399",

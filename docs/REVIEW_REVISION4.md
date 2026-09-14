@@ -34,8 +34,10 @@ Fig3A–C compares the general and count-conditioned bounds, the observation/uni
 
 Fig5 retains the observed peptide fractions, deterministic synthetic intervals and normalization-dependent upper limits. It is explicitly a prospective application. Its general calibration and mixture results remain in A13–A14, while the main text is shortened. No calibration-transfer validation or direct native occupancy estimate is added by inference from unrelated source measurements.
 
-The revised source, figures, results, manuscript and verification entry point are synchronized as v1.3.1 (verification patch to v1.3.0). The current S1 Data carries a per-file manifest. Earlier releases are not represented as containing the new work. A new Zenodo DOI is not asserted or substituted until its record is verified; the author manages Zenodo.
+The revised source, figures, results, manuscript and verification entry point are synchronized as v1.3.2 (comparison-clarification patch following v1.3.1). The current S1 Data carries a per-file manifest. Earlier releases are not represented as containing the new work. A new Zenodo DOI is not asserted or substituted until its record is verified; the author manages Zenodo.
 
 ## Remaining limits
 
 The revision adds a conditional methodological decision and observation-level performance evidence. It does not resolve native biochemical validation. Applying the certificate requires matched measurements of the count gate and coefficient bounds, plus stationarity at the lower enzyme total. Applying the binding design requires readout/concentration calibration and tests for heterogeneous states. The paired-paralog application still needs matched calibration transfer and an independent bound-fraction endpoint. These limits should remain visible to editors and reviewers.
+
+The subsequent pre-submission review corrections are recorded in `validation/MINOR_REVISION_V1_3_2.md`. The GlnD RMSE change follows joint relaxation of fixed-C, intermediate-state and transported UR-half-range constraints; it is not the isolated effect of variable state capacities.

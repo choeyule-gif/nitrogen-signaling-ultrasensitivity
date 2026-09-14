@@ -1,4 +1,6 @@
-"""Cross-assay stress fit without imposing constant UT+UR state capacity.
+"""Cross-assay stress fit retaining two endpoint specificity ratios.
+Fixed effective C, the earlier middle-state constraint and the transported
+0.080 mM UR half-range are released together.
 Transported ratios are sensitivity hypotheses, not matched-assay constraints.
 """
 from pathlib import Path
@@ -26,5 +28,5 @@ for lam in np.linspace(lo,hi,5):
  pred=3*(w@aa)/(w@(aa+bb));worst=max(worst,float(np.max(abs(pred-base))))
  family.append(dict(lam=float(lam),a=aa.tolist(),b=bb.tolist(),K1_mM=float(k1*lam),K2_mM=float(k2/lam)))
 assert worst<1e-12
-report=dict(ratio_unliganded=r0,UR_fold=b2,RMSE=float(np.sqrt(np.mean(best.fun**2))),K1_mM=k1,K2_mM=k2,a=a.tolist(),b=b.tolist(),monotone_capacity_lambda_interval=[lo,hi],family=family,max_equivalence_error=worst,zero_input_max_UMP=3*r0/(1+r0),predictions=response(x,best.x).tolist(),scope='Strict transfer of two 1998 apparent-specificity ratios, with nonconstant state catalytic capacities and monotone UT/UR sequences. Cross-assay transport is not validated; fit to 12 rounded coordinates is descriptive.')
+report=dict(ratio_unliganded=r0,UR_fold=b2,RMSE=float(np.sqrt(np.mean(best.fun**2))),K1_mM=k1,K2_mM=k2,a=a.tolist(),b=b.tolist(),monotone_capacity_lambda_interval=[lo,hi],family=family,max_equivalence_error=worst,zero_input_max_UMP=3*r0/(1+r0),predictions=response(x,best.x).tolist(),scope='Transfer of two 1998 endpoint apparent-specificity ratios with monotone UT/UR sequences; fixed effective C, the earlier intermediate-state constraint and the 0.080 mM UR half-range are not imposed. Cross-assay transport is not validated; fit to 12 rounded coordinates is descriptive.')
 (OUT/'constrained_glnd.json').write_text(json.dumps(report,indent=2));print(json.dumps(report,indent=2))

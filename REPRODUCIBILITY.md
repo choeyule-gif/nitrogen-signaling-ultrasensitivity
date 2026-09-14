@@ -52,3 +52,10 @@ The recorded source is v1.3.0, commit `39774c720ef713fc20a007748e74ace131cc80af`
 All ten documents in the public portable LaTeX ZIP compiled twice without undefined references or overfull boxes. Reference audit covers the titles and DOIs of all 36 bibliography entries; the biochemical audit also directly checked the 1998 catalytic table, 2007 main text/S10 coefficients and the 2011 assay conditions. DOI resolution does not validate every cited scientific inference. The 2007 K_P unit discrepancy is present in the original sources and remains explicitly included in sensitivity analysis.
 
 Environment, public asset hashes, source identity and machine-readable results are in `validation/`. Direct integrations verify two selected starting conditions, not global convergence. All assay-design guarantees remain conditional on the manuscript's topology, free-input, observation-gate and coefficient assumptions.
+
+
+## Comparison-clarification patch v1.3.2
+
+The GlnD fit was rerun after its constraint description was corrected. All fitted coefficients, RMSEs, predictions and equivalence-family values are unchanged from v1.3.1; only its scope metadata changes. The independent audit now reconstructs the earlier fixed-C realization and compares both UR half-ranges using a scalar root and the corresponding quadratic. Both endpoint ratios agree, while the half-ranges are 0.080 and 0.256624292315 mM. It also verifies that the earlier capacities were not all equal. This supports the corrected comparison: multiple constraints are released together, so the RMSE improvement cannot be assigned to one change.
+
+The default eight-stage integrated check passed, including fresh dynamic and binding checks and recounting all 8,700 saved trial decisions. The 8,700 raw-observation trials were not regenerated again in this patch; the earlier v1.3.0 clean-regeneration record keeps its original scope. All five main figures and the earlier supporting figures remain unchanged. See `validation/MINOR_REVISION_V1_3_2.md`, `integrated_checks_v1.3.2.json` and the `GlnD_constraint_comparison` field of `extras/observation_design/results/independent_verification.json`.

@@ -111,5 +111,5 @@
     0.6294784153108288,
     0.4473566414571892
   ],
-  "scope": "Strict transfer of two 1998 apparent-specificity ratios, with nonconstant state catalytic capacities and monotone UT/UR sequences. Cross-assay transport is not validated; fit to 12 rounded coordinates is descriptive."
+  "scope": "Transfer of two 1998 endpoint apparent-specificity ratios with monotone UT/UR sequences; fixed effective C, the earlier intermediate-state constraint and the 0.080 mM UR half-range are not imposed. Cross-assay transport is not validated; fit to 12 rounded coordinates is descriptive."
 }

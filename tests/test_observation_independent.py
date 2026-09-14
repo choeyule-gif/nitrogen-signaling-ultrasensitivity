@@ -23,6 +23,40 @@ from model_source import Cascade
 
 def main():
     report = {}
+    # The improved GlnD fit releases the transported UR half-range as well
+    # as the fixed-C/middle-state restrictions. Audit both stored fits.
+    earlier = json.loads((ROOT / 'extras/finite_mechanism/results/summary.json').read_text())['strict_cross_assay_transfer']
+    fitted = json.loads((OUT / 'constrained_glnd.json').read_text())
+    q0, q2, middle, logs, logc = earlier['parameters']
+    q = np.array([q0, q2 + middle * (q0 - q2), q2])
+    scale = np.array([1., (1-q0)/(1-q[1]), fitted['UR_fold']*(1-q0)/(1-q2)])
+    old_a, old_b = scale*q, scale*(1-q)
+    s, c = np.exp(logs), np.exp(logc)
+    old_k1, old_k2 = s*np.sqrt(c)*scale[1], s*scale[2]/(np.sqrt(c)*scale[1])
+    comparison = []
+    for name, aa, bb, k1, k2, rmse in [
+        ('fixed_C', old_a, old_b, old_k1, old_k2, earlier['RMSE']),
+        ('two_endpoint_ratios', np.array(fitted['a']), np.array(fitted['b']),
+         fitted['K1_mM'], fitted['K2_mM'], fitted['RMSE'])
+    ]:
+        midpoint = (bb[0]+bb[2])/2
+        def capacity(g):
+            weights = np.array([1., g/k1, g*g/(k1*k2)])
+            return weights@bb/weights.sum()
+        half = brentq(lambda g: capacity(g)-midpoint, 1e-10, 100, xtol=1e-14)
+        coef = [(bb[2]-midpoint)/(k1*k2), (bb[1]-midpoint)/k1, bb[0]-midpoint]
+        positive_root = max(np.roots(coef))
+        assert abs(half-positive_root) < 1e-10
+        assert abs(aa[0]/bb[0]-fitted['ratio_unliganded']) < 1e-10
+        assert abs(bb[2]/bb[0]-fitted['UR_fold']) < 1e-10
+        comparison.append(dict(model=name, RMSE=rmse, UR_half_range_mM=float(half),
+                               state_capacities=(aa+bb).tolist(),
+                               endpoint_ratios=[float(aa[0]/bb[0]), float(bb[2]/bb[0])]))
+    assert abs(comparison[0]['UR_half_range_mM']-.080) < 1e-10
+    assert abs(comparison[1]['UR_half_range_mM']-.2566242923150519) < 1e-7
+    assert not np.allclose(scale, scale[0])
+    report['GlnD_constraint_comparison'] = dict(cases=comparison,
+        interpretation='The two endpoint ratios are retained; fixed C, the middle-state constraint and the UR half-range are jointly relaxed. RMSE improvement is not attributable to one relaxation.')
     mp.mp.dps = 65
     d = mp.mpf
     eps, e, pt = d('.108'), d('.04'), d('5')

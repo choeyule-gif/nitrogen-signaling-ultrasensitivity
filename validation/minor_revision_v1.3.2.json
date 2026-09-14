@@ -1,0 +1,9 @@
+{
+  "baseline_commit": "e5738baa87c889a501207c11e3ccf9a9c32fe28b",
+  "all_figures_unchanged": true,
+  "fitted_coefficients_and_predictions_unchanged": true,
+  "integrated_check_stages": 8,
+  "passed": true,
+  "raw_Monte_Carlo_regenerated": false,
+  "scope": "GlnD refit, model-comparison diagnostics and eight-stage checks; earlier clean-regeneration scope retained."
+}

@@ -1,0 +1,63 @@
+{
+  "regenerated": false,
+  "steps": [
+    {
+      "command": [
+        "tests/test_reproduce.py"
+      ],
+      "exit_code": 0,
+      "seconds": 0.05442523956298828
+    },
+    {
+      "command": [
+        "extras/matched_models/code/verify_final.py"
+      ],
+      "exit_code": 0,
+      "seconds": 0.6027982234954834
+    },
+    {
+      "command": [
+        "tests/test_extensions.py"
+      ],
+      "exit_code": 0,
+      "seconds": 4.91693902015686
+    },
+    {
+      "command": [
+        "extras/paired_paralogs/code/paired_reporter.py"
+      ],
+      "exit_code": 0,
+      "seconds": 0.375593900680542
+    },
+    {
+      "command": [
+        "extras/paired_paralogs/code/reporter_intervals.py"
+      ],
+      "exit_code": 0,
+      "seconds": 0.29224705696105957
+    },
+    {
+      "command": [
+        "extras/paired_paralogs/code/robust_calibration.py"
+      ],
+      "exit_code": 0,
+      "seconds": 6.825096845626831
+    },
+    {
+      "command": [
+        "extras/observation_design/code/verify_revision.py"
+      ],
+      "exit_code": 0,
+      "seconds": 1.3260159492492676
+    },
+    {
+      "command": [
+        "tests/test_observation_independent.py"
+      ],
+      "exit_code": 0,
+      "seconds": 1.5072689056396484
+    }
+  ],
+  "completed": true,
+  "passed": true
+}

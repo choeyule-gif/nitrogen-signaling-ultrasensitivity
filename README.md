@@ -2,7 +2,7 @@
 
 Code, numerical outputs and manuscript sources for Yule Choi's nitrogen-signaling study. This is a conditional analysis of mechanistic equivalence and measurement design; the calculations do not establish a unique native GlnD–PII–GlnE–GS mechanism.
 
-**Current revision: v1.3.1.** This verification patch corrects two rounded sufficient thresholds and citation/package metadata, and adds independent dynamic and numerical checks. The v1.3.0 extension adds the observation-conditioned concentration certificate, end-to-end binding measurements and biochemical constraint profiles, and synchronizes the main manuscript, appendices and Figures 3–4. The earlier [v1.1.0 archive](https://doi.org/10.5281/zenodo.22735182) and v1.2.0 release do not contain these extensions. A version DOI for this revision is not asserted until its archival record is verified.
+**Current revision: v1.3.2.** This patch corrects the GlnD fit-comparison explanation, distinguishes assay nuisance ranges and points Fig5C directly to its inputs. It retains the v1.3.1 threshold, metadata and verification fixes. The v1.3.0 extension adds the observation-conditioned concentration certificate, end-to-end binding measurements and biochemical constraint profiles, and synchronizes the main manuscript, appendices and Figures 3–4. The earlier [v1.1.0 archive](https://doi.org/10.5281/zenodo.22735182) and v1.2.0 release do not contain these extensions. A version DOI for this revision is not asserted until its archival record is verified.
 
 ## Reproduce
 
