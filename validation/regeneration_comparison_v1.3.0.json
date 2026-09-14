@@ -1,0 +1,57 @@
+{
+  "observation_certificate.json": {
+    "byte_identical": true,
+    "different_numeric_fields": 0,
+    "max_absolute_difference": 0,
+    "numerically_agrees": true
+  },
+  "certificate_full_reaction_checks.json": {
+    "byte_identical": true,
+    "different_numeric_fields": 0,
+    "max_absolute_difference": 0,
+    "numerically_agrees": true
+  },
+  "constrained_glnd.json": {
+    "byte_identical": true,
+    "different_numeric_fields": 0,
+    "max_absolute_difference": 0,
+    "numerically_agrees": true
+  },
+  "glnd_constraint_profile.csv": {
+    "byte_identical": true,
+    "different_numeric_fields": 0,
+    "max_absolute_difference": 0,
+    "numerically_agrees": true
+  },
+  "binding_observation.csv": {
+    "byte_identical": true,
+    "different_numeric_fields": 0,
+    "max_absolute_difference": 0,
+    "numerically_agrees": true
+  },
+  "binding_observation_trials.csv": {
+    "byte_identical": true,
+    "different_numeric_fields": 0,
+    "max_absolute_difference": 0,
+    "numerically_agrees": true
+  },
+  "binding_local_effects.csv": {
+    "byte_identical": true,
+    "different_numeric_fields": 0,
+    "max_absolute_difference": 0,
+    "numerically_agrees": true
+  },
+  "binding_local_effects_trials.csv": {
+    "byte_identical": true,
+    "different_numeric_fields": 0,
+    "max_absolute_difference": 0,
+    "numerically_agrees": true
+  },
+  "binding_observation_example.json": {
+    "byte_identical": true,
+    "different_numeric_fields": 0,
+    "max_absolute_difference": 0,
+    "numerically_agrees": true
+  },
+  "scope": "Current observation-design numbers; larger legacy searches are verified by their scheduled scientific assertions, not required to be byte-identical."
+}

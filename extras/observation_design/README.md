@@ -14,6 +14,7 @@ python extras/observation_design/code/glnd_constraint_profile.py
 python extras/observation_design/code/binding_observation.py --trials 100
 python extras/observation_design/code/binding_local_effects.py
 python extras/observation_design/code/verify_revision.py
+python tests/test_observation_independent.py
 python extras/observation_design/code/plot_revision.py
 ```
 
@@ -35,3 +36,5 @@ The integration command `python tests/run_research_suite.py --regenerate` includ
 The 2007 primary supplement used for the source-fit ratios is DOI 10.1021/bi0620510.s001, Fig S10, PDF page 16. Its catalytic coefficients are 7.5, 175 and 1315. The main-text K_P unit is used and the inconsistent literal supplementary unit is explicitly tested. The s002 supplement is a different file. Copyrighted primary PDFs are not redistributed here; only source-attributed values needed for the analyses are retained.
 
 The bound is on pairwise differences within the specified free-state-equivalent mechanism class. It is not an error relative to biological truth. Source-fit coefficients and the PII count gate require independent justification in the proposed assay. A large upper bound does not establish detectability. The Monte Carlo intervals quantify simulation sampling uncertainty, not native-assay calibration. Rejection under a hidden affinity mixture does not identify a specific change in the single-class regulatory coefficient.
+
+The v1.3.1 audit additionally checks printed sufficient thresholds at 65-digit precision, sharpness of the count gate by 15 linear programs and of the ladder bound by nine endpoint constructions, two independent source-rate BDF trajectories, a raw-example refit with a different solver and free-ligand mass-balance implementation, and all 8,700 trial decisions. Results are in `independent_verification.json`. These checks do not establish global convergence or biological validity.

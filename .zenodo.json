@@ -1,7 +1,7 @@
 {
   "title": "Code for: Mechanistic equivalence and measurement design in models of bacterial nitrogen signaling",
   "upload_type": "software",
-  "description": "Reproducible code, digitized published observations, parameter provenance, figures and manuscript sources for Mechanistic equivalence and measurement design in models of bacterial nitrogen signaling. Version 1.3.0 adds an observation-conditioned cascade bound and concentration decision, end-to-end finite-depletion binding measurements with calibration and model-misspecification scenarios, GlnD biochemical constraint profiles, and the generalized paired-reporter calibration extension. No new experimental measurements were generated. All native-assay applications remain conditional on the stated observation, biochemical and calibration assumptions. The original analysis code is MIT licensed; the retained Gosztolai et al. workbook and model retain their CC BY 4.0 attribution. Other published values are source attributed; primary literature PDFs are not redistributed.",
+  "description": "Reproducible code, digitized published observations, parameter provenance, figures and manuscript sources for Mechanistic equivalence and measurement design in models of bacterial nitrogen signaling. Version 1.3.1 verifies and corrects printed sufficient thresholds in the v1.3.0 observation-design extension, which adds an observation-conditioned cascade bound and concentration decision, end-to-end finite-depletion binding measurements with calibration and model-misspecification scenarios, GlnD biochemical constraint profiles, and the generalized paired-reporter calibration extension. No new experimental measurements were generated. All native-assay applications remain conditional on the stated observation, biochemical and calibration assumptions. The original analysis code is MIT licensed; the retained Gosztolai et al. workbook and model retain their CC BY 4.0 attribution. Other published values are source attributed; primary literature PDFs are not redistributed.",
   "creators": [
     {
       "name": "Choi, Yule"
@@ -19,5 +19,5 @@
     "Hill coefficient"
   ],
   "language": "eng",
-  "version": "1.3.0"
+  "version": "1.3.1"
 }

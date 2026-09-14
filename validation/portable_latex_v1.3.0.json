@@ -1,0 +1,62 @@
+[
+  {
+    "source": "S1_Appendix.tex",
+    "passed": true,
+    "undefined": false,
+    "overfull": false
+  },
+  {
+    "source": "S1_Fig.tex",
+    "passed": true,
+    "undefined": false,
+    "overfull": false
+  },
+  {
+    "source": "S2_Appendix.tex",
+    "passed": true,
+    "undefined": false,
+    "overfull": false
+  },
+  {
+    "source": "S2_Fig.tex",
+    "passed": true,
+    "undefined": false,
+    "overfull": false
+  },
+  {
+    "source": "S3_Fig.tex",
+    "passed": true,
+    "undefined": false,
+    "overfull": false
+  },
+  {
+    "source": "S4_Fig.tex",
+    "passed": true,
+    "undefined": false,
+    "overfull": false
+  },
+  {
+    "source": "S5_Fig.tex",
+    "passed": true,
+    "undefined": false,
+    "overfull": false
+  },
+  {
+    "source": "S6_Fig.tex",
+    "passed": true,
+    "undefined": false,
+    "overfull": false
+  },
+  {
+    "source": "cover_letter.tex",
+    "passed": true,
+    "undefined": false,
+    "overfull": false
+  },
+  {
+    "source": "manuscript_submission.tex",
+    "passed": true,
+    "undefined": false,
+    "overfull": false
+  }
+]

@@ -1,0 +1,64 @@
+{
+  "high_precision": {
+    "nominal_bound": "0.041175682604129241070431341477242930812387302282523642971975140436",
+    "exact_ell_threshold": "0.14179910005080630758503873742043805218114013138535990976511470399",
+    "printed_ell_bound": "0.049993215597706192665877401072891985686203518664471949327565510688",
+    "pool_limits": {
+      "1": {
+        "exact": "0.035360644192357975445961568873203605607019480768229639881306104327",
+        "printed": ".03536"
+      },
+      "12": {
+        "exact": "0.0029955852579129237595267193650890174959993821837963375184600772008",
+        "printed": ".002995"
+      }
+    }
+  },
+  "ladder_extremizers": {
+    "cases": 9,
+    "max_error": "1.8216643704082369968766038681102751020204049004418428222658390827e-50"
+  },
+  "count_gate_linear_programs": {
+    "cases": 15,
+    "max_error": 1.1102230246251565e-16
+  },
+  "source_rate_ODE": {
+    "parameters": {
+      "G": 2000,
+      "Pt": 5,
+      "St": 0.5,
+      "Dt": 0.5,
+      "Et": 0.02,
+      "beta": 23.333333333333332,
+      "beta_prime": 175.33333333333334,
+      "gain": 0.001
+    },
+    "cases": [
+      {
+        "lam": 1,
+        "time": 1000000.0,
+        "max_species_error": 1.1675549416167996e-11,
+        "max_rhs": 4.527628272299467e-16,
+        "conservation_error": 2.4496724093658884e-13,
+        "min_concentration": 0.0,
+        "GS_total": 0.37526655346153065
+      },
+      {
+        "lam": 4,
+        "time": 1000000.0,
+        "max_species_error": 1.2034817586936697e-11,
+        "max_rhs": 4.926614671774132e-16,
+        "conservation_error": 3.280153926255025e-13,
+        "min_concentration": 0.0,
+        "GS_total": 0.3752665658310978
+      }
+    ]
+  },
+  "independent_raw_refit": {
+    "max_halfpoint_error_uM": 8.417495797607977e-09,
+    "rmse": 0.023889834100486066
+  },
+  "independently_recomputed_trial_decisions": 8700,
+  "passed": true,
+  "scope": "Conditional computational validation; two integrations do not prove global convergence or native kinetics."
+}

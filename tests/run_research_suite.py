@@ -17,6 +17,7 @@ commands += [[f'extras/paired_paralogs/code/{n}.py'] for n in ['paired_reporter'
 if a.regenerate:
  commands += [[f'extras/observation_design/code/{n}.py'] for n in ['observation_certificate','verify_observation_certificate','constrained_glnd','glnd_constraint_profile','binding_observation','binding_local_effects']]
 commands += [['extras/observation_design/code/verify_revision.py']]
+commands += [['tests/test_observation_independent.py']]
 (R/'results').mkdir(exist_ok=True)
 report=[]
 for args in commands:

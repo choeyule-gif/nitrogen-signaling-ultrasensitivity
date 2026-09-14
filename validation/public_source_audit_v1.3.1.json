@@ -1,0 +1,29 @@
+{
+  "public_asset_hashes_match": true,
+  "upload_manifest_matches": true,
+  "data_manifest_matches": true,
+  "inner_files": 451,
+  "removed_generated_directories": [
+    "results",
+    "figdata",
+    "extras/finite_mechanism/results",
+    "extras/paired_paralogs/results",
+    "extras/regulatory_states/results",
+    "extras/robust_design/results",
+    "extras/observation_design/results",
+    "extras/matched_models/results",
+    "extras/closed_cascade/results"
+  ],
+  "source_release": "v1.3.0",
+  "source_commit": "39774c720ef713fc20a007748e74ace131cc80af",
+  "asset_sha256": {
+    "PLOS_CB_revision4_reader.pdf": "a0b0b5a57e028ea9552b2d8f0d13b78dada657d5d88687fbaebdb948513051f7",
+    "PLOS_CB_reviewer_revision4.zip": "6b40c072d5de06aa6d9b90fad702dbaf132ab912369416b3300bc7e0abc6b1a5",
+    "PLOS_CB_revision4_LaTeX.zip": "c0073c3c335d7656941926c625f988cbde44bb9804d5465f8988bb57881990b0"
+  },
+  "verified_patch": "v1.3.1",
+  "numerical_model_changes": false,
+  "clean_regeneration_stages": 24,
+  "clean_regeneration_seconds": 809.7565176486969,
+  "scope": "Public v1.3.0 numerical source regenerated before the text/metadata/check-only v1.3.1 patch. Independent patch checks were additionally run against freshly regenerated results. Figures were preserved. No claim of biological validation or global convergence."
+}

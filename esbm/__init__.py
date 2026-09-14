@@ -1,7 +1,7 @@
 """esbm -- effector-switched bifunctional modification.
 
-Shared model code for the manuscript "Quantifying the sources of ultrasensitivity in
-bacterial nitrogen signaling".
+Shared model code for "Mechanistic equivalence and measurement design in models
+of bacterial nitrogen signaling".
 Every script in scripts/ imports from here; nothing in here is specific to one figure.
 """
 from .paths import ROOT, DATA, RESULTS, FIGURES, S1DATA

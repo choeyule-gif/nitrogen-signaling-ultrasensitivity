@@ -34,7 +34,7 @@ Fig3A–C compares the general and count-conditioned bounds, the observation/uni
 
 Fig5 retains the observed peptide fractions, deterministic synthetic intervals and normalization-dependent upper limits. It is explicitly a prospective application. Its general calibration and mixture results remain in A13–A14, while the main text is shortened. No calibration-transfer validation or direct native occupancy estimate is added by inference from unrelated source measurements.
 
-The revised source, figures, results, manuscript and verification entry point are synchronized as v1.3.0. The current S1 Data carries a per-file manifest. Earlier releases are not represented as containing the new work. A new Zenodo DOI is not asserted or substituted until its record is verified; the author manages Zenodo.
+The revised source, figures, results, manuscript and verification entry point are synchronized as v1.3.1 (verification patch to v1.3.0). The current S1 Data carries a per-file manifest. Earlier releases are not represented as containing the new work. A new Zenodo DOI is not asserted or substituted until its record is verified; the author manages Zenodo.
 
 ## Remaining limits
 

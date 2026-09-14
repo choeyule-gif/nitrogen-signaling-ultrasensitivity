@@ -1,0 +1,719 @@
+{
+  "source": "Crossref /works metadata; title and DOI checks do not validate every attributed scientific claim",
+  "checked_date": "2026-09-14",
+  "references": [
+    {
+      "key": "r1",
+      "doi": "10.1073/pnas.78.11.6840",
+      "title": "An amplified sensitivity arising from covalent modification in biological systems.",
+      "authors": [
+        "Goldbeter",
+        "Koshland"
+      ],
+      "year": [
+        [
+          1981,
+          11
+        ]
+      ],
+      "container": [
+        "Proceedings of the National Academy of Sciences"
+      ]
+    },
+    {
+      "key": "r2",
+      "doi": "10.1016/j.tibs.2014.10.002",
+      "title": "Ultrasensitivity part III: cascades, bistable switches, and oscillators",
+      "authors": [
+        "Ferrell",
+        "Ha"
+      ],
+      "year": [
+        [
+          2014,
+          12
+        ]
+      ],
+      "container": [
+        "Trends in Biochemical Sciences"
+      ]
+    },
+    {
+      "key": "r5",
+      "doi": "10.1128/mmbr.00025-13",
+      "title": "Nitrogen Assimilation in Escherichia coli: Putting Molecular Data into a Systems Perspective",
+      "authors": [
+        "van Heeswijk",
+        "Westerhoff",
+        "Boogerd"
+      ],
+      "year": [
+        [
+          2013,
+          12
+        ]
+      ],
+      "container": [
+        "Microbiology and Molecular Biology Reviews"
+      ]
+    },
+    {
+      "key": "r6",
+      "doi": "10.1016/s0966-842x(00)01709-1",
+      "title": "PII signal transduction proteins",
+      "authors": [
+        "Ninfa",
+        "Atkinson"
+      ],
+      "year": [
+        [
+          2000,
+          4
+        ]
+      ],
+      "container": [
+        "Trends in Microbiology"
+      ]
+    },
+    {
+      "key": "r7",
+      "doi": "10.1016/j.bpj.2017.04.012",
+      "title": "GlnK Facilitates the Dynamic Regulation of Bacterial Nitrogen Assimilation",
+      "authors": [
+        "Gosztolai",
+        "Schumacher",
+        "Behrends",
+        "Bundy",
+        "Heydenreich",
+        "Bennett",
+        "Buck",
+        "Barahona"
+      ],
+      "year": [
+        [
+          2017,
+          5
+        ]
+      ],
+      "container": [
+        "Biophysical Journal"
+      ]
+    },
+    {
+      "key": "r12",
+      "doi": "10.1021/bi201410x",
+      "title": "A Source of Ultrasensitivity in the Glutamine Response of the Bicyclic Cascade System Controlling Glutamine Synthetase Adenylylation State and Activity in Escherichia coli",
+      "authors": [
+        "Jiang",
+        "Ninfa"
+      ],
+      "year": [
+        [
+          2011,
+          11,
+          22
+        ]
+      ],
+      "container": [
+        "Biochemistry"
+      ]
+    },
+    {
+      "key": "r13",
+      "doi": "10.1073/pnas.0913815107",
+      "title": "Signaling properties of a covalent modification cycle are altered by a downstream target",
+      "authors": [
+        "Ventura",
+        "Jiang",
+        "Van Wassenhove",
+        "Del Vecchio",
+        "Merajver",
+        "Ninfa"
+      ],
+      "year": [
+        [
+          2010,
+          5,
+          17
+        ]
+      ],
+      "container": [
+        "Proceedings of the National Academy of Sciences"
+      ]
+    },
+    {
+      "key": "r9",
+      "doi": "10.1074/jbc.m300129200",
+      "title": "Allosteric Interactions and Bifunctionality Make the Response of Glutamine Synthetase Cascade System of Escherichia coli Robust and Ultrasensitive",
+      "authors": [
+        "Mutalik",
+        "Shah",
+        "Venkatesh"
+      ],
+      "year": [
+        [
+          2003,
+          7
+        ]
+      ],
+      "container": [
+        "Journal of Biological Chemistry"
+      ]
+    },
+    {
+      "key": "r10",
+      "doi": "10.1111/j.1742-4658.2005.04626.x",
+      "title": "The multifarious short‐term regulation of ammonium assimilation of Escherichia coli: dissection using an in silico replica",
+      "authors": [
+        "Bruggeman",
+        "Boogerd",
+        "Westerhoff"
+      ],
+      "year": [
+        [
+          2005,
+          3,
+          29
+        ]
+      ],
+      "container": [
+        "The FEBS Journal"
+      ]
+    },
+    {
+      "key": "r40",
+      "doi": "10.1023/a:1020334014497",
+      "title": "Sensitivity Analysis of Metabolic Cascades Catalyzed by Bifunctional Enzymes",
+      "authors": [
+        "Ortega",
+        "Ehrenberg",
+        "Acerenza",
+        "Westerhoff",
+        "Mas",
+        "Cascante"
+      ],
+      "year": [
+        [
+          2002,
+          3
+        ]
+      ],
+      "container": [
+        "Molecular Biology Reports"
+      ]
+    },
+    {
+      "key": "r46",
+      "doi": "10.1073/pnas.022267399",
+      "title": "Product dependence and bifunctionality compromise the ultrasensitivity of signal transduction cascades",
+      "authors": [
+        "Ortega",
+        "Acerenza",
+        "Westerhoff",
+        "Mas",
+        "Cascante"
+      ],
+      "year": [
+        [
+          2002,
+          2,
+          5
+        ]
+      ],
+      "container": [
+        "Proceedings of the National Academy of Sciences"
+      ]
+    },
+    {
+      "key": "r66",
+      "doi": "10.1016/j.bpj.2013.09.010",
+      "title": "Sensitivity and Robustness in Covalent Modification Cycles with a Bifunctional Converter Enzyme",
+      "authors": [
+        "Straube"
+      ],
+      "year": [
+        [
+          2013,
+          10
+        ]
+      ],
+      "container": [
+        "Biophysical Journal"
+      ]
+    },
+    {
+      "key": "r67",
+      "doi": "10.1371/journal.pcbi.1003614",
+      "title": "Reciprocal Regulation as a Source of Ultrasensitivity in Two-Component Systems with a Bifunctional Sensor Kinase",
+      "authors": [
+        "Straube"
+      ],
+      "year": [
+        [
+          2014,
+          5,
+          8
+        ]
+      ],
+      "container": [
+        "PLoS Computational Biology"
+      ]
+    },
+    {
+      "key": "r36",
+      "doi": "10.1021/bi3005736",
+      "title": "The Robustness of the Escherichia coli Signal-Transducing UTase/UR-PII Covalent Modification Cycle to Variation in the PII Concentration Requires Very Strong Inhibition of the UTase Activity of UTase/UR by Glutamine",
+      "authors": [
+        "Jiang",
+        "Zhang",
+        "Atkinson",
+        "Ninfa"
+      ],
+      "year": [
+        [
+          2012,
+          11,
+          1
+        ]
+      ],
+      "container": [
+        "Biochemistry"
+      ]
+    },
+    {
+      "key": "r4",
+      "doi": "10.1016/S0021-9258(18)85018-9",
+      "title": "THE HEMOGLOBIN SYSTEM",
+      "authors": [
+        "Adair",
+        "Bock",
+        "Field"
+      ],
+      "year": [
+        [
+          1925,
+          3
+        ]
+      ],
+      "container": [
+        "Journal of Biological Chemistry"
+      ]
+    },
+    {
+      "key": "r22",
+      "doi": "10.1016/j.jtbi.2009.09.003",
+      "title": "The rational parameterisation theorem for multisite post-translational modification systems",
+      "authors": [
+        "Thomson",
+        "Gunawardena"
+      ],
+      "year": [
+        [
+          2009,
+          12
+        ]
+      ],
+      "container": [
+        "Journal of Theoretical Biology"
+      ]
+    },
+    {
+      "key": "r23",
+      "doi": "10.1007/s00285-012-0510-4",
+      "title": "Variable elimination in post-translational modification reaction networks with mass-action kinetics",
+      "authors": [
+        "Feliu",
+        "Wiuf"
+      ],
+      "year": [
+        [
+          2012,
+          2,
+          5
+        ]
+      ],
+      "container": [
+        "Journal of Mathematical Biology"
+      ]
+    },
+    {
+      "key": "r24",
+      "doi": "10.1137/110847305",
+      "title": "Variable Elimination in Chemical Reaction Networks with Mass-Action Kinetics",
+      "authors": [
+        "Feliu",
+        "Wiuf"
+      ],
+      "year": [
+        [
+          2012,
+          1
+        ]
+      ],
+      "container": [
+        "SIAM Journal on Applied Mathematics"
+      ]
+    },
+    {
+      "key": "r25",
+      "doi": "10.1016/j.jtbi.2012.07.012",
+      "title": "Realistic enzymology for post-translational modification: Zero-order ultrasensitivity revisited",
+      "authors": [
+        "Xu",
+        "Gunawardena"
+      ],
+      "year": [
+        [
+          2012,
+          10
+        ]
+      ],
+      "container": [
+        "Journal of Theoretical Biology"
+      ]
+    },
+    {
+      "key": "r26",
+      "doi": "10.1529/biophysj.105.060194",
+      "title": "An Empirical Extremum Principle for the Hill Coefficient in Ligand-Protein Interactions Showing Negative Cooperativity",
+      "authors": [
+        "Abeliovich"
+      ],
+      "year": [
+        [
+          2005,
+          7
+        ]
+      ],
+      "container": [
+        "Biophysical Journal"
+      ]
+    },
+    {
+      "key": "r27",
+      "doi": "10.1016/s0022-5193(84)80170-8",
+      "title": "Cooperativity and extrema of the Hill slope for symmetric protein-ligand binding polynomials",
+      "authors": [
+        "Briggs"
+      ],
+      "year": [
+        [
+          1984,
+          5
+        ]
+      ],
+      "container": [
+        "Journal of Theoretical Biology"
+      ]
+    },
+    {
+      "key": "r70",
+      "doi": "10.1371/journal.pcbi.1003650",
+      "title": "Model Selection in Systems Biology Depends on Experimental Design",
+      "authors": [
+        "Silk",
+        "Kirk",
+        "Barnes",
+        "Toni",
+        "Stumpf"
+      ],
+      "year": [
+        [
+          2014,
+          6,
+          12
+        ]
+      ],
+      "container": [
+        "PLoS Computational Biology"
+      ]
+    },
+    {
+      "key": "r72",
+      "doi": "10.1371/journal.pcbi.1008248",
+      "title": "Testing structural identifiability by a simple scaling method",
+      "authors": [
+        "Castro",
+        "de Boer"
+      ],
+      "year": [
+        [
+          2020,
+          11,
+          3
+        ]
+      ],
+      "container": [
+        "PLOS Computational Biology"
+      ]
+    },
+    {
+      "key": "r73",
+      "doi": "10.1371/journal.pcbi.1009032",
+      "title": "On testing structural identifiability by a simple scaling method: Relying on scaling symmetries can be misleading",
+      "authors": [
+        "Villaverde",
+        "Massonis"
+      ],
+      "year": [
+        [
+          2021,
+          10,
+          14
+        ]
+      ],
+      "container": [
+        "PLOS Computational Biology"
+      ]
+    },
+    {
+      "key": "r18",
+      "doi": "10.1128/jb.01674-09",
+      "title": "Mutagenesis and Functional Characterization of the Four Domains of GlnD, a Bifunctional Nitrogen Sensor Protein",
+      "authors": [
+        "Zhang",
+        "Pohlmann",
+        "Serate",
+        "Conrad",
+        "Roberts"
+      ],
+      "year": [
+        [
+          2010,
+          6
+        ]
+      ],
+      "container": [
+        "Journal of Bacteriology"
+      ]
+    },
+    {
+      "key": "r17",
+      "doi": "10.1021/bi980667m",
+      "title": "Enzymological Characterization of the Signal-Transducing Uridylyltransferase/Uridylyl-Removing Enzyme (EC 2.7.7.59) of Escherichia coli and Its Interaction with the PII Protein",
+      "authors": [
+        "Jiang",
+        "Peliska",
+        "Ninfa"
+      ],
+      "year": [
+        [
+          1998,
+          8,
+          25
+        ]
+      ],
+      "container": [
+        "Biochemistry"
+      ]
+    },
+    {
+      "key": "r51",
+      "doi": "10.1074/jbc.r600024200",
+      "title": "The ACT Domain: A Small Molecule Binding Domain and Its Role as a Common Regulatory Element",
+      "authors": [
+        "Grant"
+      ],
+      "year": [
+        [
+          2006,
+          11
+        ]
+      ],
+      "container": [
+        "Journal of Biological Chemistry"
+      ]
+    },
+    {
+      "key": "r71",
+      "doi": "10.1021/bi0620510",
+      "title": "Escherichia coli Glutamine Synthetase Adenylyltransferase (ATase, EC 2.7.7.49):  Kinetic Characterization of Regulation by PII, PII-UMP, Glutamine, and α-Ketoglutarate",
+      "authors": [
+        "Jiang",
+        "Mayo",
+        "Ninfa"
+      ],
+      "year": [
+        [
+          2007,
+          3,
+          14
+        ]
+      ],
+      "container": [
+        "Biochemistry"
+      ]
+    },
+    {
+      "key": "r76",
+      "doi": "10.1529/biophysj.107.110866",
+      "title": "Distributivity and Processivity in Multisite Phosphorylation Can Be Distinguished through Steady-State Invariants",
+      "authors": [
+        "Gunawardena"
+      ],
+      "year": [
+        [
+          2007,
+          12
+        ]
+      ],
+      "container": [
+        "Biophysical Journal"
+      ]
+    },
+    {
+      "key": "r77",
+      "doi": "10.1074/jbc.M602477200",
+      "title": "In Vitro Analysis of the Escherichia coli AmtB-GlnK Complex Reveals a Stoichiometric Interaction and Sensitivity to ATP and 2-Oxoglutarate",
+      "authors": [
+        "Durand",
+        "Merrick"
+      ],
+      "year": [
+        [
+          2006,
+          10
+        ]
+      ],
+      "container": [
+        "Journal of Biological Chemistry"
+      ]
+    },
+    {
+      "key": "r80",
+      "doi": "10.3389/fmicb.2014.00731",
+      "title": "Association and dissociation of the GlnKâ€“AmtB complex in response to cellular nitrogen status can occur in the absence of GlnK post-translational modification",
+      "authors": [
+        "Radchenko",
+        "Thornton",
+        "Merrick"
+      ],
+      "year": [
+        [
+          2014,
+          12,
+          23
+        ]
+      ],
+      "container": [
+        "Frontiers in Microbiology"
+      ]
+    },
+    {
+      "key": "r78",
+      "doi": "10.1073/pnas.97.8.3942",
+      "title": "The\n                    Escherichia coli\n                    signal transducers PII (GlnB) and GlnK form heterotrimers\n                    in vivo\n                    : Fine tuning the nitrogen signal cascade",
+      "authors": [
+        "van Heeswijk",
+        "Wen",
+        "Clancy",
+        "Jaggi",
+        "Ollis",
+        "Westerhoff",
+        "Vasudevan"
+      ],
+      "year": [
+        [
+          2000,
+          4,
+          11
+        ]
+      ],
+      "container": [
+        "Proceedings of the National Academy of Sciences"
+      ]
+    },
+    {
+      "key": "r79",
+      "doi": "10.1038/s41467-017-02397-0",
+      "title": "Allosteric modulation of protein-protein interactions by individual lipid binding events",
+      "authors": [
+        "Cong",
+        "Liu",
+        "Liu",
+        "Liang",
+        "Laganowsky"
+      ],
+      "year": [
+        [
+          2017,
+          12,
+          19
+        ]
+      ],
+      "container": [
+        "Nature Communications"
+      ]
+    },
+    {
+      "key": "r41",
+      "doi": "10.1371/journal.pcbi.1014531",
+      "title": "Quantitative modelling of P-TEFb mediated CTD phosphorylation identifies local cooperativity",
+      "authors": [
+        "Callenbach",
+        "Dorešić",
+        "Düster",
+        "Nakonecnij",
+        "Dudkin",
+        "Geyer",
+        "Hasenauer"
+      ],
+      "year": [
+        [
+          2026,
+          7,
+          30
+        ]
+      ],
+      "container": [
+        "PLOS Computational Biology"
+      ]
+    },
+    {
+      "key": "r75",
+      "doi": "10.1016/j.bbapap.2018.09.009",
+      "title": "The deuridylylation activity of Herbaspirillum seropedicae GlnD protein is regulated by the glutamine:2-oxoglutarate ratio",
+      "authors": [
+        "Emori",
+        "Tomazini",
+        "Souza",
+        "Pedrosa",
+        "Chubatsu",
+        "Oliveira"
+      ],
+      "year": [
+        [
+          2018,
+          12
+        ]
+      ],
+      "container": [
+        "Biochimica et Biophysica Acta (BBA) - Proteins and Proteomics"
+      ]
+    },
+    {
+      "key": "r74",
+      "doi": "10.1093/bioinformatics/btp358",
+      "title": "Structural and practical identifiability analysis of partially observed dynamical models by exploiting the profile likelihood",
+      "authors": [
+        "Raue",
+        "Kreutz",
+        "Maiwald",
+        "Bachmann",
+        "Schilling",
+        "Klingmüller",
+        "Timmer"
+      ],
+      "year": [
+        [
+          2009,
+          6,
+          8
+        ]
+      ],
+      "container": [
+        "Bioinformatics"
+      ]
+    }
+  ]
+}

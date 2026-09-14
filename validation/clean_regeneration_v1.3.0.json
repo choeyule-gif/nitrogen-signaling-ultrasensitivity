@@ -1,0 +1,175 @@
+{
+  "regenerated": true,
+  "steps": [
+    {
+      "command": [
+        "run_all.py"
+      ],
+      "exit_code": 0,
+      "seconds": 492.05850076675415
+    },
+    {
+      "command": [
+        "extras/matched_models/run.py"
+      ],
+      "exit_code": 0,
+      "seconds": 86.61986994743347
+    },
+    {
+      "command": [
+        "extras/finite_mechanism/run.py"
+      ],
+      "exit_code": 0,
+      "seconds": 3.457048177719116
+    },
+    {
+      "command": [
+        "extras/regulatory_states/code/analyze.py"
+      ],
+      "exit_code": 0,
+      "seconds": 2.9979162216186523
+    },
+    {
+      "command": [
+        "extras/robust_design/code/analyze.py"
+      ],
+      "exit_code": 0,
+      "seconds": 7.905827045440674
+    },
+    {
+      "command": [
+        "extras/closed_cascade/code/analyze.py"
+      ],
+      "exit_code": 0,
+      "seconds": 87.50483775138855
+    },
+    {
+      "command": [
+        "extras/closed_cascade/code/topology.py"
+      ],
+      "exit_code": 0,
+      "seconds": 14.00122594833374
+    },
+    {
+      "command": [
+        "extras/closed_cascade/code/total_input.py"
+      ],
+      "exit_code": 0,
+      "seconds": 3.6899001598358154
+    },
+    {
+      "command": [
+        "extras/closed_cascade/code/verify_algebra.py"
+      ],
+      "exit_code": 0,
+      "seconds": 0.8520328998565674
+    },
+    {
+      "command": [
+        "extras/paired_paralogs/code/extract_data.py"
+      ],
+      "exit_code": 0,
+      "seconds": 0.19449281692504883
+    },
+    {
+      "command": [
+        "extras/paired_paralogs/code/state_bounds.py"
+      ],
+      "exit_code": 0,
+      "seconds": 1.1217751502990723
+    },
+    {
+      "command": [
+        "tests/test_reproduce.py"
+      ],
+      "exit_code": 0,
+      "seconds": 0.05192685127258301
+    },
+    {
+      "command": [
+        "extras/matched_models/code/verify_final.py"
+      ],
+      "exit_code": 0,
+      "seconds": 0.5310349464416504
+    },
+    {
+      "command": [
+        "tests/test_extensions.py"
+      ],
+      "exit_code": 0,
+      "seconds": 4.229263067245483
+    },
+    {
+      "command": [
+        "extras/paired_paralogs/code/paired_reporter.py"
+      ],
+      "exit_code": 0,
+      "seconds": 0.3492143154144287
+    },
+    {
+      "command": [
+        "extras/paired_paralogs/code/reporter_intervals.py"
+      ],
+      "exit_code": 0,
+      "seconds": 0.25951313972473145
+    },
+    {
+      "command": [
+        "extras/paired_paralogs/code/robust_calibration.py"
+      ],
+      "exit_code": 0,
+      "seconds": 6.0925209522247314
+    },
+    {
+      "command": [
+        "extras/observation_design/code/observation_certificate.py"
+      ],
+      "exit_code": 0,
+      "seconds": 0.8568210601806641
+    },
+    {
+      "command": [
+        "extras/observation_design/code/verify_observation_certificate.py"
+      ],
+      "exit_code": 0,
+      "seconds": 1.493828296661377
+    },
+    {
+      "command": [
+        "extras/observation_design/code/constrained_glnd.py"
+      ],
+      "exit_code": 0,
+      "seconds": 1.3260390758514404
+    },
+    {
+      "command": [
+        "extras/observation_design/code/glnd_constraint_profile.py"
+      ],
+      "exit_code": 0,
+      "seconds": 1.2542920112609863
+    },
+    {
+      "command": [
+        "extras/observation_design/code/binding_observation.py"
+      ],
+      "exit_code": 0,
+      "seconds": 78.83254599571228
+    },
+    {
+      "command": [
+        "extras/observation_design/code/binding_local_effects.py"
+      ],
+      "exit_code": 0,
+      "seconds": 12.903789043426514
+    },
+    {
+      "command": [
+        "extras/observation_design/code/verify_revision.py"
+      ],
+      "exit_code": 0,
+      "seconds": 1.172302007675171
+    }
+  ],
+  "completed": true,
+  "passed": true
+}
